@@ -10,7 +10,9 @@
       "event_tags": "設計標籤，供事件篩選。",
       "mortgage_burden_pct_2025q2": "內政部 114年第2季 房貸負擔率(%)，全國 43.12。來源：https://www.ettoday.net/news/20251128/3074944.htm (轉載內政部公布數據)",
       "housing_squeeze": "臺中市 114Q2 房價所得比 11.90 倍(全國 9.89，六都第三)，房貸負擔率 51.90%；用於重劃區/買房壓力事件。",
-      "social_mod_balance": "遊戲企劃 v0.4：台東、澎湖由 +5 下修為 +3，避免偏鄉出身的平凡結局率最高而浪漫化。"
+      "social_mod_balance": "遊戲企劃 v0.5：家境改用財政部分位數後，台東、澎湖不再偏窮，social_mod 由 +3 再下修為 +1，避免偏鄉平凡結局率最高而浪漫化。",
+      "income_quintile_dist": "各縣市家戶落在「全國」所得五等分 Q1-Q5 的比例。來源：財政部財政資訊中心 112年度綜稅總所得各縣市申報統計分析表(https://data.gov.tw/dataset/17963)的中位數、第一/第三分位數，以對數常態分配擬合後換算。限制：只含申報戶、不含政府移轉與免稅所得，屬近似值。",
+      "income_quintile_dist_penghu": "澎湖為折衷值：財政部報稅資料(Q1 14.5%、Q5 18.5%)與主計總處家庭收支調查(可支配所得為全國0.79倍)方向相反，推測報稅資料排除低收入未申報戶。採家庭收支方向，將報稅換算結果的Q1/Q5與Q2/Q4對調，得Q1 18.5%、Q5 14.5%。"
     }
   },
   "counties": [
@@ -27,7 +29,14 @@
         "capital"
       ],
       "mortgage_burden_pct_2025q2": 67.23,
-      "births_roc83_89": 233274
+      "births_roc83_89": 233274,
+      "income_quintile_dist": [
+        0.19,
+        0.16,
+        0.166,
+        0.187,
+        0.297
+      ]
     },
     {
       "id": "new_taipei",
@@ -42,7 +51,14 @@
         "commute"
       ],
       "mortgage_burden_pct_2025q2": 56.85,
-      "births_roc83_89": 321191
+      "births_roc83_89": 321191,
+      "income_quintile_dist": [
+        0.203,
+        0.2,
+        0.199,
+        0.199,
+        0.199
+      ]
     },
     {
       "id": "taichung",
@@ -57,7 +73,14 @@
         "housing_squeeze"
       ],
       "mortgage_burden_pct_2025q2": 51.9,
-      "births_roc83_89": 246787
+      "births_roc83_89": 246787,
+      "income_quintile_dist": [
+        0.214,
+        0.204,
+        0.199,
+        0.194,
+        0.19
+      ]
     },
     {
       "id": "taitung",
@@ -66,14 +89,21 @@
       "income_vs_taiwan": 0.682,
       "academic_mod": -6,
       "cram_cost_mult": 0.68,
-      "social_mod": 3,
+      "social_mod": 1,
       "event_tags": [
         "rural",
         "east",
         "remote"
       ],
       "mortgage_burden_pct_2025q2": 36.08,
-      "births_roc83_89": 27129
+      "births_roc83_89": 27129,
+      "income_quintile_dist": [
+        0.217,
+        0.242,
+        0.226,
+        0.192,
+        0.123
+      ]
     },
     {
       "id": "penghu",
@@ -82,13 +112,20 @@
       "income_vs_taiwan": 0.789,
       "academic_mod": -5,
       "cram_cost_mult": 0.79,
-      "social_mod": 3,
+      "social_mod": 1,
       "event_tags": [
         "island",
         "remote"
       ],
       "mortgage_burden_pct_2025q2": 37.67,
-      "births_roc83_89": 8321
+      "births_roc83_89": 8321,
+      "income_quintile_dist": [
+        0.185,
+        0.231,
+        0.23,
+        0.209,
+        0.145
+      ]
     }
   ]
 }

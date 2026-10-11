@@ -5,6 +5,7 @@ import narrationMd from '@writing/stage_narrations.md?raw';
 import balance from '@data/balance.json';
 import birthYears from '@data/birth_years.json';
 import eraTerms from '@data/era_terms.json';
+const openingMods = import.meta.glob('@data/opening.json', { eager: true, import: 'default' });
 
 const eventMods = import.meta.glob('@data/events/*.json', { eager: true, import: 'default' });
 // counties.json 可能尚未存在：glob 找不到檔案時回傳空物件 → 使用 fallback
@@ -17,5 +18,6 @@ export const gameData = buildGameData({
   balance,
   birthYears,
   eraTerms,
+  opening: Object.values(openingMods)[0],
   narrationMd,
 });

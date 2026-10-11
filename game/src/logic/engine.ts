@@ -74,7 +74,10 @@ export class Game {
   private generateStart(seed: number): GameState {
     const county = this.rng.weighted(this.data.counties, (c) => c.birth_weight)!;
     const r = county.income_vs_taiwan;
-    const q = this.rng.weighted([1, 2, 3, 4, 5], (k) => Math.exp(this.b.quintile_shift_alpha * (r - 1) * (k - 3)))!;
+    const dist = county.income_quintile_dist;
+    const q = dist
+      ? this.rng.weighted([1, 2, 3, 4, 5], (k) => dist[k - 1])!
+      : this.rng.weighted([1, 2, 3, 4, 5], (k) => Math.exp(this.b.quintile_shift_alpha * (r - 1) * (k - 3)))!; // fallback
     const Q = this.b.quintiles[String(q)];
     const I = this.b.initial_stats;
     const stats = { ...I, wealth: Q.wealth } as Record<StatId, number>;
@@ -114,6 +117,8 @@ export class Game {
       return m;
     });
   }
+  /** 開局旁白（opening.json by_quintile） */
+  openingText(): string { return this.t(this.data.opening[`Q${this.s.quintile}`]); }
   get minguoYear(): number { return this.s.birthYear + this.turnDef.age; }
 
   apForTurn(): number {

@@ -24,5 +24,6 @@ export function normalizeCounties(raw: unknown): County[] | null {
     income_vs_taiwan: Number(c.income_vs_taiwan ?? c.income_ratio ?? 1),
     academic_mod: Number(c.academic_mod ?? 0), cram_cost_mult: Number(c.cram_cost_mult ?? 1),
     social_mod: Number(c.social_mod ?? 0), event_tags: Array.isArray(c.event_tags) ? c.event_tags : [],
+    income_quintile_dist: Array.isArray(c.income_quintile_dist) && c.income_quintile_dist.length === 5 ? c.income_quintile_dist.map(Number) : undefined,
   }));
 }

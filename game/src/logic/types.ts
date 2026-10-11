@@ -26,6 +26,8 @@ export interface GameEvent {
 export interface County {
   id: string; name: string; birth_weight: number; income_vs_taiwan: number;
   academic_mod: number; cram_cost_mult: number; social_mod: number; event_tags: string[];
+  /** 落在全國所得五分位 Q1–Q5 的比例（有就直接抽，否則用 α 偏移法） */
+  income_quintile_dist?: number[];
 }
 export interface Ending { id: string; title: string; regret_low: string; regret_high: string }
 export interface Tier { min: number; text: string }
@@ -41,6 +43,8 @@ export interface BirthYear { roc_year: number; weight: number; births?: number; 
 export interface EraSegment { from: number; to: number; terms: Record<string, string> }
 export interface GameData {
   birthYears: BirthYear[]; eraTerms: EraSegment[];
+  /** 開局旁白，key = Q1..Q5 */
+  opening: Record<string, string>;
   balance: import('./balance').Balance;
   events: GameEvent[]; endings: EndingsData; counties: County[]; countiesSource: 'counties.json' | 'fallback';
   /** 階段旁白樣板，key = stage id；內容含 {變數} */

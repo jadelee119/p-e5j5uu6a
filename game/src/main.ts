@@ -29,8 +29,10 @@ function header() {
 function renderIntro() {
   const s = game.s;
   const fb = gameData.countiesSource === 'fallback' ? `<p class="warn">縣市修正值為暫代資料（data/counties.json 尚未產出）。</p>` : '';
+  const op = game.openingText(); const opImg = illustrationFor(`opening_q${s.quintile}`);
   app.innerHTML = `<h1>台灣人生 Roguelike 模擬器</h1>
-  <div class="card"><p>民國 ${s.birthYear} 年（西元 ${s.birthYear + 1911} 年），你出生在 <b>${s.county.name}</b>。</p>
+  <div class="card${opImg ? ' has-pic' : ''}">${opImg ? `<figure class="polaroid tilt"><img src="${opImg}" alt=""></figure>` : ''}
+  ${op ? `<p class="opening">${esc(op)}</p>` : ''}<p class="muted">民國 ${s.birthYear} 年（西元 ${s.birthYear + 1911} 年）・<b>${s.county.name}</b></p>
   <p>你家的所得落在全國第 <b>${s.quintile}</b> 分位（Q${s.quintile}，1 最低、5 最高）。${s.flags.has('golden_spoon') ? '嘴裡含著一根金湯匙。' : ''}</p>
   <p class="muted">這一次人生只有一次，選了就不能回頭。</p>${statsHtml()}${fb}
   <p class="muted">種子：${s.seed}</p><button class="primary" id="go">開始人生</button></div>`;

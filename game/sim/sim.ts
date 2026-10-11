@@ -17,6 +17,7 @@ const data = buildGameData({
   balance: rj('data/balance.json'),
   birthYears: rj('data/birth_years.json'),
   eraTerms: rj('data/era_terms.json'),
+  opening: existsSync(join(root, 'data/opening.json')) ? rj('data/opening.json') : undefined,
   narrationMd: readFileSync(join(root, 'writing/stage_narrations.md'), 'utf8'),
 });
 
@@ -25,6 +26,7 @@ const N = Number(process.argv[2] ?? 1000); const baseSeed = Number(process.argv[
 const pol = makeRng(baseSeed ^ 0x9e3779b9);
 const count = (m: Map<string, number>, k: string) => m.set(k, (m.get(k) ?? 0) + 1);
 const byCounty = new Map<string, Map<string, number>>(), byQuint = new Map<string, Map<string, number>>();
+const cq = new Map<string, number[]>();
 const birthYrs = new Map<string, number>(), examNames = new Map<string, number>();
 const endings = new Map<string, number>(), byQ = new Map<string, number>(), mountains = new Map<string, number>(),
   counties = new Map<string, number>(), branches = new Map<string, number>(), notes = new Map<string, number>();
@@ -64,6 +66,7 @@ for (let i = 0; i < N; i++) {
   for (const n of new Set(g.s.notes.map((n) => n.replace(/回合 \d+/, '回合 N')))) count(notes, n);
   for (const e of tagged) if (g.s.seenEvents.has(e.id)) { if (!fired.has(e.id)) fired.set(e.id, new Map()); count(fired.get(e.id)!, g.s.county.name); }
   sumPov += g.s.povertyTurns;
+  if (!cq.has(g.s.county.name)) cq.set(g.s.county.name, [0, 0, 0, 0, 0]); cq.get(g.s.county.name)![g.s.quintile - 1]++;
   count(birthYrs, `民國 ${g.s.birthYear} 年`); count(examNames, g.eraTerms().exam_name ?? '(未定義)');
   sumEffort += g.s.effort; sumRegret += g.s.regret; sumBreak += g.s.breakdowns;
   for (const [k, v] of Object.entries(g.s.stats)) sumStats[k] = (sumStats[k] ?? 0) + v;
@@ -86,6 +89,12 @@ const matrix = (title: string, m: Map<string, Map<string, number>>, order?: stri
     const n = [...row.values()].reduce((a, b) => a + b, 0);
     console.log([k, n, ...titles.map((t) => ((row.get(t) ?? 0) / n * 100).toFixed(1) + '%')].join('\t')); }
 };
+console.log('\n== 縣市 × 所得分位：模擬 vs 目標（income_quintile_dist）==');
+console.log(['', 'n', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', '最大差'].join('\t'));
+for (const c of data.counties) { const row = cq.get(c.name) ?? [0, 0, 0, 0, 0]; const n = row.reduce((a, b) => a + b, 0) || 1;
+  const tgt = c.income_quintile_dist; let maxd = 0;
+  const cells = row.map((v, i) => { const o = v / n * 100; const t = tgt ? tgt[i] * 100 : NaN; if (tgt) maxd = Math.max(maxd, Math.abs(o - t)); return `${o.toFixed(0)}/${tgt ? t.toFixed(0) : '-'}`; });
+  console.log([c.name, n, ...cells, tgt ? maxd.toFixed(1) + 'pt' : '(α 偏移)'].join('\t')); }
 matrix('出生縣市 × 結局', byCounty, data.counties.map((c) => c.name));
 matrix('所得分位 × 結局', byQuint, ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']);
 void byQ;
@@ -117,6 +126,7 @@ const rv = data.endings.review;
 [...rv.effort_reveal, ...rv.regret_reveal].forEach((x, i) => allTexts.push([`review.tier${i}`, x.text]));
 rv.three_mountains.forEach((m) => allTexts.push([`mountain.${m.id}`, m.title + m.text]));
 for (const [st, tpl] of Object.entries(data.narration)) allTexts.push([`narration.${st}`, tpl!]);
+for (const [q, tpl] of Object.entries(data.opening)) allTexts.push([`opening.${q}`, tpl]);
 let leftovers = 0;
 for (const y of data.birthYears.map((b) => b.roc_year)) {
   const g = new Game(data, 1, { birthYear: y });

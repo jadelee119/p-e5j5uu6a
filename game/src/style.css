@@ -40,3 +40,4 @@ button:disabled { color:var(--color-lock); background:transparent; border-style:
 .album .cap { display:block; font-family:var(--font-hand); color:var(--color-text); }
 .album small { display:block; font-size:.7rem; }
 .polaroid .blank { aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; padding:6px; text-align:center; font-family:var(--font-hand); color:var(--color-muted); background:repeating-linear-gradient(45deg, var(--color-bg) 0 8px, var(--color-card) 8px 16px); font-size:.85rem; }
+.opening { font-family:var(--font-hand); font-size:1.05rem; }
