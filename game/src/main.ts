@@ -1,6 +1,7 @@
 import './theme.css';
 import './fonts.css';
 import './style.css';
+import './dark.css';
 import { gameData } from './data';
 import { illustrationFor } from './illustrations';
 import { Game, TURNS, type ActionId } from './logic/engine';
@@ -8,6 +9,15 @@ import { STATS, STAT_NAMES, STAGE_NAMES } from './logic/types';
 
 const OPENING_IMG = ['opening_moon', 'opening_dawn', 'opening_charm', 'opening_chain', 'opening_keys'];
 const WEALTH_WORDS: [number, string][] = [[70, '優渥'], [40, '寬裕'], [15, '普通'], [0, '拮据']]; // core-loop §16
+// 深色模式：預設跟系統，手動切換後記在 localStorage
+(() => {
+  const root = document.documentElement; const saved = localStorage.getItem('theme');
+  const apply = (t: string) => { root.dataset.theme = t; btn.textContent = t === 'dark' ? '☀️ 淺色' : '🌙 深色'; };
+  const btn = document.createElement('button'); btn.className = 'theme-toggle'; btn.type = 'button';
+  btn.onclick = () => { const t = root.dataset.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('theme', t); apply(t); };
+  document.body.appendChild(btn);
+  apply(saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+})();
 const app = document.getElementById('app')!;
 let game: Game; let alloc: Partial<Record<ActionId, number>> = {};
 const tx = (s: string | undefined) => esc(game.t(s));

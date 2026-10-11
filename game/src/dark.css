@@ -1,0 +1,13 @@
+/* 深色模式（工程師初版色票，待美術調整）：夜晚的黑板與舊相簿 */
+:root[data-theme="dark"] {
+  /* 美術調整版：夜晚教室的深藍灰＋粉筆白。對比：ink 13.3/11.1、muted 7.4/6.2、accent 6.6/5.5（底／卡片），皆過 WCAG AA */
+  --bg: #1C2226; --card: #283036; --ink: #EEE9DF; --muted: #B5AFA4;
+  --accent: #F08A7C; --lock: #565D62;
+  --color-blackboard: #1F332B; --color-chalk: #EDEBE3; --color-iron: #9DB7C0;
+  --color-notebook: #3E5566; --color-tape: #5A4E30; --color-good: #9CCB8A; --color-warn-bg: #4A3F22;
+  --shadow-card: 0 2px 0 #0000004d, 0 6px 14px #00000066;
+  color-scheme: dark;
+}
+:root[data-theme="dark"] .polaroid img { filter: brightness(.92); }
+.theme-toggle { position: fixed; top: 10px; right: 10px; z-index: 50; background: var(--card); color: var(--ink);
+  border: 1px solid var(--lock); border-radius: var(--radius-btn); padding: 4px 10px; font: inherit; font-size: 14px; cursor: pointer; }

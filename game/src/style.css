@@ -15,7 +15,7 @@ h1 { font-size:1.35rem; margin:.4em 0; } h2 { font-size:1.15rem; margin:.3em 0; 
 .bar.stress.hot > i { background-image:repeating-linear-gradient(-45deg, transparent 0 4px, color-mix(in srgb, var(--color-chalk) 40%, transparent) 4px 6px); }
 button { font:inherit; color:var(--color-text); border:1px solid var(--color-lock); background:var(--color-card); border-radius:var(--radius-btn); padding:10px 12px; cursor:pointer; }
 button.primary { background:var(--color-blackboard); color:var(--color-chalk); border-color:var(--color-blackboard); width:100%; margin-top:8px; }
-button:disabled { color:var(--color-lock); background:transparent; border-style:dashed; cursor:not-allowed; }
+button:disabled { color:var(--color-muted); background:transparent; border-style:dashed; cursor:not-allowed; }
 .choice { display:block; width:100%; text-align:left; margin:8px 0; }
 .choice:not(:disabled)::before { content:"□ "; color:var(--color-muted); }
 .choice:not(:disabled):hover::before { content:"✓ "; color:var(--color-accent); }
