@@ -18,7 +18,8 @@
       "effort": 1,
       "from": "elementary",
       "wealth_scaled_by": "cram_cost_mult",
-      "requires_wealth": 5
+      "_note": "實際花費 = round(5 × cram_cost_mult)，家庭資源 < 實際花費時鎖定（core-loop §15）",
+      "requires_wealth": 0
     },
     "play": {
       "effects": {
@@ -50,11 +51,11 @@
       },
       "effort": 1,
       "from": "elementary",
-      "requires_wealth": 4,
       "flag_after": {
         "points": 6,
         "flag": "has_talent"
-      }
+      },
+      "requires_wealth": 4
     },
     "work": {
       "effects": {

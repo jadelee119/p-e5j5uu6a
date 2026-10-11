@@ -6,6 +6,8 @@ import { illustrationFor } from './illustrations';
 import { Game, TURNS, type ActionId } from './logic/engine';
 import { STATS, STAT_NAMES, STAGE_NAMES } from './logic/types';
 
+const OPENING_IMG = ['opening_moon', 'opening_dawn', 'opening_charm', 'opening_chain', 'opening_keys'];
+const WEALTH_WORDS: [number, string][] = [[70, '優渥'], [40, '寬裕'], [15, '普通'], [0, '拮据']]; // core-loop §16
 const app = document.getElementById('app')!;
 let game: Game; let alloc: Partial<Record<ActionId, number>> = {};
 const tx = (s: string | undefined) => esc(game.t(s));
@@ -19,7 +21,7 @@ function start(seed?: number) {
 
 function statsHtml() {
   const s = game.s.stats;
-  return `<div class="stats">${STATS.map((k) => `<div>${STAT_NAMES[k]} ${s[k]}<div class="bar ${k === 'stress' ? 'stress' + (s[k] >= 70 ? ' hot' : '') : ''}"><i style="width:${s[k]}%"></i></div></div>`).join('')}</div>`;
+  return `<div class="stats">${STATS.map((k) => `<div>${STAT_NAMES[k]} ${k === 'wealth' ? WEALTH_WORDS.find(([m]) => s[k] >= m)![1] : s[k]}<div class="bar ${k === 'stress' ? 'stress' + (s[k] >= 70 ? ' hot' : '') : ''}"><i style="width:${s[k]}%"></i></div></div>`).join('')}</div>`;
 }
 function header() {
   const t = TURNS[game.s.turn]; const s = game.s;
@@ -29,12 +31,12 @@ function header() {
 function renderIntro() {
   const s = game.s;
   const fb = gameData.countiesSource === 'fallback' ? `<p class="warn">縣市修正值為暫代資料（data/counties.json 尚未產出）。</p>` : '';
-  const op = game.openingText(); const opImg = illustrationFor(`opening_q${s.quintile}`);
+  const op = game.openingText(); const opImg = illustrationFor(OPENING_IMG[s.quintile - 1]);
   app.innerHTML = `<h1>台灣人生 Roguelike 模擬器</h1>
   <div class="card${opImg ? ' has-pic' : ''}">${opImg ? `<figure class="polaroid tilt"><img src="${opImg}" alt=""></figure>` : ''}
   ${op ? `<p class="opening">${esc(op)}</p>` : ''}<p class="muted">民國 ${s.birthYear} 年（西元 ${s.birthYear + 1911} 年）・<b>${s.county.name}</b></p>
-  <p>你家的所得落在全國第 <b>${s.quintile}</b> 分位（Q${s.quintile}，1 最低、5 最高）。${s.flags.has('golden_spoon') ? '嘴裡含著一根金湯匙。' : ''}</p>
-  <p class="muted">這一次人生只有一次，選了就不能回頭。</p>${statsHtml()}${fb}
+  
+  <p class="muted">這一次人生只有一次，選了就不能回頭。</p>${fb}
   <p class="muted">種子：${s.seed}</p><button class="primary" id="go">開始人生</button></div>`;
   document.getElementById('go')!.onclick = render;
 }
@@ -82,7 +84,7 @@ function renderResult() {
 function renderSummary() {
   const sm = game.s.summary!;
   const d = STATS.filter((k) => sm.deltas[k]).map((k) => { const v = sm.deltas[k]!;
-    return `<span class="delta ${(k === 'stress' ? -v : v) > 0 ? 'up' : 'down'}">${STAT_NAMES[k]} ${v > 0 ? '+' : ''}${v}</span>`; }).join('　');
+    return `<span class="delta ${(k === 'stress' ? -v : v) > 0 ? 'up' : 'down'}">${STAT_NAMES[k]} ${k === 'wealth' ? (v > 0 ? '變多了' : '變少了') : (v > 0 ? '+' : '') + v}</span>`; }).join('　');
   app.innerHTML = header() + `<div class="card"><h2>${sm.title}</h2><p class="pre">${esc(sm.text)}</p><p>${d || '各項數值沒有變化。'}</p><button class="primary" id="ok">下一個階段</button></div>`;
   document.getElementById('ok')!.onclick = () => { game.ackSummary(); render(); };
 }
@@ -94,7 +96,7 @@ function renderEnding() {
     return `<figure class="polaroid ${i % 2 ? 'tilt-r' : 'tilt'}${img ? '' : ' no-pic'}"><span class="tape"></span>${img ? `<img src="${img}" alt="" loading="lazy">` : `<div class="blank">${esc(a.title)}</div>`}
     <figcaption><span class="tag">${a.stageName}</span><span class="cap">${esc(a.caption)}</span><small class="muted">${esc(a.title)}：${esc(a.choice)}</small></figcaption></figure>`; }).join('')}
     <figure class="polaroid tilt-r no-pic empty"><span class="tape"></span><div class="blank">22 歲以後</div><figcaption><span class="cap">（還沒拍）</span></figcaption></figure></div></div>
-  <div class="card"><p>${esc(r.effort)}</p><p>${esc(r.regret)}</p>${r.mountain ? `<h2>${esc(r.mountain.title)}</h2><p>${esc(r.mountain.text)}</p>` : ''}</div>
+  <div class="card">${r.origin ? `<p><b>${esc(r.origin)}</b></p>` : ''}<p>${esc(r.effort)}</p><p>${esc(r.regret)}</p>${r.mountain ? `<h2>${esc(r.mountain.title)}</h2><p>${esc(r.mountain.text)}</p>` : ''}</div>
   <button class="primary" id="again">再活一次</button>`;
   document.getElementById('again')!.onclick = () => start(Math.floor(Math.random() * 2 ** 31));
 }

@@ -135,8 +135,9 @@ export class Game {
     const need = this.b.actions[a]?.requires_wealth;
     if (need === undefined) return null;
     const cost = -(this.actionEffects(a).wealth ?? 0);
-    const min = Math.max(need, cost);
-    return wealth < min ? `需要家庭資源 ≥ ${Math.ceil(min)}` : null;
+    const scaled = !!this.b.actions[a]?.wealth_scaled_by;
+    const min = scaled ? cost : Math.max(need, cost); // §15：補習只看實際花費
+    return wealth < min ? `需要家庭資源 ≥ ${min}` : null;
   }
   /** 行動實際效果（補習費依縣市倍率縮放） */
   actionEffects(a: ActionId): Record<string, number> {
@@ -159,7 +160,7 @@ export class Game {
       else this.s.notes.push(`回合 ${this.s.turn + 1}（${STAGE_NAMES[t.stage]}）事件池已空`);
     }
     if (this.apForTurn() > 0) this.s.phase = 'ap';
-    else { this.consumeApModifiers(); this.nextEvent(); }
+    else { if (t.ap) this.consumeApModifiers(); this.nextEvent(); } // 無行動點回合不吃掉懲罰（§15）
   }
   private consumeApModifiers() { this.s.apPenalty = 0; this.s.apZero = false; }
 
@@ -263,12 +264,12 @@ export class Game {
     // §2-5 檢查：壓力爆表、病倒（每回合各最多一次）
     const forced: PendingEvent[] = [];
     const F = this.b.forced;
-    if (this.s.stats.stress >= F.breakdown_stress_min) {
+    if (!this.s.forcedDone && this.s.stats.stress >= F.breakdown_stress_min) { // 同回合最多一次（§15）
       const ev = this.data.events.find((e) => e.type === 'forced' && /breakdown|collapse/.test(e.id));
       this.s.breakdowns++; this.s.apPenalty = F.breakdown_ap_penalty;
       if (ev) forced.push({ event: ev, forced: 'breakdown' }); else this.mod(F.breakdown_effects);
     }
-    if (this.s.stats.health <= F.sick_health_max) {
+    if (!this.s.forcedDone && this.s.stats.health <= F.sick_health_max) {
       const ev = this.data.events.find((e) => e.type === 'forced' && /sick/.test(e.id));
       this.s.apZero = true;
       if (ev) forced.push({ event: ev, forced: 'sick' });
@@ -358,6 +359,7 @@ export class Game {
     const album = STAGE_ORDER.map((st) => this.albumFor(st)).filter((x): x is NonNullable<typeof x> => !!x);
     return {
       album,
+      origin: ((v: unknown) => Array.isArray(v) ? (v.length ? String(v[this.s.seed % v.length]) : undefined) : (typeof v === 'string' ? v : undefined))((r as any).origin_reveal?.[`Q${this.s.quintile}`]), // 有資料才顯示；陣列依種子挑一句
       effort: this.t(pickTier(r.effort_reveal, this.s.effort), vars),
       regret: this.t(pickTier(r.regret_reveal, this.s.regret), vars),
       mountain: ((m) => m && { ...m, title: this.t(m.title), text: this.t(m.text) })(this.judgeMountain(r.three_mountains)),

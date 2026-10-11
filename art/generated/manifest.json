@@ -37,9 +37,9 @@
   "elem_capital_district_01": "art/generated/elem_capital_district_01.jpg",
   "elem_new_house_01": "art/generated/elem_new_house_01.jpg",
   "senior_mortgage_talk_01": "art/generated/senior_mortgage_talk_01.jpg",
-  "opening_q1": "art/generated/opening_q1.jpg",
-  "opening_q2": "art/generated/opening_q2.jpg",
-  "opening_q3": "art/generated/opening_q3.jpg",
-  "opening_q4": "art/generated/opening_q4.jpg",
-  "opening_q5": "art/generated/opening_q5.jpg"
+  "opening_moon": "art/generated/opening_q1.jpg",
+  "opening_dawn": "art/generated/opening_q2.jpg",
+  "opening_charm": "art/generated/opening_q3.jpg",
+  "opening_chain": "art/generated/opening_q4.jpg",
+  "opening_keys": "art/generated/opening_q5.jpg"
 }
