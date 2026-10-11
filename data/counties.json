@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "version": "0.1",
+    "notes": {
+      "birth_weight": "民國83-89年(1994-2000)五縣市出生數合計佔比。來源：內政部統計處「出生人數性別概況─按區域別分」(https://data.gov.tw/dataset/14233)，按現行行政區(新北=原臺北縣、臺中=縣市合併)。該資料自民國83年起，80-82年缺，故以83-89年代表；全國合計2,164,489與國發會歷年出生數一致。",
+      "income_vs_taiwan": "主計總處 家庭收支調查 2025 年平均每戶可支配所得 / 臺灣地區平均。",
+      "academic_mod": "初版由所得推算 round((income_vs_taiwan-1)*10)，約 ±3；企劃為了平衡放大到約兩倍（現值 ±6），排序仍照所得數據。 企劃說明：遊戲企劃依平衡放大約 2 倍（原值 ±3 對升學門檻影響太小），方向仍依數據。",
+      "cram_cost_mult": "= income_vs_taiwan，假設補習費隨在地所得水準浮動。",
+      "social_mod": "設計假設(非數據)：都會區人情較淡、離島與東部較緊密，供企劃調整。",
+      "event_tags": "設計標籤，供事件篩選。",
+      "mortgage_burden_pct_2025q2": "內政部 114年第2季 房貸負擔率(%)，全國 43.12。來源：https://www.ettoday.net/news/20251128/3074944.htm (轉載內政部公布數據)",
+      "housing_squeeze": "臺中市 114Q2 房價所得比 11.90 倍(全國 9.89，六都第三)，房貸負擔率 51.90%；用於重劃區/買房壓力事件。",
+      "social_mod_balance": "遊戲企劃 v0.4：台東、澎湖由 +5 下修為 +3，避免偏鄉出身的平凡結局率最高而浪漫化。"
+    }
+  },
+  "counties": [
+    {
+      "id": "taipei",
+      "name": "臺北市",
+      "birth_weight": 0.2788,
+      "income_vs_taiwan": 1.284,
+      "academic_mod": 6,
+      "cram_cost_mult": 1.28,
+      "social_mod": -2,
+      "event_tags": [
+        "metro",
+        "capital"
+      ],
+      "mortgage_burden_pct_2025q2": 67.23,
+      "births_roc83_89": 233274
+    },
+    {
+      "id": "new_taipei",
+      "name": "新北市",
+      "birth_weight": 0.3839,
+      "income_vs_taiwan": 1.044,
+      "academic_mod": 1,
+      "cram_cost_mult": 1.04,
+      "social_mod": 0,
+      "event_tags": [
+        "metro",
+        "commute"
+      ],
+      "mortgage_burden_pct_2025q2": 56.85,
+      "births_roc83_89": 321191
+    },
+    {
+      "id": "taichung",
+      "name": "臺中市",
+      "birth_weight": 0.295,
+      "income_vs_taiwan": 1.005,
+      "academic_mod": 0,
+      "cram_cost_mult": 1.0,
+      "social_mod": 2,
+      "event_tags": [
+        "city",
+        "housing_squeeze"
+      ],
+      "mortgage_burden_pct_2025q2": 51.9,
+      "births_roc83_89": 246787
+    },
+    {
+      "id": "taitung",
+      "name": "臺東縣",
+      "birth_weight": 0.0324,
+      "income_vs_taiwan": 0.682,
+      "academic_mod": -6,
+      "cram_cost_mult": 0.68,
+      "social_mod": 3,
+      "event_tags": [
+        "rural",
+        "east",
+        "remote"
+      ],
+      "mortgage_burden_pct_2025q2": 36.08,
+      "births_roc83_89": 27129
+    },
+    {
+      "id": "penghu",
+      "name": "澎湖縣",
+      "birth_weight": 0.0099,
+      "income_vs_taiwan": 0.789,
+      "academic_mod": -5,
+      "cram_cost_mult": 0.79,
+      "social_mod": 3,
+      "event_tags": [
+        "island",
+        "remote"
+      ],
+      "mortgage_burden_pct_2025q2": 37.67,
+      "births_roc83_89": 8321
+    }
+  ]
+}

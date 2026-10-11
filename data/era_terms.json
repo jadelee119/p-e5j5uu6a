@@ -1,0 +1,7 @@
+{
+  "_note": "依出生年份（民國）代換文案變數。程式在開局抽出生年份後，用 by_birth_year 中符合的那一段代入。",
+  "by_birth_year": [
+    {"from": 80, "to": 87, "terms": {"exam_name": "基測", "exam_score_desc": "一個三位數的分數"}},
+    {"from": 88, "to": 89, "terms": {"exam_name": "會考", "exam_score_desc": "一排 A、B、C"}}
+  ]
+}

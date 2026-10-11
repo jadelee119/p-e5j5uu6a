@@ -1,0 +1,7 @@
+/* jf open 粉圓 2.1（SIL OFL 1.1，授權見 public/fonts/jf-openhuninn-LICENSE.txt）
+   來源：https://github.com/justfont/open-huninn-font/releases/tag/v2.1，自行轉成 woff2 後放在本站 */
+@font-face {
+  font-family: "jf-openhuninn";
+  src: url("/fonts/jf-openhuninn-2.1.woff2") format("woff2");
+  font-display: swap;
+}

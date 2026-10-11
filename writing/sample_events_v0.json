@@ -1,0 +1,122 @@
+[
+  {
+    "id": "infant_zhuazhou_01",
+    "stage": "infant",
+    "type": "random",
+    "title": "抓周",
+    "text": "週歲那天，紅布上擺著毛筆、算盤、聽診器、計算機和一張悠遊卡。全家人屏住呼吸，彷彿你接下來的一抓，決定了這個家未來二十年的退休規劃。",
+    "weight": 10,
+    "once": true,
+    "conditions": { "flags_all": [], "flags_none": [], "stats_min": {}, "stats_max": {}, "county_tags_any": [] },
+    "choices": [
+      {
+        "text": "抓聽診器",
+        "requires": {},
+        "lock_text": "",
+        "effects": { "happiness": 3, "stress": 3 },
+        "hidden": {},
+        "set_flags": ["parent_expect_doctor"],
+        "result_text": "阿嬤當場哭了。從今天起，你的人生多了一個你還不會念的目標：醫學系。"
+      },
+      {
+        "text": "抓悠遊卡",
+        "requires": {},
+        "lock_text": "",
+        "effects": { "happiness": 5 },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "爸爸說：「這孩子以後會到處跑。」媽媽說：「是會到處花錢吧。」"
+      },
+      {
+        "text": "去抓阿公手上的雞腿",
+        "requires": { "stats_min": { "social": 50 } },
+        "lock_text": "需要關係 ≥ 50：阿公得坐在你旁邊才行",
+        "effects": { "happiness": 8, "social": 5 },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "全場大笑。這是你人生中最後一次，選擇沒有被任何人解讀成命運。"
+      }
+    ],
+    "album": { "caption": "一歲，紅布上的你，手裡抓著未來。", "priority": 3 }
+  },
+  {
+    "id": "junior_class_ranking_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "成績單上的名次",
+    "text": "段考成績單發下來了。導師說名次不重要，所以名次印在第一行，字體比你的名字還大。",
+    "weight": 10,
+    "once": true,
+    "conditions": { "flags_all": [], "flags_none": [], "stats_min": {}, "stats_max": {}, "county_tags_any": [] },
+    "choices": [
+      {
+        "text": "老實拿回家給爸媽簽",
+        "requires": {},
+        "lock_text": "",
+        "effects": { "stress": 6, "social": 2 },
+        "hidden": { "effort": 1 },
+        "set_flags": [],
+        "result_text": "爸爸簽名的時間，比他看你成績的時間還長。這可能是一種溫柔，也可能只是筆沒水了。"
+      },
+      {
+        "text": "自己模仿爸爸的簽名",
+        "requires": { "stats_max": { "academic": 50 } },
+        "lock_text": "成績太好了，你沒有理由這麼做",
+        "effects": { "stress": -5, "happiness": 2 },
+        "hidden": { "regret": 1 },
+        "set_flags": ["forged_signature"],
+        "result_text": "你練了三十遍，簽得比爸爸本人還像爸爸。這是你國中最紮實的一項技能。"
+      },
+      {
+        "text": "說「老師說名次不重要」",
+        "requires": { "stats_min": { "social": 40 } },
+        "lock_text": "需要關係 ≥ 40：你家沒人會信這句話",
+        "effects": { "stress": -3, "social": -3 },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "媽媽點點頭：「對，名次不重要，分數才重要。」"
+      }
+    ],
+    "album": { "caption": "國一，第一張被認真簽名的成績單。", "priority": 2 }
+  },
+  {
+    "id": "senior_learning_portfolio_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "學習歷程檔案",
+    "text": "老師說，大學想看見「獨一無二的你」。學長傳給你一份範本，裡面有一百個獨一無二的你，連錯字都一樣。",
+    "weight": 10,
+    "once": true,
+    "conditions": { "flags_all": [], "flags_none": [], "stats_min": {}, "stats_max": {}, "county_tags_any": [] },
+    "choices": [
+      {
+        "text": "熬夜自己寫",
+        "requires": {},
+        "lock_text": "",
+        "effects": { "academic": 3, "stress": 8, "health": -3 },
+        "hidden": { "effort": 1 },
+        "set_flags": [],
+        "result_text": "凌晨三點，你終於寫出一句真心話：「我也不知道我想念什麼。」然後把它刪掉了。"
+      },
+      {
+        "text": "花錢請顧問代寫",
+        "requires": { "stats_min": { "wealth": 60 } },
+        "lock_text": "需要家庭資源 ≥ 60：一份「獨一無二」要價兩萬",
+        "effects": { "academic": 6, "stress": -3, "wealth": -15 },
+        "hidden": { "regret": 1 },
+        "set_flags": ["paid_portfolio"],
+        "result_text": "顧問把你國小撿到錢交給老師的事，寫成了「深耕社會正義的起點」。"
+      },
+      {
+        "text": "直接套用學長的範本",
+        "requires": {},
+        "lock_text": "",
+        "effects": { "stress": -5, "academic": -2 },
+        "hidden": { "regret": 1 },
+        "set_flags": [],
+        "result_text": "你改掉了名字，忘了改掉性別。評審大概也忘了看。"
+      }
+    ],
+    "album": { "caption": "高二，螢幕上閃爍的游標。", "priority": 2 }
+  }
+]

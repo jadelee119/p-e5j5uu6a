@@ -1,0 +1,202 @@
+{
+  "_note": "遊戲企劃 v0.3 平衡參數。工程請改讀此檔，不寫死在 engine.ts。",
+  "actions": {
+    "study": {
+      "effects": {
+        "academic": 3,
+        "stress": 4
+      },
+      "effort": 1,
+      "from": "elementary"
+    },
+    "cram": {
+      "effects": {
+        "academic": 5,
+        "stress": 6,
+        "wealth": -5
+      },
+      "effort": 1,
+      "from": "elementary",
+      "wealth_scaled_by": "cram_cost_mult",
+      "requires_wealth": 5
+    },
+    "play": {
+      "effects": {
+        "happiness": 4,
+        "stress": -5,
+        "academic": -1
+      },
+      "from": "elementary"
+    },
+    "socialize": {
+      "effects": {
+        "social": 4,
+        "happiness": 1
+      },
+      "from": "elementary"
+    },
+    "exercise": {
+      "effects": {
+        "health": 3,
+        "stress": -3
+      },
+      "from": "elementary"
+    },
+    "talent": {
+      "effects": {
+        "happiness": 2,
+        "stress": 2,
+        "wealth": -4
+      },
+      "effort": 1,
+      "from": "elementary",
+      "requires_wealth": 4,
+      "flag_after": {
+        "points": 6,
+        "flag": "has_talent"
+      }
+    },
+    "work": {
+      "effects": {
+        "wealth": 4,
+        "stress": 4,
+        "health": -2
+      },
+      "effort": 1,
+      "from": "senior"
+    },
+    "rest": {
+      "effects": {
+        "stress": -10,
+        "health": 2
+      },
+      "regret": 1,
+      "from": "junior"
+    }
+  },
+  "passive_per_turn": {
+    "all": {
+      "happiness": -3,
+      "social": -2,
+      "health": -1,
+      "stress": 2
+    },
+    "stage_extra": {
+      "junior": {
+        "stress": 2
+      },
+      "senior": {
+        "stress": 2
+      }
+    },
+    "wealth_by_quintile": {
+      "1": -1,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 2
+    },
+    "poverty_pressure": {
+      "wealth_below": 10,
+      "effects": {
+        "stress": 3,
+        "happiness": -2
+      },
+      "_note": "每回合被動結算後，家庭資源低於門檻時套用。需引擎支援。"
+    }
+  },
+  "endings": {
+    "burnout": {
+      "breakdowns_min": 3,
+      "health_max": 15
+    },
+    "golden_cage": {
+      "flags_all": [
+        "golden_spoon"
+      ],
+      "flags_any": [
+        "uni_top",
+        "hs_elite"
+      ],
+      "happiness_max": 45
+    },
+    "against_odds": {
+      "quintile_max": 2,
+      "flags_any": [
+        "uni_top",
+        "uni_normal"
+      ],
+      "or_wealth_min": 40,
+      "effort_min": 25
+    },
+    "ordinary_good": {
+      "happiness_min": 55,
+      "social_min": 55
+    },
+    "regret_high_threshold": 10
+  },
+  "ap_by_stage": {
+    "infant": 0,
+    "elementary": 3,
+    "junior": 4,
+    "senior": 4,
+    "adult": 5
+  },
+  "forced": {
+    "breakdown_stress_min": 90,
+    "breakdown_effects": {
+      "health": -15,
+      "happiness": -20
+    },
+    "breakdown_ap_penalty": 1,
+    "sick_health_max": 10
+  },
+  "quintiles": {
+    "1": {
+      "wealth": 10,
+      "mods": {
+        "social": 2,
+        "stress": 6,
+        "happiness": -4
+      },
+      "flags": []
+    },
+    "2": {
+      "wealth": 25,
+      "mods": {
+        "stress": 3,
+        "happiness": -2
+      },
+      "flags": []
+    },
+    "3": {
+      "wealth": 45,
+      "mods": {},
+      "flags": []
+    },
+    "4": {
+      "wealth": 65,
+      "mods": {
+        "stress": 3
+      },
+      "flags": []
+    },
+    "5": {
+      "wealth": 85,
+      "mods": {
+        "stress": 5
+      },
+      "flags": [
+        "golden_spoon"
+      ]
+    }
+  },
+  "quintile_shift_alpha": 2,
+  "initial_stats": {
+    "academic": 20,
+    "happiness": 60,
+    "stress": 10,
+    "health": 70,
+    "social": 50
+  }
+}

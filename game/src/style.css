@@ -1,0 +1,42 @@
+/* 顏色與字型一律使用 theme.css 的變數（theme.css 由 art/theme.css 複製而來，不在此改色碼） */
+* { box-sizing: border-box; }
+body { margin:0; background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); line-height:1.7; }
+#app { max-width:560px; margin:0 auto; padding:12px 14px 60px; }
+h1, h2 { font-family:var(--font-title); font-weight:700; }
+h1 { font-size:1.35rem; margin:.4em 0; } h2 { font-size:1.15rem; margin:.3em 0; }
+.card { background:var(--color-card); border-radius:var(--radius-card); padding:14px 16px 14px 22px; margin:12px 0; box-shadow:var(--shadow-card);
+  border-left:3px solid var(--color-accent);
+  background-image:repeating-linear-gradient(transparent 0 calc(1.7em - 1px), color-mix(in srgb, var(--color-notebook) 35%, transparent) calc(1.7em - 1px) 1.7em); }
+.muted { color:var(--color-muted); font-size:.9rem; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:4px 10px; font-size:.85rem; }
+.bar { height:var(--bar-height); background:color-mix(in srgb, var(--color-iron) 12%, transparent); border:1px solid color-mix(in srgb, var(--color-iron) 40%, transparent); border-radius:2px; overflow:hidden; }
+.bar > i { display:block; height:100%; background:var(--color-iron); }
+.bar.stress > i { background:var(--color-bad); }
+.bar.stress.hot > i { background-image:repeating-linear-gradient(-45deg, transparent 0 4px, color-mix(in srgb, var(--color-chalk) 40%, transparent) 4px 6px); }
+button { font:inherit; color:var(--color-text); border:1px solid var(--color-lock); background:var(--color-card); border-radius:var(--radius-btn); padding:10px 12px; cursor:pointer; }
+button.primary { background:var(--color-blackboard); color:var(--color-chalk); border-color:var(--color-blackboard); width:100%; margin-top:8px; }
+button:disabled { color:var(--color-lock); background:transparent; border-style:dashed; cursor:not-allowed; }
+.choice { display:block; width:100%; text-align:left; margin:8px 0; }
+.choice:not(:disabled)::before { content:"□ "; color:var(--color-muted); }
+.choice:not(:disabled):hover::before { content:"✓ "; color:var(--color-accent); }
+.choice .lock { display:block; font-family:var(--font-hand); font-size:.85rem; color:var(--color-accent); }
+.act { display:flex; align-items:center; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--color-notebook); }
+.act .n { width:2em; text-align:center; font-weight:bold; } .act button { padding:4px 12px; }
+.act .lk { font-size:.75rem; color:var(--color-muted); }
+.pre { white-space:pre-line; font-family:var(--font-hand); }
+.delta.up { color:var(--color-good); } .delta.down { color:var(--color-bad); }
+.tag { display:inline-block; font-size:.75rem; background:var(--color-tape); border-radius:2px; padding:0 6px; margin-right:4px; }
+.warn { background:var(--color-warn-bg); font-size:.8rem; padding:6px 10px; border-radius:var(--radius-btn); }
+
+/* 插圖：拍立得相紙 */
+.polaroid { position:relative; margin:4px auto 14px; background:var(--color-card); padding:8px 8px 10px; border-radius:2px; box-shadow:var(--shadow-card); max-width:340px; }
+.polaroid img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--color-bg); }
+.polaroid.tilt { transform:rotate(-1.5deg); } .polaroid.tilt-r { transform:rotate(1.2deg); }
+.card.has-pic .polaroid { margin-top:-2px; }
+.album { display:grid; grid-template-columns:repeat(2, 1fr); gap:14px 12px; }
+.album .polaroid { margin:0; padding:6px 6px 8px; }
+.album .tape { position:absolute; top:-7px; left:50%; width:48px; height:14px; margin-left:-24px; background:color-mix(in srgb, var(--color-tape) 80%, transparent); transform:rotate(-3deg); }
+.album figcaption { font-size:.8rem; line-height:1.5; margin-top:6px; }
+.album .cap { display:block; font-family:var(--font-hand); color:var(--color-text); }
+.album small { display:block; font-size:.7rem; }
+.polaroid .blank { aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; padding:6px; text-align:center; font-family:var(--font-hand); color:var(--color-muted); background:repeating-linear-gradient(45deg, var(--color-bg) 0 8px, var(--color-card) 8px 16px); font-size:.85rem; }

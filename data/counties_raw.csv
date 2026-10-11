@@ -1,0 +1,6 @@
+id,name,births_2024,birth_weight,disposable_income_2025_ntd,income_vs_taiwan,births_source,income_source
+taipei,臺北市,17047,0.3293,1554620,1.284,內政部戶政司 113年嬰兒出生數按嬰兒性別及生父母年齡分(按發生) https://data.gov.tw/dataset/146626,行政院主計總處 家庭收支調查 平均每戶可支配所得按區域別分(2025年) https://data.gov.tw/dataset/9415
+new_taipei,新北市,16262,0.3141,1263026,1.044,內政部戶政司 113年嬰兒出生數按嬰兒性別及生父母年齡分(按發生) https://data.gov.tw/dataset/146626,行政院主計總處 家庭收支調查 平均每戶可支配所得按區域別分(2025年) https://data.gov.tw/dataset/9415
+taichung,臺中市,16115,0.3113,1216050,1.005,內政部戶政司 113年嬰兒出生數按嬰兒性別及生父母年齡分(按發生) https://data.gov.tw/dataset/146626,行政院主計總處 家庭收支調查 平均每戶可支配所得按區域別分(2025年) https://data.gov.tw/dataset/9415
+taitung,臺東縣,1570,0.0303,825085,0.682,內政部戶政司 113年嬰兒出生數按嬰兒性別及生父母年齡分(按發生) https://data.gov.tw/dataset/146626,行政院主計總處 家庭收支調查 平均每戶可支配所得按區域別分(2025年) https://data.gov.tw/dataset/9415
+penghu,澎湖縣,772,0.0149,955205,0.789,內政部戶政司 113年嬰兒出生數按嬰兒性別及生父母年齡分(按發生) https://data.gov.tw/dataset/146626,行政院主計總處 家庭收支調查 平均每戶可支配所得按區域別分(2025年) https://data.gov.tw/dataset/9415

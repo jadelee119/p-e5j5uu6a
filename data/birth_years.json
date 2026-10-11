@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "source": "內政部戶政司 歷年全國出生數(民國80-89年/1991-2000)，經維基百科「臺灣人口」轉錄，原始為內政部統計；待以戶政司人口統計年刊核對",
+    "note": "民國87年(1998虎年)出生數驟減約17%"
+  },
+  "birth_years": [
+    {
+      "roc_year": 80,
+      "ad_year": 1991,
+      "births": 321932,
+      "weight": 0.1027
+    },
+    {
+      "roc_year": 81,
+      "ad_year": 1992,
+      "births": 321632,
+      "weight": 0.1026
+    },
+    {
+      "roc_year": 82,
+      "ad_year": 1993,
+      "births": 325613,
+      "weight": 0.1039
+    },
+    {
+      "roc_year": 83,
+      "ad_year": 1994,
+      "births": 322938,
+      "weight": 0.1031
+    },
+    {
+      "roc_year": 84,
+      "ad_year": 1995,
+      "births": 329581,
+      "weight": 0.1052
+    },
+    {
+      "roc_year": 85,
+      "ad_year": 1996,
+      "births": 325545,
+      "weight": 0.1039
+    },
+    {
+      "roc_year": 86,
+      "ad_year": 1997,
+      "births": 326002,
+      "weight": 0.104
+    },
+    {
+      "roc_year": 87,
+      "ad_year": 1998,
+      "births": 271450,
+      "weight": 0.0866
+    },
+    {
+      "roc_year": 88,
+      "ad_year": 1999,
+      "births": 283661,
+      "weight": 0.0905
+    },
+    {
+      "roc_year": 89,
+      "ad_year": 2000,
+      "births": 305312,
+      "weight": 0.0974
+    }
+  ]
+}
