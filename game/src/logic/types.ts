@@ -10,7 +10,7 @@ export const STAGE_NAMES: Record<StageId, string> = {
 
 export interface Requires {
   flags_all?: string[]; flags_none?: string[];
-  stats_min?: Partial<Record<string, number>>; stats_max?: Partial<Record<string, number>>;
+  stats_min?: Partial<Record<string, number>>; age_min?: number; age_max?: number; stats_max?: Partial<Record<string, number>>;
   county_tags_any?: string[];
 }
 export interface Choice {

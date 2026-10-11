@@ -135,15 +135,20 @@ export class Game {
     const need = this.b.actions[a]?.requires_wealth;
     if (need === undefined) return null;
     const cost = -(this.actionEffects(a).wealth ?? 0);
-    const scaled = !!this.b.actions[a]?.wealth_scaled_by;
-    const min = scaled ? cost : Math.max(need, cost); // §15：補習只看實際花費
+    const min = cost > 0 ? cost : need; // §18：付得起實際花費就能做（BUG-6）
     return wealth < min ? `需要家庭資源 ≥ ${min}` : null;
   }
   /** 行動實際效果（補習費依縣市倍率縮放） */
   actionEffects(a: ActionId): Record<string, number> {
     const ab = this.b.actions[a]; const eff = { ...ab.effects };
-    if (ab.wealth_scaled_by === 'cram_cost_mult' && eff.wealth) eff.wealth = Math.round(eff.wealth * this.s.county.cram_cost_mult);
-    return eff;
+    if (ab.wealth_scaled_by === 'cram_cost_mult' && eff.wealth) eff.wealth = eff.wealth * this.s.county.cram_cost_mult; // 兩個倍率乘完才取整（BUG-7）
+    return this.scaleCost(eff);
+  }
+  /** 花費依出身打折：balance.json cost_mult_by_quintile（沒填就是 1，不影響現狀） */
+  scaleCost(eff: Record<string, number>): Record<string, number> {
+    const m = (this.b as any).cost_mult_by_quintile?.[String(this.s.quintile)];
+    if (!(eff.wealth < 0)) return eff;
+    return { ...eff, wealth: Math.round(eff.wealth * (m ?? 1)) };
   }
 
   private beginTurn() {
@@ -204,6 +209,9 @@ export class Game {
     if (req.flags_none?.some((x) => f.has(x))) return false;
     for (const [k, v] of Object.entries(req.stats_min ?? {})) if (this.statOf(k) < (v ?? 0)) return false;
     for (const [k, v] of Object.entries(req.stats_max ?? {})) if (this.statOf(k) > (v ?? 100)) return false;
+    const age = this.turnDef.age; // §17 年齡範圍
+    if (req.age_min !== undefined && age < req.age_min) return false;
+    if (req.age_max !== undefined && age > req.age_max) return false;
     if (req.county_tags_any?.length && !req.county_tags_any.some((t) => this.s.county.event_tags.includes(t))) return false;
     return true;
   }
@@ -219,7 +227,27 @@ export class Game {
   }
 
   // ----- 事件 -----
-  choiceLocked(c: Choice): boolean { return !this.meets(c.requires); }
+  /** §18：選項的財富門檻改成「付不付得起打折後的花費」；沒有花費的選項，門檻也依出身倍率縮放 */
+  choiceLocked(c: Choice): boolean {
+    if (this.baseLocked(c)) return true;
+    // BUG-5：沒設門檻但要花錢的選項，付不起就鎖；若整張卡沒有其他可選項（必要支出），允許透支避免卡死
+    if (!this.cantAfford(c)) return false;
+    const others = this.s.current?.event.choices.filter((o) => o !== c) ?? [];
+    return others.some((o) => !this.baseLocked(o) && !this.cantAfford(o));
+  }
+  private cantAfford(c: Choice): boolean {
+    const cost = -(this.scaleCost((c.effects ?? {}) as Record<string, number>).wealth ?? 0);
+    return cost > 0 && this.s.stats.wealth < cost;
+  }
+  private baseLocked(c: Choice): boolean {
+    const req = c.requires; const wMin = req?.stats_min?.wealth;
+    if (!req || wMin === undefined) return !this.meets(req);
+    const { wealth: _w, ...rest } = req.stats_min!;
+    const cost = -(this.scaleCost((c.effects ?? {}) as Record<string, number>).wealth ?? 0);
+    const m = (this.b as any).cost_mult_by_quintile?.[String(this.s.quintile)] ?? 1;
+    const need = cost > 0 ? cost : Math.round(wMin * m);
+    return this.s.stats.wealth < need || !this.meets({ ...req, stats_min: rest });
+  }
 
   private nextEvent() {
     const nx = this.s.queue.shift();
@@ -234,7 +262,7 @@ export class Game {
     if (!c || this.choiceLocked(c)) throw new Error('locked');
     const before = { ...this.s.stats };
     if (cur.forced === 'breakdown') this.mod(this.b.forced.breakdown_effects);
-    this.mod(c.effects ?? {});
+    this.mod(this.scaleCost((c.effects ?? {}) as Record<string, number>));
     this.s.effort += c.hidden?.effort ?? 0;
     this.s.regret += c.hidden?.regret ?? 0;
     for (const fl of c.set_flags ?? []) this.s.flags.add(fl);

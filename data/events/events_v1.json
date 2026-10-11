@@ -12,7 +12,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 0,
+      "age_max": 2
     },
     "choices": [
       {
@@ -42,12 +44,8 @@
       },
       {
         "text": "去抓阿公手上的雞腿",
-        "requires": {
-          "stats_min": {
-            "social": 50
-          }
-        },
-        "lock_text": "需要關係 ≥ 50：阿公得坐在你旁邊才行",
+        "requires": {},
+        "lock_text": "",
         "effects": {
           "happiness": 8,
           "social": 5
@@ -58,7 +56,7 @@
       }
     ],
     "album": {
-      "caption": "一歲，紅布上的你，手裡抓著未來。",
+      "caption": "週歲那天，紅布上的你，手裡抓著未來。",
       "priority": 3
     }
   },
@@ -75,7 +73,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 13,
+      "age_max": 13
     },
     "choices": [
       {
@@ -147,7 +147,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
     },
     "choices": [
       {
@@ -172,7 +174,7 @@
             "wealth": 60
           }
         },
-        "lock_text": "需要家庭資源 ≥ 60：一份「獨一無二」要價兩萬",
+        "lock_text": "家裡負擔不起：一份「獨一無二」要價兩萬",
         "effects": {
           "academic": 6,
           "stress": -3,
@@ -219,7 +221,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 0,
+      "age_max": 2
     },
     "choices": [
       {
@@ -249,7 +253,7 @@
       }
     ],
     "album": {
-      "caption": "一歲半，第一次讓全家安靜。",
+      "caption": "學說話那年，第一次讓全家安靜。",
       "priority": 2
     }
   },
@@ -266,7 +270,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 3,
+      "age_max": 6
     },
     "choices": [
       {
@@ -276,7 +282,7 @@
             "wealth": 55
           }
         },
-        "lock_text": "需要家庭資源 ≥ 55：這張傳單只是拿來看的",
+        "lock_text": "家裡負擔不起：這張傳單只是拿來看的",
         "effects": {
           "academic": 4,
           "wealth": -12,
@@ -302,7 +308,7 @@
       }
     ],
     "album": {
-      "caption": "四歲，第一次背書包。",
+      "caption": "幼稚園那年，第一次背書包。",
       "priority": 1
     }
   },
@@ -319,7 +325,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 7,
+      "age_max": 9
     },
     "choices": [
       {
@@ -351,7 +359,7 @@
       }
     ],
     "album": {
-      "caption": "小二，紅筆寫滿的一頁。",
+      "caption": "小學低年級，紅筆寫滿的一頁。",
       "priority": 2
     }
   },
@@ -368,7 +376,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 10,
+      "age_max": 12
     },
     "choices": [
       {
@@ -400,7 +410,7 @@
       }
     ],
     "album": {
-      "caption": "小四，黑板上的正字記號。",
+      "caption": "小學高年級，黑板上的正字記號。",
       "priority": 1
     }
   },
@@ -417,7 +427,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 10,
+      "age_max": 12
     },
     "choices": [
       {
@@ -453,7 +465,7 @@
       }
     ],
     "album": {
-      "caption": "小五，八月三十一日的檯燈。",
+      "caption": "小學的某個暑假，八月三十一日的檯燈。",
       "priority": 2
     }
   },
@@ -472,7 +484,9 @@
       "stats_max": {
         "wealth": 30
       },
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 7,
+      "age_max": 9
     },
     "choices": [
       {
@@ -502,7 +516,7 @@
       }
     ],
     "album": {
-      "caption": "小三，下課鐘響的走廊。",
+      "caption": "小學低年級，下課鐘響的走廊。",
       "priority": 3
     }
   },
@@ -529,7 +543,7 @@
             "wealth": 20
           }
         },
-        "lock_text": "需要家庭資源 ≥ 20：補習班的學費單比你的成績單還難看",
+        "lock_text": "家裡負擔不起：補習班的學費單比你的成績單還難看",
         "effects": {
           "academic": 6,
           "stress": 8,
@@ -549,7 +563,7 @@
             "wealth": 40
           }
         },
-        "lock_text": "需要家庭資源 ≥ 40：鋼琴比你家客廳還大",
+        "lock_text": "家裡負擔不起：鋼琴比你家客廳還大",
         "effects": {
           "happiness": 3,
           "stress": 4,
@@ -598,7 +612,9 @@
         "wealth": 10
       },
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 14,
+      "age_max": 14
     },
     "choices": [
       {
@@ -654,7 +670,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 15,
+      "age_max": 15
     },
     "choices": [
       {
@@ -703,7 +721,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 13,
+      "age_max": 13
     },
     "choices": [
       {
@@ -713,7 +733,7 @@
             "wealth": 25
           }
         },
-        "lock_text": "需要家庭資源 ≥ 25：家裡的手機還在用分期",
+        "lock_text": "家裡負擔不起：家裡的手機還在用分期",
         "effects": {
           "happiness": 6,
           "social": 4,
@@ -840,7 +860,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
     },
     "choices": [
       {
@@ -891,7 +913,9 @@
       "stats_max": {
         "wealth": 50
       },
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
     },
     "choices": [
       {
@@ -925,7 +949,7 @@
       }
     ],
     "album": {
-      "caption": "高一，飲料店的制服。",
+      "caption": "高中，飲料店的制服。",
       "priority": 1
     }
   },
@@ -942,7 +966,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
     },
     "choices": [
       {
@@ -972,7 +998,7 @@
       }
     ],
     "album": {
-      "caption": "高二，台下十二個人之一。",
+      "caption": "高中，台下十二個人之一。",
       "priority": 3
     }
   },
@@ -1041,7 +1067,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
     },
     "choices": [
       {
@@ -1071,7 +1099,7 @@
       }
     ],
     "album": {
-      "caption": "二十二歲，三坪大的獨立。",
+      "caption": "離家那年，三坪大的獨立。",
       "priority": 1
     }
   },
@@ -1090,7 +1118,9 @@
       "stats_max": {
         "wealth": 40
       },
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
     },
     "choices": [
       {
@@ -1122,7 +1152,7 @@
       }
     ],
     "album": {
-      "caption": "二十二歲，第一張帳單。",
+      "caption": "出社會前後，第一張帳單。",
       "priority": 2
     }
   },
@@ -1139,7 +1169,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
     },
     "choices": [
       {
@@ -1170,7 +1202,7 @@
       }
     ],
     "album": {
-      "caption": "二十二歲，沒入鏡的那張合照。",
+      "caption": "大學那幾年，沒入鏡的那張合照。",
       "priority": 2
     }
   },
@@ -1385,7 +1417,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 15,
+      "age_max": 15
     },
     "choices": [
       {
@@ -1395,7 +1429,7 @@
             "wealth": 20
           }
         },
-        "lock_text": "需要家庭資源 ≥ 20：四千五是家裡半個月的菜錢",
+        "lock_text": "家裡負擔不起：四千五是家裡半個月的菜錢",
         "effects": {
           "happiness": 8,
           "social": 5,
@@ -1438,7 +1472,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 14,
+      "age_max": 14
     },
     "choices": [
       {
@@ -1488,7 +1524,9 @@
       "stats_max": {
         "wealth": 45
       },
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 14,
+      "age_max": 14
     },
     "choices": [
       {
@@ -1542,7 +1580,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 20,
+      "age_max": 22
     },
     "choices": [
       {
@@ -1575,7 +1615,7 @@
       }
     ],
     "album": {
-      "caption": "二十二歲，第一套不合身的西裝。",
+      "caption": "出社會那年，第一套不合身的西裝。",
       "priority": 2
     }
   },
@@ -1592,7 +1632,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
     },
     "choices": [
       {
@@ -1623,7 +1665,7 @@
       }
     ],
     "album": {
-      "caption": "二十二歲，媽媽每天還是多擺的那雙筷子。",
+      "caption": "長大以後，媽媽每天還是多擺的那雙筷子。",
       "priority": 3
     }
   },
@@ -1640,7 +1682,9 @@
       "flags_none": [],
       "stats_min": {},
       "stats_max": {},
-      "county_tags_any": []
+      "county_tags_any": [],
+      "age_min": 20,
+      "age_max": 22
     },
     "choices": [
       {
@@ -1672,7 +1716,7 @@
       }
     ],
     "album": {
-      "caption": "二十二歲，存摺上的第一行。",
+      "caption": "出社會那年，存摺上的第一行。",
       "priority": 3
     }
   },
@@ -1691,7 +1735,9 @@
       "stats_max": {},
       "county_tags_any": [
         "island"
-      ]
+      ],
+      "age_min": 18,
+      "age_max": 18
     },
     "choices": [
       {
@@ -1741,7 +1787,9 @@
       "stats_max": {},
       "county_tags_any": [
         "island"
-      ]
+      ],
+      "age_min": 19,
+      "age_max": 20
     },
     "choices": [
       {
@@ -1773,7 +1821,7 @@
       }
     ],
     "album": {
-      "caption": "十八歲，碼頭上那箱花生酥。",
+      "caption": "離島那年，碼頭上那箱花生酥。",
       "priority": 3
     }
   },
@@ -1792,7 +1840,9 @@
       "stats_max": {},
       "county_tags_any": [
         "remote"
-      ]
+      ],
+      "age_min": 14,
+      "age_max": 14
     },
     "choices": [
       {
@@ -1842,7 +1892,9 @@
       "stats_max": {},
       "county_tags_any": [
         "east"
-      ]
+      ],
+      "age_min": 10,
+      "age_max": 12
     },
     "choices": [
       {
@@ -1852,7 +1904,7 @@
             "wealth": 25
           }
         },
-        "lock_text": "需要家庭資源 ≥ 25：車票加學費，是家裡的一個月",
+        "lock_text": "家裡負擔不起：車票加學費，是家裡的一個月",
         "effects": {
           "academic": 4,
           "health": -3,
@@ -1876,7 +1928,7 @@
       }
     ],
     "album": {
-      "caption": "小五，往市區的區間車。",
+      "caption": "小學高年級，往市區的區間車。",
       "priority": 3
     }
   },
@@ -1895,7 +1947,9 @@
       "stats_max": {},
       "county_tags_any": [
         "commute"
-      ]
+      ],
+      "age_min": 13,
+      "age_max": 13
     },
     "choices": [
       {
@@ -1950,7 +2004,9 @@
       "stats_max": {},
       "county_tags_any": [
         "capital"
-      ]
+      ],
+      "age_min": 7,
+      "age_max": 9
     },
     "choices": [
       {
@@ -1981,7 +2037,7 @@
       }
     ],
     "album": {
-      "caption": "小三，家長會那天的點頭。",
+      "caption": "小學低年級，家長會那天的點頭。",
       "priority": 3
     }
   },
@@ -1996,11 +2052,15 @@
     "conditions": {
       "flags_all": [],
       "flags_none": [],
-      "stats_min": {},
+      "stats_min": {
+        "wealth": 30
+      },
       "stats_max": {},
       "county_tags_any": [
         "housing_squeeze"
-      ]
+      ],
+      "age_min": 7,
+      "age_max": 9
     },
     "choices": [
       {
@@ -2033,7 +2093,7 @@
       }
     ],
     "album": {
-      "caption": "小二，新房間的窗戶。",
+      "caption": "搬家那年，新房間的窗戶。",
       "priority": 3
     }
   },
@@ -2052,7 +2112,9 @@
       "stats_max": {},
       "county_tags_any": [
         "housing_squeeze"
-      ]
+      ],
+      "age_min": 18,
+      "age_max": 18
     },
     "choices": [
       {
@@ -2087,6 +2149,214 @@
     ],
     "album": {
       "caption": "高三，餐桌上的那台計算機。",
+      "priority": 3
+    }
+  },
+  {
+    "id": "infant_grandma_care_01",
+    "stage": "infant",
+    "type": "random",
+    "title": "阿嬤帶大的",
+    "text": "爸媽要上班，你白天被送去阿嬤家。阿嬤的教育理念只有一條：吃飽最重要。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 3,
+      "age_max": 6
+    },
+    "choices": [
+      {
+        "text": "跟阿嬤去菜市場",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "social": 4,
+          "health": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你學會了怎麼殺價，也學會了每一攤的老闆都會多塞一點東西給乖小孩。這是你最早的社會課。"
+      },
+      {
+        "text": "在家看電視等爸媽",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 2,
+          "social": -2
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你把卡通的主題曲全背起來了。爸媽回到家，你已經睡著，電視還開著。"
+      }
+    ],
+    "album": {
+      "caption": "幼稚園那年，菜市場裡被塞滿的小手。",
+      "priority": 3
+    }
+  },
+  {
+    "id": "infant_red_envelope_01",
+    "stage": "infant",
+    "type": "random",
+    "title": "紅包",
+    "text": "過年了，你收到人生第一疊紅包。媽媽說：「媽媽先幫你保管。」",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 3,
+      "age_max": 6
+    },
+    "choices": [
+      {
+        "text": "乖乖交給媽媽",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "那些紅包，後來變成了你的學費、你的書包，還有一些你永遠不會知道的帳單。保管，是一種很長的承諾。"
+      },
+      {
+        "text": "偷偷藏一個起來",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "wealth": 1
+        },
+        "hidden": {
+          "regret": 0
+        },
+        "set_flags": [],
+        "result_text": "你把紅包藏在枕頭底下，每晚睡前都摸一下。這是你人生第一筆真正屬於自己的財產，裡面有兩百塊。"
+      }
+    ],
+    "album": {
+      "caption": "那年過年，枕頭底下的紅包。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "elem_full_schedule_01",
+    "stage": "elementary",
+    "type": "random",
+    "title": "排滿的星期",
+    "text": "媽媽在冰箱上貼了一張課表：週一鋼琴、週三游泳、週五心算，週末是作文和圍棋。你的星期，比你的同學還早長大。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {
+        "wealth": 60
+      },
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 7,
+      "age_max": 9
+    },
+    "choices": [
+      {
+        "text": "全部都去",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 6,
+          "happiness": -2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你學會了很多東西，包括在車上吃晚餐、在等紅燈時背琴譜。你什麼都會一點，除了發呆。"
+      },
+      {
+        "text": "問可不可以留一天給自己",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "stress": -3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "媽媽想了很久，把週三的游泳拿掉了。那天下午你什麼都沒做，躺在客廳地板上看天花板。那是你最喜歡的一門課。"
+      }
+    ],
+    "album": {
+      "caption": "小學低年級，冰箱上那張課表。",
+      "priority": 3
+    }
+  },
+  {
+    "id": "senior_study_abroad_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "遊學團",
+    "text": "爸媽幫你報名了暑假的遊學團，三個禮拜，行程表上每一天都排好了。你只需要準備一件事：照片裡要笑。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {
+        "wealth": 50
+      },
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "開開心心地去",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "social": 3,
+          "wealth": -8
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在國外拍了兩百張照片，每一張都很好看。回家後你發現，你記得最清楚的，是某天晚上自己一個人走錯路的那二十分鐘。"
+      },
+      {
+        "text": "說想留在台灣打工看看",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 3,
+          "social": 2
+        },
+        "hidden": {
+          "regret": 0
+        },
+        "set_flags": [
+          "chose_own_summer"
+        ],
+        "result_text": "爸媽愣住了，說「打工能學到什麼？」你也不知道，但那是你第一次替自己的暑假做決定。"
+      }
+    ],
+    "album": {
+      "caption": "高中，行程表上的那個暑假。",
       "priority": 3
     }
   }

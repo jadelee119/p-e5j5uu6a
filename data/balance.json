@@ -94,8 +94,8 @@
       "1": -1,
       "2": 0,
       "3": 0,
-      "4": 1,
-      "5": 2
+      "4": 3,
+      "5": 5
     },
     "poverty_pressure": {
       "wealth_below": 10,
@@ -199,5 +199,13 @@
     "stress": 10,
     "health": 70,
     "social": 50
+  },
+  "cost_mult_by_quintile": {
+    "1": 1.58,
+    "2": 1.2,
+    "3": 1.0,
+    "4": 0.85,
+    "5": 0.68,
+    "_note": "開根號緩和版，來源 data/cost_mult_source.md"
   }
 }

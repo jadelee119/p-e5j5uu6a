@@ -71,7 +71,7 @@ function renderEvent() {
   const pic = img ? `<figure class="polaroid tilt"><img src="${img}" alt="${tx(e.title)}" loading="eager"></figure>` : '';
   app.innerHTML = header() + `<div class="card${img ? ' has-pic' : ''}">${pic}${tag}<h2>${tx(e.title)}</h2><p>${tx(e.text)}</p>
   ${e.choices.map((c, i) => { const locked = game.choiceLocked(c);
-    return `<button class="choice" data-i="${i}" ${locked ? 'disabled' : ''}>${locked ? '🔒 ' : ''}${tx(c.text)}${locked && c.lock_text ? `<span class="lock">${tx(c.lock_text)}</span>` : ''}</button>`; }).join('')}</div>`;
+    return `<button class="choice" data-i="${i}" ${locked ? 'disabled' : ''}>${locked ? '🔒 ' : ''}${tx(c.text)}${locked ? `<span class="lock">${c.lock_text ? tx(c.lock_text) : '家裡負擔不起。'}</span>` : ''}</button>`; }).join('')}</div>`;
   app.querySelectorAll<HTMLButtonElement>('button.choice').forEach((b) => b.onclick = () => { game.choose(Number(b.dataset.i)); render(); });
 }
 
