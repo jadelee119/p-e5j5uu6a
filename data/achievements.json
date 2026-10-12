@@ -1,0 +1,160 @@
+{
+  "_note": "遊戲企劃 v0.1。條件寫法沿用事件 conditions，另加 ending。name 是暫定名，由劇情文案改寫。",
+  "achievements": [
+    {
+      "id": "ach_forged",
+      "name": "簽得比本人還像",
+      "desc": "國一自己簽了成績單",
+      "conditions": {
+        "flags_all": [
+          "forged_signature"
+        ]
+      },
+      "icon": "art/achievements/ach_forged.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_hid_book",
+      "name": "口紅膠的正確用法",
+      "desc": "把聯絡簿那頁黏起來",
+      "conditions": {
+        "flags_all": [
+          "hid_contact_book"
+        ]
+      },
+      "icon": "art/achievements/ach_hid_book.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_doctor_fail",
+      "name": "阿嬤的願望清單",
+      "desc": "抓了聽診器，但沒考上頂尖大學",
+      "conditions": {
+        "flags_all": [
+          "parent_expect_doctor"
+        ],
+        "flags_none": [
+          "uni_top"
+        ]
+      },
+      "icon": "art/achievements/ach_doctor_fail.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_quit_cram",
+      "name": "隔壁小明不是我",
+      "desc": "跟爸媽說不想補了",
+      "conditions": {
+        "flags_all": [
+          "quit_cram"
+        ]
+      },
+      "icon": "art/achievements/ach_quit_cram.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_teen_worker",
+      "name": "半糖少冰去珍珠",
+      "desc": "高中就在打工",
+      "conditions": {
+        "flags_all": [
+          "worked_teen"
+        ]
+      },
+      "icon": "art/achievements/ach_teen_worker.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_shopkeeper",
+      "name": "不用考試的頭銜",
+      "desc": "國二在家裡顧店",
+      "conditions": {
+        "flags_all": [
+          "family_shop"
+        ]
+      },
+      "icon": "art/achievements/ach_shopkeeper.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_own_summer",
+      "name": "照片裡沒有笑",
+      "desc": "沒去遊學團，留在台灣打工",
+      "conditions": {
+        "flags_all": [
+          "chose_own_summer"
+        ]
+      },
+      "icon": "art/achievements/ach_own_summer.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_vocational_top",
+      "name": "親戚的語氣變了",
+      "desc": "讀高職，最後考上頂尖大學",
+      "conditions": {
+        "flags_all": [
+          "hs_vocational",
+          "uni_top"
+        ]
+      },
+      "icon": "art/achievements/ach_vocational_top.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_free_childhood",
+      "name": "最富有的那幾年",
+      "desc": "國小沒補習也沒才藝，最後平凡就是福",
+      "conditions": {
+        "flags_all": [
+          "path_free"
+        ],
+        "ending": "ordinary_good"
+      },
+      "icon": "art/achievements/ach_free_childhood.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_paid_portfolio",
+      "name": "兩萬塊的獨一無二",
+      "desc": "請顧問寫備審",
+      "conditions": {
+        "flags_all": [
+          "paid_portfolio"
+        ]
+      },
+      "icon": "art/achievements/ach_paid_portfolio.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_against_odds",
+      "name": "數學上不太可能",
+      "desc": "拿到逆風飛行結局",
+      "conditions": {
+        "ending": "against_odds"
+      },
+      "icon": "art/achievements/ach_against_odds.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_golden_cage",
+      "name": "什麼都有，除了鑰匙",
+      "desc": "拿到金色的籠子結局",
+      "conditions": {
+        "ending": "golden_cage"
+      },
+      "icon": "art/achievements/ach_golden_cage.png",
+      "hidden_until_unlocked": true
+    },
+    {
+      "id": "ach_burnout",
+      "name": "身體先遞了辭呈",
+      "desc": "拿到燃燒殆盡結局",
+      "conditions": {
+        "ending": "burnout"
+      },
+      "icon": "art/achievements/ach_burnout.png",
+      "hidden_until_unlocked": true
+    }
+  ]
+}

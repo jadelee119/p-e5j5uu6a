@@ -99,7 +99,7 @@
             "academic": 50
           }
         },
-        "lock_text": "成績太好了，你沒有理由這麼做",
+        "lock_text": "需要學業 ≤ 50：成績太好了，你沒有理由這麼做",
         "effects": {
           "stress": -5,
           "happiness": 2
@@ -2358,6 +2358,1706 @@
     "album": {
       "caption": "高中，行程表上的那個暑假。",
       "priority": 3
+    }
+  },
+  {
+    "id": "infant_night_cry_01",
+    "stage": "infant",
+    "type": "random",
+    "title": "夜哭",
+    "text": "凌晨三點，你又哭了。爸爸明天早班，媽媽剛下小夜班。兩個大人在黑暗中用眼神猜拳。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 0,
+      "age_max": 2
+    },
+    "choices": [
+      {
+        "text": "哭到有人來抱",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "health": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "爸爸抱著你在客廳走了一個小時。他後來說那是他這輩子走過最長的路，雖然只有十二坪。"
+      },
+      {
+        "text": "哭一下就睡了",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "happiness": 2
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你自己睡回去了。爸媽以為你很乖，其實你只是比較早學會沒人會來。"
+      }
+    ],
+    "album": {
+      "caption": "嬰兒時期，凌晨三點的客廳。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "infant_vaccine_01",
+    "stage": "infant",
+    "type": "random",
+    "title": "打預防針",
+    "text": "護士說「不痛喔」。這是你人生聽到的第一個謊，由一位穿白衣服的專業人士提供。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 0,
+      "age_max": 2
+    },
+    "choices": [
+      {
+        "text": "放聲大哭",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "health": 4,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "整間衛生所都知道你來了。媽媽在兒童健康手冊上蓋章，像集點一樣。"
+      },
+      {
+        "text": "愣住，忘了哭",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "health": 4,
+          "social": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "護士說你好勇敢。你沒有勇敢，你只是還在處理剛剛發生的事。"
+      }
+    ],
+    "album": {
+      "caption": "嬰兒時期，健康手冊上的一個章。",
+      "priority": 1
+    }
+  },
+  {
+    "id": "infant_mcd_party_01",
+    "stage": "infant",
+    "type": "random",
+    "title": "麥當勞慶生會",
+    "text": "同學在麥當勞辦慶生會。有紙皇冠、有大哥哥帶動唱，還有一個比你頭還大的蛋糕。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 3,
+      "age_max": 6
+    },
+    "choices": [
+      {
+        "text": "跟著帶動唱，跳到最後",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 6,
+          "social": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你跳得最用力。回家路上你問媽媽，你生日也可以嗎。媽媽說：「再看看。」"
+      },
+      {
+        "text": "坐在角落吃薯條",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 2,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你把薯條一根一根排好再吃。沒人注意你，你覺得這樣剛剛好。"
+      },
+      {
+        "text": "說自己生日也要辦",
+        "requires": {
+          "stats_min": {
+            "wealth": 30
+          }
+        },
+        "lock_text": "家裡負擔不起：你的生日蛋糕是巷口那家，也很好吃",
+        "effects": {
+          "happiness": 7,
+          "wealth": -5
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "那年生日你也戴上了紙皇冠。照片裡你笑得很大，爸媽站在旁邊，算帳的表情被閃光燈蓋掉了。"
+      }
+    ],
+    "album": {
+      "caption": "學齡前，紙做的皇冠。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "elem_cleaning_duty_01",
+    "stage": "elementary",
+    "type": "random",
+    "title": "打掃工作分配",
+    "text": "老師在黑板上寫打掃工作。擦黑板、掃走廊，還有一格沒人想要的：廁所。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 7,
+      "age_max": 9
+    },
+    "choices": [
+      {
+        "text": "舉手去掃廁所",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "health": -2,
+          "stress": 2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你掃了一整學期廁所。老師在聯絡簿寫「熱心服務」。這是你第一個靠犧牲換來的評語。"
+      },
+      {
+        "text": "搶擦黑板",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 3,
+          "health": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你每天吸一口粉筆灰，覺得自己很接近知識。"
+      },
+      {
+        "text": "等著被分配",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "最後你被分到外掃區，負責掃落葉。秋天的時候，你第一次討厭樹。"
+      }
+    ],
+    "album": {
+      "caption": "小學低年級，一支比你高的掃把。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "elem_lucky_draw_01",
+    "stage": "elementary",
+    "type": "random",
+    "title": "抽抽樂",
+    "text": "福利社旁邊有一張抽抽樂，頭獎是一隻比你還大的布偶。抽一次十塊，那是你一整天的零用錢。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 7,
+      "age_max": 9
+    },
+    "choices": [
+      {
+        "text": "抽一次",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 2,
+          "wealth": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你抽到一顆糖。老闆說：「下次一定中。」你後來在很多大人身上聽過這句話。"
+      },
+      {
+        "text": "把十塊存起來",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -1,
+          "wealth": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你把十塊放進撲滿。三個月後頭獎還掛在那裡，你懷疑它根本不存在。"
+      },
+      {
+        "text": "站在旁邊看別人抽",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "happiness": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你看了一整節下課，比抽的人還緊張。最後頭獎被一個六年級的抽走，全場歡呼，你也跟著拍手。"
+      }
+    ],
+    "album": {
+      "caption": "小學低年級，一張戳破的抽抽樂。",
+      "priority": 1
+    }
+  },
+  {
+    "id": "elem_field_trip_01",
+    "stage": "elementary",
+    "type": "random",
+    "title": "戶外教學",
+    "text": "戶外教學要去動物園。前一晚你興奮到睡不著，結果在遊覽車上睡到下車。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 7,
+      "age_max": 9
+    },
+    "choices": [
+      {
+        "text": "跟好朋友坐一起",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "social": 4
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你們分著吃一包乖乖。長頸鹿什麼樣子你忘了，但你記得那包乖乖是椰子口味。"
+      },
+      {
+        "text": "坐老師旁邊",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "social": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "老師一路講解動物習性。你寫了一份很好的學習單，也錯過了全班的笑聲。"
+      },
+      {
+        "text": "負責背全組的零食",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "health": -2,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "背包很重，但每個人都要來找你。你第一次知道，被需要和被利用有時候長得一樣。"
+      }
+    ],
+    "album": {
+      "caption": "小學低年級，遊覽車上的一包乖乖。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "elem_silkworm_01",
+    "stage": "elementary",
+    "type": "random",
+    "title": "蠶寶寶",
+    "text": "自然課要養蠶寶寶。全班發一個鞋盒、五隻蠶，和一個永遠找不到桑葉的週末。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 10,
+      "age_max": 12
+    },
+    "choices": [
+      {
+        "text": "每天去找桑葉",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "happiness": 4,
+          "stress": 2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你知道了附近每一棵桑樹在哪裡。五隻都結繭了，你的觀察日記被貼在公布欄。"
+      },
+      {
+        "text": "拜託阿公阿嬤幫忙",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "happiness": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "阿公騎機車載你去河堤邊摘桑葉，摘得比你需要的多十倍。那個暑假，家裡每個人都是蠶寶寶專家。"
+      },
+      {
+        "text": "養到一半忘了",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": -4,
+          "stress": 3
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "某天打開鞋盒，你學到了自然課沒教的那一課。"
+      }
+    ],
+    "album": {
+      "caption": "小學高年級，一個裝著繭的鞋盒。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "elem_internet_cafe_01",
+    "stage": "elementary",
+    "type": "random",
+    "title": "網咖",
+    "text": "同學說網咖很好玩。門口貼著「未滿十八歲禁止進入」，字很大，櫃台很遠。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 10,
+      "age_max": 12
+    },
+    "choices": [
+      {
+        "text": "跟著進去",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 6,
+          "social": 3,
+          "stress": 2
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你玩了一個小時，回家時全身都是菸味。你跟媽媽說是公車上的人在抽。她相信了，或者她選擇相信。"
+      },
+      {
+        "text": "說要回家寫功課",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 2,
+          "social": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "同學說你很遜。隔天他們被教官在網咖門口抓到，你突然變得很有遠見。"
+      },
+      {
+        "text": "回家用家裡的電腦",
+        "requires": {
+          "stats_min": {
+            "wealth": 30
+          }
+        },
+        "lock_text": "家裡負擔不起：家裡還沒有電腦",
+        "effects": {
+          "happiness": 4,
+          "stress": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在家玩了一整個下午的小遊戲。媽媽回家摸了摸螢幕，是熱的。她沒說什麼，隔天電腦多了一組開機密碼。"
+      }
+    ],
+    "album": {
+      "caption": "小學高年級，一身菸味的下午。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_dress_code_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "服裝儀容檢查",
+    "text": "朝會後服裝儀容檢查。教官拿著尺量頭髮，像在量一個人值不值得被信任。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 13,
+      "age_max": 13
+    },
+    "choices": [
+      {
+        "text": "前一晚自己修剪",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "happiness": -3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你剪得參差不齊，但通過了。照片裡的你這一年都不太敢抬頭。"
+      },
+      {
+        "text": "改短制服裙／褲管被抓",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "stress": 4,
+          "social": 3
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你被記了一支警告。同學說你很帥，教官說你很有事。兩件事其實是同一件。"
+      },
+      {
+        "text": "什麼都照規定",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 2,
+          "academic": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你完全符合規定，像一張範例圖。沒有人記得你那天穿什麼，這就是重點。"
+      }
+    ],
+    "album": {
+      "caption": "國一，被尺量過的頭髮。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_ability_class_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "常態分班",
+    "text": "學校說是常態分班。但隔壁班的課表多了四堂數學，少了所有的美術課。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 13,
+      "age_max": 13
+    },
+    "choices": [
+      {
+        "text": "拚轉進那一班",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 6,
+          "stress": 7,
+          "happiness": -3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你轉進去了。這一班沒有下課，只有「把握時間」。"
+      },
+      {
+        "text": "留在原本的班",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "social": 3,
+          "academic": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你們班被叫做「快樂班」。大人說這三個字的語氣，你過了很多年才聽懂。"
+      },
+      {
+        "text": "問老師為什麼",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": -2,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "老師說：「這是常態分班。」然後把這句話又說了一次，比較慢。"
+      }
+    ],
+    "album": {
+      "caption": "國一，兩張不一樣的課表。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_big_fight_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "第一次大吵",
+    "text": "你跟爸媽吵起來了。起因是一件很小的事，但吵到後來，大家都在講三年前的事。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 14,
+      "age_max": 14
+    },
+    "choices": [
+      {
+        "text": "甩門回房間",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -3,
+          "social": -5,
+          "happiness": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "門很大聲。晚餐時沒人說話，但你的碗旁邊多了一盤你愛吃的菜。家裡的道歉，通常是用炒的。"
+      },
+      {
+        "text": "吵到最後一句",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 4,
+          "social": -3,
+          "happiness": 2
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你贏了。爸爸沉默地走去陽台抽菸。你第一次發現，贏了以後房子會變得那麼安靜。"
+      },
+      {
+        "text": "先開口說對不起",
+        "requires": {
+          "stats_min": {
+            "social": 40
+          }
+        },
+        "lock_text": "需要關係 ≥ 40：這句話卡在喉嚨裡",
+        "effects": {
+          "social": 5,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "媽媽愣了一下，說：「你知道就好。」然後偷偷擦了一下眼睛，說是切洋蔥。那天晚上沒有洋蔥。"
+      }
+    ],
+    "album": {
+      "caption": "國二，一扇被甩上的門。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_grad_speech_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "畢業生代表",
+    "text": "導師問誰要上台當畢業生代表致詞。全班安靜得像在默哀。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 15,
+      "age_max": 15
+    },
+    "choices": [
+      {
+        "text": "舉手",
+        "requires": {
+          "stats_min": {
+            "social": 45
+          }
+        },
+        "lock_text": "需要關係 ≥ 45：台下有一半的人不知道你是誰",
+        "effects": {
+          "social": 6,
+          "stress": 5,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你寫了三版講稿，最後在台上全部忘光，即興說了一句「謝謝大家」。台下掌聲最大的就是那句。"
+      },
+      {
+        "text": "推薦班長",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 2,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "班長瞪了你一眼，但致詞時偷偷把你的名字放進去了。"
+      },
+      {
+        "text": "專心準備{exam_name}",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "畢業典禮那天你在想數學公式。驪歌唱到一半，你才發現自己在哭，而且不知道為什麼。"
+      }
+    ],
+    "album": {
+      "caption": "國三，台下一整片藍色制服。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_night_study_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "最後一個月",
+    "text": "考前最後一個月，學校開了晚自習。教室的日光燈很白，白到每個人看起來都像沒睡。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 15,
+      "age_max": 15
+    },
+    "choices": [
+      {
+        "text": "每天留到最後",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 6,
+          "stress": 6,
+          "health": -3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你和警衛伯伯變成朋友。他說每年都有像你這樣的孩子，然後都長大了。"
+      },
+      {
+        "text": "留下來，但跟朋友分宵夜",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "social": 4,
+          "happiness": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "那一個月的鹹酥雞，比之後任何一頓都好吃。分數沒有變多，但記憶變多了。"
+      },
+      {
+        "text": "回家自己讀",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -3,
+          "academic": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在自己的書桌讀書，媽媽每隔一小時送一次水果。你吃掉的蘋果比讀完的講義多。"
+      }
+    ],
+    "album": {
+      "caption": "國三，日光燈下的最後一個月。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_club_fair_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "社團迎新",
+    "text": "社團博覽會上每個攤位都在喊。熱舞社在跳、吉他社在彈，熱音社的音箱壞了，但他們假裝這是風格。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "加入熱門社團",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 6,
+          "happiness": 4,
+          "stress": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你學會了一套舞，也學會了學長姊之間的政治。兩樣後來都派得上用場。"
+      },
+      {
+        "text": "加入冷門社團",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "social": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "整個社團只有六個人。你們每週聚在一間沒冷氣的教室，做一件沒人在乎的事，你很在乎。"
+      },
+      {
+        "text": "不加社團，專心讀書",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 4,
+          "happiness": -3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你的學習歷程很乾淨，像剛擦過的黑板。"
+      }
+    ],
+    "album": {
+      "caption": "高中，社團博覽會上的一張傳單。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_ktv_night_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "第一次夜唱",
+    "text": "同學約週五夜唱，從晚上十一點唱到早上六點。學生價很便宜，便宜到你沒理由拒絕。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "跟爸媽說實話再去",
+        "requires": {
+          "stats_min": {
+            "social": 40
+          }
+        },
+        "lock_text": "需要關係 ≥ 40：說了實話就去不成了",
+        "effects": {
+          "happiness": 5,
+          "social": 4,
+          "health": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "爸媽說早上要打電話報平安。早上六點你打了，媽媽秒接。她根本沒睡。"
+      },
+      {
+        "text": "說去同學家讀書",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 6,
+          "social": 5,
+          "stress": 3
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你唱到破音，凌晨四點吃了一碗泡麵。回家時爸爸問讀得怎樣，你說還不錯，聲音是啞的。"
+      },
+      {
+        "text": "不去",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "social": -3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "週一大家在聊那晚的事，你一句都插不進去。你第一次懂什麼叫錯過。"
+      }
+    ],
+    "album": {
+      "caption": "高中，凌晨四點的包廂。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_exam_result_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "學測成績",
+    "text": "學測成績公布那天，你盯著螢幕上的查詢頁面，網路卡了兩分鐘。那是你人生最長的兩分鐘。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "馬上打給爸媽",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你報了分數。電話那頭安靜了一秒，然後是「那很好啊」。那一秒裡有很多東西，你決定不去想。"
+      },
+      {
+        "text": "先不說，自己查落點",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 2,
+          "stress": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你查了一整晚落點分析，把每間學校的名字都看到不像字了。"
+      },
+      {
+        "text": "關掉電腦去吃宵夜",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "stress": -4
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "分數已經是那個數字了。鹽酥雞不會因為你難過就比較不好吃。"
+      }
+    ],
+    "album": {
+      "caption": "高三，螢幕上的幾個數字。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_yearbook_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "畢業紀念冊",
+    "text": "畢冊傳到你手上。每一頁都寫著「友誼長存」「勿忘我」，好像大家都預感到會忘記。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "每一頁都認真寫",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 5,
+          "happiness": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你寫到手痠。十年後有人翻到你那段，傳了照片給你。那是你們畢業後第一次聯絡。"
+      },
+      {
+        "text": "寫「前途似錦」就簽名",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "social": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "效率很高。你寫了四十三次前途似錦，祝福的濃度被稀釋到看不見。"
+      },
+      {
+        "text": "翻到某個人那頁停很久",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 3,
+          "stress": 2
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你最後只寫了一句「加油」。這兩個字你改了三次。"
+      }
+    ],
+    "album": {
+      "caption": "高三，寫滿簽名的最後一頁。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_internship_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "工廠實習",
+    "text": "實習課到工廠見習。機器很吵，師傅很安靜，手上的疤比你的履歷還長。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "跟著師傅認真學",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 4,
+          "health": -2,
+          "social": 3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "師傅說你手很穩，叫你畢業後來找他。你第一次覺得，有人看見了課本以外的你。"
+      },
+      {
+        "text": "記下來，回去寫報告",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你的報告寫得很完整。老師說你很適合繼續念上去，你開始認真想統測這件事。"
+      },
+      {
+        "text": "觀察大家下班後的樣子",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": -2,
+          "social": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "有人去接小孩，有人去上夜間部。你發現大人都是一邊累一邊往前。沒有人停下來，因為停下來要先請假。"
+      }
+    ],
+    "album": {
+      "caption": "高職，機油味的一個下午。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_license_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "丙級證照",
+    "text": "老師說這學期要考丙級證照。考過的話，你的人生會多一張能證明你會做事的紙。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "下課留下來練",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 4,
+          "happiness": 2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你練到閉著眼睛都會。考過那天，媽媽把證照影印了三份，一份放進皮夾。"
+      },
+      {
+        "text": "跟同學一起練",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "social": 4
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你們互相計時、互相挑錯，全組都過了。那是你第一次覺得團隊合作不是在分攤懲罰。"
+      },
+      {
+        "text": "直接挑戰乙級",
+        "requires": {
+          "stats_min": {
+            "academic": 55
+          }
+        },
+        "lock_text": "需要學業 ≥ 55：乙級的學科題，你還看不太懂",
+        "effects": {
+          "academic": 6,
+          "stress": 7
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你差一點點沒過，但老師說你這個年紀敢考已經很少見。你下次會過的，你知道。"
+      }
+    ],
+    "album": {
+      "caption": "高職，一張證照的影本。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_tvee_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "統測",
+    "text": "班上大部分人都在準備統測，要考科大。也有幾個同學已經找好工作，說要先存錢。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "拚統測，考科大",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 5
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你的補充講義疊得跟同學一樣高。在這間教室裡，考大學不是例外，是常態。常態的意思是，考上了也沒人會特別誇你。"
+      },
+      {
+        "text": "推甄，用證照和實習加分",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": -2,
+          "happiness": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你的備審裡有證照、有實習心得、有師傅的推薦。面試教授問得很細，你都答得出來，因為你真的做過。"
+      },
+      {
+        "text": "先工作，以後念夜間部",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 4,
+          "stress": 2,
+          "academic": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在畢業前就拿到第一份薪水。老師說夜間部的門一直開著，你說你知道。"
+      }
+    ],
+    "album": {
+      "caption": "高職三年級，統測倒數的黑板。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_jc_five_years_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "五專的時間",
+    "text": "同學在準備學測的時候，你在社辦打牌。五專很自由，自由到你偶爾會忘記，你要讀五年。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "享受這段自由",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 6,
+          "social": 4,
+          "academic": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你學會了打撞球、修機車和熬夜。國中同學很羨慕你，你偶爾也羨慕他們有個明確的終點。"
+      },
+      {
+        "text": "認真讀專業科目",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "老師說你們畢業後可以插大，也可以直接工作。你開始把這五年當成一段很長的助跑。"
+      },
+      {
+        "text": "回去參加國中同學會",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "大家在聊模擬考，你在聊實驗室。你發現你們講的是兩種語言，但都還聽得懂彼此。"
+      }
+    ],
+    "album": {
+      "caption": "五專，社辦裡的一副撲克牌。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_work_pay_cut_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "被扣薪",
+    "text": "薪水單上多了一行「扣款」。主管說是因為你上次遲到，但那次是因為他叫你去幫他買便當。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "work_first"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "去找主管理論",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 4,
+          "wealth": 2,
+          "social": -3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "錢拿回來了，但主管之後都叫你「那個很有主見的」。在職場，這不是稱讚。"
+      },
+      {
+        "text": "算了，認了",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 5,
+          "happiness": -3
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你吞下去了。那個月你少吃了幾頓好的，學會了第一個大人的技能：沉默。"
+      },
+      {
+        "text": "查勞基法，留證據",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你下載了勞基法，用螢光筆畫重點。這是你畢業後第一次念書，比高中任何一科都認真。"
+      }
+    ],
+    "album": {
+      "caption": "出社會，一張薪水單。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_work_friends_uni_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "別人的大學",
+    "text": "同學的動態都是社團、宿舍、聯誼。你在員工休息室滑著，三分鐘後要回去站櫃台。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "work_first"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "報名夜間部或進修部",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 5,
+          "health": -2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你白天上班、晚上上課。很累，但你的人生開始有兩條路同時在走。"
+      },
+      {
+        "text": "約同學吃飯",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 5,
+          "happiness": 3,
+          "wealth": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你請客，因為你是唯一有薪水的。他們聊報告，你聊客人。大家都覺得對方比較好。"
+      },
+      {
+        "text": "關掉螢幕，繼續工作",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 3,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你存的錢比他們多，這是事實。另一件事實是，你今晚又關掉了那個畫面。"
+      }
+    ],
+    "album": {
+      "caption": "出社會，休息室裡的一支手機。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_relay_race_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "大隊接力",
+    "text": "校慶大隊接力，全班要排棒次。體育股長拿著名單，像在決定誰會被記住、誰會被原諒。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 14,
+      "age_max": 14
+    },
+    "choices": [
+      {
+        "text": "自願跑最後一棒",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 6,
+          "stress": 5,
+          "health": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你被超了半個身位，又追回來。全班衝進跑道抱住你。那天你的名字被喊了很多次。"
+      },
+      {
+        "text": "跑中間，別掉棒就好",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你沒掉棒，也沒人記得你跑第幾棒。這種安全，你後來在很多地方都找過。"
+      },
+      {
+        "text": "負責加油和顧水",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 2,
+          "stress": -2,
+          "happiness": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你喊到沙啞。照片裡跑的人都糊了，只有你在旁邊笑得很清楚。"
+      }
+    ],
+    "album": {
+      "caption": "國二，校慶跑道上的一根接力棒。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "junior_transfer_student_01",
+    "stage": "junior",
+    "type": "random",
+    "title": "轉學生",
+    "text": "班上來了一個轉學生，自我介紹只說了名字，然後就看著窗外。老師把他排在你旁邊，因為只剩那個位子。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 14,
+      "age_max": 14
+    },
+    "choices": [
+      {
+        "text": "借他課本一起看",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 5,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你們共用課本一整個禮拜。他說他爸媽換工作，搬了三次家。你第一次知道，有人的童年是用紙箱裝的。"
+      },
+      {
+        "text": "下課拉他去福利社",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "happiness": 3,
+          "stress": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "他話不多，但記得你愛喝什麼。畢業後你們沒什麼聯絡，可是你每次喝那個飲料都會想到他。"
+      },
+      {
+        "text": "不太理他",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -1,
+          "social": -2
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "一個月後他交到別的朋友了。你偶爾會想，那個位子如果沒那麼剛好就好了。"
+      }
+    ],
+    "album": {
+      "caption": "國二，隔壁位子的新同學。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_cheat_note_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "小抄",
+    "text": "期中考前，朋友傳來一張小抄，字小到要瞇眼才看得到。他說：「全班都有，你沒有才奇怪。」",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 17
+    },
+    "choices": [
+      {
+        "text": "收下，但沒拿出來",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 3,
+          "social": 2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "那張紙在你口袋裡待了一整節課。你沒用，分數也沒比較高，但你知道自己是誰。"
+      },
+      {
+        "text": "用了",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 2,
+          "stress": 5
+        },
+        "hidden": {
+          "regret": 1
+        },
+        "set_flags": [],
+        "result_text": "你考得不錯。後來每次有人誇你，你都會想起那張紙的大小。"
+      },
+      {
+        "text": "拒絕，回家熬夜讀",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 4,
+          "health": -3,
+          "social": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "朋友說你很假。考卷發回來，你們分數差不多，只是你多了黑眼圈和一點驕傲。"
+      }
+    ],
+    "album": {
+      "caption": "高中，一張很小的紙條。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_relatives_ask_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "親戚的問題",
+    "text": "過年回家，親戚圍著問：「現在在做什麼？」「一個月多少？」「有沒有對象？」一桌菜還沒上完，你的人生已經被盤點完了。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "笑著一題一題回答",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "stress": 4
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你答得很得體。回程車上你才發現，整頓飯你只吃了三口。"
+      },
+      {
+        "text": "把話題轉到表弟身上",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -3,
+          "happiness": 3,
+          "social": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "表弟瞪了你一眼。你們兩個在陽台分了一瓶可樂，交換了大人才懂的默契。"
+      },
+      {
+        "text": "去廚房幫阿嬤洗碗",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "stress": -4,
+          "health": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "阿嬤沒問你任何問題，只是一直把最後一塊雞肉塞給你。廚房是這個家唯一的避難所。"
+      }
+    ],
+    "album": {
+      "caption": "成年後，過年的那張圓桌。",
+      "priority": 2
     }
   }
 ]

@@ -209,7 +209,7 @@ export class Game {
     if (req.flags_none?.some((x) => f.has(x))) return false;
     for (const [k, v] of Object.entries(req.stats_min ?? {})) if (this.statOf(k) < (v ?? 0)) return false;
     for (const [k, v] of Object.entries(req.stats_max ?? {})) if (this.statOf(k) > (v ?? 100)) return false;
-    const age = this.turnDef.age; // §17 年齡範圍
+    const age = (TURNS[this.s.turn] ?? TURNS[TURNS.length - 1]).age; // §17 年齡範圍（結局後取最後一回合）
     if (req.age_min !== undefined && age < req.age_min) return false;
     if (req.age_max !== undefined && age > req.age_max) return false;
     if (req.county_tags_any?.length && !req.county_tags_any.some((t) => this.s.county.event_tags.includes(t))) return false;
@@ -372,6 +372,12 @@ export class Game {
     if (s.quintile <= ao.quintile_max && route && s.effort >= ao.effort_min) return 'against_odds';
     if (st.happiness >= E.ordinary_good.happiness_min && st.social >= E.ordinary_good.social_min) return 'ordinary_good';
     return 'still_trying';
+  }
+  /** 成就：條件沿用 conditions 寫法，另加 ending（結局 id）。回傳本輪達成的 id */
+  achievementsMet(list: { id: string; conditions?: Requires & { ending?: string } }[]): string[] {
+    const end = this.endingId();
+    return list.filter((a) => { const { ending, ...req } = a.conditions ?? {};
+      return (!ending || ending === end) && this.meets(req as Requires); }).map((a) => a.id);
   }
   ending() {
     const id = this.endingId();

@@ -41,3 +41,10 @@ button:disabled { color:var(--color-muted); background:transparent; border-style
 .album small { display:block; font-size:.7rem; }
 .polaroid .blank { aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; padding:6px; text-align:center; font-family:var(--font-hand); color:var(--color-muted); background:repeating-linear-gradient(45deg, var(--color-bg) 0 8px, var(--color-card) 8px 16px); font-size:.85rem; }
 .opening { font-family:var(--font-hand); font-size:1.05rem; }
+
+.achs { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px; }
+.ach { display:flex; gap:8px; align-items:center; padding:6px; border:1px solid var(--color-lock); border-radius:var(--radius-btn); }
+.ach img, .ach-q { width:40px; height:40px; flex:none; display:grid; place-items:center; font-size:20px; color:var(--color-muted); }
+.ach small { display:block; }
+.ach.locked { border-style:dashed; }
+.ach.new { border-color:var(--color-accent); box-shadow:0 0 0 1px var(--color-accent) inset; }

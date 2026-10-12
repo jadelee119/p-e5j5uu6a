@@ -35,6 +35,8 @@ const fired = new Map<string, Map<string, number>>(); let sumPov = 0;
 let sumEffort = 0, sumRegret = 0, sumBreak = 0;
 const sumStats: Record<string, number> = {};
 
+const ACH = JSON.parse(readFileSync(join(root, 'data', 'achievements.json'), 'utf8')).achievements as { id: string; name: string }[];
+const achCount = new Map<string, number>();
 for (let i = 0; i < N; i++) {
   const g = new Game(data, baseSeed + i);
   let guard = 0;
@@ -58,6 +60,7 @@ for (let i = 0; i < N; i++) {
     else if (p === 'summary') g.ackSummary();
   }
   const e = g.ending(); const r = g.review();
+  for (const id of g.achievementsMet(ACH)) achCount.set(id, (achCount.get(id) ?? 0) + 1);
   count(endings, e.title + (e.regretHigh ? '（高遺憾）' : '（低遺憾）'));
   count(byQ, `Q${g.s.quintile} → ${e.title}`);
   for (const [m, k] of [[byCounty, g.s.county.name], [byQuint, `Q${g.s.quintile}`]] as const) { if (!m.has(k)) m.set(k, new Map()); count(m.get(k)!, e.title); }
@@ -137,3 +140,6 @@ for (const y of data.birthYears.map((b) => b.roc_year)) {
 }
 console.log(leftovers ? `⚠ 共 ${leftovers} 處殘留變數` : `全部 ${allTexts.length} 段文字、${data.birthYears.length} 個出生年皆無殘留變數`);
 if (notes.size) show('引擎提示（事件池耗盡等，輪數）', notes);
+
+console.log('\n== 成就達成率 ==');
+for (const a of ACH) console.log(`${a.name}\t${(((achCount.get(a.id) ?? 0) / N) * 100).toFixed(1)}%`);

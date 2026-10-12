@@ -1,0 +1,44 @@
+/* 《台灣人生 Roguelike》美術主題 v0.1 — 美術設計
+   前五個變數與 game/src/style.css 現有變數同名（--bg --card --ink --muted --accent --lock），可直接覆蓋。
+   其餘為新增語意變數，工程師可逐步把寫死的色碼換成它們。 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500&display=swap");
+/* jf open 粉圓需自行下載字型檔放入專案（https://github.com/justfont/open-huninn-font），再以 @font-face 宣告為 "jf-openhuninn" */
+
+:root {
+  /* === 對應現有變數 === */
+  --bg:     #EDEFE8; /* 淡灰綠紙色（原米黃 #F3EBDD 太黃，Jade 要求調整） */
+  --card:   #FBFAF6; /* 作業簿紙白 */
+  --ink:    #33302B; /* 鉛筆／墨色褐黑 */
+  --muted:  #66615A; /* 褪色鉛筆灰褐（原提案 #8C7F6C 對比僅 3.30:1，已加深至 4.75:1 / 卡片 5.44:1，符合 WCAG AA） */
+  --accent: #B0443A; /* 紅磚／老師紅筆 */
+  --lock:   #BDB4A5; /* 鎖住選項的灰 */
+
+  /* === 語意別名（任務要求的名稱） === */
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-text: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-lock: var(--lock);
+
+  /* === 新增色 === */
+  --color-blackboard: #2F4A3E; /* 黑板綠：階段標題、年度開場 */
+  --color-chalk:      #EDEBE3; /* 粉筆白：黑板上的字 */
+  --color-iron:       #4E6A73; /* 鐵窗藍灰：一般屬性條、邊框 */
+  --color-notebook:   #A9C4D9; /* 作業簿橫線淡藍 */
+  --color-tape:       #E8D29B; /* 相簿膠帶／泛黃 */
+  --color-good:       #4A7038; /* 數值上升（制服綠） */
+  --color-bad:        var(--accent); /* 數值下降、壓力 */
+  --color-warn-bg:    #F7E7B8;
+
+  /* === 字型 === */
+  --font-title: "Noto Serif TC", "Noto Serif CJK TC", "PMingLiU", serif;
+  --font-body:  "Noto Sans TC", "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-hand:  "jf-openhuninn", "Noto Sans TC", sans-serif; /* 旁白、相簿手寫說明 */
+
+  /* === 形狀 === */
+  --radius-card: 6px;   /* 相紙感，比現在的 12px 更方 */
+  --radius-btn: 4px;
+  --shadow-card: 0 2px 0 #0000000d, 0 6px 14px #3a322914;
+  --bar-height: 8px;
+}

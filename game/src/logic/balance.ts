@@ -43,7 +43,7 @@ export function buildBalance(raw: any): Balance {
   if (!raw?.actions || !raw?.passive_per_turn || !raw?.endings) throw new Error('data/balance.json 缺少 actions / passive_per_turn / endings');
   return { ...DEFAULT_BALANCE, ...raw } as Balance;
 }
-const KNOWN_KEYS = ['actions', 'passive_per_turn', 'endings', ...Object.keys(DEFAULT_BALANCE)];
+const KNOWN_KEYS = ['actions', 'passive_per_turn', 'endings', 'cost_mult_by_quintile', ...Object.keys(DEFAULT_BALANCE)];
 /** 回報 balance.json 與引擎鍵名差異：unknown = 引擎不認得；defaulted = 檔案缺、用內建預設 */
 export function balanceKeyReport(raw: any) {
   const keys = Object.keys(raw ?? {}).filter((k) => !k.startsWith('_'));

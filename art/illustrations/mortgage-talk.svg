@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="500" viewBox="0 0 440 500" font-family="Noto Sans CJK TC, sans-serif">
+<rect width="440" height="500" fill="#F3EBDD"/>
+<g transform="rotate(1.5 220 250)">
+<rect x="34" y="28" width="372" height="444" fill="#FFFBF2" stroke="#D9CDB7" stroke-width="1.5"/>
+<svg x="52" y="46" width="336" height="336" viewBox="0 0 336 336"><rect width="336" height="336" fill="#EDE3D0"/>
+<rect width="336" height="336" fill="#E8DCC2"/>
+<rect x="0" y="0" width="336" height="70" fill="#DCCFB3"/><line x1="40" y1="10" x2="296" y2="10" stroke="#FFFBF2" stroke-width="8"/>
+<ellipse cx="168" cy="230" rx="190" ry="130" fill="#C9A16B" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- bowls: rice + greens -->
+<ellipse cx="90" cy="150" rx="40" ry="20" fill="#FFFBF2" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="90" cy="146" rx="30" ry="12" fill="#fff"/>
+<ellipse cx="200" cy="130" rx="34" ry="16" fill="#FFFBF2" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M178 128 q10 -10 20 0 q10 -10 22 0" fill="#5E8C4A" stroke="#3A3229"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<!-- volunteer cards -->
+<g transform="rotate(8 250 230)"><rect x="210" y="190" width="100" height="70" fill="#FFFBF2" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><g stroke="#A9C4D9" stroke-width="2"><line x1="220" y1="210" x2="300" y2="210"/><line x1="220" y1="226" x2="300" y2="226"/><line x1="220" y1="242" x2="290" y2="242"/></g><text x="222" y="206" font-size="11" fill="#B5443A">志願卡</text></g>
+<!-- calculator + dad hand -->
+<rect x="96" y="200" width="78" height="104" rx="6" fill="#4E6A73" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="106" y="210" width="58" height="22" fill="#A9C4D9" stroke="#3A3229"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<text x="161" y="227" font-size="15" text-anchor="end" fill="#3A3229" font-family="monospace">51.9%</text>
+<g fill="#EDEBE3" stroke="#3A3229" stroke-width="1.5"><rect x="108" y="242" width="14" height="10"/><rect x="128" y="242" width="14" height="10"/><rect x="148" y="242" width="14" height="10"/><rect x="108" y="260" width="14" height="10"/><rect x="128" y="260" width="14" height="10"/><rect x="148" y="260" width="14" height="10"/><rect x="108" y="278" width="14" height="10"/><rect x="128" y="278" width="14" height="10"/><rect x="148" y="278" width="14" height="10"/></g>
+<path d="M200 336 L170 290 q-8 -14 -22 -8 l-6 -18 q-4 -10 -12 -4 l4 22 q-10 10 0 30 L150 336Z" fill="#E0B894" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M200 336 L176 298 L250 280 L270 336Z" fill="#7A8C6E" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<rect x="52" y="46" width="336" height="336" fill="none" stroke="#3A3229" stroke-width="1.5" opacity=".4"/>
+<text x="220" y="430" text-anchor="middle" font-size="17" fill="#3A3229">高三，餐桌上的那台計算機。</text>
+<rect x="180" y="16" width="80" height="26" fill="#E8D29B" opacity=".85" transform="rotate(-3 220 29)"/>
+</g></svg>

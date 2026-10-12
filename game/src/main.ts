@@ -3,6 +3,18 @@ import './fonts.css';
 import './style.css';
 import './dark.css';
 import { gameData } from './data';
+import achData from '@data/achievements.json';
+const achIcons = import.meta.glob('../../art/achievements/*.png', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+const iconFor = (id: string) => Object.entries(achIcons).find(([p]) => p.endsWith(`/${id}.png`))?.[1];
+const ACH = (achData as any).achievements as { id: string; name: string; desc: string; conditions?: any }[];
+function achHtml(): string {
+  const got = new Set<string>(JSON.parse(localStorage.getItem('achievements') ?? '[]'));
+  const fresh = game.achievementsMet(ACH).filter((id) => !got.has(id)); fresh.forEach((id) => got.add(id)); // BUG-12：只有之前沒存過的才算新
+  localStorage.setItem('achievements', JSON.stringify([...got]));
+  const items = ACH.map((a) => { const has = got.has(a.id); const ic = has ? iconFor(a.id) : undefined;
+    return `<div class="ach${has ? '' : ' locked'}${fresh.includes(a.id) ? ' new' : ''}">${ic ? `<img src="${ic}" alt="">` : `<span class="ach-q">${has ? '★' : '？'}</span>`}<div><b>${has ? esc(a.name) : '？？？'}</b>${has ? `<small class="muted">${esc(a.desc)}</small>` : ''}</div></div>`; }).join('');
+  return `<div class="card"><h2>成就 ${got.size} / ${ACH.length}</h2><div class="achs">${items}</div></div>`;
+}
 import { illustrationFor } from './illustrations';
 import { Game, TURNS, type ActionId } from './logic/engine';
 import { STATS, STAT_NAMES, STAGE_NAMES } from './logic/types';
@@ -107,7 +119,7 @@ function renderEnding() {
     <figcaption><span class="tag">${a.stageName}</span><span class="cap">${esc(a.caption)}</span><small class="muted">${esc(a.title)}：${esc(a.choice)}</small></figcaption></figure>`; }).join('')}
     <figure class="polaroid tilt-r no-pic empty"><span class="tape"></span><div class="blank">22 歲以後</div><figcaption><span class="cap">（還沒拍）</span></figcaption></figure></div></div>
   <div class="card">${r.origin ? `<p><b>${esc(r.origin)}</b></p>` : ''}<p>${esc(r.effort)}</p><p>${esc(r.regret)}</p>${r.mountain ? `<h2>${esc(r.mountain.title)}</h2><p>${esc(r.mountain.text)}</p>` : ''}</div>
-  <button class="primary" id="again">再活一次</button>`;
+  ${achHtml()}<button class="primary" id="again">再活一次</button>`;
   document.getElementById('again')!.onclick = () => start(Math.floor(Math.random() * 2 ** 31));
 }
 

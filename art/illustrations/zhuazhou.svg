@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="500" viewBox="0 0 440 500" font-family="Noto Sans CJK TC, sans-serif">
+<rect width="440" height="500" fill="#F3EBDD"/>
+<g transform="rotate(-2 220 250)">
+<rect x="34" y="28" width="372" height="444" fill="#FFFBF2" stroke="#D9CDB7" stroke-width="1.5"/>
+<svg x="52" y="46" width="336" height="336" viewBox="0 0 336 336"><rect width="336" height="336" fill="#EDE3D0"/>
+<rect width="336" height="336" fill="#B5443A"/>
+<path d="M0 300 Q168 270 336 300 L336 336 L0 336Z" fill="#9E3A31"/>
+<!-- adults' feet/hands at edges -->
+<ellipse cx="20" cy="40" rx="34" ry="18" fill="#F5D9BF" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="316" cy="60" rx="30" ry="16" fill="#F5D9BF" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="290" y="300" width="40" height="40" rx="10" fill="#4E6A73" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="296" width="40" height="44" rx="10" fill="#4E6A73" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- baby -->
+<ellipse cx="168" cy="200" rx="48" ry="38" fill="#FFFBF2" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="168" cy="140" r="38" fill="#F5D9BF" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="155" cy="138" r="3.5" fill="#3A3229"/><circle cx="181" cy="138" r="3.5" fill="#3A3229"/>
+<path d="M160 154 q8 6 16 0" fill="none" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="146" cy="150" r="5" fill="#E8A99A" opacity=".7"/><circle cx="190" cy="150" r="5" fill="#E8A99A" opacity=".7"/>
+<path d="M168 102 q6 -8 2 -14" fill="none" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M128 196 L96 214" fill="none" stroke="#3A3229"  stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/><path d="M128 196 L96 214" stroke="#F5D9BF" stroke-width="5" stroke-linecap="round"/>
+<!-- items -->
+<g transform="rotate(-25 60 90)"><rect x="40" y="86" width="70" height="7" fill="#7A5A3A" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 86 l16 3.5 l-16 3.5z" fill="#3A3229"/></g>
+<rect x="232" y="90" width="72" height="40" rx="3" fill="#C9A16B" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><g fill="#3A3229"><circle cx="246" cy="102" r="4"/><circle cx="262" cy="102" r="4"/><circle cx="278" cy="118" r="4"/><circle cx="292" cy="102" r="4"/></g><line x1="232" y1="110" x2="304" y2="110" stroke="#3A3229"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<path d="M52 250 q-10 -40 20 -40 q30 0 20 40" fill="none" stroke="#EDEBE3" stroke-width="5"/><circle cx="72" cy="258" r="11" fill="#A9C4D9" stroke="#EDEBE3" stroke-width="4"/>
+<rect x="240" y="226" width="54" height="70" rx="5" fill="#EDEBE3" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="248" y="234" width="38" height="16" fill="#5E8C4A"/><g fill="#3A3229"><rect x="250" y="258" width="8" height="6"/><rect x="263" y="258" width="8" height="6"/><rect x="276" y="258" width="8" height="6"/><rect x="250" y="272" width="8" height="6"/><rect x="263" y="272" width="8" height="6"/><rect x="276" y="272" width="8" height="6"/></g>
+<rect x="132" y="252" width="62" height="38" rx="6" fill="#A9C4D9" stroke="#3A3229" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="148" cy="271" r="7" fill="#FFFBF2" stroke="#3A3229"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+<rect x="52" y="46" width="336" height="336" fill="none" stroke="#3A3229" stroke-width="1.5" opacity=".4"/>
+<text x="220" y="430" text-anchor="middle" font-size="17" fill="#3A3229">一歲，紅布上的你，手裡抓著未來。</text>
+<rect x="180" y="16" width="80" height="26" fill="#E8D29B" opacity=".85" transform="rotate(-3 220 29)"/>
+</g></svg>
