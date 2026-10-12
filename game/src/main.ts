@@ -31,12 +31,15 @@ const OPENING_IMG = ['opening_moon', 'opening_dawn', 'opening_charm', 'opening_c
   document.body.appendChild(btn);
   apply(saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 })();
+const DECK_VERSION = 'v1.0 試玩一';
 // 角落版本號（單一來源：package.json → Vite define __APP_VERSION__）
 (() => {
   const el = document.createElement('div');
   el.className = 'app-version';
-  el.textContent = __APP_VERSION__;
-  el.title = '版本 ' + __APP_VERSION__;
+  // 新玩法（人生手牌）另計版本：v1.0 試玩N；舊玩法沿用 package.json
+  const v = new URLSearchParams(location.search).get('mode') === 'deck' ? DECK_VERSION : __APP_VERSION__;
+  el.textContent = v;
+  el.title = '版本 ' + v;
   document.body.appendChild(el);
 })();
 const app = document.getElementById('app')!;
@@ -87,6 +90,7 @@ function renderIntro() {
   <div class="card${opImg ? ' has-pic' : ''}">${opImg ? `<figure class="polaroid tilt"><img src="${opImg}" alt=""></figure>` : ''}
   ${op ? `<p class="opening">${esc(op)}</p>` : ''}<p class="muted">民國 ${s.birthYear} 年（西元 ${s.birthYear + 1911} 年）・<b>${s.county.name}</b></p>
   
+  <a class="deck-entry" href="?mode=deck">🃏 試玩新玩法：人生手牌 v1.0 試玩一（國中三年）</a>
   <p class="muted">這一次人生只有一次，選了就不能回頭。</p>${fb}
   <p class="muted">種子：${s.seed}</p><button class="primary" id="go">開始人生</button></div>`;
   document.getElementById('go')!.onclick = render;
@@ -154,4 +158,8 @@ function renderEnding() {
   document.getElementById('again')!.onclick = () => start(Math.floor(Math.random() * 2 ** 31));
 }
 
-start();
+if (new URLSearchParams(location.search).get('mode') === 'deck') {
+  // v1.0 人生手牌雛形：另一個入口，原本玩法不受影響
+  import('./deck-ui').then((m) => m.startDeck(app, (st) => { const keep = game; game = { s: { stats: st } } as any; const h = statsHtml(); game = keep; return h; }));
+} else start();
+

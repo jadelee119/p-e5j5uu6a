@@ -1,0 +1,458 @@
+{
+  "_note": "v1.0 國中雛形牌表（design/v1.0-deck-prototype.md §4、§7；文字 writing/v1.0_deck_cards.md）。數值全是假設值。cost=佔幾格時間；effects 為打出時屬性變化；adds/removes 為洗入/移出牌庫；result_event 連回現有事件卡（沿用插圖）。",
+  "cards": [
+    {
+      "id": "d_study",
+      "name": "讀書",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "課本攤開，螢光筆劃到整頁都亮了。",
+      "effects": {
+        "academic": 5,
+        "stress": 3
+      },
+      "tags": [
+        "effort",
+        "academic"
+      ],
+      "result_text": "你把今天的進度讀完了。燈關掉的時候，樓下的電視也關了。"
+    },
+    {
+      "id": "d_cram",
+      "name": "補習班",
+      "type": "action",
+      "cost": 2,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "放學後的第二個學校，晚餐是便利商店。",
+      "effects": {
+        "academic": 9,
+        "stress": 5,
+        "wealth": -6
+      },
+      "requires_wealth": 10,
+      "tags": [
+        "effort",
+        "academic"
+      ],
+      "result_event": "junior_cram_school_01",
+      "invest": true
+    },
+    {
+      "id": "d_tutor",
+      "name": "家教",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "每週固定那個晚上，客廳多一張椅子。",
+      "effects": {
+        "academic": 10,
+        "stress": 1,
+        "wealth": -4
+      },
+      "requires_wealth": 10,
+      "invest": true,
+      "tags": [
+        "effort",
+        "academic"
+      ],
+      "result_text": "老師講的你不一定都懂，但你知道下次上課前得先寫完。"
+    },
+    {
+      "id": "d_play",
+      "name": "跟同學鬼混",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "什麼都沒做的一下午，後來變成最常想起的一下午。",
+      "effects": {
+        "happiness": 5,
+        "stress": -4,
+        "social": 2,
+        "academic": -1
+      },
+      "adds": [
+        "d_buddy"
+      ],
+      "tags": [
+        "fun"
+      ],
+      "result_text": "你們在便利商店門口坐到天黑，誰也說不出今天做了什麼。",
+      "repeat_effects": {
+        "happiness": 2,
+        "stress": -1,
+        "social": 0,
+        "academic": -3
+      }
+    },
+    {
+      "id": "d_buddy",
+      "name": "死黨",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "放學後一起晃到天黑，什麼都聊，也什麼都不用解釋。",
+      "effects": {
+        "social": 5,
+        "happiness": 3,
+        "stress": -2
+      },
+      "tags": [
+        "fun",
+        "social"
+      ],
+      "once_in_deck": true,
+      "result_text": "你們在便利商店門口吃完一支冰，誰也沒說要回家。後來很多年，你都記得那個晚上的風。"
+    },
+    {
+      "id": "d_exercise",
+      "name": "大隊接力",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 14,
+      "expires_age": 14,
+      "line": "全班的命運，交在一根接力棒上。",
+      "effects": {
+        "health": 5,
+        "social": 3,
+        "happiness": 2
+      },
+      "tags": [
+        "social"
+      ],
+      "result_event": "junior_relay_race_01",
+      "echo": {
+        "age": 18,
+        "text": "畢業典禮放了國中的照片，那根接力棒裡沒有你。"
+      }
+    },
+    {
+      "id": "d_talent",
+      "name": "才藝班",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 14,
+      "expires_age": 14,
+      "line": "每週一次，假裝自己是另一種人生。",
+      "effects": {
+        "happiness": 4,
+        "stress": 1,
+        "wealth": -4
+      },
+      "requires_wealth": 4,
+      "tags": [
+        "effort",
+        "talent"
+      ],
+      "result_text": "老師說你進步了。你不確定她是不是對每個人都這樣說。",
+      "echo": {
+        "age": 20,
+        "text": "同學在尾牙上台彈了一首，你在台下拍手拍得很用力。"
+      },
+      "invest": true
+    },
+    {
+      "id": "d_shop",
+      "name": "顧店",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "在店裡寫作業，客人來了就先放下筆。",
+      "effects": {
+        "wealth": 5,
+        "academic": -2,
+        "social": 2,
+        "stress": 1
+      },
+      "clears": [
+        "b_bill"
+      ],
+      "tags": [
+        "effort",
+        "family"
+      ],
+      "result_event": "junior_family_shop_01"
+    },
+    {
+      "id": "d_phone",
+      "name": "第一支手機",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "全班你不是第一個有的，但你是最常拿出來看的。",
+      "effects": {
+        "happiness": 3,
+        "social": 3
+      },
+      "adds": [
+        "b_scroll"
+      ],
+      "removes": [
+        "d_phone"
+      ],
+      "tags": [
+        "fun"
+      ],
+      "result_event": "junior_phone_01"
+    },
+    {
+      "id": "d_crush",
+      "name": "立可白",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": 15,
+      "line": "隔壁班的那個人借走的立可白，到現在還沒還。",
+      "effects": {
+        "happiness": 4,
+        "stress": 2,
+        "social": 1
+      },
+      "removes": [
+        "d_crush"
+      ],
+      "tags": [
+        "fun"
+      ],
+      "result_event": "junior_crush_01",
+      "echo": {
+        "age": 22,
+        "text": "整理抽屜時找到一支沒水的立可白，你想不起來是誰的。"
+      }
+    },
+    {
+      "id": "d_trip",
+      "name": "畢業旅行",
+      "type": "action",
+      "cost": 1,
+      "age_min": 15,
+      "age_max": 15,
+      "expires_age": 15,
+      "line": "三天兩夜，有人整晚沒睡，有人在遊覽車上唱到沒聲音。",
+      "effects": {
+        "happiness": 6,
+        "social": 5,
+        "wealth": -4
+      },
+      "requires_wealth": 4,
+      "removes": [
+        "d_trip"
+      ],
+      "tags": [
+        "fun",
+        "social"
+      ],
+      "result_event": "junior_school_trip_01",
+      "echo": {
+        "age": 18,
+        "text": "同學聊起那次畢旅，你笑著點頭，假裝自己也記得。"
+      }
+    },
+    {
+      "id": "d_night",
+      "name": "最後一個月",
+      "type": "action",
+      "cost": 1,
+      "age_min": 15,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "教室後面的倒數紙，一天撕一張。",
+      "effects": {
+        "academic": 5,
+        "stress": 7,
+        "health": -2
+      },
+      "tags": [
+        "effort",
+        "academic"
+      ],
+      "result_event": "junior_night_study_01"
+    },
+    {
+      "id": "b_expect",
+      "name": "期待",
+      "type": "burden",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "大家都說你一定沒問題。你也不好意思有問題。",
+      "effects": {},
+      "in_hand": {
+        "academic_play_stress": 2,
+        "stress_at_least": 35
+      },
+      "unplayed_end": {
+        "stress": 2
+      },
+      "result_text": "你考得很好，但大家說「本來就應該」。"
+    },
+    {
+      "id": "b_comfort",
+      "name": "安逸",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "什麼都不缺的下午，特別長。",
+      "effects": {
+        "happiness": 1
+      },
+      "removes": [
+        "b_comfort"
+      ],
+      "unplayed_end": {
+        "health": -1,
+        "academic": -1
+      },
+      "tags": [
+        "effort"
+      ],
+      "result_text": "你關掉電視，發現外面天還亮著。"
+    },
+    {
+      "id": "b_bill",
+      "name": "家裡的帳單",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "壓在電話旁邊，你假裝沒看到，大家也假裝你沒看到。",
+      "effects": {
+        "wealth": 2,
+        "stress": 1
+      },
+      "unplayed_end": {
+        "stress": 3,
+        "happiness": -2
+      },
+      "tags": [
+        "family"
+      ],
+      "result_text": "這個月撐過去了。下個月的已經在路上。"
+    },
+    {
+      "id": "b_scroll",
+      "name": "玩手機",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "本來只是看一下時間。",
+      "effects": {
+        "happiness": 3,
+        "stress": -2,
+        "health": -1
+      },
+      "unplayed_end": {
+        "health": -1
+      },
+      "result_text": "回過神，已經不知道要看幾點了。",
+      "repeat_effects": {
+        "happiness": 0,
+        "stress": 1,
+        "health": -2,
+        "academic": -2
+      }
+    },
+    {
+      "id": "g_grit",
+      "name": "韌性",
+      "type": "growth",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "不是不會累，是累了也知道明天要幹嘛。",
+      "effects": {
+        "academic": 2,
+        "health": 2,
+        "stress": -1
+      },
+      "growth_per_play": 0.5,
+      "tags": [
+        "effort"
+      ],
+      "result_text": "同一件事，你做得比上次快一點，抱怨也少一點。"
+    },
+    {
+      "id": "g_mature",
+      "name": "早熟",
+      "type": "growth",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "你比同學早一步學會看大人的臉色。",
+      "effects": {
+        "social": 2,
+        "stress": -1
+      },
+      "in_hand": {
+        "burden_cost_minus": 1
+      },
+      "tags": [
+        "family"
+      ],
+      "result_text": "你在大人開口之前，就把事情做完了。"
+    },
+    {
+      "id": "f_teacher",
+      "name": "又換老師了",
+      "type": "forced",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "新老師自我介紹的時候，大家都在猜這次能待多久。",
+      "effects": {
+        "academic": -3,
+        "stress": 2
+      },
+      "removes": [
+        "f_teacher"
+      ],
+      "result_event": "junior_remote_teacher_01"
+    },
+    {
+      "id": "f_sick",
+      "name": "病倒",
+      "type": "forced",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "身體幫你請了假。",
+      "effects": {
+        "stress": -6,
+        "health": -2
+      },
+      "slot_cost": 1,
+      "removes": [
+        "f_sick"
+      ],
+      "result_event": "forced_sick",
+      "result_text": "你本來想再撐一下，身體沒有同意。醒來的時候，有人坐在床邊削蘋果。手上那些還沒做完的事，今年都只能先放著。"
+    }
+  ]
+}

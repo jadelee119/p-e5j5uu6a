@@ -28,5 +28,54 @@
         "result_buzz": "爸爸的臉書上有十二個讚"
       }
     }
-  ]
+  ],
+  "deck_card_variants": {
+    "_note": "人生手牌：依出生年（民國）換牌面，牌 id 不變（數值不受影響）。name/line 留 null 就沿用 data/deck/cards.json；icons 依序找 art/deck/<id>.jpg，第一個存在的就用。文案填 name/line，美術新增圖示後把 id 放在 icons 最前面。",
+    "by_birth_year": [
+      {
+        "from": 0,
+        "to": 87,
+        "label": "折疊機世代",
+        "cards": {
+          "b_scroll": {
+            "name": "玩手機",
+            "line": null,
+            "icons": [
+              "b_scroll"
+            ]
+          },
+          "d_phone": {
+            "name": null,
+            "line": null,
+            "icons": [
+              "d_phone"
+            ]
+          }
+        }
+      },
+      {
+        "from": 88,
+        "to": 999,
+        "label": "智慧型手機世代",
+        "cards": {
+          "b_scroll": {
+            "name": "滑手機",
+            "line": null,
+            "icons": [
+              "b_scroll_smart",
+              "b_scroll"
+            ]
+          },
+          "d_phone": {
+            "name": null,
+            "line": null,
+            "icons": [
+              "d_phone_smart",
+              "d_phone"
+            ]
+          }
+        }
+      }
+    ]
+  }
 }

@@ -1,0 +1,174 @@
+{
+  "_note": "v1.0 國中雛形可調參數（假設值）。畫面上不顯示數字。",
+  "ages": [
+    13,
+    14,
+    15
+  ],
+  "hand_size": 5,
+  "time_slots": 3,
+  "academic_tags": [
+    "academic"
+  ],
+  "start_deck": {
+    "common": [
+      "d_study",
+      "d_study",
+      "d_play",
+      "d_exercise",
+      "d_phone",
+      "d_crush",
+      "d_trip",
+      "d_night"
+    ],
+    "by_quintile": {
+      "1": [
+        "d_study",
+        "d_shop",
+        "d_shop",
+        "g_grit",
+        "g_mature",
+        "b_bill"
+      ],
+      "2": [
+        "d_shop",
+        "g_grit",
+        "b_bill"
+      ],
+      "3": [
+        "d_study",
+        "d_talent"
+      ],
+      "4": [
+        "d_cram",
+        "d_talent",
+        "b_comfort",
+        "d_tutor"
+      ],
+      "5": [
+        "d_cram",
+        "d_cram",
+        "d_talent",
+        "b_expect",
+        "b_comfort",
+        "d_tutor"
+      ]
+    }
+  },
+  "forced": {
+    "f_teacher": {
+      "base_chance": 0.15,
+      "tag_chance": 0.5,
+      "county_tags_any": [
+        "rural",
+        "remote",
+        "偏鄉"
+      ]
+    },
+    "f_sick": {
+      "stress_at_least": 39
+    }
+  },
+  "talent": {
+    "points": 6,
+    "per_point_weight": 0.3,
+    "options": {
+      "study": {
+        "name": "讀書",
+        "cards": [
+          "d_study",
+          "d_cram",
+          "d_night",
+          "d_tutor"
+        ]
+      },
+      "play": {
+        "name": "玩樂",
+        "cards": [
+          "d_play",
+          "d_buddy",
+          "d_crush"
+        ]
+      },
+      "exercise": {
+        "name": "運動",
+        "cards": [
+          "d_exercise",
+          "g_grit"
+        ]
+      },
+      "talent": {
+        "name": "才藝",
+        "cards": [
+          "d_talent"
+        ]
+      },
+      "work": {
+        "name": "顧家",
+        "cards": [
+          "d_shop",
+          "g_mature"
+        ]
+      }
+    }
+  },
+  "score": {
+    "_note": "§5/§6 變化量：國中階段結束時屬性相對開局的變化（壓力取負）＋軌跡標籤。一個屬性等級 = 20。",
+    "weights": {
+      "academic": 1,
+      "happiness": 1,
+      "health": 1,
+      "social": 1,
+      "stress": -1,
+      "wealth": 0.5
+    },
+    "tag_bonus": 2,
+    "level_size": 20,
+    "tag_min_count": 3
+  },
+  "tag_names": {
+    "effort": "很努力",
+    "fun": "很會玩",
+    "family": "很顧家",
+    "social": "人緣好",
+    "academic": "書讀得多",
+    "talent": "學過才藝"
+  },
+  "passive": {
+    "_note": "規格未定義「躺平」門檻：整局出牌數 ≤ 每年 1 張 × 年數 就算躺平，顯示依家境分開的結局文字（writing/v1.0_deck_cards.md 9b6816b）。",
+    "max_plays_per_year": 1,
+    "endings": [
+      {
+        "quintiles": [
+          5
+        ],
+        "text": "家裡替你留好的路還在原地，鋪得很平。國中三年你沒急著走上去，反正它看起來不會跑。"
+      },
+      {
+        "quintiles": [
+          4
+        ],
+        "text": "什麼都不缺的三年，安安穩穩地過完了。大人說你還小，你也就真的當自己還小。"
+      },
+      {
+        "quintiles": [
+          3
+        ],
+        "text": "不快不慢的三年，像大部分的人一樣。沒有誰催你，你也沒有催自己。"
+      },
+      {
+        "quintiles": [
+          2
+        ],
+        "text": "日子沒有變好，也沒有變壞。國中三年，你把力氣省下來，留給還不知道是什麼的以後。"
+      },
+      {
+        "quintiles": [
+          1
+        ],
+        "text": "你很早就學會不期待太多。三年就這樣過去，偶爾在夜裡，你會想如果當時多做一點會怎樣。"
+      }
+    ]
+  },
+  "rest_stress_per_slot": 2
+}
