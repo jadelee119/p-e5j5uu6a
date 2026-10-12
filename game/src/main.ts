@@ -31,6 +31,14 @@ const OPENING_IMG = ['opening_moon', 'opening_dawn', 'opening_charm', 'opening_c
   document.body.appendChild(btn);
   apply(saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 })();
+// 角落版本號（單一來源：package.json → Vite define __APP_VERSION__）
+(() => {
+  const el = document.createElement('div');
+  el.className = 'app-version';
+  el.textContent = __APP_VERSION__;
+  el.title = '版本 ' + __APP_VERSION__;
+  document.body.appendChild(el);
+})();
 const app = document.getElementById('app')!;
 let game: Game; let alloc: Partial<Record<ActionId, number>> = {};
 const tx = (s: string | undefined) => esc(game.t(s));
