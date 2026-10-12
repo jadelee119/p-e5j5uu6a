@@ -253,6 +253,54 @@
       ],
       "name": "下班喝一杯",
       "desc": "熱炒店一杯台啤，把今天的委屈配下去。"
+    },
+    "jc_intern": {
+      "effects": {
+        "wealth": 2,
+        "academic": 1,
+        "health": -2,
+        "stress": 3
+      },
+      "from": "senior",
+      "flags_any": [
+        "jc_continue"
+      ],
+      "effort": 1,
+      "flag_after": {
+        "points": 2,
+        "flag": "skilled_hands"
+      },
+      "name": "工廠實習",
+      "desc": "去工廠當學徒，手會比履歷先長出經驗。",
+      "flags_none": [
+        "uni_tech",
+        "uni_normal",
+        "military_first",
+        "work_first"
+      ]
+    },
+    "jc_license": {
+      "effects": {
+        "academic": 3,
+        "stress": 4
+      },
+      "from": "senior",
+      "flags_any": [
+        "jc_continue"
+      ],
+      "effort": 1,
+      "flag_after": {
+        "points": 2,
+        "flag": "licensed"
+      },
+      "name": "考證照",
+      "desc": "丙級、乙級，一張證明你會做事的紙。",
+      "flags_none": [
+        "uni_tech",
+        "uni_normal",
+        "military_first",
+        "work_first"
+      ]
     }
   },
   "passive_per_turn": {

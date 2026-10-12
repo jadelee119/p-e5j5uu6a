@@ -176,9 +176,12 @@ export class Game {
     const t = this.turnDef;
     this.s.queue = [];
     if (t.branch) {
-      const ev = this.data.events.find((e) => e.type === 'branch' && e.id.endsWith(BRANCH_ID_SUFFIX[t.branch!]));
+      // 同一分岔槽（id 結尾 _B1.._B4）可放多張候選卡，依 JSON 順序取第一張 conditions 符合的；
+      // 全都不符就跳過此槽（例：B3 一般高中→選組，高職／五專→senior_branch_voc_*_B3）。
+      const cands = this.data.events.filter((e) => e.type === 'branch' && e.id.endsWith(BRANCH_ID_SUFFIX[t.branch!]));
+      const ev = cands.find((e) => this.meets(e.conditions));
       if (ev) this.s.queue.push({ event: ev });
-      else this.s.notes.push(`找不到分岔事件 ${t.branch}`);
+      else if (!cands.length) this.s.notes.push(`找不到分岔事件 ${t.branch}`);
     }
     if (t.random) {
       const ev = this.drawRandom(t.stage);
@@ -245,7 +248,9 @@ export class Game {
   private drawRandom(stage: StageId): GameEvent | undefined {
     const pool = this.data.events.filter((e) => e.type === 'random' && (e.stage === stage || e.stage === 'any')
       && !(e.once !== false && this.s.seenEvents.has(e.id)) && this.meets(e.conditions));
-    return this.rng.weighted(pool, (e) => e.weight ?? 10);
+    // must-draw：條件符合（且未抽過）的必抽卡優先發，其餘才照權重抽
+    const must = pool.filter((e) => e.must);
+    return this.rng.weighted(must.length ? must : pool, (e) => e.weight ?? 10);
   }
 
   // ----- 事件 -----

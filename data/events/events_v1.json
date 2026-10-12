@@ -148,7 +148,10 @@
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_junior_college",
+        "hs_vocational"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
@@ -876,12 +879,15 @@
     "stage": "senior",
     "type": "random",
     "title": "模擬考",
-    "text": "這是第七次模擬考。你的成績像台股一樣，大家都說長期會向上，但你只活在短期。",
+    "text": "又一次模擬考。你已經數不清是第幾次了。你的成績像台股一樣，大家都說長期會向上，但你只活在短期。",
     "weight": 10,
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_junior_college",
+        "voc_work"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
@@ -918,7 +924,7 @@
       }
     ],
     "album": {
-      "caption": "高三，第七張模擬考成績單。",
+      "caption": "畢業前一年，又一張模擬考成績單。",
       "priority": 2
     }
   },
@@ -1036,7 +1042,10 @@
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_vocational",
+        "hs_junior_college"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": []
@@ -1075,6 +1084,114 @@
     ],
     "album": {
       "caption": "高二，選組單上的勾。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_branch_voc_track_B3",
+    "stage": "senior",
+    "type": "branch",
+    "title": "升學還是就業",
+    "text": "班上開始分成兩群：一群在問統測報名要考哪幾科，一群在問哪家工廠缺人、哪家店的師傅肯教。導師在黑板一邊貼統測准考證的範本，另一邊貼工作服的尺寸表。他說兩邊都是路，只是一邊要先讀書，一邊要先早起。",
+    "weight": 0,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": []
+    },
+    "choices": [
+      {
+        "text": "準備統測升學",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 6,
+          "academic": 2
+        },
+        "hidden": {},
+        "set_flags": [
+          "voc_study"
+        ],
+        "result_text": "你把統測講義疊得跟同學一樣高。在這間教室，考科大不是例外，是大多數人的選擇。准考證發下來那天，你把它夾進課本，像夾一張車票。"
+      },
+      {
+        "text": "畢業先去工作",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "stress": -2
+        },
+        "hidden": {
+          "regret": 0
+        },
+        "set_flags": [
+          "voc_work"
+        ],
+        "result_text": "你量了工作服的尺寸，師傅說你的手比你的履歷有說服力。爸媽嘴上說「再想想」，晚上卻偷偷幫你買了一個新工具箱。老師說進修部的門一直開著，你說你知道。"
+      }
+    ],
+    "album": {
+      "caption": "高職三年級，統測准考證和工具箱並排放在書桌上。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_branch_jc_track_B3",
+    "stage": "senior",
+    "type": "branch",
+    "title": "讀完還是先走",
+    "text": "五專三年級，國中同學在煩惱學測，你已經在實驗室待了三年，還有兩年。學長姊有人畢業就被公司預約，也有人中途休學，先去工作再說。導師說兩種都看過，過得好的人，都是想清楚才走的。",
+    "weight": 0,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": []
+    },
+    "choices": [
+      {
+        "text": "繼續讀完",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": 6,
+          "academic": 2
+        },
+        "hidden": {},
+        "set_flags": [
+          "voc_study"
+        ],
+        "result_text": "你決定把剩下的兩年讀完。專題、實習、證照，一樣一樣排進行事曆。國中同學才剛進大學，你已經知道自己的手適合做什麼。"
+      },
+      {
+        "text": "休學去工作",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "stress": -2
+        },
+        "hidden": {
+          "regret": 0
+        },
+        "set_flags": [
+          "voc_work"
+        ],
+        "result_text": "你辦了休學，學校說，期限內想回來都可以復學。第一份工作很累，但你很快就學會了課本沒教的事：怎麼跟老闆說話、怎麼在月底前讓錢夠用。你沒有放棄讀書，只是先去看看外面。"
+      }
+    ],
+    "album": {
+      "caption": "五專三年級，一張還沒交出去的休學申請書。",
       "priority": 2
     }
   },
@@ -1242,6 +1359,42 @@
     ],
     "album": {
       "caption": "大學那幾年，沒入鏡的那張合照。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_branch_jc_B4",
+    "stage": "adult",
+    "type": "branch",
+    "title": "畢業以後？",
+    "text": "國中同學都在煩惱「畢業以後」：學測、指考、繁星、個申，每個管道都像夜市攤位在喊價。有人已經收拾行李去讀大學了。你還在實驗室，穿著沾了東西的實驗衣。這一題，你早在國中畢業那年就填好答案了。",
+    "weight": 0,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college",
+        "voc_study"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": []
+    },
+    "choices": [
+      {
+        "text": "繼續讀五專",
+        "requires": {},
+        "lock_text": "",
+        "effects": {},
+        "hidden": {},
+        "set_flags": [
+          "jc_continue"
+        ],
+        "result_text": "同學傳來新生訓練的照片，你回了一張實驗室的。他們剛開始找方向，你已經走到路中間了。不用選的感覺，原來也有一點輕鬆。"
+      }
+    ],
+    "album": {
+      "caption": "五專四年級，同學去讀大學的那個夏天。",
       "priority": 2
     }
   },
@@ -1627,7 +1780,11 @@
       "stats_max": {},
       "county_tags_any": [],
       "age_min": 20,
-      "age_max": 22
+      "age_max": 22,
+      "flags_any": [
+        "work_first",
+        "voc_work"
+      ]
     },
     "choices": [
       {
@@ -1767,7 +1924,12 @@
       "stats_max": {},
       "county_tags_any": [],
       "age_min": 20,
-      "age_max": 22
+      "age_max": 22,
+      "flags_any": [
+        "work_first",
+        "voc_work",
+        "military_first"
+      ]
     },
     "choices": [
       {
@@ -1831,7 +1993,10 @@
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_junior_college",
+        "hs_vocational"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [
@@ -2212,7 +2377,10 @@
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_junior_college",
+        "voc_work"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [
@@ -3449,7 +3617,10 @@
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_junior_college",
+        "hs_vocational"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
@@ -3509,7 +3680,9 @@
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "hs_junior_college"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
@@ -3775,12 +3948,14 @@
       "flags_all": [
         "hs_junior_college"
       ],
-      "flags_none": [],
+      "flags_none": [
+        "voc_work"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
       "age_min": 16,
-      "age_max": 17
+      "age_max": 18
     },
     "choices": [
       {
@@ -3825,6 +4000,72 @@
     ],
     "album": {
       "caption": "五專，社辦裡的一副撲克牌。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_jc_five_years_work_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "休學以後的時間",
+    "text": "同學在準備學測的時候，你在員工休息室跟前輩打牌。休學之後的日子很規律，規律到你偶爾會忘記，學校給的復學期限正在一天一天倒數。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college",
+        "voc_work"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 16,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "享受下班後的自由",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 6,
+          "social": 4,
+          "academic": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你學會了打撞球、修機車和跟老闆討價還價。國中同學很羨慕你有薪水，你偶爾也羨慕他們還有寒暑假。"
+      },
+      {
+        "text": "下班後自己讀專業書",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "前輩說以後想考證照或回去讀書，現在的底子都用得到。你把下班後的時間當成一段很長的助跑。"
+      },
+      {
+        "text": "回去參加國中同學會",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "大家在聊模擬考，你在聊排班表。你發現你們講的是兩種語言，但都還聽得懂彼此。"
+      }
+    ],
+    "album": {
+      "caption": "五專休學那幾年，休息室裡的一副撲克牌。",
       "priority": 2
     }
   },
@@ -4293,6 +4534,603 @@
     ],
     "album": {
       "caption": "當兵那幾個月，一份沒簽的表格。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_tvee_result_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "填科大志願",
+    "text": "統測放榜了。分數就是那個分數，現在的問題是志願卡：科系、學校、離家多遠，這幾件事永遠沒辦法全拿。導師把去年的落點表影印給全班，邊角已經被翻得起毛。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational"
+      ],
+      "flags_none": [
+        "voc_work"
+      ],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "填離家近的學校",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -3,
+          "social": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你可以繼續住家裡，每天騎車上學。媽媽說這樣省很多，你說這樣也可以每天吃到她煮的飯。兩個理由都是真的。"
+      },
+      {
+        "text": "為了想念的科系去外縣市",
+        "requires": {
+          "stats_min": {
+            "wealth": 30
+          }
+        },
+        "lock_text": "家裡負擔不起：外縣市的房租，比學費還難開口",
+        "lock_text_near": "家裡負擔不起：咬牙也湊不太出外地的房租",
+        "lock_text_far": "家裡負擔不起：外縣市的房租，比學費還難開口",
+        "effects": {
+          "happiness": 5,
+          "stress": 3,
+          "wealth": -5
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你填了一間要坐很久車才到的學校，只因為那個系有你想學的東西。爸媽送你去宿舍那天，在門口站了很久才走。"
+      },
+      {
+        "text": "照分數填最高的那間",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 2,
+          "happiness": -1
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你上了分數能到的最好學校。科系的名字很長，你念了好幾遍才記住。老師說進去再轉也可以，你把這句話記得比系名還清楚。"
+      }
+    ],
+    "album": {
+      "caption": "高職三年級，一張改了很多次的志願卡。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_jc_project_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "畢業專題",
+    "text": "快畢業了，系上要交畢業專題，還要排校外實習。指導老師說專題做得好，業界的人會記住你；學長說實習的地方挑得好，畢業就不用投履歷。你們這組的意見，比組員還多。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college",
+        "voc_study"
+      ],
+      "flags_none": [
+        "military_first",
+        "work_first",
+        "uni_top",
+        "uni_normal"
+      ],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 20
+    },
+    "choices": [
+      {
+        "text": "當組長，把專題做完",
+        "requires": {
+          "stats_min": {
+            "social": 40
+          }
+        },
+        "lock_text": "組員還不太聽你的",
+        "lock_text_near": "組員快要被你說服了，再一點點",
+        "lock_text_far": "組員還不太聽你的，連訊息都沒人回",
+        "effects": {
+          "academic": 4,
+          "social": 2,
+          "stress": 5
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你排進度、催組員、半夜改簡報。成果展那天，有廠商拿走了你們的海報。你不確定他是要找人還是要回收，但你決定當成前者。"
+      },
+      {
+        "text": "去公司實習",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 2,
+          "academic": 2,
+          "stress": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在公司學會了影印機怎麼卡紙，也學會了正事。主管說你比上一屆的實習生能用，這是你聽過最不浪漫的稱讚，你很高興。"
+      },
+      {
+        "text": "跟著大家做，不搶頭香",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 3,
+          "stress": -2,
+          "social": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你負責做大家都不想做的那頁。分數普通，但組員畢業後還會約你吃飯。有些專題的成果，不在評分表上。"
+      }
+    ],
+    "album": {
+      "caption": "五專四年級，成果展上一張被拿走的海報。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_jc_graduate_01",
+    "stage": "adult",
+    "type": "random",
+    "must": true,
+    "title": "五專畢業",
+    "text": "五專終於讀完了。畢業典禮上，你發現自己是同屆國中同學裡最早拿到畢業證書的，也是最晚被問「接下來呢」的。現在輪到你了。",
+    "weight": 1000,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "jc_continue"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 20,
+      "age_max": 20
+    },
+    "choices": [
+      {
+        "text": "考二技",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 2,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [
+          "uni_tech"
+        ],
+        "result_text": "你考進科大的二技，再讀一段時間就有學士學位。課表裡很多是你五專就碰過的東西，你第一次在大學課堂上舉手，是為了糾正助教。"
+      },
+      {
+        "text": "插大",
+        "requires": {
+          "stats_min": {
+            "academic": 45
+          }
+        },
+        "lock_text": "插大考卷上的題目，你還寫不太出來",
+        "lock_text_near": "差一點，插大的榜單上沒有你的名字",
+        "lock_text_far": "插大考卷上的題目，你還寫不太出來",
+        "effects": {
+          "happiness": 3
+        },
+        "hidden": {},
+        "set_flags": [
+          "uni_normal"
+        ],
+        "result_text": "你插班進一般大學，直接從高年級開始讀。同學已經混熟了，社團幹部也選完了。你是班上唯一會修機器的人，所以很快就被記住了名字。"
+      },
+      {
+        "text": "先去當兵",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "health": 4,
+          "stress": 3
+        },
+        "hidden": {},
+        "set_flags": [
+          "military_first"
+        ],
+        "result_text": "該當兵的人先去當兵，不用當的也可以先放空一下。你決定先讓國家幫你安排一陣子的作息，順便想想下一步。"
+      },
+      {
+        "text": "直接工作",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 8,
+          "stress": 5,
+          "happiness": -2
+        },
+        "hidden": {},
+        "set_flags": [
+          "work_first"
+        ],
+        "result_text": "你拿著證照和實習經驗去面試，面試官說你比很多大學畢業的人上手快。你很早就開始領薪水，也很早就知道，薪水這個東西不太會自己長大。"
+      }
+    ],
+    "album": {
+      "caption": "五專畢業，一張比國中同學早到的畢業證書。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_jc_reunion_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "他們上大學了",
+    "text": "國中同學上大學後第一次聚會，約在學校附近的火鍋店。大家輪流講宿舍、通識課和社團，講得像在介紹一個新國家。輪到你的時候，桌上安靜了一下。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "說說自己在做的事",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你講實驗室、講工作上遇到的怪客人，大家聽得很認真。有人說好羨慕你已經在做「真的事」。你第一次發現，自己的生活也有人想聽。"
+      },
+      {
+        "text": "負責點菜和顧火",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 2,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你一直幫大家下肉、撈丸子，嘴巴沒閒過，也就不用回答問題。散場時大家說下次還要找你，因為你最會顧火鍋。"
+      },
+      {
+        "text": "搶著付帳",
+        "requires": {
+          "stats_min": {
+            "wealth": 25
+          }
+        },
+        "lock_text": "家裡負擔不起：這頓的錢，是你下禮拜的午餐",
+        "lock_text_near": "家裡負擔不起：錢包翻了又翻，還是差一點",
+        "lock_text_far": "家裡負擔不起：這頓的錢，是你下禮拜的午餐",
+        "effects": {
+          "social": 5,
+          "happiness": 1,
+          "wealth": -3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你說這頓你來。同學推了半天才收下，回家路上有人傳訊息說謝謝。你覺得自己長大了一點，錢包也瘦了一點。"
+      }
+    ],
+    "album": {
+      "caption": "五專那幾年，火鍋店裡的同學會。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_jc_license_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "證照考場",
+    "text": "證照考試的場地在別的學校，考生從穿制服的學生到穿工作服的大人都有。隔壁座位的大叔說他不是第一次來了，你沒問他前幾次發生了什麼。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "前一晚再練一次",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你練到手指記住了每一個步驟。考完那天，監考老師點點頭，什麼都沒說。後來你才知道，那就是最好的評語。"
+      },
+      {
+        "text": "拜託師傅或學長指點",
+        "requires": {
+          "stats_min": {
+            "social": 35
+          }
+        },
+        "lock_text": "你還不好意思開口",
+        "lock_text_near": "話到嘴邊了，再熟一點就敢問",
+        "lock_text_far": "你還不好意思開口，連對方姓什麼都不確定",
+        "effects": {
+          "academic": 2,
+          "social": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "他教你的不是課本上的步驟，而是哪裡最容易手滑。考試時你在那個地方停了一下，深呼吸，然後過了。"
+      },
+      {
+        "text": "隨緣去考",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你沒怎麼準備，結果剛好遇到會的題目。大叔這次也過了，你們在門口互相恭喜，像兩個剛下戰場的戰友。"
+      }
+    ],
+    "album": {
+      "caption": "五專那幾年，證照考場外的一張准考證。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_jc_scooter_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "第一台機車",
+    "text": "你終於考到機車駕照。家裡那台舊機車說要給你，條件是每週載阿嬤去市場。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "接下舊機車",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "social": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "機車很舊，發動要踩好幾下。阿嬤坐在後座，每次都說你騎太快，然後抱得更緊。"
+      },
+      {
+        "text": "自己存錢買二手車",
+        "requires": {
+          "stats_min": {
+            "wealth": 30
+          }
+        },
+        "lock_text": "家裡負擔不起：存款還不夠一台車",
+        "lock_text_near": "家裡負擔不起：咬牙也還差一點",
+        "lock_text_far": "家裡負擔不起：存款還不夠一台車，連輪胎都不太夠",
+        "effects": {
+          "happiness": 5,
+          "wealth": -4,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在車行挑了很久，最後牽回一台比你還有故事的車。第一次自己付錢買大東西，你騎著它繞了家附近好幾圈。"
+      },
+      {
+        "text": "先繼續坐公車",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -1,
+          "health": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你繼續坐公車，順便把車上的時間拿來發呆。阿嬤說沒關係，市場她自己走得到。她走得比你想的還快。"
+      }
+    ],
+    "album": {
+      "caption": "五專那幾年，一頂太大的安全帽。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_work_senior_staff_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "前輩說的『順便』",
+    "text": "上班第一年，你學最快的不是機器，是「順便」這兩個字。順便幫忙買便當、順便把倉庫整理一下、順便留下來收尾。前輩說他當年也是這樣過來的，說得好像這是一種傳家寶。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational",
+        "voc_work"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "全部接下來",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "stress": 5,
+          "health": -2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你跑遍了附近每一家便當店，也記住了每個人的口味。過了一陣子新人進來，前輩指著你說：「有問題問他。」你不確定這是升官還是轉嫁，但你決定把它當成稱讚。"
+      },
+      {
+        "text": "笑著說「我先把手上的做完」",
+        "requires": {
+          "stats_min": {
+            "social": 35
+          }
+        },
+        "lock_text": "你還不敢對前輩說不",
+        "lock_text_near": "話到嘴邊了，再熟一點就說得出口",
+        "lock_text_far": "你還不敢對前輩說不，連看他的眼睛都不太敢",
+        "effects": {
+          "stress": -1,
+          "social": 1,
+          "academic": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "前輩愣了一下，自己去買便當了。你手上的工作做得特別好，因為那是你唯一的擋箭牌。"
+      },
+      {
+        "text": "請他教你一招當交換",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "social": 2,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你幫他整理倉庫，他教你怎麼聽機器的聲音判斷哪裡快壞了。這招課本沒有，以後在哪裡都用得到。"
+      }
+    ],
+    "album": {
+      "caption": "高職畢業那年，一張寫滿便當口味的便條紙。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_work_summer_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "沒有暑假的夏天",
+    "text": "國中同學貼出墾丁的照片，曬得很黑，笑得很大。你在工廠的鐵皮屋頂下，曬得也很黑，只是曬的方式不太一樣。這是你人生第一個沒有暑假的夏天。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational",
+        "voc_work"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "請假跟他們去玩一趟",
+        "requires": {
+          "stats_min": {
+            "wealth": 30
+          }
+        },
+        "lock_text": "家裡負擔不起：車票加住宿，是你好幾天的加班",
+        "lock_text_near": "家裡負擔不起：咬牙也湊不太出這趟的錢",
+        "lock_text_far": "家裡負擔不起：車票加住宿，是你好幾天的加班",
+        "effects": {
+          "happiness": 6,
+          "social": 4,
+          "wealth": -4
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你請了幾天假，坐夜車去跟他們會合。海很藍，你很放鬆，回來上班時主管說你曬得比他還黑。那幾天的照片，你看了很久。"
+      },
+      {
+        "text": "多排幾班，把錢存起來",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 4,
+          "stress": 4,
+          "happiness": -2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "夏天的加班費特別多，你的存款簿在同屆裡最好看。同學開學回學校時，你已經在看下一台機車了。"
+      },
+      {
+        "text": "下班後去河堤吹風",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -4,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你買了一罐汽水，坐在河堤看夕陽。沒有墾丁，但風是免費的。你發現夏天不一定要去哪裡，也可以只是好好下班。"
+      }
+    ],
+    "album": {
+      "caption": "高職畢業那年，鐵皮屋頂下的夏天。",
       "priority": 2
     }
   }

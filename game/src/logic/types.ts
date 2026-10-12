@@ -22,7 +22,7 @@ export interface Choice {
 }
 export interface GameEvent {
   id: string; stage: StageId | 'any'; type: 'random' | 'branch' | 'forced';
-  title: string; text: string; weight?: number; once?: boolean;
+  title: string; text: string; weight?: number; once?: boolean; must?: boolean;
   conditions?: Requires; choices: Choice[]; album?: { caption: string; priority: number };
 }
 export interface County {
