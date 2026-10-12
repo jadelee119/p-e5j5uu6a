@@ -40,7 +40,7 @@
         },
         "hidden": {},
         "set_flags": [],
-        "result_text": "爸爸說：「這孩子以後會賺大錢。」媽媽說：「是會花大錢吧。」"
+        "result_text": "有個大人說：「這孩子以後會賺大錢。」旁邊立刻有人接：「是會花大錢吧。」"
       },
       {
         "text": "去抓阿公手上的雞腿",
@@ -93,7 +93,7 @@
         "result_text": "爸爸簽名的時間，比他看你成績的時間還長。這可能是一種溫柔，也可能只是筆沒水了。"
       },
       {
-        "text": "自己模仿爸爸的簽名",
+        "text": "自己模仿家長的簽名",
         "requires": {
           "stats_max": {
             "academic": 50
@@ -112,7 +112,7 @@
         "set_flags": [
           "forged_signature"
         ],
-        "result_text": "你練了三十遍，簽得比爸爸本人還像爸爸。這是你國中最紮實的一項技能。"
+        "result_text": "你練了三十遍，簽得比本人還像本人。這是你國中最紮實的一項技能。"
       },
       {
         "text": "說「老師說名次不重要」",
@@ -236,7 +236,7 @@
     },
     "choices": [
       {
-        "text": "說「爸爸」",
+        "text": "說出第一個叫得出來的稱呼",
         "requires": {},
         "lock_text": "",
         "effects": {
@@ -245,7 +245,7 @@
         },
         "hidden": {},
         "set_flags": [],
-        "result_text": "爸爸贏了。媽媽說沒關係，然後把你的照片換到自己錢包的最外層。"
+        "result_text": "被叫到的那個人贏了。其他人說沒關係，然後把你的照片換到自己錢包的最外層。"
       },
       {
         "text": "說「電視」",
@@ -1887,7 +1887,7 @@
         "result_text": "回程的車上你想打電話，最後傳了一張貼圖。他們回了十二個讚。"
       },
       {
-        "text": "半夜陪爸爸聊天",
+        "text": "半夜陪家裡的大人聊天",
         "requires": {
           "flags_all": [
             "night_guard"
@@ -1901,7 +1901,7 @@
         },
         "hidden": {},
         "set_flags": [],
-        "result_text": "當兵站了那麼多夜哨，你早就習慣半夜醒著。爸爸睡不著，你們在客廳聊到天亮，比過去十年加起來還多。"
+        "result_text": "當兵站了那麼多夜哨，你早就習慣半夜醒著。家裡的大人睡不著，你們在客廳聊到天亮，比過去十年加起來還多。"
       }
     ],
     "album": {
@@ -1914,12 +1914,15 @@
     "stage": "adult",
     "type": "random",
     "title": "第一份薪水",
-    "text": "第一份薪水入帳了。扣掉房租、勞健保和就學貸款，剩下的數字很適合寫在勵志書的第一章。",
+    "text": "第一筆自己賺的錢入帳了，可能叫薪水，也可能叫薪餉。扣掉該扣的、還掉該還的，剩下的數字很適合寫在勵志書的第一章。",
     "weight": 10,
     "once": true,
     "conditions": {
       "flags_all": [],
-      "flags_none": [],
+      "flags_none": [
+        "voc_work",
+        "first_paycheck"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
@@ -1927,13 +1930,12 @@
       "age_max": 22,
       "flags_any": [
         "work_first",
-        "voc_work",
         "military_first"
       ]
     },
     "choices": [
       {
-        "text": "包紅包給爸媽",
+        "text": "包紅包給家裡的大人",
         "requires": {},
         "lock_text": "",
         "effects": {
@@ -1942,8 +1944,10 @@
           "happiness": 3
         },
         "hidden": {},
-        "set_flags": [],
-        "result_text": "爸爸說不用，然後把紅包收在抽屜最裡面。你後來才知道，他一直沒有拆。"
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "家裡的大人說不用，然後把紅包收在抽屜最裡面。你後來才知道，那個紅包一直沒有拆。"
       },
       {
         "text": "全部存起來",
@@ -1956,11 +1960,13 @@
         "hidden": {
           "effort": 1
         },
-        "set_flags": [],
-        "result_text": "你的存款第一次有了五位數。照這個速度，你可以在一百二十歲買房。"
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "你的存款第一次看起來有點像樣。照這個速度，你大概可以在很老很老的時候買房，前提是房價願意等你。"
       },
       {
-        "text": "用加班費請爸媽吃大餐",
+        "text": "用加班費請家人吃大餐",
         "requires": {
           "flags_all": [
             "overtime_king"
@@ -1974,12 +1980,14 @@
           "health": -1
         },
         "hidden": {},
-        "set_flags": [],
-        "result_text": "那一桌菜是你好幾個晚上的加班換來的。媽媽一直說太貴，但每一盤都吃光了。"
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "那一桌菜是你好幾個晚上的加班換來的。家裡的大人一直說太貴，但每一盤都吃光了。"
       }
     ],
     "album": {
-      "caption": "出社會那年，存摺上的第一行。",
+      "caption": "第一次領薪水的那個月，存摺上的新一行。",
       "priority": 3
     }
   },
@@ -2638,7 +2646,7 @@
     "stage": "infant",
     "type": "random",
     "title": "夜哭",
-    "text": "凌晨三點，你又哭了。爸爸明天早班，媽媽剛下小夜班。兩個大人在黑暗中用眼神猜拳。",
+    "text": "凌晨三點，你又哭了。家裡的大人一個明天早班，一個剛下班。黑暗中，兩個人用眼神猜拳。",
     "weight": 10,
     "once": true,
     "conditions": {
@@ -2661,7 +2669,7 @@
         },
         "hidden": {},
         "set_flags": [],
-        "result_text": "爸爸抱著你在客廳走了一個小時。他後來說那是他這輩子走過最長的路，雖然只有十二坪。"
+        "result_text": "有人抱著你在客廳走了一個小時。他後來說那是他這輩子走過最長的路，雖然只有十二坪。"
       },
       {
         "text": "哭一下就睡了",
@@ -2675,7 +2683,7 @@
           "regret": 1
         },
         "set_flags": [],
-        "result_text": "你自己睡回去了。爸媽以為你很乖，其實你只是比較早學會沒人會來。"
+        "result_text": "你自己睡回去了。大人們以為你很乖，其實你只是比較早學會沒人會來。"
       }
     ],
     "album": {
@@ -3246,7 +3254,7 @@
     "stage": "junior",
     "type": "random",
     "title": "第一次大吵",
-    "text": "你跟爸媽吵起來了。起因是一件很小的事，但吵到後來，大家都在講三年前的事。",
+    "text": "你跟家裡的大人吵起來了。起因是一件很小的事，但吵到後來，大家都在講三年前的事。",
     "weight": 10,
     "once": true,
     "conditions": {
@@ -3285,7 +3293,7 @@
           "regret": 1
         },
         "set_flags": [],
-        "result_text": "你贏了。爸爸沉默地走去陽台抽菸。你第一次發現，贏了以後房子會變得那麼安靜。"
+        "result_text": "你贏了。對方沉默地走去陽台。你第一次發現，贏了以後房子會變得那麼安靜。"
       },
       {
         "text": "先開口說對不起",
@@ -3303,7 +3311,7 @@
         },
         "hidden": {},
         "set_flags": [],
-        "result_text": "媽媽愣了一下，說：「你知道就好。」然後偷偷擦了一下眼睛，說是切洋蔥。那天晚上沒有洋蔥。"
+        "result_text": "對方愣了一下，說：「你知道就好。」然後偷偷擦了一下眼睛，說是切洋蔥。那天晚上沒有洋蔥。"
       }
     ],
     "album": {
@@ -3882,7 +3890,9 @@
       "flags_all": [
         "hs_vocational"
       ],
-      "flags_none": [],
+      "flags_none": [
+        "voc_work"
+      ],
       "stats_min": {},
       "stats_max": {},
       "county_tags_any": [],
@@ -5132,6 +5142,494 @@
     "album": {
       "caption": "高職畢業那年，鐵皮屋頂下的夏天。",
       "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_work_night_shift_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "第一次大夜班",
+    "text": "排班表上，你的名字第一次出現在大夜那一格。前輩說大夜很好，主管不在、電話很少，只是天亮的時候，你會懷疑自己是不是還活在同一個國家。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_vocational",
+        "voc_work"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "咖啡加提神飲料撐過去",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 2,
+          "stress": 4,
+          "health": -3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你撐到天亮，下班時太陽很刺眼。回家路上的早餐店老闆跟你打招呼，你們從此變成同一個作息的人。"
+      },
+      {
+        "text": "跟前輩輪流打盹",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -1,
+          "social": 3
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "前輩教你怎麼用紙箱鋪出一張床，也教你聽到哪種腳步聲要立刻醒來。這些不會寫在員工手冊上，但比手冊有用。"
+      },
+      {
+        "text": "跟主管說想排白班",
+        "requires": {
+          "stats_min": {
+            "social": 40
+          }
+        },
+        "lock_text": "你跟主管還不熟到能開這個口",
+        "lock_text_near": "再多做一陣子，主管就會記得你的名字",
+        "lock_text_far": "你跟主管還不熟到能開這個口，他連你是哪一班都不確定",
+        "effects": {
+          "stress": -3,
+          "happiness": 2,
+          "social": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "主管說他會考慮，然後下個月幫你排了幾個白班。你知道這已經是他能給的最大誠意。"
+      }
+    ],
+    "album": {
+      "caption": "高職畢業那年，天亮時的打卡鐘。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_voc_work_payslip_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "拿薪資單回家",
+    "text": "你把第一張薪資單帶回家。家裡的大人戴上老花眼鏡看了很久，好像在讀一份成績單。這次的分數，是你自己一個字一個字掙來的。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "voc_work"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18,
+      "flags_any": [
+        "hs_vocational",
+        "hs_junior_college"
+      ]
+    },
+    "choices": [
+      {
+        "text": "拿給家裡的大人看",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 5,
+          "happiness": 3
+        },
+        "hidden": {},
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "對方看完，說了一句「不錯」，然後把薪資單折好還你。晚飯多了一道菜。家裡的稱讚，還是用炒的。"
+      },
+      {
+        "text": "自己收進抽屜",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "你把薪資單夾進國中的畢業紀念冊裡。那個想當太空人的自己，大概不會想到第一份工作長這樣，但應該也會覺得不錯。"
+      },
+      {
+        "text": "請弟妹或表弟妹喝飲料",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "happiness": 2,
+          "wealth": -2
+        },
+        "hidden": {},
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "你第一次當那個付錢的人。他們點了最貴的那一杯，你一點也不心疼，至少裝得很像。"
+      }
+    ],
+    "album": {
+      "caption": "開始上班那年，一張折得方方正正的薪資單。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "senior_jc_student_or_not_01",
+    "stage": "senior",
+    "type": "random",
+    "title": "被當成學生",
+    "text": "去店裡辦事，店員問你：「學生嗎？有學生證可以打折。」你愣了一下。你是學生，也不完全是；你在做大人的事，但看起來還很像小孩。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "hs_junior_college"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 18,
+      "age_max": 18
+    },
+    "choices": [
+      {
+        "text": "拿出學生證或員工證",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 2,
+          "stress": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "不管你掏出哪一張，店員都點點頭。原來你在這個年紀，最重要的身分就是證件上那張照片看起來還算像你。"
+      },
+      {
+        "text": "說「我已經在工作了」",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 2,
+          "happiness": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "店員說「好厲害喔」，口氣跟稱讚小孩會綁鞋帶一樣。你決定原諒她，因為她說的其實沒錯。"
+      },
+      {
+        "text": "說「不是，我只是長得年輕」",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 3,
+          "stress": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "店員笑了，你也笑了。你發現大人的世界有一種技能，就是把說不清楚的事變成玩笑。"
+      }
+    ],
+    "album": {
+      "caption": "五專那幾年，一張說不清身分的證件。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_uni_top_allnighter_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "期中考前的通宵",
+    "text": "期中考前一晚，圖書館關門後，大家轉移到便利商店的座位區。整排都是同校的人，桌上是共筆、咖啡和還沒拆的御飯糰。這裡的夜，比任何一堂課都安靜。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "uni_top"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "讀到天亮",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 5,
+          "health": -3
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你讀完了，也忘了不少。考卷發下來時，你看到第一題就笑了，因為那正是你凌晨背的那一段。"
+      },
+      {
+        "text": "跟同學分工做共筆",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "social": 4,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你們一人負責一章，丟到系上的 FB 社團。考完後大家說你的那章最清楚。原來你最擅長的，是把難的東西講給別人聽。"
+      },
+      {
+        "text": "先睡，早上再看",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -3,
+          "health": 2,
+          "academic": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你睡得很好，醒來覺得頭腦很清楚。分數不是最高，但你是那天唯一沒有在考場打瞌睡的人。"
+      }
+    ],
+    "album": {
+      "caption": "大學那幾年，便利商店裡的共筆。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_uni_top_lab_senior_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "研究室的學長姐",
+    "text": "你被拉進一間研究室幫忙。學長姐的桌上有咖啡漬、論文和一盆快枯的植物。他們很聰明，也很累，聰明和累在這裡看起來是同一件事。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "uni_top"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "留下來幫忙跑資料",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 5,
+          "stress": 4
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你學會了很多課堂上不教的事，例如怎麼在凌晨等程式跑完，以及怎麼假裝自己沒有在等。學長說你很有潛力，你不確定這是祝福還是警告。"
+      },
+      {
+        "text": "問學姐「讀研究所值得嗎」",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 3,
+          "happiness": 1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "學姐想了很久，說：「值得，但不要只因為大家都讀。」她說完又回去改論文了。你覺得這是你在大學聽過最誠實的一句話。"
+      },
+      {
+        "text": "禮貌地說要先忙社團",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 3,
+          "stress": -2,
+          "academic": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "學長說沒關係，研究室的門一直開著。你走出去時鬆了一口氣，也記下了那扇門的位置。"
+      }
+    ],
+    "album": {
+      "caption": "大學那幾年，研究室裡的一盆植物。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_uni_top_exchange_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "交換學生說明會",
+    "text": "國際處的交換學生說明會擠滿了人。投影片上是雪地、老教堂和陌生的校徽。學姐說交換那一年改變了她的人生，台下有人在算學分，有人在算錢。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "uni_top"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "報名交換",
+        "requires": {
+          "stats_min": {
+            "wealth": 50
+          }
+        },
+        "lock_text": "家裡負擔不起：機票和生活費加起來，是家裡好幾個月",
+        "lock_text_near": "家裡負擔不起：咬牙也湊不太出這筆錢",
+        "lock_text_far": "家裡負擔不起：機票和生活費加起來，是家裡好幾個月",
+        "effects": {
+          "happiness": 6,
+          "academic": 3,
+          "wealth": -6
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你在一個沒有人認識你的城市過了一陣子。回來以後，你看台灣的方式不太一樣了，連夜市的燈都覺得特別亮。"
+      },
+      {
+        "text": "申請獎學金試試看",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "academic": 3,
+          "stress": 4
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你寫了一份很長的讀書計畫，把自己的人生整理成幾段很漂亮的句子。不管有沒有上，你第一次那麼清楚地知道自己想要什麼。"
+      },
+      {
+        "text": "留在台灣，把系上的課修好",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "stress": -2,
+          "social": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "同學出國了，你在系上變成那個什麼都知道的人。他們傳回雪景照片，你回傳一張學餐的滷肉飯。彼此都覺得對方比較幸福。"
+      }
+    ],
+    "album": {
+      "caption": "大學那幾年，說明會上拿到的一張簡章。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_first_salary_parttime_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "第一筆打工錢",
+    "text": "打工的第一筆錢入帳了。你算了一下：一小時的薪水，剛好換一個便當加一杯飲料。從此你看菜單的方式，變成用工時計算。",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [],
+      "flags_none": [
+        "voc_work",
+        "first_paycheck"
+      ],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 19,
+      "age_max": 22,
+      "flags_any": [
+        "uni_tech",
+        "uni_normal",
+        "uni_top"
+      ]
+    },
+    "choices": [
+      {
+        "text": "請家人吃一頓",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 5,
+          "wealth": -3,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "你帶家人去吃家附近那家小館子。家裡的大人一直說點太多，最後默默把剩下的打包。那一餐，換算起來是你好幾個晚上的站櫃台。"
+      },
+      {
+        "text": "存起來當學費或生活費",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 4,
+          "stress": 1
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "你把錢存進帳戶，看著數字慢慢長大。不多，但每一塊都知道自己是怎麼來的。"
+      },
+      {
+        "text": "買一樣自己想要很久的東西",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 5,
+          "wealth": -2
+        },
+        "hidden": {},
+        "set_flags": [
+          "first_paycheck"
+        ],
+        "result_text": "你買下它的那一刻，心裡默默算了一下：這是好幾個小時的你。你決定這幾個小時花得很值得。"
+      }
+    ],
+    "album": {
+      "caption": "大學那幾年，打工後的第一張收據。",
+      "priority": 3
     }
   }
 ]
