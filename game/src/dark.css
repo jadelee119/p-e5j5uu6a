@@ -9,5 +9,10 @@
   color-scheme: dark;
 }
 :root[data-theme="dark"] .polaroid img { filter: brightness(.92); }
+:root[data-theme="dark"] .ending-pic.sat-q1 img { filter: saturate(0) brightness(.92); }
+:root[data-theme="dark"] .ending-pic.sat-q2 img { filter: saturate(0.25) brightness(.92); }
+:root[data-theme="dark"] .ending-pic.sat-q3 img { filter: saturate(0.5) brightness(.92); }
+:root[data-theme="dark"] .ending-pic.sat-q4 img { filter: saturate(0.75) brightness(.92); }
+:root[data-theme="dark"] .ending-pic.sat-q5 img { filter: saturate(1) brightness(.92); }
 .theme-toggle { position: fixed; top: 10px; right: 10px; z-index: 50; background: var(--card); color: var(--ink);
   border: 1px solid var(--lock); border-radius: var(--radius-btn); padding: 4px 10px; font: inherit; font-size: 14px; cursor: pointer; }

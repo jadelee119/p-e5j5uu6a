@@ -9,12 +9,14 @@ export const STAGE_NAMES: Record<StageId, string> = {
 };
 
 export interface Requires {
-  flags_all?: string[]; flags_none?: string[];
+  flags_all?: string[]; flags_any?: string[]; flags_none?: string[];
   stats_min?: Partial<Record<string, number>>; age_min?: number; age_max?: number; stats_max?: Partial<Record<string, number>>;
   county_tags_any?: string[];
 }
 export interface Choice {
   text: string; requires?: Requires; lock_text?: string;
+  /** 差距 ≤ balance.lock_near_gap 時顯示 near，否則 far；都沒有就用 lock_text */
+  lock_text_near?: string; lock_text_far?: string;
   effects?: Partial<Record<string, number>>; hidden?: { effort?: number; regret?: number };
   set_flags?: string[]; result_text?: string;
 }
@@ -29,7 +31,13 @@ export interface County {
   /** 落在全國所得五分位 Q1–Q5 的比例（有就直接抽，否則用 α 偏移法） */
   income_quintile_dist?: number[];
 }
-export interface Ending { id: string; title: string; regret_low: string; regret_high: string }
+/** 結局條件：事件 conditions 寫法＋出身分位、隱藏值、計數（design/endings-v2.md §1） */
+export type EndingCond = Requires & {
+  quintile_min?: number; quintile_max?: number; effort_min?: number; effort_max?: number;
+  regret_min?: number; regret_max?: number; counts_min?: Record<string, number>;
+};
+export interface EndingVariant { quintile: number; regret: 'low' | 'high'; text: string }
+export interface Ending { id: string; title: string; regret_low: string; regret_high: string; conditions?: EndingCond; variants?: EndingVariant[] }
 export interface Tier { min: number; text: string }
 export interface Mountain {
   id: string; title: string; text: string; hint?: string;

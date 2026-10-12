@@ -72,5 +72,12 @@
   "junior_relay_race_01": "art/generated/junior_relay_race_01.jpg",
   "junior_transfer_student_01": "art/generated/junior_transfer_student_01.jpg",
   "senior_cheat_note_01": "art/generated/senior_cheat_note_01.jpg",
-  "adult_relatives_ask_01": "art/generated/adult_relatives_ask_01.jpg"
+  "adult_relatives_ask_01": "art/generated/adult_relatives_ask_01.jpg",
+  "ending_skilled_trade": "art/generated/ending_skilled_trade.jpg",
+  "ending_volunteer": "art/generated/ending_volunteer.jpg",
+  "ending_degree_bills": "art/generated/ending_degree_bills.jpg",
+  "ending_savings": "art/generated/ending_savings.jpg",
+  "ending_dreamer": "art/generated/ending_dreamer.jpg",
+  "ending_not_departed": "art/generated/ending_not_departed.jpg",
+  "adult_mil_volunteer_01": "art/generated/adult_mil_volunteer_01.jpg"
 }

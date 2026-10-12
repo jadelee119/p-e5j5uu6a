@@ -7,7 +7,11 @@
         "stress": 4
       },
       "effort": 1,
-      "from": "elementary"
+      "from": "elementary",
+      "flags_none": [
+        "military_first",
+        "work_first"
+      ]
     },
     "cram": {
       "effects": {
@@ -19,7 +23,8 @@
       "from": "elementary",
       "wealth_scaled_by": "cram_cost_mult",
       "_note": "實際花費 = round(5 × cram_cost_mult)，家庭資源 < 實際花費時鎖定（core-loop §15）",
-      "requires_wealth": 0
+      "requires_wealth": 0,
+      "until": "senior"
     },
     "play": {
       "effects": {
@@ -55,7 +60,8 @@
         "points": 6,
         "flag": "has_talent"
       },
-      "requires_wealth": 4
+      "requires_wealth": 4,
+      "until": "junior"
     },
     "work": {
       "effects": {
@@ -64,7 +70,11 @@
         "health": -2
       },
       "effort": 1,
-      "from": "senior"
+      "from": "senior",
+      "flags_none": [
+        "military_first",
+        "work_first"
+      ]
     },
     "rest": {
       "effects": {
@@ -73,6 +83,176 @@
       },
       "regret": 1,
       "from": "junior"
+    },
+    "voc_intern": {
+      "effects": {
+        "wealth": 2,
+        "academic": 1,
+        "health": -2,
+        "stress": 3
+      },
+      "from": "senior",
+      "until": "senior",
+      "flags_any": [
+        "hs_vocational"
+      ],
+      "effort": 1,
+      "flag_after": {
+        "points": 2,
+        "flag": "skilled_hands"
+      },
+      "name": "工廠實習",
+      "desc": "去工廠當學徒，手會比履歷先長出經驗。"
+    },
+    "voc_license": {
+      "effects": {
+        "academic": 3,
+        "stress": 4
+      },
+      "from": "senior",
+      "until": "senior",
+      "flags_any": [
+        "hs_vocational",
+        "hs_junior_college"
+      ],
+      "effort": 1,
+      "flag_after": {
+        "points": 2,
+        "flag": "licensed"
+      },
+      "name": "考證照",
+      "desc": "丙級、乙級，一張證明你會做事的紙。"
+    },
+    "uni_club": {
+      "effects": {
+        "social": 3,
+        "happiness": 1,
+        "academic": -1,
+        "stress": 1
+      },
+      "from": "adult",
+      "flags_any": [
+        "uni_top",
+        "uni_normal",
+        "uni_tech"
+      ],
+      "flag_after": {
+        "points": 3,
+        "flag": "club_core"
+      },
+      "name": "社團",
+      "desc": "正事以外的正事，大學四年真正的必修。"
+    },
+    "uni_date": {
+      "effects": {
+        "happiness": 3,
+        "social": 1,
+        "stress": 1,
+        "academic": -2,
+        "wealth": -1
+      },
+      "from": "adult",
+      "flags_any": [
+        "uni_top",
+        "uni_normal",
+        "uni_tech"
+      ],
+      "name": "談戀愛",
+      "desc": "學分可以重修，這個不一定。"
+    },
+    "mil_drill": {
+      "effects": {
+        "health": 4,
+        "stress": 4,
+        "happiness": -2
+      },
+      "from": "adult",
+      "flags_any": [
+        "military_first"
+      ],
+      "effort": 1,
+      "name": "出操",
+      "desc": "答數喊得越大聲，脾氣就磨得越平。"
+    },
+    "mil_guard": {
+      "effects": {
+        "stress": 2,
+        "happiness": -3,
+        "wealth": 1
+      },
+      "from": "adult",
+      "flags_any": [
+        "military_first"
+      ],
+      "flag_after": {
+        "points": 3,
+        "flag": "night_guard"
+      },
+      "name": "站夜哨",
+      "desc": "凌晨兩點對著黑暗發呆，順便領一點薪餉。"
+    },
+    "mil_leave": {
+      "effects": {
+        "happiness": 2,
+        "social": 2,
+        "stress": -4
+      },
+      "from": "adult",
+      "flags_any": [
+        "military_first"
+      ],
+      "name": "放假回家",
+      "desc": "坐客運回家，媽媽已經煮好一桌菜。"
+    },
+    "job_overtime": {
+      "effects": {
+        "wealth": 5,
+        "stress": 6,
+        "health": -3
+      },
+      "from": "adult",
+      "flags_any": [
+        "work_first"
+      ],
+      "effort": 1,
+      "flag_after": {
+        "points": 2,
+        "flag": "overtime_king"
+      },
+      "name": "加班",
+      "desc": "加班費會進戶頭，黑眼圈也會。"
+    },
+    "job_hunt": {
+      "effects": {
+        "stress": 3,
+        "happiness": 1
+      },
+      "from": "adult",
+      "flags_any": [
+        "work_first"
+      ],
+      "effort": 1,
+      "flag_after": {
+        "points": 2,
+        "flag": "job_hunting"
+      },
+      "_note": "job_hunting：下回合 30% 抽「新工作」事件，待寫卡",
+      "name": "投履歷",
+      "desc": "在人力銀行上刷新，等一封回信。"
+    },
+    "job_drink": {
+      "effects": {
+        "social": 2,
+        "stress": -3,
+        "health": -2,
+        "wealth": -1
+      },
+      "from": "adult",
+      "flags_any": [
+        "work_first"
+      ],
+      "name": "下班喝一杯",
+      "desc": "熱炒店一杯台啤，把今天的委屈配下去。"
     }
   },
   "passive_per_turn": {
@@ -128,11 +308,11 @@
         "uni_normal"
       ],
       "or_wealth_min": 40,
-      "effort_min": 25
+      "effort_min": 23
     },
     "ordinary_good": {
-      "happiness_min": 55,
-      "social_min": 55
+      "happiness_min": 60,
+      "social_min": 60
     },
     "regret_high_threshold": 10
   },
@@ -206,5 +386,14 @@
     "3": 1.0,
     "4": 0.85,
     "5": 0.68
-  }
+  },
+  "lock_near_gap": 10,
+  "student_loan_chance_by_quintile": {
+    "1": 0.5,
+    "2": 0.35,
+    "3": 0.2,
+    "4": 0.05,
+    "5": 0.0
+  },
+  "_student_loan_note": "選大學時依出身擲骰決定有沒有學貸。目標：大學生約 20% 有學貸（教育部 104–109 學年 19.7–21.8%）。"
 }

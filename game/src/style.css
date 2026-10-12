@@ -48,3 +48,19 @@ button:disabled { color:var(--color-muted); background:transparent; border-style
 .ach small { display:block; }
 .ach.locked { border-style:dashed; }
 .ach.new { border-color:var(--color-accent); box-shadow:0 0 0 1px var(--color-accent) inset; }
+
+/* 點下去就定案：短暫按壓回饋，定案後鎖住其他按鈕 */
+button { transition:transform 120ms ease, background-color 120ms ease; -webkit-tap-highlight-color:transparent; touch-action:manipulation; }
+button:not(:disabled):active, .choice.chosen { transform:scale(.97); }
+.choice.chosen { border-color:var(--color-accent); }
+.choice.chosen::before { content:"✓ " !important; color:var(--color-accent) !important; }
+.committing button { pointer-events:none; }
+
+/* 行動圖示（art/actions → .actions/*.webp），沒有圖就只顯示文字 */
+.act-icon { width:40px; height:40px; flex:none; margin-right:8px; object-fit:contain; }
+.act { align-items:center; } .act-body { flex:1; }
+.act-flavor { display:block; } .act-arrows { font-size:.85em; }
+
+/* 結局圖共用一張，依出身調飽和度（endings-v2 §5：0／25／50／75／100） */
+.ending-pic.sat-q1 img { filter:saturate(0); } .ending-pic.sat-q2 img { filter:saturate(.25); }
+.ending-pic.sat-q3 img { filter:saturate(.5); } .ending-pic.sat-q4 img { filter:saturate(.75); } .ending-pic.sat-q5 img { filter:none; }

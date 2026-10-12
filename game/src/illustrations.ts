@@ -4,3 +4,9 @@ const files = import.meta.glob('../.illustrations/*.webp', { eager: true, query:
 const byId: Record<string, string> = {};
 for (const [path, url] of Object.entries(files)) byId[path.split('/').pop()!.replace(/\.webp$/, '')] = url;
 export const illustrationFor = (eventId: string): string | undefined => byId[eventId];
+
+// 行動圖示：.actions/<action_id>.webp（由 art/actions/*.png 轉檔）；沒有就回傳 undefined
+const actFiles = import.meta.glob('../.actions/*.webp', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+const actById: Record<string, string> = {};
+for (const [path, url] of Object.entries(actFiles)) actById[path.split('/').pop()!.replace(/\.webp$/, '')] = url;
+export const actionIconFor = (id: string): string | undefined => actById[id];

@@ -22,12 +22,13 @@ const data = buildGameData({
 });
 
 const keyRep = balanceKeyReport(rj('data/balance.json'));
-const N = Number(process.argv[2] ?? 1000); const baseSeed = Number(process.argv[3] ?? 12345);
+const N = Number(process.argv[2] ?? 5000); const baseSeed = Number(process.argv[3] ?? 12345);
 const pol = makeRng(baseSeed ^ 0x9e3779b9);
 const count = (m: Map<string, number>, k: string) => m.set(k, (m.get(k) ?? 0) + 1);
 const byCounty = new Map<string, Map<string, number>>(), byQuint = new Map<string, Map<string, number>>();
 const cq = new Map<string, number[]>();
 const birthYrs = new Map<string, number>(), examNames = new Map<string, number>();
+const byPath = new Map<string, number>(); const loanByQ = new Map<string, [number, number]>();
 const endings = new Map<string, number>(), byQ = new Map<string, number>(), mountains = new Map<string, number>(),
   counties = new Map<string, number>(), branches = new Map<string, number>(), notes = new Map<string, number>();
 const tagged = data.events.filter((e) => e.conditions?.county_tags_any?.length);
@@ -62,7 +63,9 @@ for (let i = 0; i < N; i++) {
   const e = g.ending(); const r = g.review();
   for (const id of g.achievementsMet(ACH)) achCount.set(id, (achCount.get(id) ?? 0) + 1);
   count(endings, e.title + (e.regretHigh ? '（高遺憾）' : '（低遺憾）'));
+  { const path = ['uni_top', 'uni_normal', 'uni_tech', 'military_first', 'work_first'].find((x) => g.s.flags.has(x)) ?? '(無B4旗標)'; count(byPath, path + '｜' + e.title); }
   count(byQ, `Q${g.s.quintile} → ${e.title}`);
+  if (['uni_top', 'uni_normal', 'uni_tech'].some((x) => g.s.flags.has(x))) for (const k of ['全部', `Q${g.s.quintile}`]) { const r = loanByQ.get(k) ?? [0, 0]; r[0]++; if (g.s.flags.has('student_loan')) r[1]++; loanByQ.set(k, r); }
   for (const [m, k] of [[byCounty, g.s.county.name], [byQuint, `Q${g.s.quintile}`]] as const) { if (!m.has(k)) m.set(k, new Map()); count(m.get(k)!, e.title); }
   count(mountains, r.mountain?.title ?? '?'); count(counties, g.s.county.name);
   for (const f of g.s.flags) if (/^(path_|hs_|track_|uni_|military|work_first)/.test(f)) count(branches, f);
@@ -80,7 +83,7 @@ const show = (title: string, m: Map<string, number>) => {
 };
 console.log(`模擬 ${N} 輪（隨機策略，seed ${baseSeed}），回合數 ${TURNS.length}，縣市資料：${data.countiesSource}`);
 const agg = new Map<string, number>(); for (const [k, v] of endings) { const t = k.replace(/（.*）/, ''); agg.set(t, (agg.get(t) ?? 0) + v); }
-show('結局分布', agg); show('結局 × 遺憾變體', endings); show('看山三境', mountains);
+show('結局分布', agg); show('B4 路線 × 結局', new Map([...byPath].sort())); show('結局 × 遺憾變體', endings); show('看山三境', mountains);
 show('出生縣市', counties); show('分岔旗標', branches);
 console.log(`\n平均 effort ${(sumEffort / N).toFixed(1)}、regret ${(sumRegret / N).toFixed(1)}、崩潰次數 ${(sumBreak / N).toFixed(2)}`);
 console.log('22 歲平均屬性：' + Object.entries(sumStats).map(([k, v]) => `${k} ${(v / N).toFixed(1)}`).join('、'));
@@ -101,6 +104,8 @@ for (const c of data.counties) { const row = cq.get(c.name) ?? [0, 0, 0, 0, 0]; 
 matrix('出生縣市 × 結局', byCounty, data.counties.map((c) => c.name));
 matrix('所得分位 × 結局', byQuint, ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']);
 void byQ;
+console.log('\n== 大學路線有學貸 student_loan 的比例（目標約 20%）==');
+for (const k of ['全部', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5']) { const [n, l] = loanByQ.get(k) ?? [0, 0]; console.log(`${k}\t${l}/${n}\t${n ? (l / n * 100).toFixed(1) : '-'}%`); }
 console.log(`\n== 縣市專屬卡觸發率（觸發輪數 / 該縣市輪數）==`);
 const cn = new Map(data.counties.map((c) => [c.name, byCounty.get(c.name) ? [...byCounty.get(c.name)!.values()].reduce((a, b) => a + b, 0) : 0]));
 let leak = 0;

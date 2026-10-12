@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>屬性條 mockup</title>
+<link rel="stylesheet" href="../../game/src/theme.css"><link rel="stylesheet" href="../../game/src/dark.css">
+<link rel="stylesheet" href="stat-bars.css">
+<style>
+body{margin:0;display:flex;font-family:var(--font-body)}
+.pane{flex:1;padding:24px;background:var(--bg);color:var(--ink)}
+.pane h2{font-family:var(--font-title);font-size:1rem;margin:0 0 10px}
+.card{background:var(--card);border-radius:var(--radius-card);box-shadow:var(--shadow-card);padding:14px 16px;margin-bottom:14px}
+.muted{color:var(--muted);font-size:.8rem;margin-bottom:8px}
+/* mockup only: 讓 dark.css 變數在單一面板生效 */
+#dark{--bg:#1C2226;--card:#283036;--ink:#EEE9DF;--muted:#B5AFA4;--accent:#F08A7C;--lock:#565D62;--color-iron:#9DB7C0;--shadow-card:0 2px 0 #0000004d,0 6px 14px #00000066}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="sb-crayon"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></svg>
+<div class="pane" id="light"></div>
+<div class="pane" id="dark" data-theme="dark"></div>
+<script>
+// 手繪風圖示（stroke=currentColor，圓角線頭）
+const ICONS={
+academic:'<path d="M3 6c3-1.5 6-1.2 9 .6 3-1.8 6-2.1 9-.6v12c-3-1.4-6-1.1-9 .6-3-1.7-6-2-9-.6z"/><path d="M12 6.6v12"/>',
+happiness:'<circle cx="12" cy="12" r="8.6"/><path d="M8.3 10h.1M15.6 10h.1M8 14.2c2.3 2.6 5.7 2.6 8 0"/>',
+stress:'<path d="M4 15c0-4 3.5-7 8-7s8 3 8 7z"/><path d="M7 15l-1 4M12 15v4.5M17 15l1 4M9 5l1.5 1.6M14.6 4.5 13.4 6.4"/>',
+health:'<path d="M12 20s-7.5-4.6-7.5-10A4.2 4.2 0 0 1 12 7.6 4.2 4.2 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/><path d="M8 12.5h2.2l1-2 1.7 4 1-2H16"/>',
+social:'<circle cx="8.5" cy="9" r="3"/><circle cx="16" cy="9.5" r="2.6"/><path d="M3.5 19c.6-3.4 2.7-5 5-5s4.4 1.6 5 5M13.5 15c.8-.9 1.7-1.3 2.6-1.3 2 0 3.7 1.6 4.2 4.6"/>',
+wealth:'<rect x="3.5" y="8" width="17" height="11" rx="2"/><path d="M8 8V6.3c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2V8M3.5 12.5h17"/><circle cx="12" cy="14.6" r="1.3"/>'};
+const NAMES={academic:'學業',happiness:'快樂',stress:'壓力',health:'健康',social:'關係',wealth:'家庭資源'};
+const LABELS={academic:['很差','偏弱','普通','不錯','頂尖'],happiness:['崩潰邊緣','悶悶的','還過得去','開心','超爽'],
+stress:['很放鬆','輕鬆','有點緊','快炸了','爆表'],health:['病懨懨','虛虛的','普通','健壯','生龍活虎'],
+social:['邊緣人','沒什麼朋友','普通','人緣好','人氣王'],wealth:['拮据','吃緊','普通','寬裕','優渥']};
+const svg=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
+const row=(k,lv,danger)=>`<div class="sb sb-${k}${danger?' is-danger':''}" data-lv="${lv}" role="img" aria-label="${NAMES[k]}：${LABELS[k][lv-1]}">
+<span class="sb-icon">${svg(k)}</span><div class="sb-head"><span class="sb-name">${NAMES[k]}</span><span class="sb-label">${LABELS[k][lv-1]}</span></div>
+<div class="sb-bar"><i></i></div></div>`;
+const scenes=[['一般狀態',[['academic',4],['happiness',3],['stress',2],['health',3],['social',4],['wealth',3]]],
+['危險狀態（學業／健康過低、壓力過高）',[['academic',1,1],['happiness',2],['stress',5,1],['health',1,1],['social',5],['wealth',1,1]]]];
+for(const id of['light','dark']){const p=document.getElementById(id);
+p.innerHTML=`<h2>${id==='light'?'淺色':'深色'}模式</h2>`+scenes.map(([t,rs])=>`<div class="card"><div class="muted">第 9/22 回合・國中・14 歲・${t}</div><div class="sb-grid">${rs.map(r=>row(...r)).join('')}</div></div>`).join('');}
+</script></body></html>

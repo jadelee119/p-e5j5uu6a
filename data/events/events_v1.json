@@ -99,7 +99,9 @@
             "academic": 50
           }
         },
-        "lock_text": "需要學業 ≤ 50：成績太好了，你沒有理由這麼做",
+        "lock_text": "成績太好了，你沒有理由這麼做",
+        "lock_text_near": "再爛一點點，你就有動機了",
+        "lock_text_far": "你的成績單乾淨到不需要掩護",
         "effects": {
           "stress": -5,
           "happiness": 2
@@ -119,7 +121,9 @@
             "social": 40
           }
         },
-        "lock_text": "需要關係 ≥ 40：你家沒人會信這句話",
+        "lock_text": "你家沒人會信這句話",
+        "lock_text_near": "爸媽差一點就信了，差一點",
+        "lock_text_far": "這句話說出口，只會換來一頓更長的訓話",
         "effects": {
           "stress": -3,
           "social": -3
@@ -175,6 +179,8 @@
           }
         },
         "lock_text": "家裡負擔不起：一份「獨一無二」要價兩萬",
+        "lock_text_near": "家裡負擔不起：咬牙也湊不太出這兩萬",
+        "lock_text_far": "家裡負擔不起：一份「獨一無二」要價兩萬，那是另一個世界的價格",
         "effects": {
           "academic": 6,
           "stress": -3,
@@ -283,6 +289,8 @@
           }
         },
         "lock_text": "家裡負擔不起：這張傳單只是拿來看的",
+        "lock_text_near": "家裡負擔不起：爸媽把傳單折好收進抽屜，說再想想",
+        "lock_text_far": "家裡負擔不起：這張傳單只是拿來看的",
         "effects": {
           "academic": 4,
           "wealth": -12,
@@ -388,7 +396,9 @@
             "social": 45
           }
         },
-        "lock_text": "需要關係 ≥ 45：除了同桌，沒人知道你的名字",
+        "lock_text": "除了同桌，沒人知道你的名字",
+        "lock_text_near": "再多幾個朋友，票就夠了",
+        "lock_text_far": "除了同桌，沒人知道你的名字",
         "effects": {
           "social": 5,
           "stress": 3
@@ -454,7 +464,9 @@
             "social": 50
           }
         },
-        "lock_text": "需要關係 ≥ 50：爸媽今天加班",
+        "lock_text": "爸媽今天加班",
+        "lock_text_near": "爸媽有空，但不太想陪你剪紙",
+        "lock_text_far": "爸媽今天加班，明天也是",
         "effects": {
           "social": 3,
           "stress": -2
@@ -544,6 +556,8 @@
           }
         },
         "lock_text": "家裡負擔不起：一個月的補習費，是家裡兩個禮拜的菜錢",
+        "lock_text_near": "家裡負擔不起：咬牙也湊不太出來，媽媽算了兩次",
+        "lock_text_far": "家裡負擔不起：一個月的補習費，是家裡兩個禮拜的菜錢",
         "effects": {
           "academic": 6,
           "stress": 8,
@@ -564,6 +578,8 @@
           }
         },
         "lock_text": "家裡負擔不起：鋼琴比你家客廳還大",
+        "lock_text_near": "家裡負擔不起：學費湊得出來，琴湊不出來",
+        "lock_text_far": "家裡負擔不起：鋼琴比你家客廳還大",
         "effects": {
           "happiness": 3,
           "stress": 4,
@@ -638,7 +654,9 @@
             "social": 40
           }
         },
-        "lock_text": "需要關係 ≥ 40：你不確定他們會聽",
+        "lock_text": "你不確定他們會聽",
+        "lock_text_near": "他們可能會聽，但你還沒準備好開口",
+        "lock_text_far": "你不確定他們會聽，你確定他們不會",
         "effects": {
           "stress": -8,
           "academic": -2
@@ -734,6 +752,8 @@
           }
         },
         "lock_text": "家裡負擔不起：家裡的手機還在用分期",
+        "lock_text_near": "家裡負擔不起：再等一個月，等分期繳完",
+        "lock_text_far": "家裡負擔不起：家裡的手機還在用分期",
         "effects": {
           "happiness": 6,
           "social": 4,
@@ -785,7 +805,9 @@
             "academic": 60
           }
         },
-        "lock_text": "需要學業 ≥ 60：差了幾分，或者一個家教",
+        "lock_text": "差了幾分，或者一個家教",
+        "lock_text_near": "差了幾分，這幾分會跟著你很久",
+        "lock_text_far": "這條路，從國一就開始岔開了",
         "effects": {
           "happiness": 5,
           "stress": 5
@@ -803,7 +825,9 @@
             "academic": 35
           }
         },
-        "lock_text": "需要學業 ≥ 35",
+        "lock_text": "分數沒有走到這裡",
+        "lock_text_near": "差一點，真的只差一點",
+        "lock_text_far": "分數沒有走到這裡",
         "effects": {
           "happiness": 2
         },
@@ -1112,12 +1136,11 @@
     "weight": 10,
     "once": true,
     "conditions": {
-      "flags_all": [],
+      "flags_all": [
+        "student_loan"
+      ],
       "flags_none": [],
       "stats_min": {},
-      "stats_max": {
-        "wealth": 40
-      },
       "county_tags_any": [],
       "age_min": 19,
       "age_max": 22
@@ -1199,6 +1222,22 @@
         },
         "set_flags": [],
         "result_text": "你在家看了大家的合照。照片裡每個人都笑得很好，包括那些跟你一樣在說謊的人。"
+      },
+      {
+        "text": "主動當揪團的人",
+        "requires": {
+          "flags_all": [
+            "club_core"
+          ]
+        },
+        "lock_text": "你不是那個會揪人的人",
+        "effects": {
+          "social": 6,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "大學社團幹部當久了，訂位、收錢、催人都是反射動作。那晚每個人都說下次還要，然後下次又是你揪。"
       }
     ],
     "album": {
@@ -1229,7 +1268,9 @@
             "academic": 72
           }
         },
-        "lock_text": "需要學業 ≥ 72",
+        "lock_text": "那扇門要的分數，你沒有",
+        "lock_text_near": "門開了一條縫，又關上了",
+        "lock_text_far": "那扇門要的分數，你沒有",
         "effects": {
           "happiness": 6,
           "stress": 3
@@ -1247,7 +1288,9 @@
             "academic": 45
           }
         },
-        "lock_text": "需要學業 ≥ 45",
+        "lock_text": "分數沒有走到這裡",
+        "lock_text_near": "差一點，志願卡上那一格空著",
+        "lock_text_far": "分數沒有走到這裡",
         "effects": {
           "happiness": 3
         },
@@ -1430,6 +1473,8 @@
           }
         },
         "lock_text": "家裡負擔不起：四千五是家裡半個月的菜錢",
+        "lock_text_near": "家裡負擔不起：咬牙也湊不太出這四千五",
+        "lock_text_far": "家裡負擔不起：四千五是家裡半個月的菜錢",
         "effects": {
           "happiness": 8,
           "social": 5,
@@ -1604,7 +1649,9 @@
             "happiness": 40
           }
         },
-        "lock_text": "需要快樂 ≥ 40：你已經忘了實話長什麼樣子",
+        "lock_text": "你已經忘了實話長什麼樣子",
+        "lock_text_near": "實話到嘴邊，又吞回去了",
+        "lock_text_far": "你已經忘了實話長什麼樣子",
         "effects": {
           "happiness": 3,
           "stress": -2
@@ -1612,6 +1659,25 @@
         "hidden": {},
         "set_flags": [],
         "result_text": "你說：「我希望五年後還想起床。」面試官笑了。你沒錄取，但那是今天唯一真實的對話。"
+      },
+      {
+        "text": "直接動手做給他看",
+        "requires": {
+          "flags_all": [
+            "skilled_hands"
+          ]
+        },
+        "lock_text": "你的手還沒練到能說話",
+        "effects": {
+          "happiness": 4,
+          "stress": -2,
+          "wealth": 2
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [],
+        "result_text": "你在實習工廠練了一整年的手。面試官看你做完，把履歷翻到背面，說：「下禮拜能來嗎？」"
       }
     ],
     "album": {
@@ -1662,6 +1728,23 @@
         },
         "set_flags": [],
         "result_text": "回程的車上你想打電話，最後傳了一張貼圖。他們回了十二個讚。"
+      },
+      {
+        "text": "半夜陪爸爸聊天",
+        "requires": {
+          "flags_all": [
+            "night_guard"
+          ]
+        },
+        "lock_text": "你還沒習慣半夜醒著",
+        "effects": {
+          "social": 5,
+          "health": -2,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "當兵站了那麼多夜哨，你早就習慣半夜醒著。爸爸睡不著，你們在客廳聊到天亮，比過去十年加起來還多。"
       }
     ],
     "album": {
@@ -1713,6 +1796,24 @@
         },
         "set_flags": [],
         "result_text": "你的存款第一次有了五位數。照這個速度，你可以在一百二十歲買房。"
+      },
+      {
+        "text": "用加班費請爸媽吃大餐",
+        "requires": {
+          "flags_all": [
+            "overtime_king"
+          ]
+        },
+        "lock_text": "你的加班費還沒累積到這個程度",
+        "effects": {
+          "social": 5,
+          "happiness": 3,
+          "wealth": -3,
+          "health": -1
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "那一桌菜是你好幾個晚上的加班換來的。媽媽一直說太貴，但每一盤都吃光了。"
       }
     ],
     "album": {
@@ -1905,6 +2006,8 @@
           }
         },
         "lock_text": "家裡負擔不起：車票加學費，是家裡的一個月",
+        "lock_text_near": "家裡負擔不起：學費湊得出來，車票湊不出來",
+        "lock_text_far": "家裡負擔不起：車票加學費，是家裡的一個月",
         "effects": {
           "academic": 4,
           "health": -3,
@@ -1974,7 +2077,9 @@
             "social": 40
           }
         },
-        "lock_text": "需要關係 ≥ 40：遷戶籍的手續早就辦好了",
+        "lock_text": "遷戶籍的手續早就辦好了",
+        "lock_text_near": "爸媽猶豫了一下，然後還是去辦了",
+        "lock_text_far": "遷戶籍的手續早就辦好了",
         "effects": {
           "happiness": 4,
           "social": 3
@@ -2508,6 +2613,8 @@
           }
         },
         "lock_text": "家裡負擔不起：你的生日蛋糕是巷口那家，也很好吃",
+        "lock_text_near": "家裡負擔不起：今年先吃巷口那家，明年再說",
+        "lock_text_far": "家裡負擔不起：你的生日蛋糕是巷口那家，也很好吃",
         "effects": {
           "happiness": 7,
           "wealth": -5
@@ -2823,6 +2930,8 @@
           }
         },
         "lock_text": "家裡負擔不起：家裡還沒有電腦",
+        "lock_text_near": "家裡負擔不起：電腦在爸爸的「明年再買」清單上",
+        "lock_text_far": "家裡負擔不起：家裡還沒有電腦",
         "effects": {
           "happiness": 4,
           "stress": 1
@@ -3017,7 +3126,9 @@
             "social": 40
           }
         },
-        "lock_text": "需要關係 ≥ 40：這句話卡在喉嚨裡",
+        "lock_text": "這句話卡在喉嚨裡",
+        "lock_text_near": "這句話已經到嘴邊了",
+        "lock_text_far": "這句話卡在喉嚨裡，還卡得很深",
         "effects": {
           "social": 5,
           "stress": 2
@@ -3057,7 +3168,9 @@
             "social": 45
           }
         },
-        "lock_text": "需要關係 ≥ 45：台下有一半的人不知道你是誰",
+        "lock_text": "台下有一半的人不知道你是誰",
+        "lock_text_near": "台下有幾個人知道你是誰，還不夠多",
+        "lock_text_far": "台下有一半的人不知道你是誰",
         "effects": {
           "social": 6,
           "stress": 5,
@@ -3090,6 +3203,23 @@
         "hidden": {},
         "set_flags": [],
         "result_text": "畢業典禮那天你在想數學公式。驪歌唱到一半，你才發現自己在哭，而且不知道為什麼。"
+      },
+      {
+        "text": "上台表演才藝",
+        "requires": {
+          "flags_all": [
+            "has_talent"
+          ]
+        },
+        "lock_text": "你沒有可以拿上台的東西",
+        "effects": {
+          "happiness": 5,
+          "social": 5,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你練了那麼多年的東西，終於在全校面前派上用場。三分鐘，台下安靜得像在聽你說話。"
       }
     ],
     "album": {
@@ -3215,6 +3345,23 @@
         "hidden": {},
         "set_flags": [],
         "result_text": "你的學習歷程很乾淨，像剛擦過的黑板。"
+      },
+      {
+        "text": "在迎新上表演",
+        "requires": {
+          "flags_all": [
+            "has_talent"
+          ]
+        },
+        "lock_text": "你沒有能拿出來的才藝",
+        "effects": {
+          "social": 6,
+          "happiness": 4,
+          "stress": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "小時候被逼著練的那些年，在這個下午變成三個社團搶著要你。你第一次覺得那些週末沒有白費。"
       }
     ],
     "album": {
@@ -3247,7 +3394,9 @@
             "social": 40
           }
         },
-        "lock_text": "需要關係 ≥ 40：說了實話就去不成了",
+        "lock_text": "說了實話就去不成了",
+        "lock_text_near": "說了實話，大概會被唸一頓再放行",
+        "lock_text_far": "說了實話就去不成了",
         "effects": {
           "happiness": 5,
           "social": 4,
@@ -3531,7 +3680,9 @@
             "academic": 55
           }
         },
-        "lock_text": "需要學業 ≥ 55：乙級的學科題，你還看不太懂",
+        "lock_text": "乙級的學科題，你還看不太懂",
+        "lock_text_near": "再練一陣子，乙級就看得懂了",
+        "lock_text_far": "先把丙級拿到",
         "effects": {
           "academic": 6,
           "stress": 7
@@ -3735,6 +3886,23 @@
         "hidden": {},
         "set_flags": [],
         "result_text": "你下載了勞基法，用螢光筆畫重點。這是你畢業後第一次念書，比高中任何一科都認真。"
+      },
+      {
+        "text": "拿證照去談加薪",
+        "requires": {
+          "flags_all": [
+            "licensed"
+          ]
+        },
+        "lock_text": "你手上沒有那張紙",
+        "effects": {
+          "wealth": 4,
+          "stress": 2,
+          "happiness": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你把高職考到的證照放在主管桌上。他看了很久，說要問上面。下個月，薪水單多了一行，這次是加的。"
       }
     ],
     "album": {
@@ -4057,6 +4225,74 @@
     ],
     "album": {
       "caption": "成年後，過年的那張圓桌。",
+      "priority": 2
+    }
+  },
+  {
+    "id": "adult_mil_volunteer_01",
+    "stage": "adult",
+    "type": "random",
+    "title": "簽不簽志願役",
+    "text": "役期快結束了。輔導長把你叫進辦公室，桌上放著一份志願役的說明。他說薪水比很多人的第一份工作高，還有宿舍。說完他補一句：「你自己想清楚。」",
+    "weight": 10,
+    "once": true,
+    "conditions": {
+      "flags_all": [
+        "military_first"
+      ],
+      "flags_none": [],
+      "stats_min": {},
+      "stats_max": {},
+      "county_tags_any": [],
+      "age_min": 20,
+      "age_max": 22
+    },
+    "choices": [
+      {
+        "text": "簽",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "wealth": 5,
+          "stress": 3,
+          "happiness": 1
+        },
+        "hidden": {
+          "effort": 1
+        },
+        "set_flags": [
+          "signed_volunteer"
+        ],
+        "result_text": "你算過了：穩定的薪水、看得到的升遷、不用每個月煩惱房租。這是你第一次把人生攤開來算，然後自己簽了名。"
+      },
+      {
+        "text": "退伍，去外面闖",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "happiness": 4,
+          "stress": 2,
+          "social": 2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "你把說明書折好還給輔導長。外面沒有排班表，也沒有人告訴你下一步。你有一點怕，也有一點期待。"
+      },
+      {
+        "text": "先回家跟爸媽商量",
+        "requires": {},
+        "lock_text": "",
+        "effects": {
+          "social": 4,
+          "stress": -2
+        },
+        "hidden": {},
+        "set_flags": [],
+        "result_text": "爸媽說你決定就好，然後聊了一整晚。最後你還是退伍了，但你知道，那扇門其實一直開著。"
+      }
+    ],
+    "album": {
+      "caption": "當兵那幾個月，一份沒簽的表格。",
       "priority": 2
     }
   }

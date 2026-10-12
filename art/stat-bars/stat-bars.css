@@ -1,0 +1,78 @@
+/* 《台灣人生》屬性條 v1 — 不顯示數字，只用「長條＋文字標籤」 — 美術設計
+   依賴 game/src/theme.css 變數（--card --ink --muted --accent --color-iron --font-hand ...），淺色／深色皆可。
+   需在頁面放一次 <svg> 濾鏡 #sb-crayon（見 mockup.html / README）。 */
+
+:root {
+  /* 每個屬性一種顏色（填色；文字一律用 --ink，所以對比不受影響） */
+  --sb-academic:  #3E6FB0; /* 作業簿藍 */
+  --sb-happiness: #B86E0E; /* 橘子汽水 */
+  --sb-stress:    #8A5BA8; /* 瘀青紫（高=壞） */
+  --sb-health:    #3D8A4B; /* 芭樂綠 */
+  --sb-social:    #C24E76; /* 紅豆餅粉 */
+  --sb-wealth:    #967430; /* 舊銅板金褐 */
+  --sb-danger:    #D2452F; /* 暖紅 */
+  --sb-track:     color-mix(in srgb, var(--color-iron) 14%, var(--card));
+  --sb-line:      color-mix(in srgb, var(--ink) 70%, transparent);
+  --sb-h: 12px;
+}
+:root[data-theme="dark"], [data-theme="dark"] {
+  --sb-academic:  #7FA8E0;
+  --sb-happiness: #F2B85A;
+  --sb-stress:    #B794D0;
+  --sb-health:    #86C68F;
+  --sb-social:    #EE93B0;
+  --sb-wealth:    #D6B46A;
+  --sb-danger:    #FF7A63;
+  --sb-track:     color-mix(in srgb, var(--color-iron) 16%, var(--card));
+  --sb-line:      color-mix(in srgb, var(--ink) 60%, transparent);
+}
+
+.sb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 14px; }
+@media (max-width: 480px) { .sb-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.sb { --c: var(--color-iron); display: grid; grid-template-columns: 22px 1fr; grid-template-rows: auto auto;
+  column-gap: 6px; align-items: center; font-family: var(--font-hand); color: var(--ink); }
+.sb-academic  { --c: var(--sb-academic); }
+.sb-happiness { --c: var(--sb-happiness); }
+.sb-stress    { --c: var(--sb-stress); }
+.sb-health    { --c: var(--sb-health); }
+.sb-social    { --c: var(--sb-social); }
+.sb-wealth    { --c: var(--sb-wealth); }
+
+.sb-icon { grid-row: 1 / span 2; width: 22px; height: 22px; color: var(--c); }
+.sb-icon svg { width: 100%; height: 100%; overflow: visible; }
+.sb-head { display: flex; justify-content: space-between; gap: 6px; font-size: .85rem; line-height: 1.2; }
+.sb-name { color: var(--ink); }
+.sb-label { color: var(--ink); font-weight: 500; }   /* 標籤用 --ink → 淺 13:1 / 深 11:1 以上 */
+
+/* 長條：蠟筆邊＋紙紋 */
+.sb-bar { position: relative; height: var(--sb-h); margin-top: 2px; border-radius: 6px 4px 7px 3px / 4px 6px 3px 6px;
+  background:
+    repeating-linear-gradient(-12deg, transparent 0 3px, color-mix(in srgb, var(--ink) 5%, transparent) 3px 4px),
+    var(--sb-track);
+  border: 1.6px solid var(--sb-line); filter: url(#sb-crayon); overflow: hidden; }
+.sb-bar > i { position: absolute; inset: 0 auto 0 0; display: block; border-radius: inherit;
+  width: calc(var(--lv, 3) * 20%);                          /* 只顯示 5 段，不露真實數值 */
+  background:
+    repeating-linear-gradient(-55deg, transparent 0 2px, color-mix(in srgb, var(--card) 35%, transparent) 2px 3px),
+    var(--c);
+  transition: width .35s ease, background-color .3s; }
+/* 段落刻痕：讓 5 格一眼可數 */
+.sb-bar::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(90deg, transparent 0 calc(20% - 1px), color-mix(in srgb, var(--ink) 25%, transparent) calc(20% - 1px) 20%); }
+
+.sb[data-lv="1"] { --lv: 1; } .sb[data-lv="2"] { --lv: 2; } .sb[data-lv="3"] { --lv: 3; }
+.sb[data-lv="4"] { --lv: 4; } .sb[data-lv="5"] { --lv: 5; }
+
+/* 危險狀態：低（壓力為高）→ 暖紅＋輕晃 2px */
+.sb.is-danger { --c: var(--sb-danger); }
+.sb.is-danger .sb-bar { border-color: var(--sb-danger); animation: sb-shake .5s ease-in-out 0s 3, sb-pulse 2.4s ease-in-out .5s infinite; }
+.sb.is-danger .sb-icon { animation: sb-shake .5s ease-in-out 3; }
+.sb.is-danger .sb-label::after { content: " !"; color: var(--sb-danger); font-weight: 700; }
+@keyframes sb-shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-2px) } 75% { transform: translateX(2px) } }
+@keyframes sb-pulse { 0%,100% { box-shadow: 0 0 0 0 transparent } 50% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--sb-danger) 25%, transparent) } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sb.is-danger .sb-bar, .sb.is-danger .sb-icon { animation: none; }
+  .sb-bar > i { transition: none; }
+}

@@ -2,22 +2,29 @@ import type { Balance } from './balance';
 import { makeRng, type Rng } from './rng';
 import {
   STATS, STAT_NAMES, STAGE_NAMES, type StatId, type StageId, type GameData, type GameEvent,
-  type Requires, type County, type Choice, type Mountain,
+  type Requires, type County, type Choice, type Mountain, type EndingCond,
 } from './types';
 
 // ---------- 常數（對應 core-loop.md v0.2） ----------
-export type ActionId = 'study' | 'cram' | 'play' | 'socialize' | 'exercise' | 'talent' | 'work' | 'rest';
-export interface ActionDef { id: ActionId; name: string; from: StageId; desc: string }
+export type ActionId = string;
+export interface ActionDef { id: ActionId; name: string; from: StageId; desc: string; flavor?: string }
+/** 效果方向（UI 不顯示數字）：↑／↓，|值| ≥ 5 用兩個箭頭 */
+const arrowsOf = (eff: Record<string, number>) => Object.entries(eff).filter(([, v]) => v).map(([k, v]) => `${STAT_NAMES[k as StatId] ?? k}${(v > 0 ? '↑' : '↓').repeat(Math.abs(v) >= 5 ? 2 : 1)}`).join(' ');
 const ACTION_NAMES: Record<string, string> = {
   study: '讀書', cram: '補習', play: '玩樂', socialize: '陪家人/交朋友', exercise: '運動', talent: '才藝', work: '打工', rest: '躺平',
+  // 路線行動（design/path-actions.md v0.6，暫定名稱，文案之後改）
+  voc_intern: '實習', voc_license: '考證照', uni_club: '社團', uni_date: '談戀愛',
+  mil_drill: '操練', mil_guard: '站哨', mil_leave: '放假回家', job_overtime: '加班', job_hunt: '找下一份工作', job_drink: '下班喝一杯',
 };
 /** 行動清單由 balance.json 產生（名稱為 UI 文字） */
 export function actionDefs(b: Balance): ActionDef[] {
   return Object.entries(b.actions).map(([id, a]) => ({
-    id: id as ActionId, name: ACTION_NAMES[id] ?? id, from: a.from,
-    desc: Object.entries(a.effects).map(([k, v]) => `${STAT_NAMES[k as StatId] ?? k}${v > 0 ? '+' : ''}${v}`).join(' '),
+    id: id as ActionId, name: a.name ?? ACTION_NAMES[id] ?? id, from: a.from,
+    // UI 不顯示數字：只寫方向（↑／↓），大幅（≥5）用兩個箭頭
+    desc: arrowsOf(a.effects), flavor: a.desc,
   }));
 }
+const UNI_FLAGS = ['uni_top', 'uni_normal', 'uni_tech']; const STUDENT_LOAN_WEALTH = 30;
 const STAGE_ORDER: StageId[] = ['infant', 'elementary', 'junior', 'senior', 'adult'];
 
 export interface TurnDef { stage: StageId; age: number; ap: boolean; branch?: string; random: boolean; label?: string }
@@ -128,15 +135,29 @@ export class Game {
   }
   availableActions(): ActionDef[] {
     const idx = STAGE_ORDER.indexOf(this.turnDef.stage);
-    return this.actions.filter((a) => STAGE_ORDER.indexOf(a.from) <= idx);
+    const f = this.s.flags;
+    return this.actions.filter((a) => {
+      const ab = this.b.actions[a.id];
+      if (STAGE_ORDER.indexOf(a.from) > idx) return false;
+      if (ab.until && STAGE_ORDER.indexOf(ab.until) < idx) return false;
+      if (ab.flags_any?.length && !ab.flags_any.some((x) => f.has(x))) return false;
+      if (ab.flags_none?.some((x) => f.has(x))) return false;
+      return true;
+    });
   }
+  /** 選大學時依出身擲骰決定學貸（balance.student_loan_chance_by_quintile） */
+  rollStudentLoan(): boolean {
+    const p = (this.b as any).student_loan_chance_by_quintile?.[String(this.s.quintile)] ?? 0;
+    return this.rng.int(1, 10000) <= Math.round(p * 10000);
+  }
+
   /** 行動是否可用（§3 wealth≤0 鎖付費、§4 條件） */
   actionLock(a: ActionId, wealth = this.s.stats.wealth): string | null {
     const need = this.b.actions[a]?.requires_wealth;
     if (need === undefined) return null;
     const cost = -(this.actionEffects(a).wealth ?? 0);
     const min = cost > 0 ? cost : need; // §18：付得起實際花費就能做（BUG-6）
-    return wealth < min ? `需要家庭資源 ≥ ${min}` : null;
+    return wealth < min ? '家裡負擔不起' : null; // UI 不顯示數字
   }
   /** 行動實際效果（補習費依縣市倍率縮放） */
   actionEffects(a: ActionId): Record<string, number> {
@@ -173,7 +194,7 @@ export class Game {
   /** alloc: 行動 -> 點數。依序逐點結算；付費行動在資源不足時該點作廢（UI 應避免）。 */
   applyActions(alloc: Partial<Record<ActionId, number>>) {
     if (this.s.phase !== 'ap') throw new Error('not in ap phase');
-    const total = Object.values(alloc).reduce((a, b) => a + (b ?? 0), 0);
+    const total = Object.values(alloc).reduce<number>((a, b) => a + (b ?? 0), 0);
     if (total > this.apForTurn()) throw new Error('too many AP');
     const stage = this.turnDef.stage;
     const use = (this.s.stageApUse[stage] ??= {});
@@ -207,6 +228,7 @@ export class Game {
     const f = this.s.flags;
     if (req.flags_all?.some((x) => !f.has(x))) return false;
     if (req.flags_none?.some((x) => f.has(x))) return false;
+    if (req.flags_any?.length && !req.flags_any.some((x) => f.has(x))) return false;
     for (const [k, v] of Object.entries(req.stats_min ?? {})) if (this.statOf(k) < (v ?? 0)) return false;
     for (const [k, v] of Object.entries(req.stats_max ?? {})) if (this.statOf(k) > (v ?? 100)) return false;
     const age = (TURNS[this.s.turn] ?? TURNS[TURNS.length - 1]).age; // §17 年齡範圍（結局後取最後一回合）
@@ -249,6 +271,44 @@ export class Game {
     return this.s.stats.wealth < need || !this.meets({ ...req, stats_min: rest });
   }
 
+  /** 鎖定時與門檻的最大差距（只算沒達到的 stats_min／stats_max；財富用實際需要額） */
+  lockGap(c: Choice): number | null {
+    const req = c.requires; let gap: number | null = null;
+    const bump = (g: number) => { if (g > 0 && (gap === null || g > gap)) gap = g; };
+    for (const [k, v] of Object.entries(req?.stats_min ?? {})) {
+      if (v === undefined) continue;
+      if (k === 'wealth') {
+        const cost = -(this.scaleCost((c.effects ?? {}) as Record<string, number>).wealth ?? 0);
+        const m = (this.b as any).cost_mult_by_quintile?.[String(this.s.quintile)] ?? 1;
+        bump((cost > 0 ? cost : Math.round(v * m)) - this.s.stats.wealth);
+      } else bump(v - this.statOf(k));
+    }
+    for (const [k, v] of Object.entries(req?.stats_max ?? {})) if (v !== undefined) bump(this.statOf(k) - v);
+    if (gap === null && this.cantAfford(c)) bump(-(this.scaleCost((c.effects ?? {}) as Record<string, number>).wealth ?? 0) - this.s.stats.wealth);
+    return gap;
+  }
+  /** 鎖定說明：依差距挑 lock_text_near／lock_text_far，退回 lock_text */
+  lockText(c: Choice): string | undefined {
+    const gap = this.lockGap(c);
+    if (gap !== null) {
+      const pick = gap <= (this.b.lock_near_gap ?? 10) ? c.lock_text_near : c.lock_text_far;
+      if (pick) return this.t(pick);
+    }
+    return c.lock_text ? this.t(c.lock_text) : undefined;
+  }
+
+  /** 旗標條件（flags_all／flags_any／flags_none）不符的選項整個隱藏，不顯示成鎖定 */
+  choiceHiddenByFlags(c: Choice): boolean {
+    const r = c.requires; if (!r) return false; const f = this.s.flags;
+    return !!(r.flags_all?.some((x) => !f.has(x)) || r.flags_none?.some((x) => f.has(x)) || (r.flags_any?.length && !r.flags_any.some((x) => f.has(x))));
+  }
+  /** 要顯示的選項索引；保證至少一個（全被旗標擋掉時退回全部顯示） */
+  visibleChoices(): number[] {
+    const ch = this.s.current?.event.choices ?? [];
+    const idx = ch.map((_, i) => i).filter((i) => !this.choiceHiddenByFlags(ch[i]!));
+    return idx.length ? idx : ch.map((_, i) => i);
+  }
+
   private nextEvent() {
     const nx = this.s.queue.shift();
     if (nx) { this.s.current = nx; this.s.phase = 'event'; return; }
@@ -266,6 +326,8 @@ export class Game {
     this.s.effort += c.hidden?.effort ?? 0;
     this.s.regret += c.hidden?.regret ?? 0;
     for (const fl of c.set_flags ?? []) this.s.flags.add(fl);
+    // endings-v2 §4：B4 選大學時家庭資源 < 30（選項花費打折扣完之後的值）→ 學貸
+    if ((c.set_flags ?? []).some((x) => UNI_FLAGS.includes(x)) && this.rollStudentLoan()) this.s.flags.add('student_loan');
     this.s.seenEvents.add(cur.event.id);
     const impact = STATS.reduce((s, k) => s + Math.abs(this.s.stats[k] - before[k]), 0);
     this.s.log.push({
@@ -370,8 +432,20 @@ export class Game {
     const ao = E.against_odds;
     const route = (ao.flags_any?.length ? ao.flags_any.some((x) => f.has(x)) : false) || (ao.or_wealth_min !== undefined && st.wealth >= ao.or_wealth_min);
     if (s.quintile <= ao.quintile_max && route && s.effort >= ao.effort_min) return 'against_odds';
+    // endings-v2 §2：稀有之後、平凡就是福之前，依 endings.json 順序判斷有 conditions 的結局
+    const core = new Set(['burnout', 'golden_cage', 'against_odds', 'ordinary_good', 'still_trying']);
+    for (const e of this.data.endings.endings) if (!core.has(e.id) && e.conditions && this.meetsEnding(e.conditions)) return e.id;
     if (st.happiness >= E.ordinary_good.happiness_min && st.social >= E.ordinary_good.social_min) return 'ordinary_good';
     return 'still_trying';
+  }
+  /** 結局條件：meets() 之外再看出身分位、努力、遺憾、計數 */
+  meetsEnding(c: EndingCond): boolean {
+    const s = this.s;
+    const rng = (v: number, lo?: number, hi?: number) => (lo === undefined || v >= lo) && (hi === undefined || v <= hi);
+    if (!rng(s.quintile, c.quintile_min, c.quintile_max) || !rng(s.effort, c.effort_min, c.effort_max) || !rng(s.regret, c.regret_min, c.regret_max)) return false;
+    for (const [k, n] of Object.entries(c.counts_min ?? {})) if (((s as any)[k] ?? s.actionTotals[k] ?? 0) < n) return false;
+    const { quintile_min: _a, quintile_max: _b, effort_min: _c, effort_max: _d, regret_min: _e, regret_max: _f, counts_min: _g, ...req } = c;
+    return this.meets(req);
   }
   /** 成就：條件沿用 conditions 寫法，另加 ending（結局 id）。回傳本輪達成的 id */
   achievementsMet(list: { id: string; conditions?: Requires & { ending?: string } }[]): string[] {
@@ -383,7 +457,8 @@ export class Game {
     const id = this.endingId();
     const e = this.data.endings.endings.find((x) => x.id === id) ?? this.data.endings.endings[this.data.endings.endings.length - 1];
     const high = this.s.regret >= this.b.endings.regret_high_threshold;
-    return { id, title: this.t(e.title), text: this.t(high ? e.regret_high : e.regret_low), regretHigh: high };
+    const v = e.variants?.find((x) => x.quintile === this.s.quintile && x.regret === (high ? 'high' : 'low'));
+    return { id, title: this.t(e.title), text: this.t(v?.text ?? (high ? e.regret_high : e.regret_low)), regretHigh: high, quintile: this.s.quintile };
   }
 
   // ----- 人生回顧 -----

@@ -5,7 +5,7 @@ import type { StageId } from './types';
  * （§3/§6 規格值：AP、強制事件門檻、所得分位表、分位偏移強度），並在 balance.json 有同名鍵時被覆蓋。
  */
 export interface ActionBalance {
-  effects: Record<string, number>; effort?: number; regret?: number; from: StageId;
+  effects: Record<string, number>; effort?: number; regret?: number; from: StageId; until?: StageId; flags_any?: string[]; flags_none?: string[]; name?: string; desc?: string;
   wealth_scaled_by?: 'cram_cost_mult'; requires_wealth?: number; flag_after?: { points: number; flag: string };
 }
 export interface Balance {
@@ -23,6 +23,8 @@ export interface Balance {
   quintiles: Record<string, { wealth: number; mods: Record<string, number>; flags: string[] }>;
   quintile_shift_alpha: number;
   initial_stats: Record<string, number>;
+  /** 鎖定說明：差距在這個值以內算「差一點」 */
+  lock_near_gap: number;
 }
 
 export const DEFAULT_BALANCE: Omit<Balance, 'actions' | 'passive_per_turn' | 'endings'> = {
@@ -37,6 +39,7 @@ export const DEFAULT_BALANCE: Omit<Balance, 'actions' | 'passive_per_turn' | 'en
   },
   quintile_shift_alpha: 2,
   initial_stats: { academic: 20, happiness: 60, stress: 10, health: 70, social: 50 },
+  lock_near_gap: 10,
 };
 
 export function buildBalance(raw: any): Balance {

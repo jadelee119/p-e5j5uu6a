@@ -1,0 +1,21 @@
+item,year,value,unit,note,source_name,source_url
+學貸_大專申貸人數,2015,291000,人,104學年度大專校院（約數，29.1萬餘人）,立法院 預算評估（引教育部統計）,https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=45764&pid=222941
+學貸_大專申貸比例,2015,21.84,%,104學年度占大專學生比率,立法院 預算評估（引教育部統計）,https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=45764&pid=222941
+學貸_大專申貸人數,2020,236000,人,109學年度（約數，23.6萬餘人）,立法院 預算評估（引教育部統計）,https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=45764&pid=222941
+學貸_大專申貸比例,2020,19.68,%,109學年度占大專學生比率,立法院 預算評估（引教育部統計）,https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=45764&pid=222941
+學貸_私立占申貸者比例,2015-2020,76.02-80.01,%,104–109學年度大專申貸者中私校占比區間（公立19.99–23.98%）；非「私校生申貸率」,立法院 預算評估（引教育部統計）,https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=45764&pid=222941
+學貸_申貸人數_全學制,2024,180000,人,113學年度上下學期合計約33.2萬人次≈18萬人（含高中職）,教育部 高級中等以上學校學生就學貸款統計,https://ws.moe.edu.tw/Download.ashx?icon=..pdf&n=MTEz5a245bm05bqm5bCx5a246LK45qy%2B57Wx6KiIMS5wZGY%3D&u=LzAwMS9VcGxvYWQvMzYvcmVsZmlsZS84NjY1LzkxMC84OTQ0ZWRlZS1lOTNlLTRlYjMtYTdhYi1kODU0ODdjNWY0YjUucGRm
+學貸_畢業時平均餘額,,,元,缺；聯徵中心有「個人學貸平均金額/中位數」季資料（全體借款人，非畢業時），未下載,金管會銀行局/聯徵中心 個人學生貸款統計（data.gov.tw）,https://data.gov.tw/dataset/54478
+學貸_寬限期,~2025,1,年,畢業（或服義務役、教育實習期滿）後1年開始還款,教育部 圓夢助學網,https://www.edu.tw/helpdreams/cp.aspx?n=D862A99E08414877&s=04C0F2D009469151
+學貸_寬限期,2026,2,年,115學年起延長為畢業後2年（114學年畢業生即適用）,教育部 圓夢助學網,https://www.edu.tw/helpdreams/cp.aspx?n=D862A99E08414877&s=04C0F2D009469151
+學貸_還款利率_學生負擔,~2025,1.775,%,115學年起政府再負擔1%→0.775%；在學期間利息由政府負擔,教育部 圓夢助學網,https://www.edu.tw/helpdreams/cp.aspx?n=D862A99E08414877&s=04C0F2D009469151
+學貸_緩繳本金門檻,~2025,50000,元/月,前一年月收入未達5萬可申請緩繳本金，每次1年最多12次,教育部 圓夢助學網,https://www.edu.tw/helpdreams/cp.aspx?n=D862A99E08414877&s=04C0F2D009469151
+志願役士兵_二等兵月薪,2013,29625,元/月,調薪前（媒體報導值）,Taiwan Business TOPICS 2019/11,https://topics.amcham.com.tw/2019/11/%E5%BE%B5%E5%85%B5%E5%88%B6%E5%8F%96%E6%B6%88%E5%BE%8C%E7%9A%84%E6%8C%91%E6%88%B0/
+志願役士兵_勤務加給調增,2014,4000,元/月,103.1.1起一、二等兵+4000、上等兵+3000、士官+2000,立法院 預算評估（國防部資料）,https://www.ly.gov.tw/Pages/Detail.aspx?nodeid=45642&pid=220733
+志願役士兵_二等兵月薪,2019,34340,元/月,本俸9740＋志願役加給10000＋專業加給14600；一兵35995、上兵37655；入伍訓8週領義務役6070；同頁文字另寫33625（頁內不一致）,海巡署 士兵福利制度（Wayback 2019/5）,https://web.archive.org/web/20190501235410/http:/hr.cga.gov.tw/texthtml/B/%E5%A3%AB%E5%85%B5%E7%A6%8F%E5%88%A9%E5%88%B6%E5%BA%A6.aspx
+志願役士兵_二等兵月薪,2022,35320,元/月,國軍人才招募中心公告；一兵37040、上兵38770,國防部 國軍人才招募中心（Wayback 2022/3）,https://web.archive.org/web/20220308044530/https:/rdrc.mnd.gov.tw/EditPage/?PageID=3ada0d3c-245c-4db0-8d97-2e53736d4668
+志願役士官_下士月薪,2022,41450,元/月,中士45260、上士48890,國防部 國軍人才招募中心（Wayback 2022/3）,https://web.archive.org/web/20220308044530/https:/rdrc.mnd.gov.tw/EditPage/?PageID=3ada0d3c-245c-4db0-8d97-2e53736d4668
+志願役軍官_少尉月薪,2022,50560,元/月,參考,國防部 國軍人才招募中心（Wayback 2022/3）,https://web.archive.org/web/20220308044530/https:/rdrc.mnd.gov.tw/EditPage/?PageID=3ada0d3c-245c-4db0-8d97-2e53736d4668
+志願役士兵_二等兵本俸,2025,10870,元/月,含副食費450；一兵11710、上兵12540；不含加給,志願役現役軍人俸額表（114/1/1生效）,https://www-ws.pthg.gov.tw/Upload/2015pthg/32/relfile/7940/659261/5620a85e-d99d-4678-921c-e4847c9e6471.pdf
+志願役加給,2025,13000-15000,元/月,114/4/1起調增；另戰鬥部隊加給一類12000/二類7000；總月薪未查到官方合計數,國防部新聞稿 114/3/21；立法院專案報告,https://www.mnd.gov.tw/Publication/84180
+志願役加給,2026,30000,元/月,軍人待遇條例114/6修正：志願役加給每月3萬，115/1/1施行,全國法規資料庫 軍人待遇條例,https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=F0030038
