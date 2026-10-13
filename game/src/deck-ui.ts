@@ -41,7 +41,7 @@ function cardHtml(i: Inst, opts: { btn: boolean }) {
 function renderTalent() {
   const left = g.talentLeft() - Object.values(alloc).reduce((a, b) => a + b, 0);
   const op = g.openingText();
-  app.innerHTML = `<h1>人生手牌 v1.0 試玩二</h1><div class="card">${op ? `<p class="opening">${esc(op)}</p>` : ''}
+  app.innerHTML = `<h1>人生手牌 v1.1</h1><div class="card">${op ? `<p class="opening">${esc(op)}</p>` : ''}
   <p class="muted">每年抽一手牌，但時間只夠打其中幾張。沒打的牌會被丟掉，有些錯過那個年紀就不會再來。</p></div>
   <div class="card"><h2>天賦：你比較常遇到什麼事 ${dots(left, cfg.talent.points)}</h2>
   ${Object.entries(cfg.talent.options).map(([k, o]) => `<div class="act"><span>${esc(o.name)} ${dots(alloc[k] ?? 0, cfg.talent.points)}</span><span><button data-k="${k}" data-d="-1" ${(alloc[k] ?? 0) <= 0 ? 'disabled' : ''}>－</button> <button data-k="${k}" data-d="1" ${left <= 0 ? 'disabled' : ''}>＋</button></span></div>`).join('')}
