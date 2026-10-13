@@ -3,8 +3,9 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildGameData } from '../src/logic/load';
-import { DeckGame, drawablePool, type CardDef, type DeckConfig } from '../src/logic/deck';
+import { DeckGame, botSchoolChoice, drawablePool, type CardDef, type DeckConfig } from '../src/logic/deck';
 import { makeRng } from '../src/logic/rng';
+const CH = makeRng(0x5c4001); // 選校用（獨立於出牌亂數）
 import { STATS, type StatId } from '../src/logic/types';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -29,12 +30,12 @@ const value = (g: DeckGame, i: any) => g.scoreValue(i) / Math.max(1, g.costOf(i)
 interface R { label: string; sick: number; expect: number; mean: number; statMean: number; plays: number; stat: Record<StatId, number> }
 const rows: R[] = [];
 function run(label: string, q: number, policy: Policy): R {
-  const pol = makeRng(seed0 ^ (q * 31 + policy.length)); let sum = 0, sumStat = 0, plays = 0, sickN = 0, expN = 0; const missed = new Map<string, number>();
+  const pol = makeRng(seed0 ^ (q * 31 + policy.length)); let sum = 0, sumStat = 0, plays = 0, sickN = 0, expN = 0; const missed = new Map<string, number>(); const trk: Record<string, number> = {}; let sickSenior = 0, sickJunior = 0;
   const stat = Object.fromEntries(STATS.map((k) => [k, 0])) as Record<StatId, number>;
   for (let n = 0; n < N; n++) {
     const g = newGame(q, seed0 + n * 104729);
     g.setTalent({}); let sk = false, ex = false;
-    while (g.phase !== 'review') {
+    while (g.phase !== 'review') { if (g.phase === 'choice') { g.chooseSchool(botSchoolChoice(g, CH)); continue; }
       const limit = policy === 'passive' ? pol.int(0, 1) : Infinity; let k = 0;
       while (k < limit) { const p = g.playable(); if (!p.length) break;
         let i = p[Math.floor(pol.next() * p.length)];
@@ -43,7 +44,7 @@ function run(label: string, q: number, policy: Policy): R {
         if (g.effectsFor(i).expect) ex = true; g.play(i.uid); k++; plays++; }
       g.endYear();
     }
-    if (g.sickCount) sickN++; if (ex) expN++;
+    if (g.sickCount) sickN++; if (ex) expN++; if (g.track) trk[g.track] = (trk[g.track] ?? 0) + 1; if (g.sickAges.some((a) => a <= 15)) sickJunior++; if (g.sickAges.some((a) => a >= 16)) sickSenior++;
     const tagPart = g.tagBonus();
     sum += g.score(); sumStat += g.score() - tagPart;
     const d = g.deltas(); for (const k of STATS) stat[k] += d[k] / N;
@@ -52,7 +53,9 @@ function run(label: string, q: number, policy: Policy): R {
   const r = { label, sick: sickN / N, expect: expN / N, mean: sum / N, statMean: sumStat / N, plays: plays / N, stat };
   console.log(`${label}: 變化量平均 ${r.mean.toFixed(1)}（屬性部分 ${r.statMean.toFixed(1)}）・每局出牌 ${r.plays.toFixed(2)} 張・`
     + STATS.map((k) => `${k} ${stat[k] >= 0 ? '+' : ''}${stat[k].toFixed(1)}`).join(' ')
-    + `・病倒 ${(100 * r.sick).toFixed(1)}%・期待 ${(100 * r.expect).toFixed(1)}%` + `・錯過率 ${[...missed].map(([k, v]) => `${k} ${(100 * v / N).toFixed(0)}%`).join('、') || '無'}`);
+    + `・病倒 ${(100 * r.sick).toFixed(1)}%・期待 ${(100 * r.expect).toFixed(1)}%` + `（13–15 歲 ${(100 * sickJunior / N).toFixed(1)}%・16–18 歲 ${(100 * sickSenior / N).toFixed(1)}%）`
+    + `・選校 ${['hs_general', 'hs_vocational', 'hs_5yr'].map((k) => `${cfg.school_choice!.options[k].name} ${(100 * (trk[k] ?? 0) / N).toFixed(0)}%`).join('/')}`
+    + `・錯過率 ${[...missed].map(([k, v]) => `${k} ${(100 * v / N).toFixed(0)}%`).join('、') || '無'}`);
   rows.push(r); return r;
 }
 console.log(`== deckcheck：各 ${N} 局 ==`);
@@ -69,10 +72,11 @@ const chk = (name: string, ok: boolean, msg: string) => { console.log(`${name}�
 console.log('');
 chk('B − A ≥ 20', B.mean - A.mean >= lv, `${(B.mean - A.mean).toFixed(1)}`);
 chk('C ≥ B', C.mean >= B.mean, `C ${C.mean.toFixed(1)} vs B ${B.mean.toFixed(1)}`);
-chk('B− ≤ D + 5', Bw.mean <= D.mean + 5, `B− ${Bw.mean.toFixed(1)} vs D ${D.mean.toFixed(1)}`);
-chk('C− ≤ A + 5', Cw.mean <= A.mean + 5, `C− ${Cw.mean.toFixed(1)} vs A ${A.mean.toFixed(1)}`);
+const tol = 5 * cfg.ages.length / 3; // §11：每 3 年 +5
+chk(`B− ≤ D + ${tol}`, Bw.mean <= D.mean + tol, `B− ${Bw.mean.toFixed(1)} vs D ${D.mean.toFixed(1)}`);
+chk(`C− ≤ A + ${tol}`, Cw.mean <= A.mean + tol, `C− ${Cw.mean.toFixed(1)} vs A ${A.mean.toFixed(1)}`);
 // 躺平結局：A / D 判定為躺平，且文字依家境不同
-const pe = (q: number) => { const g = newGame(q, seed0); g.setTalent({}); while (g.phase !== 'review') g.endYear(); return g.passiveEnding(); };
+const pe = (q: number) => { const g = newGame(q, seed0); g.setTalent({}); while (g.phase !== 'review') { if (g.phase === 'choice') { g.chooseSchool(botSchoolChoice(g, CH)); continue; } g.endYear(); } return g.passiveEnding(); };
 const texts = [1, 2, 3, 4, 5].map(pe);
 chk('躺平結局依家境不同', !!texts[0] && !!texts[4] && texts[0] !== texts[4] && texts[2] !== texts[0] && texts[2] !== texts[4],
   texts.map((t, k) => `Q${k + 1}「${(t ?? '（無）').slice(0, 10)}…」`).join(' '));
@@ -81,7 +85,7 @@ chk('躺平結局依家境不同', !!texts[0] && !!texts[4] && texts[0] !== text
   const th = cfg.forced.f_sick.stress_at_least; let maxStress = 0, sickRuns = 0, expRuns = 0;
   for (let n = 0; n < N; n++) {
     const g = newGame((n % 5) + 1, seed0 + n * 104729); g.setTalent({}); let sick = false, ex = false;
-    while (g.phase !== 'review') {
+    while (g.phase !== 'review') { if (g.phase === 'choice') { g.chooseSchool(botSchoolChoice(g, CH)); continue; }
       for (;;) { const p = g.playable(); if (!p.length) break;
         const i = p.reduce((m, x) => (g.effectsFor(x).eff.stress ?? 0) > (g.effectsFor(m).eff.stress ?? 0) ? x : m);
         if ((g.effectsFor(i).eff.stress ?? 0) < -(cfg.rest_stress_per_slot ?? 0) * (g.costOf(i) ?? 1)) break; // 只有比休息更降壓時才不打
@@ -104,9 +108,16 @@ chk('躺平結局依家境不同', !!texts[0] && !!texts[4] && texts[0] !== text
 console.log(`取捨檢查：B+ − B− = ${(Bg.mean - Bw.mean).toFixed(1)}，C+ − C− = ${(Cg.mean - Cw.mean).toFixed(1)}`);
 
 console.log('\n== 每個分位×年齡的可抽牌（門檻 6） ==');
-for (let q = 1; q <= 5; q++) for (const age of cfg.ages) { const p = drawablePool(cfg, cards, q, age);
-  const ok = p.length >= 6; if (!ok) fail++;
-  console.log(`Q${q} ${age}歲：${p.length} 張 ${ok ? '' : '✗ '}(${p.join(',')})`); }
+for (let q = 1; q <= 5; q++) for (const age of cfg.ages) for (const t of age >= (cfg.school_choice?.age ?? 99) ? Object.keys(cfg.school_choice!.options) : [undefined]) {
+  const p = drawablePool(cfg, cards, q, age, t); const ok = p.length >= 6; if (!ok) fail++;
+  console.log(`Q${q} ${age}歲${t ? `・${cfg.school_choice!.options[t].name}` : ''}：${p.length} 張 ${ok ? '' : '✗ '}(${p.join(',')})`); }
 const echoes = cards.filter((c) => c.expires_age !== null && c.echo && c.echo.age >= 16 && c.echo.age <= 22);
 console.log(`\n有 16–22 歲回響的可錯過牌：${echoes.length} 張（門檻 3）${echoes.length >= 3 ? '' : ' ✗'}`); if (echoes.length < 3) fail++;
+// 選校分流（自然分位、隨機打法，對照 data/track_ratios_source.md：普高≈45%、高職 45–50%、五專 <10%）
+{ const CH2 = makeRng(0x5c4001), pol = makeRng(seed0 ^ 4242); const cnt: Record<string, number> = {};
+  for (let n = 0; n < N; n++) { const g = new DeckGame(data, cfg, cards, seed0 + n * 104729); g.setTalent({});
+    while (g.phase !== 'choice' && g.phase !== 'review') { for (;;) { const p = g.playable(); if (!p.length) break; g.play(p[Math.floor(pol.next() * p.length)].uid); } g.endYear(); }
+    if (g.phase === 'choice') { const t = botSchoolChoice(g, CH2); cnt[t] = (cnt[t] ?? 0) + 1; } }
+  const f = (k: string) => (cnt[k] ?? 0) / N;
+  chk('\n選校分流・五專 < 10%', f('hs_5yr') < 0.1, `普高門檻 學業≥${cfg.school_choice!.general_academic_min}・自然分位隨機打法：普高 ${(100 * f('hs_general')).toFixed(1)}%、高職 ${(100 * f('hs_vocational')).toFixed(1)}%、五專 ${(100 * f('hs_5yr')).toFixed(1)}%`); }
 console.log(fail ? `\n✗ ${fail} 項未通過` : '\n全部通過'); process.exit(fail ? 1 : 0);

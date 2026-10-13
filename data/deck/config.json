@@ -1,9 +1,12 @@
 {
-  "_note": "v1.0 國中雛形可調參數（假設值）。畫面上不顯示數字。",
+  "_note": "v1.0 手牌雛形可調參數（假設值）。畫面上不顯示數字。ages 13–18（國中＋高中，cb9b590 §8 結轉）。time_slots 高中也先維持 3（假設：骨架原寫 4 格，等 16–18 模擬後由企劃決定）。",
   "ages": [
     13,
     14,
-    15
+    15,
+    16,
+    17,
+    18
   ],
   "hand_size": 5,
   "time_slots": 3,
@@ -19,7 +22,17 @@
       "d_phone",
       "d_crush",
       "d_trip",
-      "d_night"
+      "d_night",
+      "s_study",
+      "s_study",
+      "s_cram",
+      "s_club",
+      "s_work",
+      "s_love",
+      "s_game",
+      "s_game",
+      "s_skip",
+      "s_skip"
     ],
     "by_quintile": {
       "1": [
@@ -28,12 +41,14 @@
         "d_shop",
         "g_grit",
         "g_mature",
-        "b_bill"
+        "b_bill",
+        "d_team"
       ],
       "2": [
         "d_shop",
         "g_grit",
-        "b_bill"
+        "b_bill",
+        "d_team"
       ],
       "3": [
         "d_study",
@@ -142,33 +157,89 @@
         "quintiles": [
           5
         ],
-        "text": "家裡替你留好的路還在原地，鋪得很平。國中三年你沒急著走上去，反正它看起來不會跑。"
+        "text": "家裡替你留好的路還在原地，鋪得很平。這幾年你沒急著走上去，反正它看起來不會跑。"
       },
       {
         "quintiles": [
           4
         ],
-        "text": "什麼都不缺的三年，安安穩穩地過完了。大人說你還小，你也就真的當自己還小。"
+        "text": "什麼都不缺的這幾年，安安穩穩地過完了。大人說你還小，你也就真的當自己還小。"
       },
       {
         "quintiles": [
           3
         ],
-        "text": "不快不慢的三年，像大部分的人一樣。沒有誰催你，你也沒有催自己。"
+        "text": "不快不慢的這幾年，像大部分的人一樣。沒有誰催你，你也沒有催自己。"
       },
       {
         "quintiles": [
           2
         ],
-        "text": "日子沒有變好，也沒有變壞。國中三年，你把力氣省下來，留給還不知道是什麼的以後。"
+        "text": "日子沒有變好，也沒有變壞。這幾年，你把力氣省下來，留給還不知道是什麼的以後。"
       },
       {
         "quintiles": [
           1
         ],
-        "text": "你很早就學會不期待太多。三年就這樣過去，偶爾在夜裡，你會想如果當時多做一點會怎樣。"
+        "text": "你很早就學會不期待太多。這幾年就這樣過去，偶爾在夜裡，你會想如果當時多做一點會怎樣。"
       }
     ]
   },
-  "rest_stress_per_slot": 2
+  "rest_stress_per_slot": 2,
+  "regret_ratio": 0.75,
+  "regret_min_pool": 2,
+  "_regret_note": "遺憾多：這局抽到（打出或錯過）的會過期牌 ≥ regret_min_pool 且 錯過÷抽到 ≥ regret_ratio（design/v1.0-life-review-skeleton.md 決定一節）",
+  "_senior_note": "16–18：共用 s_* 7 張＋選校後依路線洗入路線牌／包袱；國中包袱、成長、病倒 age_max 延到 18；國中專屬行動牌 age_max ≤15 自然抽不到。打工 Q1/Q2 ×1.5（weight_quintile）；學費先不扣。",
+  "school_choice": {
+    "_note": "cb9b590 §8：16 歲第一回合開頭選校，選了就算數；普高學業門檻是假設值（依 data/track_ratios_source.md 目標 普高≈45%／高職 45–50%／五專<10% 用模擬校準）。adds＝選完洗入牌庫的路線牌與包袱牌。。§9（bc6027d）：b_exam_pressure 只給普高、高二（17 歲）起洗入；b_track_regret 各路線都洗入但抽中權重 0.3；voc_license 高職與五專都有。",
+    "age": 16,
+    "general_academic_min": 37,
+    "hint_under": "分數差了一點，這扇門今年沒有為你打開。",
+    "options": {
+      "hs_general": {
+        "name": "普通高中",
+        "result": "你選了一條大家都比較看得懂的路。",
+        "academic_min": true,
+        "adds": [
+          "b_track_regret"
+        ],
+        "adds_at_age": {
+          "17": [
+            "b_exam_pressure"
+          ]
+        }
+      },
+      "hs_vocational": {
+        "name": "高職",
+        "result": "你選了一條可以早一點用雙手證明自己的路。",
+        "adds": [
+          "voc_intern",
+          "voc_license",
+          "b_judged",
+          "b_track_regret"
+        ]
+      },
+      "hs_5yr": {
+        "name": "五專",
+        "result": "你選了一條比較長的路，一走就是好幾年。",
+        "adds": [
+          "jc_project",
+          "jc_workshop",
+          "jc_nursing",
+          "voc_license",
+          "b_judged",
+          "b_track_regret"
+        ]
+      }
+    },
+    "sim_policy": {
+      "_note": "假玩家（deckcheck／regretratio）的選校方式：夠門檻→機率 general_if_eligible 選普高；否則五專機率 five_year，其餘高職",
+      "general_if_eligible": 0.9,
+      "five_year": 0.12
+    },
+    "_threshold_note": "37 = 用滿隨機打法下 16 歲學業中位數（企劃假設「中位數」）。sim/trackcheck.ts（MODE=full，3000 局，自然分位）：門檻 32→普高 64%、35→53%、36→48%、37→45%、38→42%、40→35%；五專 4–7%。若改用躺平/隨機/挑最好混合，中位數只有 29（門檻 29→48%）"
+  },
+  "summer_stress_mult": 0.5,
+  "_summer_note": "§10（9b31ad8）：15→16 結轉時壓力 ×0.5（假設值）",
+  "_temptation_note": "§11：s_game、s_skip 各 2 張進起始牌庫，和 s_study 一樣多（「權重和 s_study 相同」的假設解讀）"
 }

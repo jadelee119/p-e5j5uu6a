@@ -22,5 +22,7 @@
 /* v0.8 美術：深色對比加強（鎖住格子、主按鈕、成就縮圖） */
 :root[data-theme="dark"] { --lock: #7C868C; }
 :root[data-theme="dark"] button.primary { background:#3F6B55; border-color:#6E9C82; color:var(--color-chalk); }
+:root[data-theme="dark"] button.primary:disabled, :root[data-theme="dark"] button:disabled { background:transparent; border-color:var(--color-muted); color:var(--color-muted); }
 :root[data-theme="dark"] .ach.locked { background:#ffffff08; }
 :root[data-theme="dark"] .ach img { border-radius:6px; filter:brightness(.85); box-shadow:0 0 0 2px #6E9C82; }
+#app { padding-bottom: 48px; }

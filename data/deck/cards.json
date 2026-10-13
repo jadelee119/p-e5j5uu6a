@@ -18,7 +18,10 @@
         "effort",
         "academic"
       ],
-      "result_text": "你把今天的進度讀完了。燈關掉的時候，樓下的電視也關了。"
+      "result_text": "你把今天的進度讀完了。燈關掉的時候，樓下的電視也關了。",
+      "album_text": "書桌上的螢光筆一枝一枝用到沒水。",
+      "regret_text": "那些課本後來被收進箱子，有幾頁還是乾淨的。",
+      "accent": "#5A4632"
     },
     {
       "id": "d_cram",
@@ -40,7 +43,10 @@
         "academic"
       ],
       "result_event": "junior_cram_school_01",
-      "invest": true
+      "invest": true,
+      "album_text": "晚上的街燈下，大家揹著一樣的書包走出來。",
+      "regret_text": "那間補習班的招牌換過好幾次名字，你一次也沒進去過。",
+      "accent": "#3F5A7A"
     },
     {
       "id": "d_tutor",
@@ -62,7 +68,10 @@
         "effort",
         "academic"
       ],
-      "result_text": "老師講的你不一定都懂，但你知道下次上課前得先寫完。"
+      "result_text": "老師講的你不一定都懂，但你知道下次上課前得先寫完。",
+      "album_text": "客廳的餐桌，有人陪你把題目慢慢拆開。",
+      "regret_text": "有個題目你一直沒弄懂，後來也沒人再問起。",
+      "accent": "#7A6A4F"
     },
     {
       "id": "d_play",
@@ -91,7 +100,10 @@
         "stress": -1,
         "social": 0,
         "academic": -3
-      }
+      },
+      "album_text": "放學後的操場，影子被拉得很長。",
+      "regret_text": "那群人後來有自己的聚會，照片裡沒有你。",
+      "accent": "#4A7038"
     },
     {
       "id": "d_buddy",
@@ -112,7 +124,10 @@
         "social"
       ],
       "once_in_deck": true,
-      "result_text": "你們在便利商店門口吃完一支冰，誰也沒說要回家。後來很多年，你都記得那個晚上的風。"
+      "result_text": "你們在便利商店門口吃完一支冰，誰也沒說要回家。後來很多年，你都記得那個晚上的風。",
+      "album_text": "便利商店門口，兩支冰一起滴到手上。",
+      "regret_text": "你偶爾會想，如果那時候多說一句話，現在會不會有個人可以打給。",
+      "accent": "#C0623A"
     },
     {
       "id": "d_exercise",
@@ -135,7 +150,10 @@
       "echo": {
         "age": 18,
         "text": "畢業典禮放了國中的照片，那根接力棒裡沒有你。"
-      }
+      },
+      "album_text": "接棒的那一下，全班都在喊你的名字。",
+      "regret_text": "那根棒子交給了別人，你在旁邊幫忙喊加油。",
+      "accent": "#A8322D"
     },
     {
       "id": "d_talent",
@@ -161,7 +179,37 @@
         "age": 20,
         "text": "同學在尾牙上台彈了一首，你在台下拍手拍得很用力。"
       },
-      "invest": true
+      "invest": true,
+      "album_text": "手上的繭，是那時候留下來的。",
+      "regret_text": "家裡角落還放著那個沒怎麼用過的琴譜袋。",
+      "accent": "#6B4A8C"
+    },
+    {
+      "id": "d_team",
+      "name": "校隊",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 14,
+      "expires_age": 14,
+      "line": "體育老師說你跑得不錯，問你要不要留下來練習。",
+      "effects": {
+        "health": 4,
+        "happiness": 3,
+        "stress": 2
+      },
+      "tags": [
+        "effort",
+        "talent"
+      ],
+      "result_text": "你每天放學都留下來，鞋底磨平了一雙，老師幫你找來另一雙。",
+      "echo": {
+        "age": 20,
+        "text": "路過一所國中，操場上有人在練跑。你停下來看了一會兒，腳好像還記得那條跑道。"
+      },
+      "album_text": "操場邊的水壺，上面寫著你的名字。",
+      "regret_text": "那天你說要回家幫忙，老師點點頭，後來就沒再問了。",
+      "accent": "#B0443A"
     },
     {
       "id": "d_shop",
@@ -185,7 +233,10 @@
         "effort",
         "family"
       ],
-      "result_event": "junior_family_shop_01"
+      "result_event": "junior_family_shop_01",
+      "album_text": "櫃檯後面寫功課，抬頭就是熟客的臉。",
+      "regret_text": "那家店的鐵門很早就拉下來，你沒怎麼看過它開著的樣子。",
+      "accent": "#B8902F"
     },
     {
       "id": "d_phone",
@@ -209,7 +260,10 @@
       "tags": [
         "fun"
       ],
-      "result_event": "junior_phone_01"
+      "result_event": "junior_phone_01",
+      "album_text": "握在手心的第一支手機，連鈴聲都捨不得換。",
+      "regret_text": "那時候大家在傳的訊息，你都是隔天才聽說。",
+      "accent": "#4E6A73"
     },
     {
       "id": "d_crush",
@@ -235,7 +289,10 @@
       "echo": {
         "age": 22,
         "text": "整理抽屜時找到一支沒水的立可白，你想不起來是誰的。"
-      }
+      },
+      "album_text": "那支立可白，後來一直在別人的筆袋裡。",
+      "regret_text": "你沒去借那支立可白，那個人也就一直只是隔壁班的人。",
+      "accent": "#8A6A4A"
     },
     {
       "id": "d_trip",
@@ -245,7 +302,7 @@
       "age_min": 15,
       "age_max": 15,
       "expires_age": 15,
-      "line": "三天兩夜，有人整晚沒睡，有人在遊覽車上唱到沒聲音。",
+      "line": "出門那幾天，有人整晚沒睡，有人在遊覽車上唱到沒聲音。",
       "effects": {
         "happiness": 6,
         "social": 5,
@@ -263,7 +320,10 @@
       "echo": {
         "age": 18,
         "text": "同學聊起那次畢旅，你笑著點頭，假裝自己也記得。"
-      }
+      },
+      "album_text": "遊覽車上的歌唱到破音，沒有人在意。",
+      "regret_text": "大家回來後講了好久的笑話，你只聽得懂一半。",
+      "accent": "#3E7FA8"
     },
     {
       "id": "d_night",
@@ -283,7 +343,10 @@
         "effort",
         "academic"
       ],
-      "result_event": "junior_night_study_01"
+      "result_event": "junior_night_study_01",
+      "album_text": "畢業前的走廊，每個人都在簽名。",
+      "regret_text": "那本紀念冊有幾頁空白，到現在還空著。",
+      "accent": "#2F4A3E"
     },
     {
       "id": "b_expect",
@@ -291,7 +354,7 @@
       "type": "burden",
       "cost": null,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "大家都說你一定沒問題。你也不好意思有問題。",
       "effects": {},
@@ -302,7 +365,10 @@
       "unplayed_end": {
         "stress": 2
       },
-      "result_text": "你考得很好，但大家說「本來就應該」。"
+      "result_text": "你考得很好，但大家說「本來就應該」。",
+      "album_text": "家裡的人說起你，語氣總是帶著一點希望。",
+      "accent": "#C9A227",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
     },
     {
       "id": "b_comfort",
@@ -310,7 +376,7 @@
       "type": "burden",
       "cost": 1,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "什麼都不缺的下午，特別長。",
       "effects": {
@@ -326,7 +392,10 @@
       "tags": [
         "effort"
       ],
-      "result_text": "你關掉電視，發現外面天還亮著。"
+      "result_text": "你關掉電視，發現外面天還亮著。",
+      "album_text": "那幾年很安穩，安穩到好像不用往前走。",
+      "accent": "#8FA39A",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
     },
     {
       "id": "b_bill",
@@ -334,7 +403,7 @@
       "type": "burden",
       "cost": 1,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "壓在電話旁邊，你假裝沒看到，大家也假裝你沒看到。",
       "effects": {
@@ -348,7 +417,10 @@
       "tags": [
         "family"
       ],
-      "result_text": "這個月撐過去了。下個月的已經在路上。"
+      "result_text": "這個月撐過去了。下個月的已經在路上。",
+      "album_text": "餐桌上的信封，你很早就知道哪幾封不能拆給大人看。",
+      "accent": "#7A6A55",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
     },
     {
       "id": "b_scroll",
@@ -356,7 +428,7 @@
       "type": "burden",
       "cost": 1,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "本來只是看一下時間。",
       "effects": {
@@ -373,7 +445,10 @@
         "stress": 1,
         "health": -2,
         "academic": -2
-      }
+      },
+      "album_text": "螢幕的光，照亮了很多個本來該睡覺的晚上。",
+      "accent": "#5C6B8A",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
     },
     {
       "id": "g_grit",
@@ -381,7 +456,7 @@
       "type": "growth",
       "cost": 1,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "不是不會累，是累了也知道明天要幹嘛。",
       "effects": {
@@ -393,7 +468,10 @@
       "tags": [
         "effort"
       ],
-      "result_text": "同一件事，你做得比上次快一點，抱怨也少一點。"
+      "result_text": "同一件事，你做得比上次快一點，抱怨也少一點。",
+      "album_text": "跌倒很多次以後，你學會先拍拍灰塵再哭。",
+      "accent": "#5E8C3A",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
     },
     {
       "id": "g_mature",
@@ -401,7 +479,7 @@
       "type": "growth",
       "cost": 1,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "你比同學早一步學會看大人的臉色。",
       "effects": {
@@ -414,7 +492,10 @@
       "tags": [
         "family"
       ],
-      "result_text": "你在大人開口之前，就把事情做完了。"
+      "result_text": "你在大人開口之前，就把事情做完了。",
+      "album_text": "你比同齡的人早一點懂事，也早一點不吵著要東西。",
+      "accent": "#9A7B5B",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
     },
     {
       "id": "f_teacher",
@@ -432,7 +513,8 @@
       "removes": [
         "f_teacher"
       ],
-      "result_event": "junior_remote_teacher_01"
+      "result_event": "junior_remote_teacher_01",
+      "accent": "#66615A"
     },
     {
       "id": "f_sick",
@@ -440,7 +522,7 @@
       "type": "forced",
       "cost": null,
       "age_min": 13,
-      "age_max": 15,
+      "age_max": 18,
       "expires_age": null,
       "line": "身體幫你請了假。",
       "effects": {
@@ -452,7 +534,483 @@
         "f_sick"
       ],
       "result_event": "forced_sick",
-      "result_text": "你本來想再撐一下，身體沒有同意。醒來的時候，有人坐在床邊削蘋果。手上那些還沒做完的事，今年都只能先放著。"
+      "result_text": "你本來想再撐一下，身體沒有同意。醒來的時候，有人坐在床邊削蘋果。手上那些還沒做完的事，今年都只能先放著。",
+      "accent": "#8C8C8C",
+      "_carry_note": "cb9b590 §8：結轉到高中，age_max 15→18"
+    },
+    {
+      "id": "s_study",
+      "name": "讀書",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "參考書疊得比便當還高，你每天都在挑今天要先翻哪一本。",
+      "effects": {
+        "academic": 6,
+        "stress": 3
+      },
+      "result_text": "你把錯的題目抄進筆記本，抄著抄著，下一次真的就沒錯了。",
+      "album_text": "書桌前的檯燈，陪你寫完一本又一本的參考書。",
+      "tags": [
+        "effort",
+        "academic"
+      ],
+      "accent": "#3A6FB0"
+    },
+    {
+      "id": "s_cram",
+      "name": "補習",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "放學後換一棟大樓，換一批同學，換一個更會講笑話的老師。",
+      "effects": {
+        "academic": 9,
+        "stress": 3,
+        "wealth": -5,
+        "social": 1
+      },
+      "result_text": "講義又多了一疊。回家的公車上你睡著了，差點坐過站。",
+      "album_text": "補習班樓下的路燈，大家揹著書包魚貫走出來。",
+      "tags": [
+        "effort",
+        "academic"
+      ],
+      "invest": true,
+      "adds": [
+        "b_tired"
+      ],
+      "accent": "#2E7F86"
+    },
+    {
+      "id": "s_club",
+      "name": "社團",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "社辦的鑰匙不知道為什麼在你身上。",
+      "effects": {
+        "social": 5,
+        "happiness": 3,
+        "stress": -1
+      },
+      "result_text": "成果發表那天你忙到沒吃飯，謝幕之後，好幾個人跑來跟你要聯絡方式。",
+      "album_text": "社辦裡亂成一團的道具，每一件都有人記得它的故事。",
+      "tags": [
+        "club"
+      ],
+      "grant_after": {
+        "count": 3,
+        "flag": "club_core",
+        "adds": [
+          "g_network"
+        ]
+      },
+      "accent": "#D9762B"
+    },
+    {
+      "id": "s_work",
+      "name": "打工",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "假日早上的飲料店，冰塊比客人還早到。",
+      "effects": {
+        "wealth": 6,
+        "academic": -2,
+        "stress": 1
+      },
+      "result_text": "第一次自己賺的錢，你在手上握了很久才放進錢包。",
+      "album_text": "假日的櫃檯後面，你學會用最快的速度封口。",
+      "tags": [
+        "family"
+      ],
+      "weight_quintile": {
+        "1": 1.5,
+        "2": 1.5
+      },
+      "_note": "未滿 18 只有白天班（文字層級，尚無機制）",
+      "accent": "#5FA37E"
+    },
+    {
+      "id": "s_love",
+      "name": "戀愛",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": 18,
+      "line": "放學的路明明很短，你們每天都走得很慢。",
+      "effects": {
+        "happiness": 6,
+        "stress": 1,
+        "academic": -1
+      },
+      "result_text": "你記住了一首歌，不是因為好聽，是因為那天剛好在放。",
+      "album_text": "放學的路上，兩個人的影子靠得很近。",
+      "regret_text": "那條放學的路，後來你都一個人走得很快。",
+      "tags": [
+        "fun"
+      ],
+      "weight_if_played": {
+        "d_crush": 1.5
+      },
+      "accent": "#C25A80"
+    },
+    {
+      "id": "s_game",
+      "name": "網咖",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "missed_if_never_played": true,
+      "line": "樓梯口飄出泡麵和冷氣的味道，裡面永遠有一台空位在等你。",
+      "effects": {
+        "happiness": 3,
+        "stress": -2,
+        "academic": -7,
+        "health": -4
+      },
+      "result_text": "你連贏了好幾場，走出來才發現天黑了，書包還放在櫃檯。",
+      "album_text": "網咖角落那台電腦，鍵盤上有一顆鍵被你按到發亮。",
+      "regret_text": "那間網咖你經過很多次，從來沒推開過那扇貼滿海報的門。",
+      "tags": [
+        "fun"
+      ],
+      "accent": "#8A4FC0",
+      "_note": "§11 誘惑牌；88 年次以後換「手遊」（era_terms deck_card_variants，圖 s_game_smart）",
+      "_balance_note": "§11 加重扣分（deckcheck 校準）：§11 原值 academic −3、health −2 → −7、−4；happiness 5 → 3（636ac2d QA：B− 邊際）"
+    },
+    {
+      "id": "s_skip",
+      "name": "蹺課",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "missed_if_never_played": true,
+      "line": "第一節是考試，天氣好得不像話。",
+      "effects": {
+        "happiness": 3,
+        "social": 3,
+        "academic": -9
+      },
+      "adds_if_twice_in_year": [
+        "b_comfort"
+      ],
+      "result_text": "你們在河堤邊坐了一整個上午，回學校的時候，有人已經在幫你想請假的理由。",
+      "album_text": "河堤上的風，吹亂了制服，也吹掉了一節課。",
+      "regret_text": "那幾年你一節課都沒蹺過，偶爾會想，河堤邊的風是什麼感覺。",
+      "tags": [
+        "fun"
+      ],
+      "accent": "#7DAA3C",
+      "_note": "§11 誘惑牌；同一年打 2 次洗入 b_comfort",
+      "_balance_note": "§11 加重扣分（deckcheck 校準）：§11 原值 academic −4 → −9"
+    },
+    {
+      "id": "b_tired",
+      "name": "疲勞",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "眼皮很重，課本上的字開始自己跳舞。",
+      "effects": {
+        "stress": -3,
+        "health": 1
+      },
+      "removes": [
+        "b_tired"
+      ],
+      "max_in_deck": 2,
+      "result_text": "你終於睡了一個沒有鬧鐘的覺，醒來時天已經亮很久了。",
+      "album_text": "那段日子，你在每一種交通工具上都睡著過。",
+      "accent": "#7A6699"
+    },
+    {
+      "id": "g_network",
+      "name": "人脈",
+      "type": "growth",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你記得每個人的名字，大家也開始記得你的。",
+      "effects": {
+        "social": 4,
+        "happiness": 2,
+        "stress": -1
+      },
+      "growth_per_play": 0.5,
+      "once_in_deck": true,
+      "tags": [
+        "social"
+      ],
+      "result_text": "有人說「我認識一個人可以幫你」，這句話你開始常常聽到。",
+      "accent": "#D4A72C",
+      "album_text": "通訊錄越拉越長，每個名字後面都有一段故事。",
+      "held_per_year": {
+        "social": 2
+      }
+    },
+    {
+      "id": "voc_intern",
+      "name": "實習",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": 18,
+      "line": "白天跟著老師傅，你負責遞工具，也負責被唸。",
+      "effects": {
+        "health": 2,
+        "academic": 1,
+        "wealth": 2,
+        "stress": 1
+      },
+      "result_text": "你第一次做出一件不用重來的東西，老師傅沒說話，只是點了點頭。",
+      "album_text": "工作服口袋裡，總有一支不知道是誰的螺絲起子。",
+      "regret_text": "那個老師傅後來退休了，你沒有機會跟他說謝謝。",
+      "tags": [
+        "effort"
+      ],
+      "requires_track": "hs_vocational",
+      "accent": "#6B7A3A",
+      "grant_after": {
+        "count": 2,
+        "flag": "skilled_hands",
+        "adds": [
+          "g_skill"
+        ]
+      }
+    },
+    {
+      "id": "voc_license",
+      "name": "考證照",
+      "type": "action",
+      "cost": 2,
+      "age_min": 16,
+      "age_max": 22,
+      "expires_age": 22,
+      "line": "術科考場很安靜，只聽得到大家的手在抖。",
+      "effects": {
+        "academic": 4,
+        "stress": 3
+      },
+      "result_text": "成績單寄來那天，你把它夾進資料夾最前面，比獎狀還小心。",
+      "album_text": "資料夾最前面那張證書，邊角被摸得有點軟了。",
+      "regret_text": "那張准考證一直夾在抽屜裡，日期早就過了。",
+      "tags": [
+        "effort"
+      ],
+      "requires_track": [
+        "hs_vocational",
+        "hs_5yr"
+      ],
+      "accent": "#2E7A4F",
+      "grant_after": {
+        "count": 1,
+        "flag": "licensed"
+      },
+      "_expiry_note": "§9：不過期，到 22 歲沒打才算錯過；以 expires_age 22 表示（目前一局只到 18）"
+    },
+    {
+      "id": "jc_project",
+      "name": "專題",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": 20,
+      "line": "組員有人負責做，有人負責消失，你負責收尾。",
+      "effects": {
+        "academic": 4,
+        "social": 2,
+        "stress": 2
+      },
+      "result_text": "成果展那天，你站在海報旁邊講了好幾遍，講到自己都相信它很厲害。",
+      "album_text": "成果展的海報捲起來收在床底，你一直捨不得丟。",
+      "regret_text": "那一組的名單上有你的名字，但做出來的東西你說不太出來。",
+      "tags": [
+        "effort"
+      ],
+      "requires_track": "hs_5yr",
+      "accent": "#E06A50"
+    },
+    {
+      "id": "jc_workshop",
+      "name": "實習工廠",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": 20,
+      "line": "機器的聲音很大，你慢慢聽得出哪一台今天不太對勁。",
+      "effects": {
+        "health": 2,
+        "academic": 2,
+        "stress": 1
+      },
+      "result_text": "你的手上多了幾道說不出名字的小傷，也多了一種說得出口的本事。",
+      "album_text": "機油的味道，很久以後聞到還是會想起那幾年。",
+      "regret_text": "那台機器你一直沒學會開，後來也沒人要你學了。",
+      "tags": [
+        "effort"
+      ],
+      "requires_track": "hs_5yr",
+      "accent": "#8A5A3A",
+      "grant_after": {
+        "count": 2,
+        "adds": [
+          "g_skill"
+        ]
+      }
+    },
+    {
+      "id": "jc_nursing",
+      "name": "護理專題",
+      "type": "action",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": 20,
+      "line": "你在假人身上練了好幾次打針，假人一次都沒喊痛。",
+      "effects": {
+        "academic": 3,
+        "social": 2,
+        "stress": 2
+      },
+      "result_text": "第一次在實習單位幫人量血壓，對方說「謝謝」，你緊張到忘記回。",
+      "album_text": "白色的實習服，洗了很多次還是燙得很平。",
+      "regret_text": "那個假人你只練過幾次，後來就換別人上了。",
+      "tags": [
+        "effort"
+      ],
+      "requires_track": "hs_5yr",
+      "accent": "#5A8FC0"
+    },
+    {
+      "id": "b_exam_pressure",
+      "name": "升學壓力",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "教室後面的倒數紙換了一張新的，大家都假裝沒看到。",
+      "effects": {
+        "stress": -2
+      },
+      "result_text": "你把倒數紙撕下來折成紙飛機，它飛得不遠，但你笑了。",
+      "album_text": "教室後面的倒數紙，一天一天變薄。",
+      "accent": "#555555",
+      "held_per_year": {
+        "stress": 2
+      },
+      "_note": "§9＋§10：打出不移除；持有每年 stress +3→+2（§10）"
+    },
+    {
+      "id": "b_track_regret",
+      "name": "選組後悔",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "你坐在新的教室裡，常常想起隔壁組在上的那堂課。",
+      "effects": {
+        "happiness": 2,
+        "stress": -1
+      },
+      "result_text": "你終於承認選了就選了，然後在這一組裡找到一件自己喜歡的事。",
+      "album_text": "你常常在別組的教室門口多站一下。",
+      "accent": "#5A6A85",
+      "held_per_year": {
+        "happiness": -2
+      },
+      "remove_after": 2,
+      "weight_quintile": {
+        "1": 0.3,
+        "2": 0.3,
+        "3": 0.3,
+        "4": 0.3,
+        "5": 0.3
+      },
+      "_note": "§9：權重低（假設 30%）→ 抽中權重 ×0.3；打 2 次後移除"
+    },
+    {
+      "id": "g_skill",
+      "name": "一技之長",
+      "type": "growth",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "手比腦袋先記住了做法。",
+      "effects": {
+        "academic": 2,
+        "wealth": 2,
+        "happiness": 2
+      },
+      "once_in_deck": true,
+      "tags": [
+        "effort"
+      ],
+      "result_text": "你不用看說明書，也知道下一步該拿哪一樣工具。",
+      "accent": "#1F7A7A",
+      "held_per_year": {
+        "happiness": 1
+      },
+      "album_text": "工具箱裡每一樣東西，你閉著眼睛都摸得到。"
+    },
+    {
+      "id": "b_judged",
+      "name": "別人的眼光",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 16,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "親戚問你念哪裡，聽完之後說「也不錯啦」。",
+      "effects": {},
+      "result_text": "過年你把自己做的東西擺上桌，這次沒人說「也不錯啦」，他們說「這你做的？」。",
+      "album_text": "過年的飯桌上，每個人都在問你念哪裡。",
+      "accent": "#C8322E",
+      "held_per_year": {
+        "happiness": -2
+      },
+      "requires_in_deck": [
+        "g_skill"
+      ],
+      "removes": [
+        "b_judged"
+      ]
+    },
+    {
+      "id": "f_school_choice",
+      "name": "選校",
+      "type": "forced",
+      "cost": null,
+      "age_min": 16,
+      "age_max": 16,
+      "expires_age": null,
+      "line": "放榜之後，家裡的餐桌上攤著好幾份簡章。",
+      "effects": {},
+      "accent": "#D98A60",
+      "_note": "不進牌庫：16 歲第一回合開頭的選擇畫面（cb9b590 §8）。選項在 config.school_choice"
     }
   ]
 }

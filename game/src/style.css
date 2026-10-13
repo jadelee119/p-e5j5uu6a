@@ -81,3 +81,17 @@ button:not(:disabled):active, .choice.chosen { transform:scale(.97); }
 .dcard .lock { font-size:.8rem; color:var(--color-accent); }
 .polaroid.missed { opacity:.75; filter:grayscale(1); }
 .deck-entry { display:block; text-align:center; margin-top:8px; }
+
+/* v1.0 人生回顧頁（art/mockup-life-review.png） */
+.review .rv-title { font-family: var(--font-title, serif); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 4px; padding-right: 72px; }
+.review .rv-h { font-size: 1rem; margin: 18px 0 8px; }
+.review .rv-missed-h { color: var(--muted); }
+.review .rv-row { display: flex; flex-wrap: wrap; gap: 14px; }
+.review .rv-card { margin: 0; width: 150px; background: var(--card, #fff); color: var(--ink); border: 2px solid var(--ink); padding: 6px; box-shadow: 4px 4px 0 #0000001f; }
+.review .rv-card img, .review .rv-card .blank { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: grid; place-items: center; background: #f5f3ee; }
+.review .rv-card figcaption { font-size: .8rem; margin-top: 4px; display: grid; gap: 2px; }
+.review .rv-card .cap { color: var(--muted); font-family: var(--font-hand, inherit); }
+.review .rv-card.missed { border: 2px dashed var(--acc); transform: rotate(var(--tilt)); }
+.review .rv-card.missed img, .review .rv-card.missed .blank { filter: saturate(.35) opacity(.6); }
+.review .rv-card.kept { width: 110px; }
+.review #again { margin-top: 20px; }
