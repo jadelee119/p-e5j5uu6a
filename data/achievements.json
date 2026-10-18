@@ -153,6 +153,15 @@
       "conditions": {
         "ending": "burnout"
       },
+      "v12": {
+        "_note": "v1.2 卡牌模式的覆寫（企劃 10/17：舊模式維持原條件和原說明；v1.2 看 stress_peak 旗標）。只在 v1.2 套用，conditions 整組取代",
+        "desc": "壓力爆表過，或累到病倒過一次。",
+        "conditions": {
+          "flags_any": [
+            "stress_peak"
+          ]
+        }
+      },
       "icon": "art/achievements/ach_burnout.png",
       "hidden_until_unlocked": true
     }

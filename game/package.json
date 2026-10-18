@@ -9,6 +9,8 @@
     "preview": "vite preview --host",
     "sim": "tsx sim/sim.ts",
     "deckcheck": "tsx sim/deckcheck.ts",
+    "deckcheck12": "tsx sim/deckcheck12.ts",
+    "namecheck12": "tsx sim/namecheck12.ts",
     "images": "node scripts/optimize-images.mjs",
     "predev": "npm run images",
     "prebuild": "npm run images"

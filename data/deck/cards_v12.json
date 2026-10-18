@@ -1,0 +1,1264 @@
+{
+  "_note": "v1.2 新牌（規格 §4.1）。只在 v1.2 打開時載入。文字：writing/v1.2_spec_text.md（443a25d），工程轉入；改文字請同步兩邊。數值照規格（標「工程暫定」的除外）。",
+  "cards": [
+    {
+      "id": "s_club_jr",
+      "name": "學校\u200b社團",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 15,
+      "expires_age": null,
+      "line": "社團課一到，你是全班最早離開座位的那個。",
+      "effects": {
+        "social": 5,
+        "happiness": 3,
+        "stress": -1
+      },
+      "tags": [
+        "talent"
+      ],
+      "result_text": "成果發表那天台下沒坐滿，你還是把最後一個動作做完了。",
+      "album_text": "活動中心的舞台很舊，燈打在你身上的時候剛剛好。",
+      "transforms_at_age": {
+        "16": "s_club"
+      },
+      "icon": "s_club",
+      "_src": "文字：writing/v1.2_childhood_memory_cards.md 12a04e8；數值：規格 §1.6（抄 s_club）；文字：writing/v1.2_spec_text.md（443a25d）"
+    },
+    {
+      "id": "t_exam_cram",
+      "name": "考前\u200b抱佛腳",
+      "type": "action",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "明天要考的範圍，你今天才第一次翻開。",
+      "effects": {
+        "academic": 4,
+        "stress": 3
+      },
+      "tags": [
+        "academic"
+      ],
+      "temp": true,
+      "icon": "d_night",
+      "_src": "規格 §3.2；文字：writing/v1.2_spec_text.md（443a25d）",
+      "result_text": "你熬到課本上的字開始排隊，結果有幾題居然真的考出來了。"
+    },
+    {
+      "id": "b_home_rent",
+      "name": "家裡\u200b租房子",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 13,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "每個月初，大人會把一個信封交給房東。",
+      "effects": {
+        "stress": 1
+      },
+      "burden_class": "money",
+      "on_handle": "return",
+      "returns_after": 2,
+      "held_per_turn": {
+        "stress": 1,
+        "happiness": -1
+      },
+      "trigger_after": 3,
+      "trigger_card": "f_home_trouble",
+      "icon": "b_bill",
+      "_src": "規格 §2.4；文字：writing/v1.2_spec_text.md（443a25d）",
+      "result_text": "這個月的房租交了，房東順手把漏水的水龍頭修好了。",
+      "album_text": "租來的房子牆上，有你偷偷畫的身高線，房東好像一直沒發現。",
+      "held_text": "房東說，下次續約再談。",
+      "sticky": true
+    },
+    {
+      "id": "f_home_trouble",
+      "name": "家裡\u200b出事",
+      "type": "forced",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "放學回家，客廳燈沒開，大人坐在暗處講電話。",
+      "effects": {
+        "stress": 4,
+        "happiness": -2,
+        "wealth": -3
+      },
+      "slot_cost": 1,
+      "cooldown": 2,
+      "icon": "b_bill",
+      "_src": "規格 §2.4 爆牌；文字：writing/v1.2_spec_text.md（443a25d）",
+      "result_text": "那幾天大家說話都很小聲。你把晚餐熱好端上桌，事情慢慢過去了。",
+      "album_text": "那陣子餐桌很安靜，但每天都還是有人把飯煮好。",
+      "variants": [
+        {
+          "by_flag": "parent_unemployed",
+          "by_age": [
+            13,
+            18
+          ],
+          "line": "大人這陣子白天也在家，報紙的求職版被翻得很皺。",
+          "result_text": "有一天大人換上很久沒穿的襯衫出門，回來時帶了你愛吃的滷味。"
+        },
+        {
+          "by_flag": "parent_unemployed",
+          "by_age": [
+            19,
+            22
+          ],
+          "line": "大人說最近在找新工作，叫你不用擔心，你更擔心了。",
+          "result_text": "你幫忙改了履歷上的錯字，第一次覺得自己幫得上忙。"
+        },
+        {
+          "by_age": [
+            19,
+            22
+          ],
+          "line": "電話講到一半，大人突然問：「你那邊錢夠用嗎？」",
+          "result_text": "你這個月少吃幾頓好的，匯了一點錢回家。電話那頭說不用，還是收下了。",
+          "album_text": "那張匯款收據，你在皮夾裡夾了好久。"
+        }
+      ]
+    },
+    {
+      "id": "f_lost",
+      "name": "不知道\u200b要幹嘛",
+      "type": "forced",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你盯著天花板很久，想不起上次真心想要什麼是何時。",
+      "effects": {
+        "happiness": -3,
+        "academic": -2
+      },
+      "slot_cost": 0,
+      "cooldown": 2,
+      "icon": "b_comfort",
+      "_src": "規格 §2.4 爆牌；文字：writing/v1.2_spec_text.md（443a25d）",
+      "detail_name": "你突然不知道自己想要什麼",
+      "result_text": "你沒想出答案，但你起來把窗戶打開了。",
+      "album_text": "有一段日子，你每天都很忙著不做任何事。"
+    },
+    {
+      "id": "f_expect_fight",
+      "name": "飯桌上\u200b很安靜",
+      "type": "forced",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "成績單攤在餐桌上，沒有人先開口，湯慢慢涼了。",
+      "effects": {
+        "stress": 4,
+        "happiness": -3
+      },
+      "slot_cost": 0,
+      "cooldown": 2,
+      "icon": "b_expect",
+      "_src": "規格 §2.4 爆牌；文字：writing/v1.2_spec_text.md（443a25d）",
+      "result_text": "後來有人夾了一塊肉到你碗裡，這大概就是今天的結論。",
+      "album_text": "那頓飯的菜色你忘了，只記得大家都吃得很慢。",
+      "variants": [
+        {
+          "by_age": [
+            19,
+            22
+          ],
+          "line": "你說了自己的打算，餐桌上只剩筷子碰到碗的聲音。",
+          "result_text": "回去的路上，你收到一句「路上小心」，看了很久。"
+        }
+      ]
+    },
+    {
+      "id": "e_child_bitter",
+      "echo_card": true,
+      "name": "以前\u200b很會念書",
+      "type": "forced",
+      "cost": null,
+      "age_min": 14,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "老師翻到你小學的資料，說「你以前不是很會念書嗎」。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_child_bitter",
+        "e_child_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "小學的獎狀還貼在牆上，只是顏色淡了。",
+      "variants": [
+        {
+          "by_flag": "child_top_study",
+          "name": "以前\u200b很會念書",
+          "line": "老師翻到你小學的資料，說「你以前不是很會念書嗎」。",
+          "album_text": "小學的獎狀還貼在牆上，只是顏色淡了。"
+        },
+        {
+          "by_flag": "child_top_play",
+          "name": "好久\u200b不見",
+          "line": "走廊遇到小學一起玩的同學，你們愣了一下才打招呼。",
+          "album_text": "畢業紀念冊裡的「永遠」，有幾個已經想不起臉。"
+        },
+        {
+          "by_flag": "child_top_exercise",
+          "name": "場邊的\u200b位置",
+          "line": "大隊接力名單上沒有你，你在場邊喊得比誰都大聲。",
+          "album_text": "體育服還很新，因為很少穿到流汗。"
+        },
+        {
+          "by_flag": "child_top_talent",
+          "name": "櫃子\u200b最上層",
+          "line": "你翻到小時候的作品，想不起最後一次碰它是什麼時候。",
+          "album_text": "櫃子最上層，放著一樣你曾經很喜歡的東西。"
+        },
+        {
+          "by_flag": "child_top_work",
+          "name": "很懂事",
+          "line": "同學說你好獨立，你不知道該說謝謝還是解釋。",
+          "album_text": "那幾年你很少讓人操心，也很少讓人知道你累。"
+        }
+      ],
+      "flags_any": [
+        "child_top_study",
+        "child_top_play",
+        "child_top_exercise",
+        "child_top_talent",
+        "child_top_work"
+      ],
+      "child_top_plays": {
+        "max": 0
+      }
+    },
+    {
+      "id": "e_child_warm",
+      "echo_card": true,
+      "name": "坐得住",
+      "type": "forced",
+      "cost": null,
+      "age_min": 14,
+      "age_max": 18,
+      "expires_age": null,
+      "line": "段考前一晚你照樣先寫完講義才開電視，結果只剩新聞。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_child_warm",
+        "e_child_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "書桌前的檯燈，從小學一路亮到現在。",
+      "variants": [
+        {
+          "by_flag": "child_top_study",
+          "name": "坐得住",
+          "line": "段考前一晚你照樣先寫完講義才開電視，結果只剩新聞。",
+          "album_text": "書桌前的檯燈，從小學一路亮到現在。"
+        },
+        {
+          "by_flag": "child_top_play",
+          "name": "老朋友",
+          "line": "分班名單上，你一眼就找到小時候一起玩的名字。",
+          "album_text": "走廊上，你們還是用小時候的綽號叫對方。"
+        },
+        {
+          "by_flag": "child_top_exercise",
+          "name": "最後\u200b一棒",
+          "line": "大隊接力，大家理所當然把你排在最後一棒。",
+          "album_text": "終點線前那幾步，全班的聲音都在你背後。"
+        },
+        {
+          "by_flag": "child_top_talent",
+          "name": "又上台了",
+          "line": "社團成果發表你又舉手了，這次你知道要表演什麼。",
+          "album_text": "舞台的燈打下來時，你一點都不緊張。"
+        },
+        {
+          "by_flag": "child_top_work",
+          "name": "沒人\u200b教過",
+          "line": "家政課大家手忙腳亂，只有你把鍋子洗好、桌面擦乾。",
+          "album_text": "你會做的事很多，有好幾樣沒人教過。"
+        }
+      ],
+      "flags_any": [
+        "child_top_study",
+        "child_top_play",
+        "child_top_exercise",
+        "child_top_talent",
+        "child_top_work"
+      ],
+      "child_top_plays": {
+        "min": 2
+      }
+    },
+    {
+      "id": "e_track_bitter",
+      "echo_card": true,
+      "name": "另一份\u200b簡章",
+      "type": "forced",
+      "cost": null,
+      "age_min": 18,
+      "age_max": 20,
+      "expires_age": null,
+      "line": "你路過一所高職，實習工廠傳來機器的聲音，多看了幾眼。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_track_bitter",
+        "e_track_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "簡章裡有一頁你折了角，後來沒有翻回去。",
+      "variants": [
+        {
+          "by_track": "hs_general",
+          "name": "另一份\u200b簡章",
+          "line": "你路過一所高職，實習工廠傳來機器的聲音，多看了幾眼。",
+          "album_text": "簡章裡有一頁你折了角，後來沒有翻回去。"
+        },
+        {
+          "by_track": "hs_vocational",
+          "name": "插不上話",
+          "line": "同學聊起學測和選系，你插不上話，低頭喝飲料。",
+          "album_text": "你的手會做很多事，只是那陣子很少有人問。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "name": "同一個\u200b校門",
+          "line": "國中同學都換學校了，你還走同一條路去上學。",
+          "album_text": "五年很長，長到你偶爾會忘了當初為什麼選這裡。"
+        }
+      ],
+      "flags_all": [
+        "held_b_track_regret"
+      ]
+    },
+    {
+      "id": "e_track_warm",
+      "echo_card": true,
+      "name": "因為你\u200b才留下",
+      "type": "forced",
+      "cost": null,
+      "age_min": 18,
+      "age_max": 20,
+      "expires_age": null,
+      "line": "社團學弟妹寫卡片給你，說是因為你才留下來的。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_track_warm",
+        "e_track_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "那幾年你沒選錯，至少社辦裡的人都這麼說。",
+      "variants": [
+        {
+          "by_track": "hs_general",
+          "name": "因為你\u200b才留下",
+          "line": "社團學弟妹寫卡片給你，說是因為你才留下來的。",
+          "album_text": "那幾年你沒選錯，至少社辦裡的人都這麼說。"
+        },
+        {
+          "by_track": "hs_vocational",
+          "name": "那張\u200b證照",
+          "line": "證照寄到家裡，大人把它擺在電視櫃最顯眼的地方。",
+          "album_text": "證照外面那層護貝，是大人親自拿去文具行弄的。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "name": "先打\u200b給你",
+          "line": "實習的師傅說，下次有缺會先打給你。",
+          "album_text": "工作服上那塊油漬，你洗不掉，也沒打算洗。"
+        }
+      ],
+      "flags_any": [
+        "licensed",
+        "club_core",
+        "skilled_hands"
+      ],
+      "flags_none": [
+        "held_b_track_regret"
+      ]
+    },
+    {
+      "id": "e_branch_bitter",
+      "echo_card": true,
+      "name": "天快\u200b亮了",
+      "type": "forced",
+      "cost": null,
+      "age_min": 21,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "報告寫到天亮，你突然想：如果當時選了{branch_not_taken}？",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_branch_bitter",
+        "e_branch_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "宿舍窗外天亮了，報告和那個問題都還沒寫完。",
+      "variants": [
+        {
+          "by_track": "uni",
+          "name": "天快\u200b亮了",
+          "line": "報告寫到天亮，你突然想：如果當時選了{branch_not_taken}？",
+          "album_text": "宿舍窗外天亮了，報告和那個問題都還沒寫完。"
+        },
+        {
+          "by_track": "uni_tech",
+          "name": "回程的\u200b公車",
+          "line": "下班的公車上，你想著如果當時選了{branch_not_taken}。",
+          "album_text": "公車窗戶上的霧，你畫了一條路又擦掉。"
+        },
+        {
+          "by_track": "work_first",
+          "name": "別人的\u200b學士服",
+          "line": "學士服照片一張張滑過，如果當時選了{branch_not_taken}……",
+          "album_text": "那天你照常上班，只是午餐吃得比較慢。"
+        }
+      ],
+      "flags_any": [
+        "uni",
+        "uni_tech",
+        "work_first"
+      ],
+      "flags_all": [
+        "branch_not_taken"
+      ],
+      "post_split_gain": "non_positive"
+    },
+    {
+      "id": "e_branch_warm",
+      "echo_card": true,
+      "name": "從沒\u200b蹺過",
+      "type": "forced",
+      "cost": null,
+      "age_min": 21,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "有一堂課你從來沒蹺過，因為那是你真正喜歡的。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_branch_warm",
+        "e_branch_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "圖書館那個靠窗的位子，大家都知道是你的。",
+      "variants": [
+        {
+          "by_track": "uni",
+          "name": "從沒\u200b蹺過",
+          "line": "有一堂課你從來沒蹺過，因為那是你真正喜歡的。",
+          "album_text": "圖書館那個靠窗的位子，大家都知道是你的。"
+        },
+        {
+          "by_track": "uni_tech",
+          "name": "那是\u200b你做的",
+          "line": "老師拿你的作品給學弟妹看，沒說是誰做的，但你知道。",
+          "album_text": "工具箱裡每樣東西的位置，你閉著眼都摸得到。"
+        },
+        {
+          "by_track": "work_first",
+          "name": "前輩",
+          "line": "主管把新人交給你帶，說「跟著學就對了」。",
+          "album_text": "第一次有人叫你前輩，你差點回頭找是誰。"
+        }
+      ],
+      "flags_any": [
+        "uni",
+        "uni_tech",
+        "work_first"
+      ],
+      "post_split_gain": "positive"
+    },
+    {
+      "id": "e_home_bitter",
+      "echo_card": true,
+      "name": "感冒的\u200b晚上",
+      "type": "forced",
+      "cost": null,
+      "age_min": 20,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "感冒那晚你自己下樓買粥，回來時鑰匙轉了好幾下才開。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_home_bitter",
+        "e_home_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "那間房間很小，小到想家的時候沒地方躲。",
+      "variants": [
+        {
+          "by_flag": "moved_out",
+          "name": "感冒的\u200b晚上",
+          "line": "感冒那晚你自己下樓買粥，回來時鑰匙轉了好幾下才開。",
+          "album_text": "那間房間很小，小到想家的時候沒地方躲。"
+        },
+        {
+          "by_flag": "living_home",
+          "name": "門禁",
+          "line": "同學約宵夜，你看了一眼時鐘，家裡的門禁快到了。",
+          "album_text": "你的房間還是小時候那間，只是書桌換了一張。"
+        }
+      ],
+      "flags_any": [
+        "moved_out",
+        "living_home"
+      ],
+      "in_hand_any": [
+        "b_rent",
+        "f_home_trouble"
+      ]
+    },
+    {
+      "id": "e_home_warm",
+      "echo_card": true,
+      "name": "第一\u200b鍋湯",
+      "type": "forced",
+      "cost": null,
+      "age_min": 20,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你第一次自己煮了一鍋湯，打電話回家問鹽要放多少。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_home_warm",
+        "e_home_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "規格 §4.1 回音牌；文字：writing/v1.2_spec_text.md（443a25d）；條件：企劃 10/17 裁示（數值 苦 happiness −1、暖 +2 是規格假設）",
+      "album_text": "冰箱裡那盒家裡帶來的菜，你吃得特別慢。",
+      "variants": [
+        {
+          "by_flag": "moved_out",
+          "name": "第一\u200b鍋湯",
+          "line": "你第一次自己煮了一鍋湯，打電話回家問鹽要放多少。",
+          "album_text": "冰箱裡那盒家裡帶來的菜，你吃得特別慢。"
+        },
+        {
+          "by_flag": "living_home",
+          "name": "留著的燈",
+          "line": "晚歸那天客廳燈還亮著，桌上有一碗蓋好的湯。",
+          "album_text": "家裡那盞燈，你很晚才發現是為你留的。"
+        }
+      ],
+      "flags_any": [
+        "moved_out",
+        "living_home"
+      ],
+      "in_hand_none": [
+        "b_rent",
+        "f_home_trouble"
+      ]
+    },
+    {
+      "id": "e_teenjob_bitter",
+      "echo_card": true,
+      "name": "你會\u200b什麼",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "新同學問你會什麼，你想了想，只想到封口封得很快。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_teenjob_bitter",
+        "e_teenjob_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "那幾年的班表，你到現在還背得出來。",
+      "flags_any": [
+        "worked_teen"
+      ],
+      "flags_none": [
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_teenjob_warm",
+      "echo_card": true,
+      "name": "帶新人",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "新來的工讀生手忙腳亂，你教對方怎麼封口最快。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_teenjob_warm",
+        "e_teenjob_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "圍裙口袋裡的原子筆，換過好幾支，位置沒變。",
+      "flags_any": [
+        "worked_teen"
+      ],
+      "flags_all": [
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_loan_bitter",
+      "echo_card": true,
+      "name": "對保",
+      "type": "forced",
+      "cost": null,
+      "age_min": 21,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "開學前去銀行對保，櫃員說畢業滿一年後才開始還。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_loan_bitter",
+        "e_loan_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "那疊對保單據，你收在抽屜最裡面。",
+      "flags_any": [
+        "student_loan"
+      ],
+      "flags_none": [
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_loan_warm",
+      "echo_card": true,
+      "name": "第一期",
+      "type": "forced",
+      "cost": null,
+      "age_min": 21,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "打工存的錢不多，但你已經把畢業後第一期學貸的錢先存起來了。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_loan_warm",
+        "e_loan_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "存摺那一頁你拍了照，沒給誰看，只是想留著。",
+      "flags_any": [
+        "student_loan"
+      ],
+      "flags_all": [
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_single_bitter",
+      "echo_card": true,
+      "name": "不用\u200b請假",
+      "type": "forced",
+      "cost": null,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": null,
+      "line": "家長日那天，你先幫家裡的大人想好不用請假的理由。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_single_bitter",
+        "e_single_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "家長簽名欄的字跡，你比誰都熟。",
+      "flags_any": [
+        "single_parent"
+      ],
+      "stats_max": {
+        "social": 60
+      }
+    },
+    {
+      "id": "e_single_warm",
+      "echo_card": true,
+      "name": "分工",
+      "type": "forced",
+      "cost": null,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": null,
+      "line": "你和家裡的大人分好家事，默契好到不用講話。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_single_warm",
+        "e_single_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "冰箱上的便條紙，一張寫給你，一張寫給大人。",
+      "flags_any": [
+        "single_parent"
+      ],
+      "stats_min": {
+        "social": 61
+      }
+    },
+    {
+      "id": "e_cram_bitter",
+      "echo_card": true,
+      "name": "換了\u200b招牌",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "路過以前的補習班，招牌換了，樓下還是停滿機車。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_cram_bitter",
+        "e_cram_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "那幾年的講義，最後都拿去回收換了衛生紙。",
+      "flags_any": [
+        "crammed"
+      ],
+      "flags_none": [
+        "uni",
+        "uni_tech"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_cram_warm",
+      "echo_card": true,
+      "name": "原封\u200b不動",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你開始當家教，把補習班老師的笑話原封不動講一遍。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_cram_warm",
+        "e_cram_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "學生聽懂那一刻的表情，你以前也有過。",
+      "flags_any": [
+        "crammed"
+      ],
+      "flags_any_also": [
+        "uni",
+        "uni_tech"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_care_bitter",
+      "echo_card": true,
+      "name": "下次\u200b再說",
+      "type": "forced",
+      "cost": null,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": null,
+      "line": "同學約週末出去，你說要先回家看長輩，下次再說。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_care_bitter",
+        "e_care_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "那陣子你學會的事，課本上都沒有。",
+      "flags_any": [
+        "caregiving"
+      ],
+      "stats_max": {
+        "social": 60
+      }
+    },
+    {
+      "id": "e_care_warm",
+      "echo_card": true,
+      "name": "你小時候",
+      "type": "forced",
+      "cost": null,
+      "age_min": 16,
+      "age_max": 20,
+      "expires_age": null,
+      "line": "長輩今天精神很好，拉著你講了一下午你小時候的事。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_care_warm",
+        "e_care_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "有些故事你聽了很多遍，還是讓長輩再講一次。",
+      "flags_any": [
+        "caregiving"
+      ],
+      "stats_min": {
+        "social": 61
+      }
+    },
+    {
+      "id": "e_filial_bitter",
+      "echo_card": true,
+      "name": "記帳本",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "家裡說不用擔心，你還是把每筆花費都記在本子上。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_filial_bitter",
+        "e_filial_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "那本記帳本，你寫得比任何一本筆記都認真。",
+      "flags_any": [
+        "parent_unemployed",
+        "household_debt"
+      ],
+      "flags_none": [
+        "work_first",
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_filial_warm",
+      "echo_card": true,
+      "name": "推了\u200b兩次",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你把第一筆孝親費塞給家裡的大人，推了兩次才收下。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_filial_warm",
+        "e_filial_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "那個信封後來沒被拆開，一直收在抽屜裡。",
+      "flags_any": [
+        "parent_unemployed",
+        "household_debt"
+      ],
+      "flags_any_also": [
+        "work_first",
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_shop_bitter",
+      "echo_card": true,
+      "name": "好羨慕",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "同學說羨慕你家有店，你想起那些在店裡寫完的作業。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_shop_bitter",
+        "e_shop_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "店裡角落那張小桌子，現在堆滿了貨。",
+      "flags_any": [
+        "mem_06_work_a",
+        "mem_09_work_b",
+        "mem_12_work_a"
+      ],
+      "flags_none": [
+        "worked_teen",
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_shop_warm",
+      "echo_card": true,
+      "name": "以前\u200b顧過店",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "打工第一天，店長看你找錢的速度，問你是不是顧過店。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_shop_warm",
+        "e_shop_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "客人一進門，你的「歡迎光臨」比誰都快。",
+      "flags_any": [
+        "mem_06_work_a",
+        "mem_09_work_b",
+        "mem_12_work_a"
+      ],
+      "flags_any_also": [
+        "worked_teen",
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_newyear_bitter",
+      "echo_card": true,
+      "name": "換題目了",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "過年飯桌上，問題從成績換成「現在在做什麼」。",
+      "effects": {
+        "happiness": -1
+      },
+      "removes": [
+        "e_newyear_bitter",
+        "e_newyear_warm"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "你練了一整年的回答，被一句「然後呢」打斷。",
+      "flags_any": [
+        "mem_12_work_b"
+      ],
+      "flags_none": [
+        "work_first",
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "e_newyear_warm",
+      "echo_card": true,
+      "name": "換你包",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "今年換你包紅包給小朋友，你終於懂大人為什麼嘆氣。",
+      "effects": {
+        "happiness": 2
+      },
+      "removes": [
+        "e_newyear_warm",
+        "e_newyear_bitter"
+      ],
+      "cooldown": 2,
+      "cooldown_group": "adult_echo",
+      "_src": "新回音牌（企劃 10/17 定案）；文字與條件：writing/v1.2_echo_classmates_text.md（b969ba2），由 game/scripts/echo-from-md.py 轉出",
+      "album_text": "紅包袋是你自己去買的，挑了最便宜也最紅的。",
+      "flags_any": [
+        "mem_12_work_b"
+      ],
+      "flags_any_also": [
+        "work_first",
+        "worked_uni"
+      ],
+      "echo_cap_group": "adult_echo",
+      "draw_weight": 0.5
+    },
+    {
+      "id": "su_summer_job",
+      "type": "break",
+      "cost": null,
+      "age_min": 16,
+      "age_max": 21,
+      "expires_age": null,
+      "effects": {
+        "wealth": 2,
+        "stress": 1
+      },
+      "cooldown": 2,
+      "_src": "規格 §4.1；文字：writing/v1.2_spec_text.md（443a25d）；寒暑假效果是工程暫定（規格沒給數值），待企劃",
+      "name": "暑假打工",
+      "line": "暑假在附近的書局打工，包書套包到指紋都快磨平。",
+      "result_text": "領薪水那天，你在店門口站了一下，想好要先買什麼。",
+      "album_text": "書局櫃檯後面的那個暑假，手上都是膠帶的味道。",
+      "weight_quintile": {
+        "1": 1.5,
+        "2": 1.5
+      },
+      "icon": "s_work",
+      "variants": [
+        {
+          "by_age": [
+            19,
+            21
+          ],
+          "line": "暑假在補習班櫃檯打工，學會用很溫柔的聲音說「請稍等」。",
+          "result_text": "你發現大人的世界，很多事都靠一句「我確認一下」。",
+          "album_text": "那個暑假你接了很多電話，每一通都從「您好」開始。"
+        }
+      ]
+    },
+    {
+      "id": "su_summer_class",
+      "type": "break",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 17,
+      "expires_age": null,
+      "effects": {
+        "academic": 2,
+        "happiness": -1
+      },
+      "cooldown": 2,
+      "_src": "規格 §4.1；文字：writing/v1.2_spec_text.md（443a25d）；寒暑假效果是工程暫定（規格沒給數值），待企劃",
+      "name": "暑期輔導",
+      "line": "暑假還是每天去學校，電風扇轉得很努力，大家都在發呆。",
+      "result_text": "課上了什麼你只記得一半，福利社什麼時候補貨你全記得。",
+      "album_text": "暑假的教室很安靜，只有電風扇和蟬在吵。",
+      "icon": "s_study"
+    },
+    {
+      "id": "su_countryside",
+      "type": "break",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 18,
+      "expires_age": null,
+      "effects": {
+        "happiness": 2,
+        "stress": -1
+      },
+      "cooldown": 2,
+      "_src": "規格 §4.1；文字：writing/v1.2_spec_text.md（443a25d）；寒暑假效果是工程暫定（規格沒給數值），待企劃",
+      "name": "回鄉下",
+      "line": "暑假被送回鄉下的親戚家，那裡的蚊子好像比較認識你。",
+      "result_text": "你幫忙曬了一下午的東西，晚上吃到全世界最甜的西瓜。",
+      "album_text": "鄉下的晚上很黑，星星多到有點吵。",
+      "icon": "d_trip",
+      "variants": [
+        {
+          "by_county_tag": [
+            "rural",
+            "remote",
+            "偏鄉"
+          ],
+          "name": "去城裡的\u200b親戚家",
+          "line": "暑假去城裡的親戚家住幾天，搭車搭錯了兩次。",
+          "result_text": "你看到很多沒看過的東西，回家後覺得自己房間的天空比較大。"
+        }
+      ]
+    },
+    {
+      "id": "su_camp",
+      "type": "break",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 21,
+      "expires_age": null,
+      "effects": {
+        "social": 2,
+        "happiness": 1,
+        "wealth": -1
+      },
+      "cooldown": 2,
+      "_src": "規格 §4.1；文字：writing/v1.2_spec_text.md（443a25d）；寒暑假效果是工程暫定（規格沒給數值），待企劃",
+      "name": "營隊",
+      "line": "營隊第一天大家都很害羞，最後一天卻哭著交換聯絡方式。",
+      "result_text": "營歌你唱了一整個暑假，家裡的人聽到都會背了。",
+      "album_text": "營隊名牌你一直留著，背面寫滿了綽號。",
+      "weight_quintile": {
+        "3": 1.3,
+        "4": 1.3,
+        "5": 1.3
+      },
+      "icon": "s_club"
+    },
+    {
+      "id": "w_lunar_new_year",
+      "type": "break",
+      "cost": null,
+      "age_min": 13,
+      "age_max": 22,
+      "expires_age": null,
+      "effects": {
+        "happiness": 1,
+        "stress": 1
+      },
+      "cooldown": 2,
+      "_src": "規格 §4.1；文字：writing/v1.2_spec_text.md（443a25d）；寒暑假效果是工程暫定（規格沒給數值），待企劃",
+      "name": "過年",
+      "line": "紅包還沒拿熱就被收去保管，親戚的問題倒是一個也沒少。",
+      "result_text": "你練出一套標準答案，從「還好」一路講到「會再努力」。",
+      "album_text": "過年的客廳很吵，吵到沒人發現你多吃了一塊年糕。",
+      "icon": "d_shop",
+      "variants": [
+        {
+          "by_age": [
+            19,
+            22
+          ],
+          "line": "親戚的問題從成績換成工作和對象，你笑著低頭夾菜。",
+          "result_text": "你學會把話題轉到桌上那盤菜，大家就都開始吃了。"
+        }
+      ]
+    },
+    {
+      "id": "w_winter_sprint",
+      "type": "break",
+      "cost": null,
+      "age_min": 15,
+      "age_max": 18,
+      "expires_age": null,
+      "effects": {
+        "academic": 2,
+        "stress": 2
+      },
+      "cooldown": 2,
+      "_src": "規格 §4.1；文字：writing/v1.2_spec_text.md（443a25d）；寒暑假效果是工程暫定（規格沒給數值），待企劃",
+      "name": "寒假衝刺",
+      "line": "寒假才幾天，{exam_name}的倒數紙已經撕得很薄了。",
+      "result_text": "錯題本翻到起毛，年夜飯你吃得特別快。",
+      "album_text": "那年寒假，書桌上的燈比鞭炮還亮。",
+      "ages": [
+        15,
+        18
+      ],
+      "break_force": true,
+      "icon": "d_night",
+      "variants": [
+        {
+          "by_track": "hs_general",
+          "by_age": [
+            18,
+            18
+          ],
+          "line": "學測就在寒假裡，過年的鞭炮聽起來都像在倒數。"
+        },
+        {
+          "by_track": "hs_vocational",
+          "by_age": [
+            18,
+            18
+          ],
+          "line": "統測還要等一陣子，寒假的衝刺班冷到大家穿外套抄筆記。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            18,
+            18
+          ],
+          "line": "五專的寒假不用拚大考，大人問你「那你都在忙什麼」。"
+        }
+      ]
+    }
+  ]
+}

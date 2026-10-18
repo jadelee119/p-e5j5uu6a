@@ -1,0 +1,639 @@
+{
+  "_note": "v1.2 童年序章（design/v1.2-spec.md §1）。由 game/scripts/childhood-from-md.ts 從 writing/v1.2_childhood_memory_cards.md 產生（改文字請改 md 再重跑）；洗入照規格 §1.4，權重等級照規格 §1.3（假設值，沒有統計依據）。echo_hook 只給回音牌參考，不上牌面。",
+  "ages": [
+    6,
+    9,
+    12
+  ],
+  "acts": {
+    "6": {
+      "label": "剛上小學",
+      "era_band": [
+        6,
+        8
+      ]
+    },
+    "9": {
+      "label": "小學中年級",
+      "era_band": [
+        9,
+        11
+      ]
+    },
+    "12": {
+      "label": "小學快畢業",
+      "era_band": [
+        12,
+        12
+      ]
+    }
+  },
+  "draw": 3,
+  "pick": 1,
+  "distinct_categories": true,
+  "show_consequence": "before",
+  "categories": {
+    "study": {
+      "name": "讀書",
+      "fallback_add": "d_study"
+    },
+    "play": {
+      "name": "玩樂",
+      "fallback_add": "d_play"
+    },
+    "exercise": {
+      "name": "運動",
+      "fallback_add": "d_exercise"
+    },
+    "talent": {
+      "name": "才藝",
+      "fallback_add": "s_club_jr"
+    },
+    "work": {
+      "name": "顧家",
+      "fallback_add": "g_mature"
+    }
+  },
+  "weight_levels": {
+    "equal": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "mid_up_slight": {
+      "1": 0.7,
+      "2": 0.7,
+      "3": 1.2,
+      "4": 1.2,
+      "5": 1.2
+    },
+    "mid_up": {
+      "1": 0.7,
+      "2": 0.7,
+      "3": 1.5,
+      "4": 1.5,
+      "5": 1.5
+    },
+    "mid_up_soft": {
+      "1": 1,
+      "2": 1,
+      "3": 1.5,
+      "4": 1.5,
+      "5": 1.5
+    },
+    "rich": {
+      "1": 0.5,
+      "2": 0.5,
+      "3": 1,
+      "4": 1.5,
+      "5": 1.5
+    },
+    "poor": {
+      "1": 1.5,
+      "2": 1.5,
+      "3": 1.5,
+      "4": 0.5,
+      "5": 0.5
+    }
+  },
+  "memories": [
+    {
+      "id": "mem_06_study_a",
+      "act": 6,
+      "category": "study",
+      "name": "聯絡簿",
+      "situation": "你是那種聯絡簿永遠準時簽好，還自己圈重點的小孩。",
+      "consequence": "之後念書比較坐得住；只是被誇乖久了，會忘記怎麼不乖。",
+      "adds": [
+        "d_study"
+      ],
+      "flag": "mem_06_study_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_study_a",
+      "echo_hook": "國中班導第一天就指定你當學藝股長，理由是「看起來很可靠」。或者高中某個晚上，聯絡簿沒有人簽，你自己簽了，字跡練得很像。"
+    },
+    {
+      "id": "mem_06_study_b",
+      "act": 6,
+      "category": "study",
+      "name": "先寫功課",
+      "situation": "卡通的片頭曲都響了，你的數學習作還剩最後一題。",
+      "consequence": "你學會先把該做的做完；代價是每部卡通都從中間開始看。",
+      "adds": [
+        "d_study"
+      ],
+      "flag": "mem_06_study_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_study_b",
+      "echo_hook": "國中段考前一晚，你照樣先寫完講義才開電視，結果只剩新聞。高中同學說你自律，你想起那些只看過後半段的卡通。"
+    },
+    {
+      "id": "mem_06_play_a",
+      "act": 6,
+      "category": "play",
+      "name": "下課十分鐘",
+      "situation": "下課鐘一響你第一個衝出去，十分鐘玩完鬼抓人加鞦韆。",
+      "consequence": "你很會交朋友，也很會在上課鐘響後才想起作業。",
+      "adds": [
+        "d_play"
+      ],
+      "flag": "mem_06_play_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_play_a",
+      "echo_hook": "國中分班名單上，你一眼就找到一個小時候一起玩鬼抓人的名字。"
+    },
+    {
+      "id": "mem_06_play_b",
+      "act": 6,
+      "category": "play",
+      "name": "玩到天黑",
+      "situation": "溜滑梯排到第三輪，公園那頭傳來全名被叫的聲音。",
+      "consequence": "你很懂得讓自己開心；只是要你喊停，永遠比別人難。",
+      "adds": [
+        "d_play"
+      ],
+      "flag": "mem_06_play_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_play_b",
+      "echo_hook": "國中補習下課，你走過那座公園。溜滑梯換新了，排隊的小孩你一個都不認識。高中某天被叫全名，你還是下意識先縮了一下。"
+    },
+    {
+      "id": "mem_06_exercise_a",
+      "act": 6,
+      "category": "exercise",
+      "name": "拆掉輔助輪",
+      "situation": "拆掉輔助輪那天你摔了好幾次，紅藥水沒乾又牽車出門。",
+      "consequence": "你不太怕跌倒，身體也比較跟得上你想做的事。",
+      "adds": [
+        "d_exercise"
+      ],
+      "flag": "mem_06_exercise_a",
+      "weight": "equal",
+      "weight_if_county_tags": {
+        "rural": 1.2,
+        "remote": 1.2,
+        "偏鄉": 1.2
+      },
+      "by_birth_year": [],
+      "art": "mem_06_exercise_a",
+      "echo_hook": "高中你每天騎腳踏車上學。某次上坡騎到一半，你想起那天摔倒，還是沒有下來牽車。"
+    },
+    {
+      "id": "mem_06_exercise_b",
+      "act": 6,
+      "category": "exercise",
+      "name": "跳繩比賽",
+      "situation": "你跳繩跳到全班幫你數，數到大家都亂了，你還沒停。",
+      "consequence": "你喜歡身體動起來的感覺，需要撐的時候也知道怎麼撐。",
+      "adds": [
+        "g_grit"
+      ],
+      "flag": "mem_06_exercise_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_exercise_b",
+      "echo_hook": "高中體適能測驗，大家都在哀號，你是少數覺得還好的人。"
+    },
+    {
+      "id": "mem_06_talent_a",
+      "act": 6,
+      "category": "talent",
+      "name": "學鋼琴",
+      "situation": "家裡送你去學鋼琴。老師的節拍器，比你還有耐心。",
+      "consequence": "你會一件很少人會的事；但每個月要繳學費，也要有人接送。",
+      "adds": [
+        "d_talent"
+      ],
+      "flag": "mem_06_talent_a",
+      "weight": "rich",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_talent_a",
+      "echo_hook": "國中合唱比賽，班上一致推你去伴奏。或者高中某天掀開琴蓋，上面已經積了一層灰。"
+    },
+    {
+      "id": "mem_06_talent_b",
+      "act": 6,
+      "category": "talent",
+      "name": "一盒蠟筆",
+      "situation": "一盒蠟筆就能讓你安靜一下午，畫完還要大人猜是什麼。",
+      "consequence": "你很早就找到一件能自己玩很久的事，它會一直跟著你。",
+      "adds": [
+        "s_club_jr"
+      ],
+      "flag": "mem_06_talent_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_talent_b",
+      "echo_hook": "國中美術課，你的作品被老師留下來布置教室。高中做班服時，大家都來找你畫圖案。"
+    },
+    {
+      "id": "mem_06_work_a",
+      "act": 6,
+      "category": "work",
+      "name": "店裡的小板凳",
+      "situation": "放學就坐在店裡的小板凳，客人進門你比大人先喊歡迎。",
+      "consequence": "你比同年紀早學會看場合、算零錢；自己玩的時間少一點。",
+      "adds": [
+        "d_shop"
+      ],
+      "flag": "mem_06_work_a",
+      "weight": "poor",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_work_a",
+      "echo_hook": "國中數學老師很驚訝你心算這麼快。高中同學走進店裡，你愣了一下，還是先喊了「歡迎光臨」。"
+    },
+    {
+      "id": "mem_06_work_b",
+      "act": 6,
+      "category": "work",
+      "name": "脖子上的鑰匙",
+      "situation": "鑰匙掛在脖子上，放學自己開門，電鍋自己按。",
+      "consequence": "你很會照顧自己；只是有時候，也不太會開口要人陪。",
+      "adds": [
+        "g_mature"
+      ],
+      "flag": "mem_06_work_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_06_work_b",
+      "echo_hook": "國中同學說你好獨立，你不知道該說謝謝還是解釋。高中某天忘了帶鑰匙，你坐在門口把一整份作業寫完。"
+    },
+    {
+      "id": "mem_09_study_a",
+      "act": 9,
+      "category": "study",
+      "name": "安親班",
+      "situation": "路隊直接走到安親班，作業給老師檢查過才能下樓玩。",
+      "consequence": "你習慣先寫完再說，考前比較不慌；只是放學後的天空看得少。",
+      "adds": [
+        "d_study"
+      ],
+      "flag": "mem_09_study_a",
+      "weight": "mid_up",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_study_a",
+      "echo_hook": "國中補習班的座位，好像自然而然就輪到你。或者高中第一次沒人檢查作業，你坐在書桌前，不知道該先寫哪一科。"
+    },
+    {
+      "id": "mem_09_study_b",
+      "act": 9,
+      "category": "study",
+      "name": "借書卡",
+      "situation": "午休你溜去圖書室，借書卡上一整排都是你的名字。",
+      "consequence": "讀得進書是一種本事，你有；只要圖書室的門開著就好。",
+      "adds": [
+        "d_study"
+      ],
+      "flag": "mem_09_study_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_study_b",
+      "echo_hook": "國中你自願去當圖書館志工，因為那裡最安靜。高中寫讀書心得時，你挑了一本小時候借過好幾次的書。"
+    },
+    {
+      "id": "mem_09_play_a",
+      "act": 9,
+      "category": "play",
+      "name": "抽屜裡的卡牌",
+      "situation": "抽屜裡一疊卡牌，下課蹲走廊對打，輸了的不能要回來。",
+      "consequence": "你懂朋友間的規矩、很會談條件；課本常被擠到最下面。",
+      "adds": [
+        "d_buddy"
+      ],
+      "flag": "mem_09_play_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_play_a",
+      "echo_hook": "國中整理書包時，你翻到一張小時候被贏走、後來又贏回來的卡，想不起來對手是誰。"
+    },
+    {
+      "id": "mem_09_play_b",
+      "act": 9,
+      "category": "play",
+      "name": "電腦課",
+      "situation": "老師一轉身全班切到小遊戲，你負責教大家一秒切回來。",
+      "consequence": "你很會玩，也很會收手；遇到新東西，通常你先上手。",
+      "adds": [
+        "d_play"
+      ],
+      "flag": "mem_09_play_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_play_b",
+      "echo_hook": "國中第一次走進網咖，你發現自己什麼都會。高中老師的投影機壞了，全班都轉頭看你。"
+    },
+    {
+      "id": "mem_09_exercise_a",
+      "act": 9,
+      "category": "exercise",
+      "name": "躲避球",
+      "situation": "躲避球打到最後只剩你在場內，全班喊你名字比升旗還齊。",
+      "consequence": "你身手很靈活，也很習慣大家把希望放在你身上。",
+      "adds": [
+        "d_exercise"
+      ],
+      "flag": "mem_09_exercise_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_exercise_a",
+      "echo_hook": "國中大隊接力，大家理所當然把你排在最後一棒。"
+    },
+    {
+      "id": "mem_09_exercise_b",
+      "act": 9,
+      "category": "exercise",
+      "name": "巷口打球",
+      "situation": "巷口的籃框沒有網子，你打到天黑，有人喊吃飯才散。",
+      "consequence": "你跌倒爬起來很快，累的時候知道怎麼把力氣找回來。",
+      "adds": [
+        "g_grit"
+      ],
+      "flag": "mem_09_exercise_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_exercise_b",
+      "echo_hook": "高中某天路過那條巷子，籃框不見了，那裡畫成了停車格。"
+    },
+    {
+      "id": "mem_09_talent_a",
+      "act": 9,
+      "category": "talent",
+      "name": "直笛",
+      "situation": "全班只有你的直笛不像殺雞，老師把你拉進學校樂隊。",
+      "consequence": "你發現自己有點天分，之後有機會上台都會想試試。",
+      "adds": [
+        "s_club_jr"
+      ],
+      "flag": "mem_09_talent_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_talent_a",
+      "echo_hook": "國中樂隊招生，學長姐一眼就認出你。高中社團博覽會，你在管樂社的攤位前站了很久。"
+    },
+    {
+      "id": "mem_09_talent_b",
+      "act": 9,
+      "category": "talent",
+      "name": "美術班術科",
+      "situation": "大人帶你去考美術班，你在考場畫了一隻比桌子大的貓。",
+      "consequence": "考沒考上都好，你有一件想認真的事了；畫具會一直要錢。",
+      "adds": [
+        "d_talent"
+      ],
+      "flag": "mem_09_talent_b",
+      "weight": "mid_up_soft",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_talent_b",
+      "echo_hook": "國中又遇到美術班術科，這次要不要去考，換你自己決定。高中的備審資料裡，放了你最滿意的那張作品。",
+      "todo": "⚠️待查（見文案稿）"
+    },
+    {
+      "id": "mem_09_work_a",
+      "act": 9,
+      "category": "work",
+      "name": "冰箱上的家事表",
+      "situation": "冰箱上貼著家事表，垃圾車音樂一響，衝下樓的永遠是你。",
+      "consequence": "家裡的事你很會接，大人很放心；你自己的事常排最後。",
+      "adds": [
+        "g_mature"
+      ],
+      "flag": "mem_09_work_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_work_a",
+      "echo_hook": "國中某天在補習班聽到垃圾車音樂，你下意識站了起來。高中第一次住宿，整層樓只有你會分資源回收。"
+    },
+    {
+      "id": "mem_09_work_b",
+      "act": 9,
+      "category": "work",
+      "name": "夜市的攤位",
+      "situation": "你在攤子後面寫功課，燈泡很熱，找錢算得比大人快。",
+      "consequence": "你很早就懂錢怎麼一點一點進來；寫功課的地方總是很吵。",
+      "adds": [
+        "d_shop"
+      ],
+      "flag": "mem_09_work_b",
+      "weight": "poor",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_09_work_b",
+      "echo_hook": "高中打工第一天，店長看你封口的速度，問你以前是不是做過。"
+    },
+    {
+      "id": "mem_12_study_a",
+      "act": 12,
+      "category": "study",
+      "name": "私中入學考",
+      "situation": "你被帶去考私中，看到第二大題就開始想午餐吃什麼。",
+      "consequence": "你很早就知道考試會把人分開，之後遇到大考比較有準備。",
+      "adds": [
+        "d_study"
+      ],
+      "flag": "mem_12_study_a",
+      "weight": "rich",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_study_a",
+      "echo_hook": "國中開學，你發現有人已經上過一輪國一的課。高中大家在聊{exam_name}，你發現自己好像從小六就在準備了。",
+      "todo": "⚠️待查（見文案稿）"
+    },
+    {
+      "id": "mem_12_study_b",
+      "act": 12,
+      "category": "study",
+      "name": "數學小老師",
+      "situation": "當了數學小老師，下課有人排隊問題目，你的下課沒了。",
+      "consequence": "講給別人聽你會更懂；只是大家很快把你當成本來就會。",
+      "adds": [
+        "d_study"
+      ],
+      "flag": "mem_12_study_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_study_b",
+      "echo_hook": "國中第一次段考失常，同學說「你也會錯喔」。高中有人傳紙條來：「作業借我抄。」（可以跟包袱「期待」接在一起）"
+    },
+    {
+      "id": "mem_12_play_a",
+      "act": 12,
+      "category": "play",
+      "name": "畢業紀念冊",
+      "situation": "紀念冊留言頁寫滿了，每個人都寫「永遠不要忘記我」。",
+      "consequence": "你朋友多，很少一個人；只是有些「永遠」比你想的短。",
+      "adds": [
+        "d_buddy"
+      ],
+      "flag": "mem_12_play_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_play_a",
+      "echo_hook": "國中在走廊遇到小學同學，你們都愣了一下才打招呼。高中翻到那本紀念冊，有一半的名字你已經想不起臉了。"
+    },
+    {
+      "id": "mem_12_play_b",
+      "act": 12,
+      "category": "play",
+      "name": "第一次去網咖",
+      "situation": "第一次溜去網咖，說好玩一下下，出來天已經黑了。",
+      "consequence": "你找到一個能把時間整個丟進去的地方，很過癮，也很難停。",
+      "adds": [
+        "d_play"
+      ],
+      "flag": "mem_12_play_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [
+        {
+          "from": 88,
+          "to": 89,
+          "name": "家裡的電腦",
+          "situation": "家裡的電腦裝了線上遊戲，說好玩一下下，抬頭天就黑了。",
+          "consequence": null
+        }
+      ],
+      "art": "mem_12_play_b",
+      "echo_hook": "國中「玩手機」那張包袱牌第一次出現時，旁白可以接一句：「你突然想起那天走出網咖時，天黑的顏色。」",
+      "todo": "⚠️待查（見文案稿）"
+    },
+    {
+      "id": "mem_12_exercise_a",
+      "act": 12,
+      "category": "exercise",
+      "name": "田徑隊晨練",
+      "situation": "體育老師在操場邊叫住你，問你要不要每天早上來練跑。",
+      "consequence": "你有了每天早起的理由，之後很累的時候比較撐得住。",
+      "adds": [
+        "g_grit"
+      ],
+      "flag": "mem_12_exercise_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_exercise_a",
+      "echo_hook": "直接接國中的「校隊」牌（d_team），老師會說：「我聽小學老師說過你。」"
+    },
+    {
+      "id": "mem_12_exercise_b",
+      "act": 12,
+      "category": "exercise",
+      "name": "直排輪",
+      "situation": "你在社區空地一圈圈地繞，從扶著牆練到能倒著溜。",
+      "consequence": "你知道一件事要摔很多次才會，而你不怕摔。",
+      "adds": [
+        "d_exercise"
+      ],
+      "flag": "mem_12_exercise_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_exercise_b",
+      "echo_hook": "高中某天在河堤看到有人在溜，你差點開口問能不能借你試一圈。",
+      "todo": "⚠️待查（見文案稿）"
+    },
+    {
+      "id": "mem_12_talent_a",
+      "act": 12,
+      "category": "talent",
+      "name": "畢業典禮的表演",
+      "situation": "老師問畢業典禮誰有才藝，你先舉手，再想自己會什麼。",
+      "consequence": "你敢站上台，有被看見的機會時，你不太會往後退。",
+      "adds": [
+        "s_club_jr"
+      ],
+      "flag": "mem_12_talent_a",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_talent_a",
+      "echo_hook": "國中社團成果發表，你又舉手了，這次你知道自己要表演什麼。"
+    },
+    {
+      "id": "mem_12_talent_b",
+      "act": 12,
+      "category": "talent",
+      "name": "登上國語日報",
+      "situation": "你的短文登上國語日報，那一小塊在冰箱上貼到發黃。",
+      "consequence": "你有一件能讓自己被看見的事，而且是你自己寫出來的。",
+      "adds": [
+        "s_club_jr"
+      ],
+      "flag": "mem_12_talent_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_talent_b",
+      "echo_hook": "高中整理備審資料時，你想起冰箱上那張黃掉的剪報，不知道該不該放進去。"
+    },
+    {
+      "id": "mem_12_work_a",
+      "act": 12,
+      "category": "work",
+      "name": "早餐店的鐵板",
+      "situation": "天沒亮就在早餐店煎蛋，同學說你好香，你只覺得好睏。",
+      "consequence": "你早起、手也快；上課打瞌睡被抓的次數，也比別人多。",
+      "adds": [
+        "d_shop"
+      ],
+      "flag": "mem_12_work_a",
+      "weight": "poor",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_work_a",
+      "echo_hook": "國中有同學來店裡買早餐，認出你之後點了一份加蛋，說「算我便宜一點」。"
+    },
+    {
+      "id": "mem_12_work_b",
+      "act": 12,
+      "category": "work",
+      "name": "過年的客廳",
+      "situation": "過年你負責倒茶、陪小孩、被每個大人問成績，紅包先交保管。",
+      "consequence": "你很會照顧場面，大家說你懂事；懂事久了，忘了可以鬧。",
+      "adds": [
+        "g_mature"
+      ],
+      "flag": "mem_12_work_b",
+      "weight": "equal",
+      "weight_if_county_tags": {},
+      "by_birth_year": [],
+      "art": "mem_12_work_b",
+      "echo_hook": "國中過年，問題從「考幾分」變成「{exam_name}準備得怎樣」。高中你發現那些紅包，好像一直都還在保管。"
+    }
+  ],
+  "summary": {
+    "all_same": {
+      "study": "你的童年大多坐在書桌前，檯燈比誰都了解你。",
+      "play": "你的童年一直在玩，玩到天黑被叫回家，這是你最會的事。",
+      "exercise": "你的童年一直在跑，膝蓋上的疤一個比一個新。",
+      "talent": "你的童年有一件特別喜歡的事，你一直沒有放下。",
+      "work": "你的童年大多在幫忙，你比誰都早學會照顧別人。"
+    },
+    "mixed": "你的童年什麼都碰一點，像一個塞得太滿的書包。"
+  }
+}

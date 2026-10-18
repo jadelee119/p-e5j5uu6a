@@ -44,3 +44,10 @@ balance.json 尚未定義的鍵由 `src/logic/balance.ts` 的 `DEFAULT_BALANCE` 
 - 美術重畫同名檔案後重新 build 就會換上新圖；manifest 新增或移除的圖也會自動同步。沒有插圖的事件卡就不顯示圖片。
 - 開局插圖（選用）：manifest 鍵名 `opening_q1` … `opening_q5`，依玩家所得分位顯示在開局畫面；沒有就不顯示。
 - 事件卡上方顯示拍立得相紙；人生回顧相簿每階段一張拍立得（沒有插圖時顯示斜紋空白相紙），最後一格是「22 歲以後」的空白相框。
+
+## v1.2 單一檔案預覽（離線試玩用）
+
+- **怎麼開**：把 `taiwan-life-v1.2-preview.html` 複製到自己的電腦，雙擊用瀏覽器打開就好（Chrome、Edge、Safari 都可以）。不用上網，也不用架伺服器。沒帶網址參數時，它會自己切到 `?mode=deck&v12=1`，直接進 v1.2。沒有中途存檔，重新整理就是新的一局；瀏覽器 localStorage 只記成就和深淺色主題，跟線上版分開。
+- **建自哪個 commit**：看瀏覽器分頁標題括號裡的 `build xxxxxxx`，或在 F12 Console 看第一行，或用文字編輯器打開檔頭的 `<!-- v1.2 預覽 · build … -->` 和 `<meta name="build-commit">`。帶 `-dirty` 表示建置時 game/、data/、writing/、art/ 裡追蹤中的檔案有還沒 commit 的改動；新增但還沒 git add 的檔案不算。畫面裡不放 hash，因為畫面上不能出現阿拉伯數字。
+- **怎麼重建**：在 `game/` 底下跑 `python3 scripts/build-single-file.py [輸出檔]`。預設輸出到 `/workspace/preview/taiwan-life-v1.2-preview.html`，這個檔不放在 repo 裡。
+- **跟正式版的差別**：只在這個檔案裡把圖縮到最長邊 720px 並轉成 WebP；拿掉 Google Fonts 的外部 @import，改用後備字型，粉圓照樣內嵌。它不碰 `dist/`、Pages，也不改 `v12.json`（`enabled` 照舊是 false）。

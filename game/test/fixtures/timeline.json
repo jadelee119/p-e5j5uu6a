@@ -1,0 +1,124 @@
+{
+  "_note": "測試用假資料（不是真實事件，不進正式資料）。格式照數據研究員的 data/timeline.json 規格。正式檔 data/timeline.json 出現後，deckcheck 會改讀正式檔。",
+  "events": [
+    {
+      "id": "fixture_nationwide",
+      "name_zh": "測試事件甲（全國、跨學期）",
+      "roc_ym_start": "95-03",
+      "roc_ym_end": "95-06",
+      "age_min": 6,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中"
+      ],
+      "counties": [
+        "全國"
+      ],
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "sources": [
+        {
+          "title": "測試用，無來源",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "id": "fixture_regional",
+      "name_zh": "測試事件乙（分重災區、輕災區）",
+      "roc_ym_start": "98-08",
+      "roc_ym_end": "98-08",
+      "age_min": 9,
+      "age_max": 18,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中"
+      ],
+      "counties": [
+        "taitung",
+        "taichung"
+      ],
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "sources": [
+        {
+          "title": "測試用，無來源",
+          "url": ""
+        }
+      ],
+      "county_impact": {
+        "heavy": [
+          "taitung"
+        ],
+        "light": [
+          "taichung"
+        ]
+      }
+    },
+    {
+      "id": "fixture_late",
+      "name_zh": "測試事件丙（晚出生的人才碰得到）",
+      "roc_ym_start": "108-12",
+      "roc_ym_end": "110-06",
+      "age_min": 19,
+      "age_max": 22,
+      "school_stages_affected": [
+        "大學"
+      ],
+      "counties": [
+        "全國"
+      ],
+      "reachable_birth_years": [
+        86,
+        87,
+        88,
+        89
+      ],
+      "sources": [
+        {
+          "title": "測試用，無來源",
+          "url": ""
+        }
+      ]
+    }
+  ],
+  "system_rules": [
+    {
+      "id": "fixture_rule",
+      "name_zh": "測試制度（只給晚出生的人）",
+      "applies_to_birth_roc_years": [
+        88,
+        89
+      ],
+      "sources": [
+        {
+          "title": "測試用，無來源",
+          "url": ""
+        }
+      ]
+    }
+  ]
+}

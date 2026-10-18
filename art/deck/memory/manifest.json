@@ -1,0 +1,196 @@
+{
+ "_note": "童年記憶牌插圖（美術設計）。4:5 母版 480×600，主體在安全區 x 80–400、y 60–540。svg＝向量原檔（含濾鏡），png＝600×750 匯出（96 色調色盤，遊戲建議用 png）。",
+ "ratio": "4:5",
+ "size": [
+  480,
+  600
+ ],
+ "safe_zone": [
+  80,
+  60,
+  400,
+  540
+ ],
+ "cards": {
+  "mem_06_study_a": {
+   "svg": "art/deck/memory/mem_06_study_a.svg",
+   "png": "art/deck/memory/mem_06_study_a.png",
+   "accent": "#3A6FB0",
+   "subject": "攤開的聯絡簿：紅筆圈重點、家長簽名的鬼畫符、鉛筆"
+  },
+  "mem_06_study_b": {
+   "svg": "art/deck/memory/mem_06_study_b.svg",
+   "png": "art/deck/memory/mem_06_study_b.png",
+   "accent": "#2B8C96",
+   "subject": "後面的舊電視在播片頭（彩虹＋音符），前面的習作只剩最後一格"
+  },
+  "mem_06_play_a": {
+   "svg": "art/deck/memory/mem_06_play_a.svg",
+   "png": "art/deck/memory/mem_06_play_a.png",
+   "accent": "#4A7038",
+   "subject": "盪鞦韆盪到最高＋旁邊在鬼抓人的小孩"
+  },
+  "mem_06_play_b": {
+   "svg": "art/deck/memory/mem_06_play_b.svg",
+   "png": "art/deck/memory/mem_06_play_b.png",
+   "accent": "#2E6E5A",
+   "subject": "天黑的公園溜滑梯，月亮出來了，左邊傳來叫名字的聲波"
+  },
+  "mem_06_exercise_a": {
+   "svg": "art/deck/memory/mem_06_exercise_a.svg",
+   "png": "art/deck/memory/mem_06_exercise_a.png",
+   "accent": "#A8322D",
+   "subject": "紅色小腳踏車，拆下來的輔助輪滾在地上，飄著一張 OK 繃"
+  },
+  "mem_06_exercise_b": {
+   "svg": "art/deck/memory/mem_06_exercise_b.svg",
+   "png": "art/deck/memory/mem_06_exercise_b.png",
+   "accent": "#C8572B",
+   "subject": "跳繩跳到騰空，殘影繩子一圈又一圈"
+  },
+  "mem_06_talent_a": {
+   "svg": "art/deck/memory/mem_06_talent_a.svg",
+   "png": "art/deck/memory/mem_06_talent_a.png",
+   "accent": "#6B4A8C",
+   "subject": "擺動的節拍器＋底下一排琴鍵"
+  },
+  "mem_06_talent_b": {
+   "svg": "art/deck/memory/mem_06_talent_b.svg",
+   "png": "art/deck/memory/mem_06_talent_b.png",
+   "accent": "#9A4DA6",
+   "subject": "打開的蠟筆盒（七色）＋後面一張塗鴉（太陽、草、房子）"
+  },
+  "mem_06_work_a": {
+   "svg": "art/deck/memory/mem_06_work_a.svg",
+   "png": "art/deck/memory/mem_06_work_a.png",
+   "accent": "#B8902F",
+   "subject": "店面條紋遮雨棚下，坐在紅色塑膠小板凳上揮手的小孩"
+  },
+  "mem_06_work_b": {
+   "svg": "art/deck/memory/mem_06_work_b.svg",
+   "png": "art/deck/memory/mem_06_work_b.png",
+   "accent": "#A6742B",
+   "subject": "掛繩鑰匙＋冒蒸氣的電鍋（無商標）"
+  },
+  "mem_09_study_a": {
+   "svg": "art/deck/memory/mem_09_study_a.svg",
+   "png": "art/deck/memory/mem_09_study_a.png",
+   "accent": "#4A5DB5",
+   "subject": "戴黃帽的路隊三個小孩，走向安親班的門（招牌空白）"
+  },
+  "mem_09_study_b": {
+   "svg": "art/deck/memory/mem_09_study_b.svg",
+   "png": "art/deck/memory/mem_09_study_b.png",
+   "accent": "#2C7DB8",
+   "subject": "書袋插著借書卡，卡上一整排一樣的簽名線"
+  },
+  "mem_09_play_a": {
+   "svg": "art/deck/memory/mem_09_play_a.svg",
+   "png": "art/deck/memory/mem_09_play_a.png",
+   "accent": "#6E8B2A",
+   "subject": "從木頭抽屜扇出來的四張卡牌（星星、圓、火焰、閃電）"
+  },
+  "mem_09_play_b": {
+   "svg": "art/deck/memory/mem_09_play_b.svg",
+   "png": "art/deck/memory/mem_09_play_b.png",
+   "accent": "#3C8A5A",
+   "subject": "米色 CRT 電腦螢幕一半是方塊小遊戲、一半瞬間切回白色文件"
+  },
+  "mem_09_exercise_a": {
+   "svg": "art/deck/memory/mem_09_exercise_a.svg",
+   "png": "art/deck/memory/mem_09_exercise_a.png",
+   "accent": "#B8402E",
+   "subject": "躲避球場只剩一個小孩跳起來閃球，場外一圈歡呼手"
+  },
+  "mem_09_exercise_b": {
+   "svg": "art/deck/memory/mem_09_exercise_b.svg",
+   "png": "art/deck/memory/mem_09_exercise_b.png",
+   "accent": "#C9692A",
+   "subject": "黃昏巷口，沒有網子的籃框、飛過去的籃球、路燈"
+  },
+  "mem_09_talent_a": {
+   "svg": "art/deck/memory/mem_09_talent_a.svg",
+   "png": "art/deck/memory/mem_09_talent_a.png",
+   "accent": "#5A4E9E",
+   "subject": "米色直笛斜放，笛口飄出一串音符"
+  },
+  "mem_09_talent_b": {
+   "svg": "art/deck/memory/mem_09_talent_b.svg",
+   "png": "art/deck/memory/mem_09_talent_b.png",
+   "accent": "#A04A86",
+   "subject": "比桌子還大的一張貓（橘貓）畫紙＋畫筆"
+  },
+  "mem_09_work_a": {
+   "svg": "art/deck/memory/mem_09_work_a.svg",
+   "png": "art/deck/memory/mem_09_work_a.png",
+   "accent": "#C49A1E",
+   "subject": "冰箱上的打勾家事表、一袋垃圾、垃圾車音符"
+  },
+  "mem_09_work_b": {
+   "svg": "art/deck/memory/mem_09_work_b.svg",
+   "png": "art/deck/memory/mem_09_work_b.png",
+   "accent": "#C27A1F",
+   "subject": "夜市攤子上一顆熱燈泡，下面攤開的作業簿和一疊零錢"
+  },
+  "mem_12_study_a": {
+   "svg": "art/deck/memory/mem_12_study_a.svg",
+   "png": "art/deck/memory/mem_12_study_a.png",
+   "accent": "#34507F",
+   "subject": "考卷＋鉛筆，頭上冒出想像泡泡：便當"
+  },
+  "mem_12_study_b": {
+   "svg": "art/deck/memory/mem_12_study_b.svg",
+   "png": "art/deck/memory/mem_12_study_b.png",
+   "accent": "#3F95B5",
+   "subject": "黑板畫三角形和圓、坐在桌前的小老師，旁邊排隊的同學"
+  },
+  "mem_12_play_a": {
+   "svg": "art/deck/memory/mem_12_play_a.svg",
+   "png": "art/deck/memory/mem_12_play_a.png",
+   "accent": "#7A9A3A",
+   "subject": "畢業紀念冊寫滿彩色留言塗鴉，角落別一朵畢業胸花"
+  },
+  "mem_12_play_b": {
+   "svg": "art/deck/memory/mem_12_play_b.svg",
+   "png": "art/deck/memory/mem_12_play_b.png",
+   "accent": "#2E5A3A",
+   "subject": "暗暗的網咖、發亮的螢幕、背對的小孩戴耳機，窗外已有月亮"
+  },
+  "mem_12_exercise_a": {
+   "svg": "art/deck/memory/mem_12_exercise_a.svg",
+   "png": "art/deck/memory/mem_12_exercise_a.png",
+   "accent": "#9A2F45",
+   "subject": "日出的紅色跑道，前景一隻跑鞋"
+  },
+  "mem_12_exercise_b": {
+   "svg": "art/deck/memory/mem_12_exercise_b.svg",
+   "png": "art/deck/memory/mem_12_exercise_b.png",
+   "accent": "#D24A3A",
+   "subject": "直排輪鞋，後面繞圈的軌跡"
+  },
+  "mem_12_talent_a": {
+   "svg": "art/deck/memory/mem_12_talent_a.svg",
+   "png": "art/deck/memory/mem_12_talent_a.png",
+   "accent": "#7A3F7A",
+   "subject": "布幕舞台、聚光燈下舉手的小孩"
+  },
+  "mem_12_talent_b": {
+   "svg": "art/deck/memory/mem_12_talent_b.svg",
+   "png": "art/deck/memory/mem_12_talent_b.png",
+   "accent": "#574A7A",
+   "subject": "冰箱門上用膠帶貼著泛黃的剪報（只有線條，沒有字）"
+  },
+  "mem_12_work_a": {
+   "svg": "art/deck/memory/mem_12_work_a.svg",
+   "png": "art/deck/memory/mem_12_work_a.png",
+   "accent": "#A88A2A",
+   "subject": "天還沒亮，早餐店鐵板上兩顆荷包蛋、鍋鏟、蒸氣"
+  },
+  "mem_12_work_b": {
+   "svg": "art/deck/memory/mem_12_work_b.svg",
+   "png": "art/deck/memory/mem_12_work_b.png",
+   "accent": "#B5682A",
+   "subject": "過年茶几：茶壺茶杯、一盤橘子、紅包（素面）"
+  }
+ }
+}

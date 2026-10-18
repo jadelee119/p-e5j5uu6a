@@ -1,0 +1,621 @@
+{
+  "_note": "v1.0 十九到二十二歲牌（adult_branch 開關打開才載入）。文字：writing/v1.0_adult_cards_final_batch1.md。數值皆假設值。",
+  "cards": [
+    {
+      "id": "uni_study",
+      "name": "讀書",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "圖書館的位子要早點去搶，你總是搶輸那個每天都在的人。",
+      "effects": {
+        "academic": 6,
+        "stress": 2
+      },
+      "result_text": "期末你終於搞懂了那個章節，發現考試考的是別的章節。",
+      "album_text": "筆記本上的螢光筆，畫到後來整頁都是重點。",
+      "requires_track": "uni",
+      "icon": "s_study",
+      "tags": [
+        "academic"
+      ],
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_study"
+    },
+    {
+      "id": "uni_club",
+      "name": "社團",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "迎新那晚你被拉去喝了杯飲料，然後就變成了幹部。",
+      "effects": {
+        "social": 6,
+        "happiness": 1,
+        "stress": -1
+      },
+      "result_text": "成發那天燈光打下來，你忘了自己這學期翹了多少課。",
+      "album_text": "社辦的沙發很破，但你在上面睡過最安心的午覺。",
+      "requires_track": "uni",
+      "icon": "s_club",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_club"
+    },
+    {
+      "id": "uni_love",
+      "name": "戀愛",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你們在宵夜攤聊到老闆開始收椅子。",
+      "effects": {
+        "happiness": 3,
+        "social": 3
+      },
+      "result_text": "你學會了等訊息，也學會了不要等訊息。",
+      "album_text": "那間宵夜攤後來收了，但你還記得你們坐哪個位子。",
+      "requires_track": "uni",
+      "icon": "s_love",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_love"
+    },
+    {
+      "id": "uni_parttime",
+      "name": "打工",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "飲料店的訂單機一直響，你的手比腦袋還快。",
+      "effects": {
+        "wealth": 3,
+        "social": 1,
+        "academic": -1
+      },
+      "result_text": "領到錢那天，你請室友吃了宵夜，覺得自己很大方。",
+      "album_text": "制服上的店名，你到現在還記得怎麼念得很有精神。",
+      "requires_track": "uni",
+      "icon": "s_work",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_work",
+      "weight_quintile": {
+        "1": 1.5,
+        "2": 1.5
+      }
+    },
+    {
+      "id": "uni_double",
+      "name": "雙主修",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你的課表滿到連喝水都要排時間。",
+      "effects": {
+        "academic": 8,
+        "stress": 4
+      },
+      "result_text": "你修完了，畢業證書上多了幾個字，黑眼圈也是。",
+      "album_text": "課表上每個空格都被填滿，連午餐都寫在上面。",
+      "requires_track": "uni",
+      "icon": "d_night",
+      "tags": [
+        "academic"
+      ],
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 d_night",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "uni_exchange",
+      "name": "交換學生",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 21,
+      "expires_age": 21,
+      "line": "公布欄上貼著交換計畫，申請截止日用紅筆圈起來。",
+      "effects": {
+        "social": 6,
+        "happiness": 2,
+        "wealth": -5
+      },
+      "result_text": "你在陌生的城市迷路了好幾次，最後迷路變成了你最喜歡的事。",
+      "album_text": "行李箱上的託運貼紙，你一直沒有撕掉。",
+      "regret_text": "那張申請表你填到備審資料那欄就停了，後來它被壓在講義下面。",
+      "requires_track": "uni",
+      "icon": "d_trip",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 d_trip",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "uni_confess",
+      "name": "告白",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": 22,
+      "line": "你在對話框裡打了很長的字，又刪掉，又打。",
+      "effects": {
+        "happiness": 2,
+        "social": 4
+      },
+      "result_text": "你按下送出，對方回了很久。不管回了什麼，你終於說出口了。",
+      "album_text": "那天晚上的風很涼，你記得手機螢幕的光照在臉上。",
+      "regret_text": "那段話後來還存在草稿裡，那個人已經在別的城市了。",
+      "requires_track": "uni",
+      "icon": "d_crush",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 d_crush"
+    },
+    {
+      "id": "tech_intern",
+      "name": "實習",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你穿上公司的識別證，發現影印機比人難搞。",
+      "effects": {
+        "academic": 2,
+        "wealth": 3
+      },
+      "result_text": "主管把你做的東西拿去開會，雖然沒提到你的名字。",
+      "album_text": "識別證的照片拍得很醜，你還是留著。",
+      "requires_track": "uni_tech",
+      "icon": "voc_intern",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 voc_intern"
+    },
+    {
+      "id": "tech_license",
+      "name": "考證照",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "報名費繳了，書買了，剩下就是讀。",
+      "effects": {
+        "academic": 4,
+        "stress": 2
+      },
+      "result_text": "證書寄來，你把它和以前那張放在同個資料夾裡，資料夾開始有點重量了。",
+      "album_text": "資料夾越來越厚，你的自信也是。",
+      "requires_track": "uni_tech",
+      "icon": "voc_license",
+      "tags": [
+        "academic"
+      ],
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 voc_license"
+    },
+    {
+      "id": "tech_project",
+      "name": "專題",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "指導老師說「再改改看」，你們已經改到檔名後面加了好幾個「最終版」。",
+      "effects": {
+        "academic": 4,
+        "social": 2,
+        "stress": 1
+      },
+      "result_text": "成果發表結束，組員在走廊上抱在一起，好像打完了場仗。",
+      "album_text": "檔案夾裡躺著好多個「最終版」，只有最後那個是真的。",
+      "requires_track": "uni_tech",
+      "icon": "jc_project",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 jc_project"
+    },
+    {
+      "id": "tech_parttime",
+      "name": "打工",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "下了課直接去上班，背包裡同時有課本和制服。",
+      "effects": {
+        "wealth": 3,
+        "social": 1,
+        "academic": -1
+      },
+      "result_text": "你算了算，這個月的生活費是自己賺的。",
+      "album_text": "背包裡永遠有件摺得皺皺的制服。",
+      "requires_track": "uni_tech",
+      "icon": "s_work",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_work",
+      "weight_quintile": {
+        "1": 1.5,
+        "2": 1.5
+      }
+    },
+    {
+      "id": "tech_industry_intern",
+      "name": "業界實習",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": 22,
+      "line": "廠商來學校徵實習生，名額不多，報名的人很多。",
+      "effects": {
+        "academic": 3,
+        "wealth": 3,
+        "health": 1
+      },
+      "result_text": "你在產線旁邊學了很多課本沒教的事，最重要的是怎麼跟老鳥相處。",
+      "album_text": "工廠的午餐便當很鹹，大家吃得很快，你也是。",
+      "regret_text": "那家公司後來留了別人，你偶爾會在路上看到他們的貨車。",
+      "requires_track": "uni_tech",
+      "icon": "jc_workshop",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 jc_workshop",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "tech_competition",
+      "name": "專題競賽",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": 22,
+      "line": "你們的作品被老師推去參加比賽，熬夜的理由變得很正當。",
+      "effects": {
+        "academic": 4,
+        "social": 3,
+        "stress": 2
+      },
+      "result_text": "你們沒拿到最大的獎，但評審記住了你們的名字。",
+      "album_text": "比賽的名牌掛在宿舍床頭，一直沒拿下來。",
+      "regret_text": "那個作品沒有送出去，現在還在實驗室角落積灰塵。",
+      "requires_track": "uni_tech",
+      "icon": "jc_project",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 jc_project",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "work_overtime",
+      "name": "加班",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "下班時間到了，辦公室裡沒有人動。",
+      "effects": {
+        "wealth": 4,
+        "stress": 3,
+        "health": -1
+      },
+      "result_text": "你多做了很多，主管說辛苦了，薪水沒有說話。",
+      "album_text": "捷運末班車的座位，你比自己的床還熟。",
+      "requires_track": "work_first",
+      "icon": "b_tired",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_tired",
+      "weight_quintile": {
+        "1": 1.5,
+        "2": 1.5
+      }
+    },
+    {
+      "id": "work_save",
+      "name": "存錢",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你開始記帳，記沒幾頁就不太想看了。",
+      "effects": {
+        "wealth": 3,
+        "happiness": -2
+      },
+      "result_text": "存款慢慢長出來，雖然長得很慢，但它在長。",
+      "album_text": "記帳本上的字越寫越小，數字越存越安心。",
+      "requires_track": "work_first",
+      "icon": "b_bill",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_bill"
+    },
+    {
+      "id": "work_job_offer",
+      "name": "換工作機會",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": 22,
+      "line": "以前的同事傳訊息來說：「我們這裡缺人，要不要過來看看？」",
+      "effects": {
+        "wealth": 2,
+        "happiness": 1,
+        "social": 4
+      },
+      "result_text": "你遞了辭呈，走出舊公司的時候，覺得空氣比較新鮮。",
+      "album_text": "新公司的識別證夾在舊公司的旁邊，你哪張都沒丟。",
+      "regret_text": "那則訊息你一直沒回，後來那個人也不再問了。",
+      "requires_track": "work_first",
+      "icon": "g_network",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 g_network",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "work_night_school",
+      "name": "夜校進修",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 21,
+      "expires_age": 21,
+      "line": "下班之後，你又背起書包走進教室。",
+      "effects": {
+        "academic": 5,
+        "stress": 2,
+        "wealth": -3
+      },
+      "result_text": "同學有的比你小，有的比你大，大家都很累，但沒有人趴下。",
+      "album_text": "教室的日光燈很亮，你在裡面熬過很多個晚上。",
+      "regret_text": "招生簡章被你貼在冰箱上，後來被外送菜單蓋住了。",
+      "requires_track": "work_first",
+      "icon": "d_night",
+      "tags": [
+        "academic"
+      ],
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 d_night",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "work_switch",
+      "name": "換工作",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "你打開求職網站，把履歷上的「熱情」改成「抗壓」。",
+      "effects": {
+        "wealth": 2,
+        "happiness": 1,
+        "social": 2
+      },
+      "result_text": "新公司的冷氣比較涼，主管比較客氣，至少前幾個禮拜是這樣。",
+      "album_text": "你的履歷越寫越長，每段經歷後面都藏著離開的理由。",
+      "requires_track": "work_first",
+      "icon": "s_work",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_work"
+    },
+    {
+      "id": "work_apprentice",
+      "name": "跟師傅學手藝",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 21,
+      "expires_age": 21,
+      "line": "師傅說先看，你就看；師傅說先掃地，你就掃地。",
+      "effects": {
+        "academic": 3,
+        "health": 2
+      },
+      "result_text": "有天師傅把工具遞給你，沒說話，只是站在旁邊看。",
+      "album_text": "師傅的工具箱有個把手被磨得發亮，後來換你握著。",
+      "regret_text": "那間店的鐵門後來拉下來了，門上貼著「頂讓」，你沒學到的那些也跟著收起來了。",
+      "requires_track": "work_first",
+      "icon": "jc_workshop",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 jc_workshop",
+      "weight_quintile": {
+        "4": 1.5,
+        "5": 2
+      }
+    },
+    {
+      "id": "b_loan",
+      "name": "學貸",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "每學期開學前，你都會簽次名，簽得越來越熟練。",
+      "effects": {
+        "wealth": -3,
+        "stress": 1
+      },
+      "result_text": "你算了算還要還多久，然後決定今天先不要算。",
+      "album_text": "對保單上的簽名，你練到閉著眼睛都會寫。",
+      "icon": "b_bill",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_bill"
+    },
+    {
+      "id": "b_rent",
+      "name": "租屋",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "房東說這間很溫馨，意思是轉身會撞到衣櫃。",
+      "effects": {
+        "wealth": -2,
+        "stress": 1
+      },
+      "result_text": "你在門後貼了張海報，這裡開始有點像你的房間。",
+      "album_text": "那間小套房的窗戶對著別人的冷氣機，你還是很想念它。",
+      "icon": "b_bill",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_bill",
+      "flags_any": [
+        "moved_out"
+      ]
+    },
+    {
+      "id": "b_family_expect",
+      "name": "家裡的期待",
+      "type": "burden",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "過年回家，長輩問你什麼時候要「穩定下來」。",
+      "effects": {
+        "stress": 1,
+        "happiness": -1
+      },
+      "result_text": "你終於跟家人好好聊開了，家人沒有完全懂，但點了頭。",
+      "album_text": "餐桌上大家的筷子停下來，等你回答那個問題。",
+      "icon": "b_expect",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_expect",
+      "weight_if_flags": {
+        "living_home": 1.3
+      }
+    },
+    {
+      "id": "first_paycheck",
+      "name": "第一份薪水",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "存摺多了行字，你看了好幾遍。",
+      "effects": {
+        "wealth": 2,
+        "happiness": 3
+      },
+      "result_text": "你請家人吃了頓飯，結帳時手有點抖，心裡卻很踏實。",
+      "album_text": "那頓飯吃了什麼你忘了，只記得結帳的時候大家都在看你。",
+      "icon": "s_work",
+      "removes": [
+        "first_paycheck"
+      ],
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 s_work"
+    },
+    {
+      "id": "f_recession",
+      "name": "景氣差",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "新聞說景氣不好，公司說要共體時艱。",
+      "effects": {
+        "wealth": -3,
+        "stress": 1
+      },
+      "result_text": "你撐過來了，雖然不知道撐的是公司還是自己。",
+      "album_text": "那陣子大家吃飯都不太講話。",
+      "icon": "b_bill",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_bill"
+    },
+    {
+      "id": "f_family_crisis",
+      "name": "家變",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "家裡打電話來，聲音跟平常不太一樣。",
+      "effects": {
+        "stress": 2,
+        "happiness": -2
+      },
+      "result_text": "你請了假回家，才發現自己已經是能幫上忙的大人了。",
+      "album_text": "那班回家的車，你坐得特別久。",
+      "icon": "b_expect",
+      "_note": "文案 e06d4cd／2c1047b；數值假設（骨架 dfa145b）；圖暫借 b_expect"
+    },
+    {
+      "id": "t_binge",
+      "name": "熬夜追劇或打電動",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "只看完這集就睡，你對自己說了好幾次。",
+      "effects": {
+        "happiness": 1,
+        "stress": -2,
+        "academic": -8,
+        "health": -7
+      },
+      "result_text": "天亮了，劇追完了，遊戲破關了，你的黑眼圈也升級了。",
+      "album_text": "螢幕的光照著棉被，窗外的鳥比你早起。",
+      "icon": "s_game",
+      "_note": "成人共用誘惑牌：不過期、不進沒走的路、不算遺憾比例；數值比照 s_game／s_skip（假設）",
+      "temptation": true
+    },
+    {
+      "id": "t_party",
+      "name": "跑趴或夜衝",
+      "type": "action",
+      "cost": 1,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "有人在群組裡喊「今晚出發」，後面跟著很多個驚嘆號。",
+      "effects": {
+        "happiness": 1,
+        "social": 3,
+        "academic": -9,
+        "health": -4
+      },
+      "result_text": "你們在山上等日出，結果起霧了，大家笑到不行，還是覺得值得。",
+      "album_text": "機車後座的風很冷，前面那個人的外套很暖。",
+      "icon": "s_skip",
+      "_note": "成人共用誘惑牌：不過期、不進沒走的路、不算遺憾比例；數值比照 s_game／s_skip（假設）",
+      "temptation": true
+    },
+    {
+      "id": "f_branch",
+      "name": "下一步",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "畢業典禮的花還沒謝，大家已經開始問你「然後呢」。",
+      "effects": {},
+      "icon": "f_school_choice",
+      "_note": "分流畫面標題／說明（選項文字在 config adult_branch）"
+    },
+    {
+      "id": "f_branch_jc",
+      "name": "五專之後",
+      "type": "forced",
+      "cost": null,
+      "age_min": 19,
+      "age_max": 22,
+      "expires_age": null,
+      "line": "同屆的人有些要畢業了，有些才剛開始想要不要繼續。",
+      "effects": {},
+      "icon": "f_school_choice",
+      "_note": "分流畫面標題／說明（選項文字在 config adult_branch）"
+    }
+  ]
+}

@@ -1,0 +1,909 @@
+{
+  "_note": "v1.2 時代牌（design/v1.2-era-cards.md 64dfdc9）。來源 data/timeline.json（75cc901）。效果、優先序是設計假設。county_tiers 沒寫的從 timeline county_impact 帶入（全國事件寫空的 heavy/light＝所有人都是 tv）。文字待劇情文案（todo_writer）；notes 欄位不上畫面。",
+  "slot_rule": {
+    "fall_months": [
+      9,
+      10,
+      11,
+      12,
+      1
+    ],
+    "spring_months": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "summer_months": [
+      7,
+      8
+    ]
+  },
+  "prologue_bands": {
+    "6": [
+      6,
+      8
+    ],
+    "9": [
+      9,
+      11
+    ],
+    "12": [
+      12,
+      12
+    ]
+  },
+  "prologue_capacity": {
+    "6": 2,
+    "9": 2,
+    "12": 1
+  },
+  "review_max_lines": 3,
+  "cards": [
+    {
+      "id": "era_921",
+      "timeline_id": "jiji_earthquake_921",
+      "type": "era",
+      "priority": 5,
+      "name": "半夜的搖晃",
+      "accent": "#8C4A32",
+      "line": "半夜床一直在搖，你醒來時燈都不亮了。",
+      "review_line": "很小的時候，有一晚整座島搖醒了，燈也跟著熄了。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_921",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "88-09",
+      "roc_ym_end": "88-09",
+      "album_text": "那幾天用的手電筒，後來一直放在床頭。",
+      "variants": [
+        {
+          "by_prologue": true,
+          "by_tier": "heavy",
+          "by_birth_year": [
+            83,
+            83
+          ],
+          "line": "還沒上小學的那年秋天，半夜有人一把抱起你往外跑。",
+          "consequence": "你記得不多，只記得那幾晚都睡在外面的帳篷裡。"
+        },
+        {
+          "by_prologue": true,
+          "by_tier": [
+            "light",
+            "tv"
+          ],
+          "by_birth_year": [
+            83,
+            83
+          ],
+          "line": "還沒上小學的那年，你半夜被叫醒，大人說不要怕。",
+          "consequence": "你後來只記得手電筒的光，和一直開著的電視。"
+        },
+        {
+          "by_prologue": true,
+          "by_tier": "heavy",
+          "line": "半夜整棟樓搖醒了，大人抱著你衝下樓。",
+          "consequence": "後來在鐵皮教室上課，大家輪流湊到電風扇前面。"
+        },
+        {
+          "by_prologue": true,
+          "by_tier": [
+            "light",
+            "tv"
+          ],
+          "line": "半夜床一直在搖，你醒來時燈都不亮了。",
+          "consequence": "隔天不用上課，電視一直在播中部的新聞，大人看得很安靜。"
+        }
+      ]
+    },
+    {
+      "id": "era_nari",
+      "timeline_id": "typhoon_nari",
+      "type": "era",
+      "priority": 3,
+      "name": "捷運泡水了",
+      "accent": "#2F6F8F",
+      "line": "颱風天雨一直下，電視上的台北泡在水裡。",
+      "review_line": "有一年颱風賴著不走，北部淹水，連捷運都停了。",
+      "tier_policy": "heavy_light",
+      "prologue_effects": false,
+      "flag": "era_nari",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "90-09",
+      "roc_ym_end": "90-09",
+      "county_tiers": {
+        "heavy": [
+          "taipei",
+          "new_taipei"
+        ],
+        "light": [
+          "taichung"
+        ]
+      },
+      "album_text": "回到學校時，走廊上曬著一排泡水的課本。",
+      "variants": [
+        {
+          "by_prologue": true,
+          "by_tier": "heavy",
+          "line": "颱風賴著不走，大人說捷運站淹水，車都停了。",
+          "consequence": "停課在家那幾天，你趴在窗邊看樓下的路變成河。"
+        },
+        {
+          "by_prologue": true,
+          "by_tier": "light",
+          "line": "颱風天雨一直下，電視上的台北泡在水裡。",
+          "consequence": "你第一次知道，捷運站也會淹水。"
+        }
+      ]
+    },
+    {
+      "id": "era_sars",
+      "timeline_id": "sars_2003",
+      "type": "era",
+      "priority": 5,
+      "name": "量體溫的早上",
+      "accent": "#5E8F4A",
+      "line": "每天早上量體溫，寫在聯絡簿上，再讓大人簽名。",
+      "review_line": "有一陣子，每天早上都要量體溫，大家戴著口罩上學。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_sars",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "92-03",
+      "roc_ym_end": "92-07",
+      "pending": [
+        "首例日期（不影響月份）"
+      ],
+      "album_text": "那年夏天以前，每個人的臉上都有口罩的印子。",
+      "variants": [
+        {
+          "by_prologue": true,
+          "by_tier": "heavy",
+          "line": "每天早上排隊量體溫，口罩戴到耳朵後面都痛了。",
+          "consequence": "有一陣子停課在家，你把電視台全部轉過好幾輪。"
+        },
+        {
+          "by_prologue": true,
+          "by_tier": [
+            "light",
+            "tv"
+          ],
+          "line": "每天早上量體溫，寫在聯絡簿上，再讓大人簽名。",
+          "consequence": "新聞一直開著，你學會一個連大人都說不清楚的新詞。"
+        }
+      ]
+    },
+    {
+      "id": "era_hsr",
+      "timeline_id": "hsr_opening",
+      "type": "era",
+      "priority": 2,
+      "name": "新的列車",
+      "accent": "#D9732B",
+      "line": "電視上說一日生活圈，那條線卻不經過你們這裡。",
+      "review_line": "新的列車通車了，電視上一直在播它跑得有多快。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_hsr",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "96-01",
+      "roc_ym_end": "96-03",
+      "effects": {
+        "happiness": 1
+      },
+      "album_text": "第一次看到它從窗外劃過去，你還來不及說話。",
+      "variants": [
+        {
+          "by_prologue": true,
+          "line": "電視上播著一列長鼻子的新列車，說它快得像在飛。",
+          "consequence": "你開始幻想坐上去，去很遠的地方吃一頓午餐。"
+        },
+        {
+          "by_prologue": false,
+          "by_tier": [
+            "light",
+            "heavy"
+          ],
+          "line": "新的列車通車，車站排滿買票的人，排得比坐車還久。"
+        },
+        {
+          "by_prologue": false,
+          "by_tier": "tv",
+          "line": "電視上說一日生活圈，那條線卻不經過你們這裡。"
+        }
+      ]
+    },
+    {
+      "id": "era_crisis",
+      "timeline_id": "global_financial_crisis_2008",
+      "type": "era",
+      "priority": 4,
+      "name": "景氣不好",
+      "accent": "#5A5F73",
+      "line": "大人在飯桌上講景氣，講到一半看你一眼，換了話題。",
+      "review_line": "有一陣子景氣很差，大人說話的聲音都放得很低。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_crisis",
+      "frame": "crt",
+      "source_status": "media",
+      "roc_ym_start": "97-09",
+      "roc_ym_end": "98-12",
+      "county_tiers": {
+        "heavy": [],
+        "light": []
+      },
+      "effects_by_quintile": {
+        "1": {
+          "stress": 1
+        },
+        "2": {
+          "stress": 1
+        },
+        "3": {
+          "stress": 1
+        }
+      },
+      "rolls": [
+        {
+          "flag": "parent_unemployed",
+          "quintiles": [
+            1,
+            2,
+            3
+          ],
+          "chance_mult": 0.5
+        }
+      ],
+      "pending": [
+        "台灣官方起日",
+        "無薪假官方統計"
+      ],
+      "variants": [
+        {
+          "by_prologue": true,
+          "by_quintile": [
+            1,
+            2,
+            3
+          ],
+          "line": "大人最近白天也在家，說公司在放沒有薪水的假。",
+          "consequence": "你很早就聽懂「景氣」兩個字，雖然還不太會寫。"
+        },
+        {
+          "by_prologue": true,
+          "by_quintile": [
+            4,
+            5
+          ],
+          "line": "大人在飯桌上講景氣，講到一半看你一眼就換了話題。",
+          "consequence": "你聽不太懂，只知道大人最近都很晚才關電視。"
+        },
+        {
+          "by_prologue": false,
+          "by_quintile": [
+            1
+          ],
+          "weight": 0.3,
+          "_note": "設計假設：權重 0.3（相對 q123 版 1.0）",
+          "line": "這學期的午餐費，大人填了補助申請表，說你不用擔心。"
+        },
+        {
+          "by_prologue": false,
+          "by_quintile": [
+            1,
+            2,
+            3
+          ],
+          "weight": 1,
+          "line": "大人平日也在家，日曆上圈著一格格沒有薪水的假。"
+        },
+        {
+          "by_prologue": false,
+          "by_quintile": [
+            4,
+            5
+          ],
+          "line": "大人在飯桌上講景氣，講到一半看你一眼，換了話題。"
+        }
+      ],
+      "album_text": "那陣子家裡的電視，常常停在財經新聞。",
+      "sets_flags_by_quintile": {
+        "1": [
+          "era_crisis_q123"
+        ],
+        "2": [
+          "era_crisis_q123"
+        ],
+        "3": [
+          "era_crisis_q123"
+        ],
+        "4": [
+          "era_crisis_q45"
+        ],
+        "5": [
+          "era_crisis_q45"
+        ]
+      }
+    },
+    {
+      "id": "era_voucher",
+      "timeline_id": "consumer_vouchers_2009",
+      "type": "era",
+      "priority": 2,
+      "name": "一疊消費券",
+      "accent": "#C99A1E",
+      "line": "大人帶印章去學校排隊領券，回來討論要買米還是球鞋。",
+      "review_line": "有一年每個人都領到一疊消費券，全家討論了好幾晚要怎麼花。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_voucher",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "98-01",
+      "roc_ym_end": "98-09",
+      "effects": {
+        "happiness": 1
+      },
+      "album_text": "那疊券用迴紋針夾著，在電視櫃上放了好幾個月。",
+      "variants": [
+        {
+          "by_prologue": true,
+          "line": "大人一早帶著印章去學校排隊，領回一疊像大富翁的券。",
+          "consequence": "你一直提議買玩具，最後全家決定先換一個新電鍋。"
+        },
+        {
+          "by_prologue": false,
+          "line": "大人帶印章去學校排隊領券，回來討論要買米還是球鞋。"
+        }
+      ]
+    },
+    {
+      "id": "era_morakot",
+      "timeline_id": "typhoon_morakot",
+      "type": "era",
+      "priority": 5,
+      "name": "停不下來的雨",
+      "accent": "#6B5E3A",
+      "line": "電視整天在播南部和東部的大水，你把零錢投進超商的捐款箱。",
+      "review_line": "有一年暑假的雨大得不像話，南部和東部的路斷了，電視一直開著。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_morakot",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "98-08",
+      "roc_ym_end": "98-08",
+      "county_tiers": {
+        "heavy": [
+          "taitung"
+        ],
+        "light": [
+          "taichung",
+          "penghu"
+        ]
+      },
+      "effects_by_tier": {
+        "heavy": {
+          "stress": 2
+        },
+        "light": {
+          "stress": 1
+        },
+        "tv": {}
+      },
+      "pending": [],
+      "album_text": "那年暑假的雨聲，後來每到颱風天你都會想起來。",
+      "variants": [
+        {
+          "by_prologue": true,
+          "by_tier": "heavy",
+          "line": "暑假的雨下個不停，家裡停水，出去的路也斷了。",
+          "consequence": "你學會一盆水先洗臉、再拿去沖馬桶，一滴都不浪費。"
+        },
+        {
+          "by_prologue": true,
+          "line": "暑假的雨下了好幾天，電視上南部和東部的路都斷了。",
+          "consequence": "開學後班上辦了捐款，你把零用錢投進箱子裡。"
+        },
+        {
+          "by_prologue": false,
+          "by_tier": "heavy",
+          "line": "雨下了好幾天，家裡停水，對外的路也斷了。"
+        },
+        {
+          "by_prologue": false,
+          "by_tier": "light",
+          "line": "這幾天的雨大得嚇人，新聞一直在播南部和東部的大水。"
+        },
+        {
+          "by_prologue": false,
+          "by_tier": "tv",
+          "line": "電視整天在播南部和東部的大水，你把零錢投進超商的捐款箱。"
+        }
+      ]
+    },
+    {
+      "id": "era_sunflower",
+      "timeline_id": "sunflower_movement",
+      "type": "era",
+      "priority": 3,
+      "name": "新聞一直開著",
+      "accent": "#7A6A9A",
+      "line": "午休時有人在討論新聞，下課大家又各自去福利社。",
+      "review_line": "有一年春天，新聞一直開著，身邊的人都在討論同一件事。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_sunflower",
+      "frame": "crt",
+      "source_status": "media",
+      "roc_ym_start": "103-03",
+      "roc_ym_end": "103-04",
+      "county_tiers": {
+        "heavy": [
+          "taipei"
+        ],
+        "light": []
+      },
+      "album_text": "那幾個星期，大家吃飯時聊的都是同一件事。",
+      "variants": [
+        {
+          "by_flag": "era_sunflower_heavy",
+          "line": "你住的地方離那裡不遠，這陣子新聞一直開著。"
+        },
+        {
+          "by_flag": "work_first",
+          "line": "午餐時電視一直播同一則新聞，同事邊吃邊聊。"
+        },
+        {
+          "by_flag": [
+            "uni",
+            "uni_tech"
+          ],
+          "line": "課堂上有人在討論，有人在趕報告，新聞一直開著。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            16,
+            20
+          ],
+          "line": "午休時有人在討論新聞，下課大家又各自去福利社。"
+        },
+        {
+          "by_age": [
+            16,
+            18
+          ],
+          "line": "午休時有人在討論新聞，下課大家又各自去福利社。"
+        },
+        {
+          "by_age": [
+            13,
+            15
+          ],
+          "line": "這陣子新聞一直開著，班上有人在聊，你聽得半懂。"
+        },
+        {
+          "line": "午休時有人在討論新聞，下課大家又各自去福利社。"
+        }
+      ]
+    },
+    {
+      "id": "era_flexday",
+      "timeline_id": "one_fixed_one_flexible_day_off",
+      "type": "era",
+      "priority": 3,
+      "name": "新的排班表",
+      "accent": "#3C5BA9",
+      "line": "星期六想去寄東西，郵局只開到中午，限時信也要等星期一才會送。",
+      "review_line": "有一陣子休假的規定改了，大家都在重新算自己哪天休。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_flexday",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "105-12",
+      "roc_ym_end": "107-03",
+      "county_tiers": {
+        "heavy": [],
+        "light": []
+      },
+      "variants": [
+        {
+          "by_flag": [
+            "worked_teen",
+            "worked_uni"
+          ],
+          "line": "店長貼出新的排班表，說以後休假要分成兩種。"
+        },
+        {
+          "by_track": "work_first",
+          "line": "店長貼出新的排班表，說以後休假要分成兩種。"
+        },
+        {
+          "line": "星期六想去寄東西，郵局只開到中午，限時信也要等星期一才會送。"
+        }
+      ],
+      "album_text": "那陣子大家見面常問：「你這週休哪一天？」"
+    },
+    {
+      "id": "era_covid",
+      "timeline_id": "covid19_first_case_school_delay",
+      "type": "era",
+      "priority": 5,
+      "name": "口罩",
+      "accent": "#3FA0B5",
+      "line": "開學延後了，你拿著健保卡去藥局排隊，順便幫家人代買一份。",
+      "review_line": "那年寒假特別長，大家拿著健保卡排隊買口罩，開學也延後了。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_covid",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "109-01",
+      "roc_ym_end": "109-02",
+      "county_tiers": {
+        "heavy": [],
+        "light": []
+      },
+      "effects": {
+        "stress": 1
+      },
+      "variants": [
+        {
+          "by_term": 0,
+          "line": "過年那幾天口罩突然很難買，超商的口罩一個人只能買幾片。"
+        },
+        {
+          "by_term": 1,
+          "line": "開學延後了，你拿著健保卡去藥局排隊，順便幫家人代買一份。"
+        }
+      ],
+      "album_text": "那陣子出門前，你都會先摸摸口袋，確認口罩還在。"
+    },
+    {
+      "id": "era_covid_lv3",
+      "timeline_id": "covid19_level3_alert",
+      "type": "era",
+      "priority": 5,
+      "name": "鏡頭前的教室",
+      "accent": "#A0457A",
+      "line": "學校停止到校，改成線上上課，同學的大頭貼比本人還常見。",
+      "review_line": "有一陣子大家都不出門，課在鏡頭前上，那年的畢業典禮很多都取消了。",
+      "tier_policy": "all",
+      "prologue_effects": false,
+      "flag": "era_covid_lv3",
+      "frame": "crt",
+      "source_status": "official",
+      "roc_ym_start": "110-05",
+      "roc_ym_end": "110-07",
+      "effects": {
+        "stress": 1,
+        "social": -1
+      },
+      "album_text": "那陣子的同學，你最熟的是每個人房間的窗簾。",
+      "variants": [
+        {
+          "by_tier": "heavy",
+          "line": "警戒比別的地方早幾天升級，你對著鏡頭上課，背景是自己的床。"
+        },
+        {
+          "by_tier": [
+            "light",
+            "tv"
+          ],
+          "line": "學校停止到校，改成線上上課，同學的大頭貼比本人還常見。"
+        }
+      ],
+      "turn_flags": [
+        "grad_cancelled"
+      ]
+    }
+  ],
+  "review_only": [
+    {
+      "id": "rev_turnover_2000",
+      "timeline_id": "first_party_turnover_2000",
+      "roc_ym_start": "89-03",
+      "roc_ym_end": "89-03",
+      "priority": 1,
+      "review_line": "有一晚大人看開票看到很晚，電視上的票數一直在跳。"
+    },
+    {
+      "id": "rev_weekend",
+      "timeline_id": "two_day_weekend_2001",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "roc_ym_start": "90-01",
+      "roc_ym_end": "90-01",
+      "priority": 1,
+      "review_line": "有一年開始，星期六不用上學了，你多了一整天可以睡。"
+    },
+    {
+      "id": "rev_turnover_2008",
+      "timeline_id": "second_party_turnover_2008",
+      "roc_ym_start": "97-03",
+      "roc_ym_end": "97-03",
+      "priority": 1,
+      "review_line": "大選那晚，家裡的電視一直停在開票畫面。"
+    },
+    {
+      "id": "rev_4g",
+      "timeline_id": "mobile_broadband_4g_launch",
+      "roc_ym_start": "103-05",
+      "roc_ym_end": "103-05",
+      "priority": 2,
+      "review_line": "那陣子手機突然滑得比較快，影片不用再等它轉圈圈。"
+    },
+    {
+      "id": "rev_formosa",
+      "timeline_id": "formosa_fun_coast_dust_explosion",
+      "roc_ym_start": "104-06",
+      "roc_ym_end": "104-06",
+      "priority": 1,
+      "review_line": "那年暑假，學校一直宣導不要去玩彩色粉末。",
+      "counties": [
+        "new_taipei",
+        "taipei"
+      ]
+    },
+    {
+      "id": "rev_turnover_2016",
+      "timeline_id": "third_party_turnover_2016",
+      "roc_ym_start": "105-01",
+      "roc_ym_end": "105-01",
+      "priority": 1,
+      "review_line": "大選那天，你聽到身邊有人說，這是自己第一次去投票。"
+    },
+    {
+      "id": "rev_meinong",
+      "timeline_id": "meinong_earthquake",
+      "roc_ym_start": "105-02",
+      "roc_ym_end": "105-02",
+      "priority": 2,
+      "review_line": "過年前的一個半夜，床搖了一下，你醒來看了看手機。",
+      "counties": [
+        "taichung",
+        "taitung"
+      ]
+    },
+    {
+      "id": "rev_samesex",
+      "timeline_id": "same_sex_marriage_act",
+      "roc_ym_start": "108-05",
+      "roc_ym_end": "108-05",
+      "priority": 1,
+      "review_line": "那陣子一條關於結婚的新法律上路，新聞和飯桌上都在聊。"
+    },
+    {
+      "id": "rev_triple",
+      "timeline_id": "triple_stimulus_voucher",
+      "roc_ym_start": "109-07",
+      "roc_ym_end": "109-12",
+      "priority": 2,
+      "review_line": "那陣子大家拿著振興券，討論要花在哪裡。"
+    },
+    {
+      "id": "rev_quintuple",
+      "timeline_id": "quintuple_stimulus_voucher",
+      "roc_ym_start": "110-10",
+      "roc_ym_end": "111-04",
+      "priority": 1,
+      "review_line": "又一輪振興券發下來，你這次早就想好要買什麼。"
+    }
+  ],
+  "rules": [
+    {
+      "timeline_rule_id": "nine_year_integrated_curriculum",
+      "applies_to_birth_roc_years": [
+        80,
+        81
+      ],
+      "game_effect": "flag",
+      "flag": "curr9_junior"
+    },
+    {
+      "timeline_rule_id": "nine_year_integrated_curriculum",
+      "applies_to_birth_roc_years": [
+        82,
+        83
+      ],
+      "game_effect": "flag",
+      "flag": "curr9_mid"
+    },
+    {
+      "timeline_rule_id": "nine_year_integrated_curriculum",
+      "applies_to_birth_roc_years": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "game_effect": "flag",
+      "flag": "curr9_native"
+    },
+    {
+      "timeline_rule_id": "basic_competence_test_jice",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "game_effect": "text_variant",
+      "_note": "era_terms.json exam_name＝基測（已核對）"
+    },
+    {
+      "timeline_rule_id": "twelve_year_basic_education_cap",
+      "applies_to_birth_roc_years": [
+        88,
+        89
+      ],
+      "game_effect": "text_variant",
+      "_note": "era_terms.json exam_name＝會考（已核對）"
+    },
+    {
+      "timeline_rule_id": "multiple_university_admission",
+      "applies_to_birth_roc_years": [
+        80,
+        81
+      ],
+      "game_effect": "flag",
+      "flag": "star_plan",
+      "_note": "18 上模擬考場景：繁星計畫"
+    },
+    {
+      "timeline_rule_id": "multiple_university_admission",
+      "applies_to_birth_roc_years": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "game_effect": "flag",
+      "flag": "star_recommend",
+      "_note": "繁星推薦"
+    },
+    {
+      "timeline_rule_id": "vocational_admission_tvc",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "game_effect": "flag",
+      "flag": "tvc_star",
+      "_note": "可以提到技職繁星"
+    },
+    {
+      "timeline_rule_id": "tuition_subsidy_114w_100_102",
+      "applies_to_birth_roc_years": [
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "game_effect": "flag",
+      "flag": "tuition_114w",
+      "choice_text_birth_roc_years": [
+        85,
+        86,
+        87
+      ],
+      "quintiles": [
+        1,
+        2,
+        3
+      ],
+      "_note": "era-cards §6：依學年算是 83–87（82 年次 1–8 月出生不適用）；Q1–Q3 是假設；86／87 年次部分年級 ⚠️待查。只換選校畫面文字"
+    },
+    {
+      "timeline_rule_id": "tuition_free_148w_from_103",
+      "applies_to_birth_roc_years": [
+        88,
+        89
+      ],
+      "game_effect": "flag",
+      "flag": "tuition_148w",
+      "_note": "高職所有家境；普高 Q1–Q4（假設），由選校文字判斷"
+    },
+    {
+      "timeline_rule_id": "textbook_liberalization_one_guideline_many_versions",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "game_effect": "text_variant",
+      "_note": "背景文字，不改規則"
+    },
+    {
+      "timeline_rule_id": "basic_wage_schedule",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "game_effect": "turn_flag",
+      "_note": "回合的月份區間結束在 96-07 以前＝wage_frozen，否則 wage_rising；只換 s_work 第一次打的旁白（v12.json play_notes），不寫金額",
+      "before": "96-07",
+      "flag_before": "wage_frozen",
+      "flag_after": "wage_rising"
+    },
+    {
+      "timeline_rule_id": "military_1yr_born_on_or_before_82",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82
+      ],
+      "game_effect": "deferred_v13"
+    },
+    {
+      "timeline_rule_id": "military_4mo_training_83_93",
+      "applies_to_birth_roc_years": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "game_effect": "deferred_v13"
+    },
+    {
+      "timeline_rule_id": "alternative_service_launch",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82
+      ],
+      "game_effect": "deferred_v13"
+    }
+  ],
+  "_text_source": "writing/v1.2_era_cards_text.md（game/scripts/era-text-from-md.py 轉入）"
+}

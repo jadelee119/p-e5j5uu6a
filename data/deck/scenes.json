@@ -1,0 +1,207 @@
+{
+  "_note": "v1.2 場景文字（規格 §3.2；文字：writing/v1.2_spec_text.md（443a25d））。版本選擇規則同牌的 variants（見 game/src/logic/v12.ts pickVariantField）。哪一回合用哪個場景在 v12.json term_scenes.table。",
+  "scenes": {
+    "sc_school_start": {
+      "name": "開學",
+      "text": "新制服大一號，大人說「會長高的」。新教室裡，你誰都不認識。",
+      "variants": [
+        {
+          "by_flag": "curr9_junior",
+          "by_age": [
+            13,
+            13
+          ],
+          "text": "國一的課本換了，社會和自然都改叫「領域」，老師也還在適應。"
+        },
+        {
+          "by_track": "hs_general",
+          "text": "走進高中校門，你發現大家都跟你一樣，假裝自己不緊張。"
+        },
+        {
+          "by_track": "hs_vocational",
+          "text": "實習工廠有一股特別的味道，學長說聞久了就會喜歡。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "text": "同屆的人要一起念五年，你看著校門，覺得前面的路好長。"
+        },
+        {
+          "by_track": "uni",
+          "text": "迎新的學長姐很熱情，熱情到你開始懷疑有什麼目的。"
+        },
+        {
+          "by_track": "uni_tech",
+          "text": "第一天就拿到一張器材清單，比課表還長。"
+        }
+      ]
+    },
+    "sc_new_job": {
+      "name": "新工作",
+      "text": "第一天上班，你把同事的名字偷偷記在便條紙上，下班前全背起來了。"
+    },
+    "sc_midterm": {
+      "name": "段考",
+      "text": "段考週到了，大家走路都在背書，福利社排隊也安安靜靜。",
+      "variants": [
+        {
+          "by_track": "uni",
+          "name": "期中考",
+          "text": "期中考週到了，共筆在群組裡傳得比八卦還快。"
+        },
+        {
+          "by_track": "uni_tech",
+          "name": "期中考",
+          "text": "期中考週，學長姐的考古題在影印店印到機器發燙。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            19,
+            20
+          ],
+          "name": "期中考",
+          "text": "期中考週，比考試更可怕的是專題進度，組員已讀不回。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            16,
+            16
+          ],
+          "text": "專業科目的課本厚到可以當枕頭，段考前一晚你真的拿來睡了。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            17,
+            17
+          ],
+          "text": "段考週，影印店老闆已經認得你，順手把同學的筆記多印一份。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            18,
+            18
+          ],
+          "text": "同年的人在拚學測，你在拚段考，誰比較輕鬆，沒人說得準。"
+        }
+      ]
+    },
+    "sc_sports_day": {
+      "name": "運動會",
+      "text": "進場練了好幾次，真正那天，你們班還是有人走錯方向。"
+    },
+    "sc_school_trip": {
+      "name": "畢旅",
+      "text": "畢旅前一晚你幾乎沒睡，書包裡塞滿零食和一副撲克牌。",
+      "variants": [
+        {
+          "by_age": [
+            16,
+            18
+          ],
+          "text": "畢旅的夜晚，大家擠在同一間房間，聊到天快亮。"
+        }
+      ]
+    },
+    "sc_mock_exam": {
+      "name": "模擬考",
+      "text": "{exam_name}模擬考那天，教室安靜到聽得見筆芯斷掉。",
+      "variants": [
+        {
+          "by_flag": "star_recommend",
+          "by_track": "hs_general",
+          "by_age": [
+            18,
+            18
+          ],
+          "text": "老師發下繁星推薦的說明，大家假裝不在意，回家偷偷看校排。"
+        },
+        {
+          "by_flag": "star_plan",
+          "by_track": "hs_general",
+          "by_age": [
+            18,
+            18
+          ],
+          "text": "老師在班上講繁星計畫，大家假裝不在意，回家偷偷看自己的校排。"
+        },
+        {
+          "by_track": "hs_general",
+          "by_age": [
+            16,
+            18
+          ],
+          "text": "學測模擬考寫到一半，你發現自己在想午餐。"
+        },
+        {
+          "by_track": "hs_vocational",
+          "by_age": [
+            16,
+            18
+          ],
+          "text": "統測模擬考的專業科目，你寫得比國文還順。"
+        }
+      ]
+    },
+    "sc_graduation": {
+      "name": "畢業典禮",
+      "text": "驪歌唱完，大家在校門口拍照，聊的都是{exam_name}。",
+      "variants": [
+        {
+          "by_flag": "grad_cancelled",
+          "text": "畢業典禮取消了，你把學士服套在家居服外面，對著鏡頭拍了一張。"
+        },
+        {
+          "by_track": [
+            "hs_general",
+            "hs_vocational"
+          ],
+          "by_age": [
+            18,
+            18
+          ],
+          "text": "有人在台下哭得很慘，有人已經在約晚上去唱歌。"
+        },
+        {
+          "by_track": "hs_5yr",
+          "by_age": [
+            20,
+            20
+          ],
+          "text": "同屆的人有的已經上大學，你終於也拿到這張證書。"
+        },
+        {
+          "by_track": [
+            "uni",
+            "uni_tech"
+          ],
+          "by_age": [
+            22,
+            22
+          ],
+          "text": "學士帽丟上天，掉下來時你沒接到，就像很多事一樣。"
+        }
+      ]
+    },
+    "sc_final": {
+      "name": "期末",
+      "text": "期末週，圖書館的位子比演唱會門票還難搶。"
+    },
+    "sc_half_first": {
+      "name": "上半年",
+      "text": "年初公司訂了新目標，你還在研究影印機怎麼雙面印。"
+    },
+    "sc_half_second": {
+      "name": "下半年",
+      "text": "年底大家在聊年終，你在算還要上幾天班才放假。"
+    },
+    "school_choice_text": {
+      "_note": "選校畫面的學費句（era-cards §6）；DeckGame.choiceNote(key) 選用。私立普高句企劃定案不做，不轉入",
+      "tuition_114_vocational": "簡章上寫著符合條件的免學費，大人看了好幾遍，鬆了一口氣。",
+      "tuition_148": "學費那一欄不用煩惱了，剩下的只有要選哪一間。",
+      "tuition_neutral": "簡章後面有一頁學費說明，大人看得很仔細。"
+    }
+  }
+}

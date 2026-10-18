@@ -1,0 +1,28 @@
+/* 《台灣人生》時代牌舊電視框（美術設計）
+   結構：<div class="tv-box" style="--acc:<牌的 accent>">
+           <img class="tv-art" src="art/deck/era/<card id>.jpg" alt="">
+           <span class="tv-frame" aria-hidden="true"><!-- 內嵌 tv-frame.svg 原始碼 --></span>
+         </div>
+   - 牌圖是 1280×720（16:9），整張墊在下面；電視框一樣 16:9，疊在上面，螢幕挖空。
+   - 外框色吃 --acc，所以 SVG 要「內嵌」進 DOM（?raw），用 <img> 載入的話 var() 拿不到，只會是木頭備用色。
+   - 螢幕挖空的位置（佔整張的百分比）寫成變數，想只把牌圖放進螢幕裡（不墊整張）的話用 --tv-screen-*。 */
+:root {
+  --tv-ratio: 16 / 9;
+  /* 螢幕挖空的外接框（含鼓起），單位＝框寬／框高的百分比 */
+  --tv-screen-top: 16.9%; --tv-screen-right: 20.8%; --tv-screen-bottom: 7.5%; --tv-screen-left: 7%;
+  --tv-paper: #FBFAF6; /* 機殼外面那圈紙色，放在深色底上可以改成 transparent 以外的底色 */
+}
+.tv-box { position: relative; aspect-ratio: var(--tv-ratio); width: 100%; overflow: hidden; border-radius: 6px; }
+.tv-box > .tv-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* 只放進螢幕：<img class="tv-art in-screen"> */
+.tv-box > .tv-art.in-screen { inset: var(--tv-screen-top) var(--tv-screen-right) var(--tv-screen-bottom) var(--tv-screen-left); width: auto; height: auto; }
+.tv-box > .tv-frame { position: absolute; inset: 0; pointer-events: none; color: var(--acc); }
+.tv-box > .tv-frame svg { width: 100%; height: 100%; display: block; }
+/* 沒有牌圖時，螢幕裡放一層舊電視的綠灰色當底（跟灰盒的 .crt .tube 一樣） */
+.tv-box:not(:has(.tv-art)) { background: radial-gradient(ellipse at 40% 45%, #6F8C7E, #24332C 75%); }
+
+/* 套到工程現有的 .crt 結構（deck-ui.ts 的 crt()）時，等價寫法：
+   .dk .crt.framed .tube { aspect-ratio: 16/9; width: 132px; }            (big 版可用 min(46%,200px))
+   .dk .crt.framed .tube img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:0; }
+   .dk .crt.framed .tube .nm { position:absolute; inset: var(--tv-screen-top) var(--tv-screen-right) var(--tv-screen-bottom) var(--tv-screen-left); }
+   .dk .crt .frame { position:absolute; inset:0; color: var(--acc); } */

@@ -1,0 +1,250 @@
+/* 《台灣人生》v1.2 手機一屏：美術皮膚（美術設計）
+   用法：在工程灰盒（design/mockups/v1.2-mobile 的 common.css 之後）或正式 deck-ui 載入：
+     <link rel="stylesheet" href="art/ui/mobile-v12/skin.css">
+   只覆蓋外觀，不改版面流程；類別名稱對齊灰盒：.mini .is-burden .badge .pinned .sheet .resbar .meter .slots .mem .btn.primary。
+   每張牌請在元素上設主色：style="--acc:<data/deck/cards.json 的 accent>"；記憶牌用類別色 data-cat="study|play|exercise|talent|work"。
+   畫面上不出現數字：成本＝時鐘個數、背多久＝引信（.fuse 的 --fuse-total／--fuse-burnt 是 CSS 變數，不顯示在畫面上）。 */
+
+:root {
+  /* === 主題（同 art/theme.css；灰盒的灰色換成紙、鉛筆、黑板） === */
+  --color-bg: #EDEFE8; --color-card: #FBFAF6; --color-text: #33302B; --color-muted: #66615A;
+  --color-accent: #B0443A; --color-lock: #BDB4A5; --color-line: #D6D2C6;
+  --color-blackboard: #2F4A3E; --color-chalk: #EDEBE3; --color-tape: #E8D29B; --color-notebook: #A9C4D9;
+  --color-placeholder: color-mix(in srgb, var(--acc, #A9C4D9) 22%, #FBFAF6);
+  --color-primary-bg: var(--color-blackboard); --color-primary-ink: var(--color-chalk);
+  --color-scrim: rgb(51 48 43 / .5);
+  --color-burden: #5A5048; --color-burden-frame: #2E2823;
+  --font-title: "Noto Serif TC", "Noto Serif CJK TC", serif;
+  --font-body: "Noto Sans TC", "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-hand: "jf-openhuninn", "Noto Sans TC", sans-serif;
+  --radius-card: 7px; --radius-btn: 10px; --radius-sheet: 18px;
+  --shadow-card: 0 2px 0 #0000000d, 0 6px 14px #3a322914;
+  --shadow-heavy: 1px 6px 8px #1d191566;
+
+  /* === 手牌（README §6） === */
+  --hand-card-w: 88px; --hand-card-h: 128px; --hand-card-radius: 7px;
+  --hand-art-ratio: 7 / 5; --hand-min-reveal: 44px; --hand-fan-max-rot: 5deg; --hand-fan-arc: 9px;
+  --hand-lift: 14px; --hand-side-pad: 20px; --card-border-w: 2.6px;
+  --mini-card-w: var(--hand-card-w); --mini-card-h: var(--hand-card-h); --mini-card-img-h: calc((var(--hand-card-w) - 10px) * .72);
+
+  /* === 包袱 === */
+  --burden-edge-w: 4.5px; --burden-sink: 6px; --burden-knot-h: 14px; --burden-stamp: #C8322E;
+  --fuse-rope: #D9B77A; --burden-fuse-burnt: #7A6D64; --fuse-spark: #D2452F; /* 燒過那段的顏色（灰燼色，深淺底都看得到）；原名 --fuse-burnt 跟元素上的「已燒段數」撞名，改名 */
+  --burden-frame-w: var(--burden-edge-w);
+
+  /* === 版面區塊 === */
+  --topbar-h: 44px; --resbar-h: 42px; --handlabel-h: 22px; --actionbar-h: 68px; --timerow-h: 30px;
+  --sheet-max-h: 74dvh; --sheet-art-ratio: 16 / 9; --sheet-btn-h: 54px;
+  --clock-d: 18px; --icon-size: 20px; --meter-seg-w: 8px; --meter-seg-h: 6px;
+  --memory-card-h: 150px; --memory-art-w: 84px;
+
+  /* 屬性色（同 art/stat-bars） */
+  --sb-academic: #3E6FB0; --sb-happiness: #B86E0E; --sb-stress: #8A5BA8; --sb-health: #3D8A4B; --sb-social: #C24E76; --sb-wealth: #967430; --sb-danger: #D2452F;
+  /* 記憶牌類別色（提案：沿用該類代表牌的 accent） */
+  --cat-study: #3A6FB0; --cat-play: #4A7038; --cat-exercise: #A8322D; --cat-talent: #6B4A8C; --cat-work: #B8902F;
+}
+@media (max-height: 700px) {
+  :root { --hand-card-w: 74px; --hand-card-h: 108px; --hand-side-pad: 16px; --resbar-h: 38px;
+          --sheet-max-h: 86dvh; --sheet-art-ratio: 2 / 1; --memory-card-h: 124px; --memory-art-w: 72px; }
+}
+@media (min-width: 900px) and (orientation: landscape) { :root { --hand-card-w: 132px; --hand-card-h: 192px; } }
+
+/* 紙紋：一層很淡的雜訊（SVG 內嵌，無外部資源） */
+body, .screen {
+  background-color: var(--color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .19 0 0 0 0 .17 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- 頂列：黑板牌（階段＋年份圓點＋學期課本） ---------- */
+.topbar { background: transparent; border: 0; padding: 0 10px; }
+.topbar .where, .topbar .stage-pill {
+  background: var(--color-blackboard); color: var(--color-chalk); font-family: var(--font-title);
+  border-radius: 8px; padding: 6px 12px; box-shadow: var(--shadow-card);
+}
+/* 學期：<span class="sem" data-sem="1|2"><i></i><i></i></span> → 兩本小課本，下學期第二本亮＋紅書籤 */
+.sem { display: inline-flex; gap: 5px; vertical-align: middle; }
+.sem i { width: 12px; height: 15px; border: 1.6px dashed var(--color-chalk); border-radius: 1px; position: relative; }
+.sem i:first-child, .sem[data-sem="2"] i { background: var(--color-tape); border-style: solid; box-shadow: inset 3px 0 0 #2f4a3e55; }
+.sem[data-sem="2"] i:last-child::after { content: ""; position: absolute; right: 1px; top: -3px; width: 4px; height: 9px; background: var(--color-accent); clip-path: polygon(0 0,100% 0,100% 100%,50% 75%,0 100%); }
+
+/* ---------- 屬性列：圖示＋五格蠟筆條（每個屬性自己的顏色） ---------- */
+.resbar { background: var(--color-card); border: 1px solid var(--color-line); border-radius: 10px; margin: 0 8px; }
+.res { --c: var(--color-muted); }
+.res:nth-child(1) { --c: var(--sb-academic); } .res:nth-child(2) { --c: var(--sb-happiness); } .res:nth-child(3) { --c: var(--sb-stress); }
+.res:nth-child(4) { --c: var(--sb-health); } .res:nth-child(5) { --c: var(--sb-social); } .res:nth-child(6) { --c: var(--sb-wealth); }
+.res svg { color: var(--c); }
+.meter b { background: color-mix(in srgb, var(--c) 18%, var(--color-card)); border-radius: 2px; }
+.meter b.on { background: var(--c); }
+.res.danger svg { color: var(--sb-danger); }
+.res.danger { outline: 1.6px dashed var(--sb-danger); outline-offset: 1px; border-radius: 50%; }
+
+/* ---------- 時間格：手繪時鐘（沒有刻度數字）。灰盒的 .slots i 直接換皮 ---------- */
+.slots i {
+  width: var(--clock-d); height: var(--clock-d); border: 0; border-radius: 0; background: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='13' r='8' fill='none' stroke='%2366615A' stroke-width='1.6' stroke-dasharray='3 2.5'/%3E%3Cpath d='M7 8l10 10' stroke='%2366615A' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  opacity: .6;
+}
+.slots i.on {
+  opacity: 1; background: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='13' r='8' fill='%23E8D29B' stroke='%232F4A3E' stroke-width='2'/%3E%3Cpath d='M12 13V8M12 13l3.5 1.6M7 4.5l-2-2M17 4.5l2-2' stroke='%232F4A3E' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.mini .slots i { width: 11px; height: 11px; }
+
+/* ---------- 一般手牌（小卡） ---------- */
+.mini {
+  --acc: var(--color-accent);
+  width: var(--hand-card-w); height: var(--hand-card-h); border-radius: var(--hand-card-radius);
+  background: var(--color-card); border: var(--card-border-w) solid var(--acc); padding: 5px;
+  box-shadow: var(--shadow-card); transition: transform .14s ease, box-shadow .14s ease;
+}
+.handrow .mini:nth-child(odd) { transform: rotate(-2deg); } .handrow .mini:nth-child(even) { transform: rotate(1.5deg) translateY(2px); }
+.mini .ph, .mini img { height: auto; aspect-ratio: var(--hand-art-ratio); width: 100%; object-fit: cover; object-position: 50% 50%; border-radius: 4px; }
+.mini b {
+  font-family: var(--font-hand); font-weight: 700; font-size: 13px; line-height: 1.2; color: var(--color-text);
+  background: linear-gradient(transparent 78%, color-mix(in srgb, var(--acc) 55%, transparent) 78% 92%, transparent 92%) no-repeat;
+  background-size: 100% 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.mini .foot { color: var(--acc); }
+.mini:focus-visible, .mini.sel, .mini:hover { transform: translateY(calc(-1 * var(--hand-lift))) rotate(0); box-shadow: 0 0 0 4px color-mix(in srgb, var(--acc) 30%, transparent), var(--shadow-card); }
+.mini.off { opacity: .6; border-style: dashed; }
+/* 扇形（可選）：<div class="handrow fan">，子元素設 style="--i:<index>;--n:<count>" */
+.handrow.fan { overflow: visible; justify-content: center; padding-inline: var(--hand-side-pad); }
+.handrow.fan .mini {
+  --t: calc((var(--i) - (var(--n) - 1) / 2) / max(1, (var(--n) - 1) / 2));
+  margin-left: calc(-1 * max(0px, var(--hand-card-w) - max(var(--hand-min-reveal), (100vw - 2 * var(--hand-side-pad) - var(--hand-card-w)) / max(1, var(--n) - 1))));
+  transform: rotate(calc(var(--t) * var(--hand-fan-max-rot))) translateY(calc(var(--t) * var(--t) * var(--hand-fan-arc)));
+  transform-origin: 50% 100%;
+}
+.handrow.fan .mini:first-child { margin-left: 0; }
+
+/* ---------- 包袱牌：包袱巾、布耳打結、深邊、縫線、朱紅印章、引信 ---------- */
+.mini.is-burden {
+  --burden-fill: color-mix(in srgb, var(--acc) 55%, black);
+  --burden-edge: color-mix(in srgb, var(--acc) 32%, black);
+  background-color: var(--burden-fill);
+  background-image:
+    repeating-linear-gradient(45deg, #ffffff1a 0 1.4px, transparent 1.4px 7px),
+    repeating-linear-gradient(-45deg, #ffffff1a 0 1.4px, transparent 1.4px 7px);
+  border: var(--burden-edge-w) solid var(--burden-edge); outline: none;
+  box-shadow: inset 0 0 0 3px var(--burden-fill), inset 0 0 0 4.2px #EDEBE38c, var(--shadow-heavy);
+  translate: 0 var(--burden-sink); overflow: visible;
+}
+.mini.is-burden::before { /* 布耳打結（凸出牌頂） */
+  content: ""; position: absolute; left: 50%; top: calc(-1 * var(--burden-knot-h) - 2px); width: 40px; height: calc(var(--burden-knot-h) + 8px); translate: -50% 0;
+  background: var(--burden-fill);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 22'%3E%3Cpath d='M16 20C6 16-2 6 4 2c5-3 10 4 12 12zM24 20c10-4 18-14 12-18-5-3-10 4-12 12z'/%3E%3Ccircle cx='20' cy='18' r='6'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 22'%3E%3Cpath d='M16 20C6 16-2 6 4 2c5-3 10 4 12 12zM24 20c10-4 18-14 12-18-5-3-10 4-12 12z'/%3E%3Ccircle cx='20' cy='18' r='6'/%3E%3C/svg%3E") center/contain no-repeat;
+  filter: drop-shadow(0 0 0 var(--burden-edge)) drop-shadow(0 1px 0 var(--burden-edge));
+}
+.mini.is-burden .ph, .mini.is-burden img { filter: sepia(.6) saturate(.5); background-color: var(--color-chalk); }
+.mini.is-burden b { color: var(--color-chalk); background: none; }
+.mini.is-burden .badge { /* 朱紅「包袱」印章，放左上（扇形或捲動列裡都不會被下一張蓋住） */
+  position: absolute; top: 8px; left: 8px; z-index: 2; rotate: -12deg;
+  background: #FBFAF6e6; color: var(--burden-stamp); border: 2px solid var(--burden-stamp); border-radius: 3px;
+  font-family: var(--font-title); font-size: 10px; font-weight: 700; padding: 0 4px; line-height: 1.5;
+}
+.mini.is-burden .foot { color: var(--color-chalk); }
+.pinned { background: linear-gradient(90deg, var(--color-bg) 85%, transparent); border-right: 1.5px dashed color-mix(in srgb, var(--color-burden-frame) 60%, transparent); }
+.cap b.burden { background: var(--color-burden-frame); border-color: var(--color-burden-frame); }
+/* 每學期痛一次：牌晃一下（灰盒的 .shake 換成擺動） */
+.shake { animation: burden-shake .3s ease 2; }
+@keyframes burden-shake { 0%,100% { rotate: 0deg; } 25% { rotate: -3deg; } 75% { rotate: 3deg; } }
+
+/* 引信：<span class="fuse" style="--fuse-total:4;--fuse-burnt:3"></span>（放在包袱牌下緣或詳情裡）
+   --fuse-total／--fuse-burnt 是段數（數字，由工程在元素上設）；顏色是 :root 的 --fuse-rope／--burden-fuse-burnt／--fuse-spark。 */
+.fuse {
+  --seg: calc(100% / var(--fuse-total, 3)); --burnt: calc(100% * var(--fuse-burnt, 0) / var(--fuse-total, 3));
+  position: relative; display: block; height: 6px; margin: 4px 2px 2px; border-radius: 3px;
+  background:
+    linear-gradient(90deg, var(--burden-fuse-burnt, #7A6D64) 0 var(--burnt), transparent var(--burnt)),
+    repeating-linear-gradient(90deg, var(--fuse-rope) 0 calc(var(--seg) - 3px), #B89656 calc(var(--seg) - 3px) var(--seg));
+}
+.fuse::after { /* 火星＝目前位置 */
+  content: ""; position: absolute; left: var(--burnt); top: 50%; width: 12px; height: 12px; translate: -50% -50%;
+  background: radial-gradient(circle, var(--fuse-spark) 0 35%, #F2B85A99 36% 70%, transparent 71%);
+}
+.fuse[style*="--fuse-burnt:0"]::after { display: none; }
+.sheet .fuse { height: 9px; margin: 8px 0; }
+
+/* ---------- 詳情底板 ---------- */
+.scrim { background: var(--color-scrim); }
+.sheet {
+  --acc: var(--color-accent);
+  max-height: var(--sheet-max-h); border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  background-color: var(--color-card);
+  background-image: repeating-linear-gradient(transparent 0 25px, color-mix(in srgb, var(--color-notebook) 45%, transparent) 25px 26px);
+  border-top: 5px solid var(--acc); padding-bottom: calc(14px + env(safe-area-inset-bottom));
+}
+.grab { background: var(--color-muted); opacity: .5; }
+.sheet .ph.big, .sheet .art {
+  height: auto; aspect-ratio: var(--sheet-art-ratio); width: 100%; object-fit: cover;
+  background: var(--color-card); padding: 7px; box-shadow: var(--shadow-card); rotate: -1.2deg; border-radius: 2px;
+}
+.sheet h3 { font-size: 24px; text-decoration: underline 5px color-mix(in srgb, var(--acc) 60%, transparent); text-underline-offset: 6px; }
+.sheet .line { font-size: 17px; }
+.sheet .btn { min-height: 44px; border-radius: var(--radius-btn); }
+.sheet .btn.primary { background: var(--acc); border-color: var(--acc); color: #fff; min-height: var(--sheet-btn-h); font-size: 18px; }
+/* 包袱的詳情：整片換成包袱巾 */
+.sheet.is-burden {
+  --burden-fill: color-mix(in srgb, var(--acc) 55%, black); --burden-edge: color-mix(in srgb, var(--acc) 32%, black);
+  background-color: var(--burden-fill); color: var(--color-chalk);
+  background-image: repeating-linear-gradient(45deg, #ffffff1a 0 1.4px, transparent 1.4px 7px), repeating-linear-gradient(-45deg, #ffffff1a 0 1.4px, transparent 1.4px 7px);
+  border-top: 7px solid var(--burden-edge);
+}
+.sheet.is-burden .art, .sheet.is-burden .ph.big { filter: sepia(.6) saturate(.5); }
+.sheet.is-burden .rule { background: #00000026; color: var(--color-chalk); border-left-color: var(--fuse-spark); }
+.sheet.is-burden .btn { background: var(--color-card); color: var(--color-text); }
+.sheet.is-burden .btn.primary { background: var(--color-tape); border-color: var(--color-tape); color: var(--color-text); }
+
+/* ---------- 按鈕 ---------- */
+.btn { min-height: 44px; border-radius: var(--radius-btn); font-family: var(--font-hand); }
+.btn.primary { background: var(--color-primary-bg); color: var(--color-primary-ink); border-color: var(--color-primary-bg);
+  box-shadow: inset 0 0 0 3px var(--color-primary-bg), inset 0 0 0 4px #EDEBE340, var(--shadow-card); font-size: 16px; }
+.actionbar { background: transparent; border-top: 0; }
+
+/* ---------- 結果舞台：拍立得＋手寫旁白 ---------- */
+.result { background: transparent; box-shadow: none; }
+.result .ph, .result img.art { background: var(--color-card); padding: 7px 7px 26px; box-shadow: var(--shadow-card); rotate: -1.6deg; border-radius: 2px; }
+.result p { font-family: var(--font-hand); }
+.toast { background: #F7E7B8; color: var(--color-text); box-shadow: var(--shadow-card); rotate: -1.2deg; border-radius: 0; } /* 包袱便條旁白 */
+
+/* ---------- 童年序章：記憶牌（牌名＋處境＋後果，選之前就看得到） ----------
+   建議結構：<button class="mem" data-cat="study"><div class="ph">…</div><div class="txt">
+     <b><i class="cat"></i>先寫功課</b><span class="l">處境</span><span class="cons">後果</span><span class="adds">＋<i>讀書</i></span></div></button> */
+.mem { --acc: var(--color-accent); height: var(--memory-card-h); border: 2.4px solid var(--acc); border-radius: 8px; padding: 9px; gap: 10px; background: var(--color-card); }
+.mem[data-cat="study"] { --acc: var(--cat-study); } .mem[data-cat="play"] { --acc: var(--cat-play); } .mem[data-cat="exercise"] { --acc: var(--cat-exercise); }
+.mem[data-cat="talent"] { --acc: var(--cat-talent); } .mem[data-cat="work"] { --acc: var(--cat-work); }
+.mems .mem:nth-child(1) { rotate: -1.2deg; } .mems .mem:nth-child(2) { rotate: .8deg; } .mems .mem:nth-child(3) { rotate: -.6deg; }
+.mem .ph { width: var(--memory-art-w); border-radius: 4px; color: color-mix(in srgb, var(--acc) 70%, black);
+  background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--acc) 22%, var(--color-card)) 0 6px, color-mix(in srgb, var(--acc) 12%, var(--color-card)) 6px 12px);
+  outline: 1.6px dashed var(--acc); outline-offset: -4px; font-family: var(--font-hand); font-size: 10px; }
+.mem b { font-family: var(--font-title); font-size: 16px; display: flex; align-items: center; gap: 6px; }
+.mem .cat { /* 類別小圓章：圖示，不寫數字 */
+  width: 22px; height: 22px; flex: none; border-radius: 50%; border: 1.4px solid var(--acc);
+  background: color-mix(in srgb, var(--acc) 20%, var(--color-card)) var(--cat-icon, none) center / 14px no-repeat; }
+.mem[data-cat="study"] .cat { --cat-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E5890' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M3 6c3-1.5 6-1.2 9 .6 3-1.8 6-2.1 9-.6v12c-3-1.4-6-1.1-9 .6-3-1.7-6-2-9-.6zM12 6.6v12'/%3E%3C/svg%3E"); }
+.mem[data-cat="play"] .cat { --cat-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B5A2D' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M12 3l7 7-7 11-7-11zM5 10h14M12 21c1 1.5 2.5 2 4 1.5'/%3E%3C/svg%3E"); }
+.mem[data-cat="exercise"] .cat { --cat-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23862824' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='6' cy='16' r='4'/%3E%3Ccircle cx='18' cy='16' r='4'/%3E%3Cpath d='M6 16l4-7h5l3 7M10 9l2 7h6M9 6h3'/%3E%3C/svg%3E"); }
+.mem[data-cat="talent"] .cat { --cat-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23553B70' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M9 18V6l10-2v12'/%3E%3Ccircle cx='6.5' cy='18' r='2.5'/%3E%3Ccircle cx='16.5' cy='16' r='2.5'/%3E%3C/svg%3E"); }
+.mem[data-cat="work"] .cat { --cat-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23937326' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M3 10l2-5h14l2 5M5 12.5V20h14v-7.5M10 20v-4h4v4M3 10c0 3 6 3 6 0 0 3 6 3 6 0 0 3 6 3 6 0'/%3E%3C/svg%3E"); }
+.mem .l { font-family: var(--font-body); font-size: 13px; line-height: 1.45; -webkit-line-clamp: 2; }
+.mem .cons { /* 後果：虛線下方、手寫感、較小較淡 */
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  margin-top: 4px; padding: 5px 0 0 14px; border-top: 1.3px dashed color-mix(in srgb, var(--acc) 60%, transparent);
+  font-family: var(--font-hand); font-size: 12px; line-height: 1.45; color: color-mix(in srgb, var(--color-muted) 75%, var(--acc));
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%2366615A' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M2 1v5q0 3 3 3h5l-2-2m2 2-2 2'/%3E%3C/svg%3E") 0 7px / 11px no-repeat;
+}
+.mem .adds { color: color-mix(in srgb, var(--acc) 75%, black); font-family: var(--font-hand); }
+.mem .adds i { border-color: var(--acc); }
+.mem.sel { border-width: 3.4px; outline: none; translate: 0 -4px; box-shadow: 0 0 0 5px color-mix(in srgb, var(--acc) 26%, transparent), var(--shadow-card); position: relative; }
+.mem.sel::after { content: ""; position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--acc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M6 11l4 4 7-8'/%3E%3C/svg%3E") center/100% no-repeat; }
+.pro:has(.mem.sel) .btn.primary { background: var(--sel-acc, var(--color-primary-bg)); }
+
+@media (prefers-reduced-motion: reduce) { .shake { animation: none; } .mini { transition: none; } }
+
+/* 幕次／進度圓點（灰盒把序章進度也放在 .slots）：維持圓點，不用時鐘 */
+.slots.prog i, #prog .slots i { width: 13px; height: 13px; border-radius: 50%; border: 1.6px solid var(--color-muted); background: none; opacity: 1; }
+.slots.prog i.on, #prog .slots i.on { background: var(--color-tape); border-color: var(--color-blackboard); }
+/* 包袱規則說明（灰盒 .sheet .rule）：深底白字，確保對比 */
+.sheet .rule { background: var(--color-burden); color: var(--color-chalk); border-left-color: var(--fuse-spark); }

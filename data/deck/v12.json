@@ -1,0 +1,734 @@
+{
+  "_note": "v1.2 規則（design/v1.2-spec.md a1b9fc6）。規格寫在 config.json／cards*.json 的欄位，因為企劃工作區的 config.json、cards_adult.json 還有未提交的 r4 數值，先集中放在這個檔：config_overrides 疊到 config、card_overrides 疊到牌（值寫 null＝刪掉該欄位）。只在 v1.2 打開時套用（enabled，或網址 ?v12=1、deckcheck 參數 v12），v1.1 完全不受影響。上線前可以把這些搬回 config.json／cards*.json。數值除非註明都是規格裡的假設值。",
+  "enabled": true,
+  "adult": true,
+  "turns_per_year": 2,
+  "per_turn_scale": 0.5,
+  "term_names": {
+    "fall": "上學期",
+    "spring": "下學期",
+    "work_fall": "上半年",
+    "work_spring": "下半年",
+    "winter": "寒假",
+    "summer": "暑假"
+  },
+  "max_sticky": 2,
+  "config_overrides": {
+    "_note": "規格 §3.3：標籤次數 ×2；躺平改成每回合最多一張",
+    "score": {
+      "tag_min_count": 6
+    },
+    "passive": {
+      "max_plays_per_turn": 1
+    },
+    "start_deck": {
+      "by_quintile": {
+        "3": [
+          "d_study",
+          "d_talent",
+          "d_team"
+        ]
+      }
+    },
+    "_start_deck_note": "企劃 2026-10-17（QA qa/v12-pool-gaps.md）：Q3 14 歲上、下學期抽得到的行動牌不到 6 張的回合 15–25%、最少 4 張。Q3 起始牌加 d_team（Q1、Q2 原本就有；13–14 歲，14 歲後過期），只影響 Q3 的國中。改後 Q3 14 上／下不到 6 張 1.9–2.6%、最少 5（兩個 seed × 5000）。副作用：Q3 選普高少約 4 個百分點（學業牌被稀釋），見 design/v1.2-balance-log.md"
+  },
+  "card_overrides": {
+    "_note": "規格 §2.4 包袱逐張建議值、§3.3 計數調整、§3.5 冷卻。數值單位是一年份，引擎套用時 × per_turn_scale。held_text：包袱每學期結束晃一下時的旁白（文字：writing/v1.2_spec_text.md（443a25d））",
+    "b_expect": {
+      "sticky": true,
+      "burden_class": "expectation",
+      "cost": null,
+      "on_handle": "discard",
+      "held_per_turn": {
+        "stress": 2
+      },
+      "unplayed_end": null,
+      "removed_by": {
+        "tags_any": [
+          "academic"
+        ],
+        "count": 2,
+        "flags_any": [
+          "hs_general",
+          "hs_vocational",
+          "hs_5yr",
+          "uni",
+          "uni_tech",
+          "work_first"
+        ]
+      },
+      "trigger_after": 4,
+      "trigger_card": "f_expect_fight",
+      "held_text": "大家還在等你的好消息。",
+      "_balance_note": "企劃定案（5121d58）：升學節點離開——選校（hs_*）或分流（uni／uni_tech／work_first）",
+      "age_max": 22,
+      "_age_note": "QA r2 新 bug 1（企劃 2026-10-17）：五專手上延後的 b_expect 要撐到 21 歲 branch_jc 節點，靠 removed_by.flags_any（uni／uni_tech／work_first）離開。只在 v1.2 把 age_max 延到 22（v1.2 引擎規定 19 歲後不再抽新的 b_expect，所以不會多抽）。沒有放回 config.json carry_age_max：那會讓 v1.1 一年一回合模式 19–22 歲也抽得到 b_expect，舊 deckcheck 種子 7 的出社會 B 增量 − C 增量變成 6.0（門檻 5）"
+    },
+    "b_family_expect": {
+      "sticky": true,
+      "burden_class": "expectation",
+      "cost": null,
+      "on_handle": "discard",
+      "held_per_turn": {
+        "stress": 1,
+        "happiness": -1
+      },
+      "removed_by": {
+        "cards_any": [
+          "first_paycheck",
+          "uni_double",
+          "tech_license",
+          "work_save",
+          "work_job_offer"
+        ],
+        "count": 1
+      },
+      "trigger_after": 4,
+      "trigger_card": "f_expect_fight",
+      "held_text": "長輩又問你什麼時候要穩定下來。"
+    },
+    "b_comfort": {
+      "sticky": true,
+      "burden_class": "habit",
+      "on_handle": "remove",
+      "effects": {
+        "happiness": 1
+      },
+      "removes": null,
+      "held_per_turn": {
+        "health": -1,
+        "academic": -1
+      },
+      "unplayed_end": null,
+      "trigger_after": 3,
+      "trigger_card": "f_lost",
+      "held_text": "又一個什麼都不用做的下午。"
+    },
+    "b_bill": {
+      "sticky": true,
+      "burden_class": "money",
+      "on_handle": "return",
+      "returns_after": 3,
+      "held_per_turn": {
+        "stress": 2,
+        "happiness": -2
+      },
+      "unplayed_end": null,
+      "removed_by": {
+        "cards_any": [
+          "d_shop",
+          "s_work"
+        ],
+        "count": 1
+      },
+      "trigger_after": 3,
+      "trigger_card": "f_home_trouble",
+      "held_text": "電話旁邊那疊信封，又厚了一點。",
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：包袱富窮負擔差（門檻 0.2）。held_per_turn stress 3 → 2；returns_after 2 → 3（一年半才回來）"
+    },
+    "d_shop": {
+      "clears": null,
+      "effects": {
+        "wealth": 5,
+        "academic": -1,
+        "social": 2,
+        "stress": null,
+        "happiness": 2
+      },
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：序章同類等強（顧家類 d_shop 和 g_mature 差距過大）。原值 academic −2、stress +1 → academic −1、happiness +2"
+    },
+    "b_scroll": {
+      "sticky": true,
+      "burden_class": "habit",
+      "on_handle": "discard",
+      "held_per_turn": {
+        "health": -1
+      },
+      "unplayed_end": null,
+      "trigger_after": 4,
+      "trigger_card": "f_lost",
+      "held_text": "你又看了一下，就一下。"
+    },
+    "b_tired": {
+      "sticky": true,
+      "burden_class": "body",
+      "on_handle": "remove",
+      "removes": null,
+      "held_per_turn": {
+        "stress": 1,
+        "health": -1
+      },
+      "trigger_after": 3,
+      "trigger_card": "f_sick",
+      "held_text": "你的眼皮比課本還重。"
+    },
+    "b_exam_pressure": {
+      "sticky": true,
+      "burden_class": "mind",
+      "on_handle": "return",
+      "returns_after": 1,
+      "held_per_turn": {
+        "stress": 2
+      },
+      "held_per_year": null,
+      "held_text": "教室後面的倒數又撕掉一張。"
+    },
+    "b_track_regret": {
+      "sticky": true,
+      "burden_class": "mind",
+      "on_handle": "return",
+      "returns_after": 2,
+      "remove_after": 2,
+      "held_per_turn": {
+        "happiness": -2
+      },
+      "held_per_year": null,
+      "held_text": "你又想起那份沒翻開的簡章。"
+    },
+    "b_judged": {
+      "sticky": true,
+      "burden_class": "mind",
+      "on_handle": "remove",
+      "removes": null,
+      "held_per_turn": {
+        "happiness": -2
+      },
+      "held_per_year": null,
+      "requires_in_deck": null,
+      "removed_by": {
+        "cards_any": [
+          "g_skill",
+          "voc_license"
+        ],
+        "count": 1
+      },
+      "held_text": "有人問你念哪裡，你笑了笑。"
+    },
+    "b_loan": {
+      "sticky": true,
+      "burden_class": "money",
+      "on_handle": "return",
+      "returns_after": 2,
+      "held_per_turn": {
+        "stress": 1
+      },
+      "trigger_after": 3,
+      "trigger_card": "f_home_trouble",
+      "held_text": "開學前，對保的通知又寄來了。"
+    },
+    "b_rent": {
+      "sticky": true,
+      "burden_class": "money",
+      "on_handle": "return",
+      "returns_after": 2,
+      "held_per_turn": {
+        "stress": 1,
+        "happiness": -1
+      },
+      "removed_by": {
+        "flags_any": [
+          "living_home"
+        ]
+      },
+      "trigger_after": 3,
+      "trigger_card": "f_home_trouble",
+      "held_text": "又到了要找房東的日子。"
+    },
+    "g_grit": {
+      "growth_per_play": 0.15,
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：序章同類等強（運動類 g_grit 偏強）。growth_per_play 0.25 → 0.15"
+    },
+    "g_network": {
+      "growth_per_play": 0.25
+    },
+    "s_club": {
+      "grant_after": {
+        "count": 6,
+        "flag": "club_core",
+        "adds": [
+          "g_network"
+        ]
+      }
+    },
+    "voc_intern": {
+      "grant_after": {
+        "count": 4,
+        "flag": "skilled_hands",
+        "adds": [
+          "g_skill"
+        ]
+      }
+    },
+    "jc_workshop": {
+      "grant_after": {
+        "count": 4,
+        "adds": [
+          "g_skill"
+        ]
+      }
+    },
+    "s_skip": {
+      "adds_if_twice_in_year": null,
+      "adds_if_n_in_year": {
+        "n": 3,
+        "adds": [
+          "b_comfort"
+        ]
+      }
+    },
+    "f_recession": {
+      "cooldown": 2,
+      "cooldown_group": "bad_news"
+    },
+    "f_family_crisis": {
+      "cooldown": 2,
+      "cooldown_group": "bad_news"
+    },
+    "g_mature": {
+      "effects": {
+        "social": 1,
+        "stress": null
+      },
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：序章同類等強。原值 social 2、stress −1 → social 1（手上時處理包袱少一格的效果不變）"
+    },
+    "d_talent": {
+      "effects": {
+        "happiness": 5,
+        "social": 3,
+        "stress": null,
+        "wealth": -4
+      },
+      "age_max": 15,
+      "expires_age": null,
+      "transforms_at_age": {
+        "16": "s_club"
+      },
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：序章同類等強（才藝類 d_talent 只活到 14 歲，s_club_jr 會延續到高中）。學才藝 13–15 歲，16 歲轉成高中社團 s_club（假設：學過才藝的人高中進社團）；原值 happiness 4、stress 1、age_max 14、expires_age 14。因為會轉牌，不再列入「沒走的路」（regret_text 不會出現）",
+      "requires_wealth": 2,
+      "_fair_note3": "企劃 2026-10-17 第三輪：出社會約 10% 之後，序章公平 A 的才藝卡社交又到 +2.0（mem_09_talent_b，種子 2026）。試過 social 2→1：+1.9／+2.4（種子 2026／7，各 1000 局），更糟，跟第二輪結果一樣。改 social 2→3：最大單卡差 社交 +1.3／+1.2、全部屬性最大 +1.3（種子 2026／7）。檢查標準不動。數值是設計假設",
+      "_fair_note": "企劃 2026-10-17 第二輪：序章公平 A（單卡貧富差 ≤ 2）mem_09_talent_b 的社交在工作區資料到 +2.0：原本 requires_wealth 4，Q1 國中常常打不起，富的才打得到社交。requires_wealth 4 → 2，讓窮的也打得起；第 9 幕只跑時改成 +1.35／+1.32（seed 2026／7，各 1000 局），門檻不動。試過 social 2→1 反而變大（+1.83／+2.46），沒用。數值是設計假設"
+    },
+    "d_play": {
+      "repeat_effects": {
+        "happiness": 2,
+        "stress": -1,
+        "social": 1,
+        "academic": -1
+      },
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：序章同類等強（玩樂類 d_play 和 d_buddy）。重複打的效果原值 social 0、academic −3"
+    },
+    "d_exercise": {
+      "age_max": 15,
+      "expires_age": 15,
+      "_balance_note": "企劃 v1.2 平衡（2026-10-17，deckcheck12 校準；數值都是設計假設，沒有統計依據）：序章同類等強（運動類 d_exercise 只到 14 歲，比 g_grit 弱）。age_max、expires_age 14 → 15，和其他國中行動牌一樣到國三"
+    },
+    "voc_license": {
+      "requires_track": [
+        "hs_vocational",
+        "hs_5yr",
+        "uni_tech",
+        "work_first"
+      ],
+      "flags_any": [
+        "hs_vocational",
+        "hs_5yr"
+      ],
+      "_track_note": "企劃 2026-10-17（PM 定案）：v1.2 分流後 track 換成分流路線（b6e01c3），原本只認 hs_vocational／hs_5yr，19 歲後就抽不到。科大的人照樣考證照：19 歲後走 uni_tech、work_first 抽得到，走 uni 抽不到。flags_any 讓它只給高職、五專出身的人（跟原設計一樣，普高轉科大的不加）；只在 v1.2 生效，v1.1 不變"
+    }
+  },
+  "family_situations": {
+    "_note": "規格 §2.5：開局依分位擲骰給旗標，只調包袱抽中權重（和回顧文字），不直接扣屬性。home_rent 機率有依據（家庭收支調查租押比例，family_quintile_stats.csv），其餘假設",
+    "home_rent": {
+      "chance_by_quintile": {
+        "1": 0.11,
+        "2": 0.11,
+        "3": 0.09,
+        "4": 0.07,
+        "5": 0.04
+      },
+      "adds": [
+        "b_home_rent"
+      ]
+    },
+    "single_parent": {
+      "chance_by_quintile": {
+        "1": 0.14,
+        "2": 0.1,
+        "3": 0.08,
+        "4": 0.06,
+        "5": 0.05
+      },
+      "weight_mult": {
+        "b_bill": 1.3,
+        "g_mature": 1.2
+      }
+    },
+    "household_debt": {
+      "chance_by_quintile": {
+        "1": 0.25,
+        "2": 0.2,
+        "3": 0.15,
+        "4": 0.12,
+        "5": 0.1
+      },
+      "weight_mult": {
+        "b_bill": 1.2
+      }
+    },
+    "parent_unemployed": {
+      "chance_by_quintile": {
+        "1": 0.1,
+        "2": 0.07,
+        "3": 0.05,
+        "4": 0.03,
+        "5": 0.02
+      },
+      "weight_mult": {
+        "b_bill": 1.3
+      }
+    },
+    "caregiving": {
+      "chance_by_quintile": {
+        "1": 0.08,
+        "2": 0.07,
+        "3": 0.06,
+        "4": 0.05,
+        "5": 0.05
+      },
+      "weight_mult": {
+        "g_mature": 1.2
+      }
+    }
+  },
+  "term_scenes": {
+    "_note": "規格 §3.2；場景 id 企劃 10/17 確認。文字在 data/deck/scenes.json。查不到用 route_default（出社會：上半年／下半年），再查不到用 default（段考，放進考前抱佛腳）",
+    "default": "sc_midterm",
+    "table": [
+      {
+        "age": 13,
+        "term": "fall",
+        "scene": "sc_school_start"
+      },
+      {
+        "age": 14,
+        "term": "fall",
+        "scene": "sc_sports_day"
+      },
+      {
+        "age": 14,
+        "term": "spring",
+        "scene": "sc_school_trip"
+      },
+      {
+        "age": 15,
+        "term": "fall",
+        "scene": "sc_mock_exam"
+      },
+      {
+        "age": 15,
+        "term": "spring",
+        "scene": "sc_graduation"
+      },
+      {
+        "age": 16,
+        "term": "fall",
+        "scene": "sc_school_start"
+      },
+      {
+        "age": 17,
+        "term": "fall",
+        "scene": "sc_sports_day"
+      },
+      {
+        "age": 17,
+        "term": "spring",
+        "scene": "sc_school_trip",
+        "tracks": [
+          "hs_general",
+          "hs_vocational"
+        ]
+      },
+      {
+        "age": 18,
+        "term": "fall",
+        "scene": "sc_mock_exam",
+        "tracks": [
+          "hs_general",
+          "hs_vocational"
+        ]
+      },
+      {
+        "age": 18,
+        "term": "spring",
+        "scene": "sc_graduation",
+        "tracks": [
+          "hs_general",
+          "hs_vocational"
+        ]
+      },
+      {
+        "age": 19,
+        "term": "fall",
+        "scene": "sc_school_start",
+        "routes": [
+          "uni",
+          "uni_tech"
+        ]
+      },
+      {
+        "age": 19,
+        "term": "fall",
+        "scene": "sc_new_job",
+        "routes": [
+          "work_first"
+        ]
+      },
+      {
+        "age": 20,
+        "term": "spring",
+        "scene": "sc_graduation",
+        "tracks": [
+          "hs_5yr"
+        ]
+      },
+      {
+        "age": 22,
+        "term": "spring",
+        "scene": "sc_graduation",
+        "routes": [
+          "uni",
+          "uni_tech"
+        ]
+      },
+      {
+        "age": 19,
+        "term": "spring",
+        "scene": "sc_final",
+        "routes": [
+          "uni",
+          "uni_tech"
+        ]
+      },
+      {
+        "age": 20,
+        "term": "spring",
+        "scene": "sc_final",
+        "routes": [
+          "uni",
+          "uni_tech"
+        ]
+      },
+      {
+        "age": 21,
+        "term": "spring",
+        "scene": "sc_final",
+        "routes": [
+          "uni",
+          "uni_tech"
+        ]
+      }
+    ],
+    "scenes": {
+      "sc_midterm": {
+        "name": "段考",
+        "adds_this_turn": [
+          "t_exam_cram"
+        ],
+        "effects": {}
+      },
+      "sc_school_start": {
+        "name": "開學",
+        "effects": {}
+      },
+      "sc_sports_day": {
+        "name": "運動會",
+        "effects": {
+          "happiness": 1
+        }
+      },
+      "sc_school_trip": {
+        "name": "畢旅",
+        "effects": {}
+      },
+      "sc_mock_exam": {
+        "name": "模擬考",
+        "effects": {}
+      },
+      "sc_graduation": {
+        "name": "畢業典禮",
+        "effects": {}
+      },
+      "sc_final": {
+        "name": "期末",
+        "effects": {}
+      },
+      "sc_new_job": {
+        "name": "新工作",
+        "effects": {}
+      },
+      "sc_half_first": {
+        "name": "上半年",
+        "effects": {}
+      },
+      "sc_half_second": {
+        "name": "下半年",
+        "effects": {}
+      }
+    },
+    "route_default": {
+      "work_first": {
+        "fall": "sc_half_first",
+        "spring": "sc_half_second"
+      }
+    }
+  },
+  "breaks": {
+    "_note": "規格 §3.4 寒暑假（不算一手，翻 draw 張選 1，效果不縮放）。出社會只有寒假（過年）。寒暑假牌在 cards_v12.json（type break）",
+    "draw": 2,
+    "winter": {
+      "chance": 0.5,
+      "force_ages": [
+        15,
+        18
+      ],
+      "pool": [
+        "w_lunar_new_year",
+        "w_winter_sprint"
+      ]
+    },
+    "summer": {
+      "chance": 1,
+      "pool": [
+        "su_summer_job",
+        "su_summer_class",
+        "su_countryside",
+        "su_camp"
+      ],
+      "skip_routes": [
+        "work_first"
+      ]
+    }
+  },
+  "era": {
+    "_note": "時代牌規則在 design/v1.2-era-cards.md；資料在 data/deck/era_cards.json（容量、優先序、回顧行數）。這裡只留引擎共用設定：nationwide＝年表 counties 裡代表全國的值。",
+    "nationwide": [
+      "全國"
+    ]
+  },
+  "checks": {
+    "_note": "deckcheck v1.2 門檻（規格 §1.7、§2.7；全部是設計假設）",
+    "prologue_category_min": 0.35,
+    "prologue_card_min": 0.05,
+    "fairness_per_card_stat_max": 2,
+    "fairness_category_sum_max": 5,
+    "same_strength_max": 3,
+    "deadlock_turn_max": 0.05,
+    "deadlock_streak3_run_max": 0.02,
+    "burden_index_gap_max": 0.2,
+    "expect_leaves_min": 0.6,
+    "era_total_min": 5,
+    "era_after13_min": 2,
+    "_era_note": "era-cards §10 第 2 點：每個出生年×縣市翻開張數 ≥ 5，其中 13 歲以後 ≥ 2（設計假設，留餘裕；§3.2 實際最少 6 和 3）"
+  },
+  "start_adds": [
+    "e_child_bitter",
+    "e_child_warm",
+    "e_track_bitter",
+    "e_track_warm",
+    "e_branch_bitter",
+    "e_branch_warm",
+    "e_home_bitter",
+    "e_home_warm",
+    "e_teenjob_bitter",
+    "e_teenjob_warm",
+    "e_loan_bitter",
+    "e_loan_warm",
+    "e_single_bitter",
+    "e_single_warm",
+    "e_cram_bitter",
+    "e_cram_warm",
+    "e_care_bitter",
+    "e_care_warm",
+    "e_filial_bitter",
+    "e_filial_warm",
+    "e_shop_bitter",
+    "e_shop_warm",
+    "e_newyear_bitter",
+    "e_newyear_warm"
+  ],
+  "play_notes": {
+    "_note": "每局第一次打這張牌時多一句旁白（era-cards §6 基本工資）",
+    "s_work": [
+      {
+        "by_flag": "wage_frozen",
+        "text": "店長說時薪好幾年沒動過了，說完自己也嘆了一口氣。"
+      },
+      {
+        "by_flag": "wage_rising",
+        "text": "店長說時薪調了，櫃檯旁邊的公告換了一張新的。"
+      }
+    ]
+  },
+  "play_flags": {
+    "_note": "打過這些牌就加旗標（企劃定案）。worked_teen＝既有旗標（achievements ach_teen_worker「高中就在打工」、events_v1 打工事件），只看 s_work；大學、科大打工是 worked_uni。一例一休的打工版本看兩者任一或 work_first",
+    "worked_teen": {
+      "cards": [
+        "s_work"
+      ]
+    },
+    "worked_uni": {
+      "cards": [
+        "uni_parttime",
+        "tech_parttime"
+      ]
+    },
+    "crammed": {
+      "cards": [
+        "d_cram",
+        "s_cram"
+      ]
+    }
+  },
+  "echo_caps": {
+    "_note": "回音牌上限組（echo_cap_group）：同組每局最多幾張（企劃 10/17：19–22 歲六組新回音合計最多兩張）",
+    "adult_echo": 2
+  },
+  "echo_cap_from": {
+    "_note": "回音上限組最早放進手牌的回合：[年齡, 學期（0 上／1 下）]（企劃 10/17：六組新回音 19 歲下學期起才放）",
+    "adult_echo": [
+      19,
+      1
+    ]
+  },
+  "echo_art": {
+    "_note": "回音牌插圖（美術 10/17）：組名＝牌 id 去掉 strip_suffix 再去掉 strip_prefix（e_teenjob_warm → teenjob），苦暖共用一張、4:5；pattern 的 {group} 換成組名，依 ext 順序找。只認建置時 art/deck/echo/ 裡實際有的檔，沒檔就用沒插圖樣式（不破圖、不發 404）",
+    "pattern": "art/deck/echo/echo_{group}",
+    "ext": ["webp", "png"],
+    "strip_prefix": "e_",
+    "strip_suffix": ["_bitter", "_warm"],
+    "manifest": "art/deck/echo/manifest.json",
+    "_manifest_note": "美術的 manifest：groups.<組名>.hand_focus（例 \"50% 62%\"）＝手牌 7:5 裁切焦點（object-position），build 時讀進來、manifest 本身不打包；沒寫＝置中。詳情頁照樣顯示整張 4:5"
+  },
+  "echo_cap_chance": {
+    "_note": "回音上限組每回合能放進手牌的機率（企劃 10/17：0.4→0.36→0.22（第三輪，33776de 回音只從回音步驟進手牌後每局變多；設計假設）；數值歸企劃）。擲骰用種子＋回合數的獨立亂數，不動其他亂數流",
+    "adult_echo": 0.22
+  },
+  "echo_from_card": {
+    "_note": "單張牌最早放進手牌的回合：[年齡, 學期（0 上／1 下）]，取代上限組 echo_cap_from（企劃 10/17 第三輪：打工／孝親／過年三組苦暖兩版都延到 20 歲上學期，讓苦版不擠在 19 歲；設計假設）",
+    "e_teenjob_bitter": [20, 0],
+    "e_teenjob_warm": [20, 0],
+    "e_filial_bitter": [20, 0],
+    "e_filial_warm": [20, 0],
+    "e_newyear_bitter": [20, 0],
+    "e_newyear_warm": [20, 0]
+  },
+  "echo_cooldown": {
+    "_note": "回音冷卻改成 min～max 回合隨機（企劃 10/17）：原本固定 2 回合，回音只會在同一個學期（上或下）放進手牌。19–22 歲六組另用自己的 cooldown_group（adult_echo），舊回音不再擋住它們",
+    "groups": [
+      "echo",
+      "adult_echo"
+    ],
+    "min": 2,
+    "max": 3
+  }
+}

@@ -1,0 +1,82 @@
+{
+ "_note": "時代牌牌圖（美術設計）。1280×720，engine 讀 png；tv-frame.svg 疊在上面，主體在螢幕安全區 x 12–76%、y 22–88%。accent＝定案主色（製作人已交給工程，填進 era_cards.json 的 accent），同時拿來染電視框 --acc。",
+ "size": [
+  1280,
+  720
+ ],
+ "safe_zone_pct": [
+  12,
+  22,
+  76,
+  88
+ ],
+ "frame": "art/deck/era/tv-frame.svg",
+ "cards": {
+  "era_921": {
+   "png": "art/deck/era/era_921.png",
+   "svg": "art/deck/era/src/svg/era_921.svg",
+   "accent": "#8C4A32",
+   "subject": "下雨天的鐵皮屋頂臨時教室：窗裡擠著小孩、教室裡一台電風扇、屋頂上的雨聲"
+  },
+  "era_nari": {
+   "png": "art/deck/era/era_nari.png",
+   "svg": "art/deck/era/src/svg/era_nari.svg",
+   "accent": "#2F6F8F",
+   "subject": "從家裡的窗戶看出去，樓下的路變成河（只露出車頂和路燈）；窗邊的小孩背影、一雙黃雨鞋"
+  },
+  "era_sars": {
+   "png": "art/deck/era/era_sars.png",
+   "svg": "art/deck/era/src/svg/era_sars.svg",
+   "accent": "#5E8F4A",
+   "subject": "早上的書桌：攤開的聯絡簿和簽名、體溫計、一片口罩、窗外的太陽"
+  },
+  "era_hsr": {
+   "png": "art/deck/era/era_hsr.png",
+   "svg": "art/deck/era/src/svg/era_hsr.svg",
+   "accent": "#D9732B",
+   "subject": "黃昏時窗外高架橋上劃過去的新列車（完全虛構：淺灰綠車身、窗下兩條細深青線、圓圓的玩具車頭，車上沒有橘色、沒有標誌），橘色只用在夕陽天空和窗前小孩的上衣；稻田"
+  },
+  "era_crisis": {
+   "png": "art/deck/era/era_crisis.png",
+   "svg": "art/deck/era/src/svg/era_crisis.svg",
+   "accent": "#5A5F73",
+   "subject": "吊燈下的飯桌：大人托著頭、攤開的帳單、沒有數字的計算機、一杯茶；角落的小電視停在一條曲線"
+  },
+  "era_voucher": {
+   "png": "art/deck/era/era_voucher.png",
+   "svg": "art/deck/era/src/svg/era_voucher.svg",
+   "accent": "#C99A1E",
+   "subject": "迴紋針夾著的一疊像大富翁的彩色券、木頭印章和紅印泥、一袋米和一隻球鞋"
+  },
+  "era_morakot": {
+   "png": "art/deck/era/era_morakot.png",
+   "svg": "art/deck/era/src/svg/era_morakot.svg",
+   "accent": "#6B5E3A",
+   "subject": "停水那幾天的浴室：紅色臉盆裡留著的水、水瓢、毛巾、一桶備用水；窗外的雨停不下來"
+  },
+  "era_sunflower": {
+   "png": "art/deck/era/era_sunflower.png",
+   "svg": "art/deck/era/src/svg/era_sunflower.svg",
+   "accent": "#7A6A9A",
+   "subject": "晚餐時電視一直開著：螢幕上是抽象的人群（只有圓點，沒有標語、旗子、建築），一家人的背影邊吃邊聊"
+  },
+  "era_flexday": {
+   "png": "art/deck/era/era_flexday.png",
+   "svg": "art/deck/era/src/svg/era_flexday.svg",
+   "accent": "#3C5BA9",
+   "subject": "員工休息區：牆上沒有數字的月曆，每週有兩種顏色的休假格；新貼的排班表；穿圍裙的打工族拿著杯子靠牆"
+  },
+  "era_covid": {
+   "png": "art/deck/era/era_covid.png",
+   "svg": "art/deck/era/src/svg/era_covid.svg",
+   "accent": "#3FA0B5",
+   "subject": "藥局門口戴口罩排隊的一列人，最前面的人拿著健保卡（卡面沒有字）；藥局只用通用的十字"
+  },
+  "era_covid_lv3": {
+   "png": "art/deck/era/era_covid_lv3.png",
+   "svg": "art/deck/era/src/svg/era_covid_lv3.svg",
+   "accent": "#A0457A",
+   "subject": "房間窗簾前，學士服套在粉紅條紋睡褲外面、戴著方帽舉起雙手；桌上筆電的視訊格都是同學的彩色大頭貼"
+  }
+ }
+}

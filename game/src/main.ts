@@ -31,7 +31,7 @@ const OPENING_IMG = ['opening_moon', 'opening_dawn', 'opening_charm', 'opening_c
   document.body.appendChild(btn);
   apply(saved ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 })();
-const DECK_VERSION = 'v1.1';
+const DECK_VERSION = 'v1.2';
 // 角落版本號（單一來源：package.json → Vite define __APP_VERSION__）
 (() => {
   // deck 模式：版號只放標題畫面（規格：介面不出現數字）
@@ -92,7 +92,7 @@ function renderIntro() {
   <div class="card${opImg ? ' has-pic' : ''}">${opImg ? `<figure class="polaroid tilt"><img src="${opImg}" alt=""></figure>` : ''}
   ${op ? `<p class="opening">${esc(op)}</p>` : ''}<p class="muted">民國 ${s.birthYear} 年（西元 ${s.birthYear + 1911} 年）・<b>${s.county.name}</b></p>
   
-  <a class="deck-entry" href="?mode=deck">🃏 試玩新玩法：人生手牌 v1.1（從國中到高中）</a>
+  <a class="deck-entry" href="?mode=deck">🃏 試玩新玩法：人生手牌 v1.2（從小一路長大）</a>
   <p class="muted">這一次人生只有一次，選了就不能回頭。</p>${fb}
   <p class="muted">種子：${s.seed}</p><button class="primary" id="go">開始人生</button></div>`;
   document.getElementById('go')!.onclick = render;

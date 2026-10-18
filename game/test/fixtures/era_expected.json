@@ -1,0 +1,271 @@
+{
+ "_note": "design/v1.2-era-cards.md §3.1 出生年總表（64dfdc9）逐格轉錄，給 deckcheck12 比對。槽位：act6/act9/act12＝序章三幕；<age>F/S/U＝上學期/下學期/暑假。north_only 的牌只在 taipei、new_taipei、taichung 出現。",
+ "north_only": {
+  "era_nari": [
+   "taipei",
+   "new_taipei",
+   "taichung"
+  ]
+ },
+ "by_birth_year": {
+  "80": {
+   "slots": {
+    "act9": [
+     "era_921",
+     "era_nari"
+    ],
+    "act12": [
+     "era_sars"
+    ],
+    "16F": [
+     "era_hsr"
+    ],
+    "18F": [
+     "era_crisis"
+    ],
+    "18S": [
+     "era_voucher"
+    ],
+    "18U": [
+     "era_morakot"
+    ]
+   },
+   "lost": []
+  },
+  "81": {
+   "slots": {
+    "act6": [
+     "era_921"
+    ],
+    "act9": [
+     "era_sars",
+     "era_nari"
+    ],
+    "15F": [
+     "era_hsr"
+    ],
+    "17F": [
+     "era_crisis"
+    ],
+    "17S": [
+     "era_voucher"
+    ],
+    "17U": [
+     "era_morakot"
+    ],
+    "22S": [
+     "era_sunflower"
+    ]
+   },
+   "lost": []
+  },
+  "82": {
+   "slots": {
+    "act6": [
+     "era_921"
+    ],
+    "act9": [
+     "era_sars",
+     "era_nari"
+    ],
+    "14F": [
+     "era_hsr"
+    ],
+    "16F": [
+     "era_crisis"
+    ],
+    "16S": [
+     "era_voucher"
+    ],
+    "16U": [
+     "era_morakot"
+    ],
+    "21S": [
+     "era_sunflower"
+    ]
+   },
+   "lost": []
+  },
+  "83": {
+   "slots": {
+    "act6": [
+     "era_921",
+     "era_nari"
+    ],
+    "act9": [
+     "era_sars"
+    ],
+    "13F": [
+     "era_hsr"
+    ],
+    "15F": [
+     "era_crisis"
+    ],
+    "15S": [
+     "era_voucher"
+    ],
+    "15U": [
+     "era_morakot"
+    ],
+    "20S": [
+     "era_sunflower"
+    ]
+   },
+   "lost": []
+  },
+  "84": {
+   "slots": {
+    "act6": [
+     "era_sars",
+     "era_nari"
+    ],
+    "act12": [
+     "era_hsr"
+    ],
+    "14F": [
+     "era_crisis"
+    ],
+    "14S": [
+     "era_voucher"
+    ],
+    "14U": [
+     "era_morakot"
+    ],
+    "19S": [
+     "era_sunflower"
+    ],
+    "22F": [
+     "era_flexday"
+    ]
+   },
+   "lost": []
+  },
+  "85": {
+   "slots": {
+    "act6": [
+     "era_sars",
+     "era_nari"
+    ],
+    "act9": [
+     "era_hsr"
+    ],
+    "13F": [
+     "era_crisis"
+    ],
+    "13S": [
+     "era_voucher"
+    ],
+    "13U": [
+     "era_morakot"
+    ],
+    "18S": [
+     "era_sunflower"
+    ],
+    "21F": [
+     "era_flexday"
+    ]
+   },
+   "lost": []
+  },
+  "86": {
+   "slots": {
+    "act6": [
+     "era_sars"
+    ],
+    "act9": [
+     "era_hsr"
+    ],
+    "act12": [
+     "era_morakot"
+    ],
+    "13F": [
+     "era_crisis"
+    ],
+    "17S": [
+     "era_sunflower"
+    ],
+    "20F": [
+     "era_flexday"
+    ]
+   },
+   "lost": [
+    "era_voucher"
+   ]
+  },
+  "87": {
+   "slots": {
+    "act9": [
+     "era_morakot",
+     "era_crisis"
+    ],
+    "act12": [
+     "era_voucher"
+    ],
+    "16S": [
+     "era_sunflower"
+    ],
+    "19F": [
+     "era_flexday"
+    ],
+    "22F": [
+     "era_covid"
+    ]
+   },
+   "lost": [
+    "era_hsr"
+   ]
+  },
+  "88": {
+   "slots": {
+    "act6": [
+     "era_hsr"
+    ],
+    "act9": [
+     "era_morakot",
+     "era_crisis"
+    ],
+    "15S": [
+     "era_sunflower"
+    ],
+    "18F": [
+     "era_flexday"
+    ],
+    "21F": [
+     "era_covid"
+    ],
+    "22S": [
+     "era_covid_lv3"
+    ]
+   },
+   "lost": [
+    "era_voucher"
+   ]
+  },
+  "89": {
+   "slots": {
+    "act6": [
+     "era_hsr"
+    ],
+    "act9": [
+     "era_morakot",
+     "era_crisis"
+    ],
+    "14S": [
+     "era_sunflower"
+    ],
+    "17F": [
+     "era_flexday"
+    ],
+    "20F": [
+     "era_covid"
+    ],
+    "21S": [
+     "era_covid_lv3"
+    ]
+   },
+   "lost": [
+    "era_voucher"
+   ]
+  }
+ }
+}

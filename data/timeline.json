@@ -1,0 +1,4695 @@
+{
+  "_meta": {
+    "version": "timeline v1.1 (official sources)",
+    "generated": "2026-10-17",
+    "births_roc": [
+      80,
+      89
+    ],
+    "school_stage_assumption": "1–8 月出生者滿 6 歲當年 9 月入小一；9–12 月出生者晚一年（7 歲）入學。學年度以 8/1 為界。主要欄位 school_stage 用 1–8 月出生者，若 9–12 月出生者不同則另列 school_stage_if_born_sep_dec。age_at_event = 事件年 − 出生年（遊戲用的整數年齡；生日前實際少一歲）。",
+    "county_ids": [
+      "taipei",
+      "new_taipei",
+      "taichung",
+      "taitung",
+      "penghu"
+    ],
+    "doc": "data/timeline_source.md"
+  },
+  "events": [
+    {
+      "id": "edu_reform_410_march",
+      "name_zh": "四一〇教育改造大遊行",
+      "date_start": "1994-04-10",
+      "roc_year": 83,
+      "roc_ym_start": "83-04",
+      "category": "education_system",
+      "summary_zh": "民間團體與教育界人士在台北發起教育改革遊行，提出落實小班小校、廣設高中大學、推動教育現代化、制定教育基本法等訴求。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "age_min": 0,
+      "age_max": 3,
+      "school_stages_affected": [
+        "幼兒"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": -1,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": -2,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": -3,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": -4,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": -5,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": -6,
+          "school_stage": "出生前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "「教改30年廣設大學及技專升格 如今面臨整併退場之問題及對策」書面報告",
+          "url": "https://lis.ly.gov.tw/lydbmeetr/uploadn/113/1130417/501.pdf",
+          "publisher": "立法院（教育部書面報告）",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "台北市 410教育改革大遊行（1994-04-10）",
+          "url": "https://news.cts.com.tw/cts/general/199404/199404101732521.html",
+          "publisher": "華視新聞",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "遊戲出生年 80–83 當時 0–3 歲；84–89 尚未出生。主要影響是之後的升學制度（見 system_rules）。",
+        "教育部書面報告（113-04-17）第貳節：83 年 4 月 10 日、全國兩百多個民間社團與學界共同發起，四大訴求如上；行政院 83 年 9 月成立教育改革審議委員會。"
+      ]
+    },
+    {
+      "id": "nhi_launch",
+      "name_zh": "全民健康保險開辦",
+      "date_start": "1995-03-01",
+      "roc_year": 84,
+      "roc_ym_start": "84-03",
+      "category": "politics_policy",
+      "summary_zh": "全民健康保險開辦，全體國民納入單一公辦健康保險。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "age_min": 0,
+      "age_max": 4,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": -1,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": -2,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": -3,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": -4,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": -5,
+          "school_stage": "出生前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "衛生福利部 組織沿革",
+          "url": "https://www.mohw.gov.tw/cp-7-7-1.html",
+          "publisher": "衛生福利部",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "全民健康保險法 沿革",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=L0060001",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "84 年 3 月以後出生者（約 84 年次後段起）出生時已有健保。"
+      ]
+    },
+    {
+      "id": "first_direct_presidential_election",
+      "name_zh": "首次總統直選",
+      "date_start": "1996-03-23",
+      "roc_year": 85,
+      "roc_ym_start": "85-03",
+      "category": "politics_policy",
+      "summary_zh": "舉行第九任總統副總統選舉，為首次由公民直接選舉總統、副總統。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "age_min": 0,
+      "age_max": 5,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": -1,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": -2,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": -3,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": -4,
+          "school_stage": "出生前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "檔案支援教學網－總統直選",
+          "url": "https://art.archives.gov.tw/tw/art/1589.html",
+          "publisher": "國家發展委員會檔案管理局",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "中央選舉委員會選舉公報（總統副總統）",
+          "url": "https://bulletin.cec.gov.tw/?dir=01%E9%81%B8%E8%88%89%E5%85%AC%E5%A0%B1%2F01%E7%B8%BD%E7%B5%B1%E5%89%AF%E7%B8%BD%E7%B5%B1",
+          "publisher": "中央選舉委員會",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "政治事件，文案保持中立：只寫投票日的生活細節（例如家長去投票），不評價候選人或政黨。"
+      ]
+    },
+    {
+      "id": "taipei_mrt_muzha_line_opening",
+      "name_zh": "台北捷運木柵線通車",
+      "date_start": "1996-03-28",
+      "roc_year": 85,
+      "roc_ym_start": "85-03",
+      "category": "tech_culture",
+      "summary_zh": "台北捷運第一條路線木柵線通車營運。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "age_min": 0,
+      "age_max": 5,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": -1,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": -2,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": -3,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": -4,
+          "school_stage": "出生前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "臺北市",
+          "新北市（原臺北縣）"
+        ]
+      },
+      "counties": [
+        "taipei"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taipei"
+        ],
+        "light": [
+          "new_taipei"
+        ]
+      },
+      "sources": [
+        {
+          "title": "捷運技術 第48期 p.170（路網興建期程表：木柵線 1996.03.28 通車）",
+          "url": "https://ebook.dorts.gov.taipei/JRTST/ebook/no48/files/basic-html/page170.html",
+          "publisher": "臺北市政府捷運工程局",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "⚠️待查：淡水線（1997）等後續路線通車日未逐條列入；如需「第一次搭捷運」卡，可依同一表補。"
+      ]
+    },
+    {
+      "id": "taiwan_province_streamlining",
+      "name_zh": "精省（臺灣省政府功能業務與組織調整）",
+      "date_start": "1998-12-21",
+      "date_end": "1999-07-01",
+      "roc_year": 87,
+      "roc_ym_start": "87-12",
+      "roc_ym_end": "88-07",
+      "category": "politics_policy",
+      "summary_zh": "依《臺灣省政府功能業務與組織調整暫行條例》調整省政府功能與組織，省政業務逐步移轉中央，88 年 7 月 1 日進入第二階段。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "age_min": 0,
+      "age_max": 7,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前",
+        "國小"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 7,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 6,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": -1,
+          "school_stage": "出生前"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": -2,
+          "school_stage": "出生前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "臺灣省政府功能業務與組織調整暫行條例",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0040012",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "制定臺灣省政府功能業務與組織調整暫行條例（總統府公報）",
+          "url": "https://www.president.gov.tw/Page/294/33762",
+          "publisher": "總統府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "臺灣省政府功能業務與組織調整暫行條例 沿革（87-12-21 施行）",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=A0040012",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "俗稱「凍省」。全國法規資料庫沿革頁明載：87 年 10 月 28 日制定公布，「本條例自八十七年十二月二十一日起施行」（✅官方確認）；94 年 12 月 31 日屆期廢止。88 年 7 月 1 日第二階段。",
+        "影響學生的具體例子：省立高中職於 89 年 2 月 1 日改名國立（教育部部史網）。"
+      ]
+    },
+    {
+      "id": "jiji_earthquake_921",
+      "name_zh": "九二一集集大地震",
+      "date_start": "1999-09-21",
+      "roc_year": 88,
+      "roc_ym_start": "88-09",
+      "category": "disaster",
+      "summary_zh": "凌晨 1 時 47 分南投集集一帶發生芮氏規模 7.3 地震，中部災情最重，全台有感，部分學校校舍受損停課重建。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "age_min": 0,
+      "age_max": 8,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前",
+        "國小"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 8,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 7,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 6,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": -1,
+          "school_stage": "出生前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國有感",
+          "重災：南投縣、臺中縣市（震度 6–7 級）",
+          "雲林、嘉義震度 6 級"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taichung"
+        ],
+        "light": [
+          "taipei",
+          "new_taipei",
+          "taitung",
+          "penghu"
+        ]
+      },
+      "sources": [
+        {
+          "title": "921大地震地震報告（第043號有感地震報告）",
+          "url": "https://scweb.cwa.gov.tw/special/19990921/1999092101471273043.htm",
+          "publisher": "中央氣象署地震測報中心",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "災害地震 個案報導",
+          "url": "https://scweb.cwa.gov.tw/zh-tw/page/disaster/3",
+          "publisher": "中央氣象署地震測報中心",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 1992–2001（88年9月：十五縣市371校校舍受損）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=5",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "921地震二十週年 台電抗震啟示錄（649萬戶停電）",
+          "url": "https://www.taipower.com.tw/2289/2323/2324/7378/normalPost",
+          "publisher": "台灣電力公司",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "最長的一夜 驚天一震後 縫起大地的傷口（台電月刊）",
+          "url": "https://service.taipower.com.tw/tpcjournal/article/3441",
+          "publisher": "台灣電力公司",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "副總統視察台電全省電力調度中心（經濟部長報告北部限電 10/9 晚解除）",
+          "url": "https://www.president.gov.tw/NEWS/6042",
+          "publisher": "總統府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "電力狀況（921 地震知識庫典藏之經濟部災情資料）",
+          "url": "https://web.archive.org/web/20160304185624/http:/921kb.sinica.edu.tw/archive/wcamoea/wcamoea3.html",
+          "publisher": "中央研究院 921 地震知識庫（Internet Archive 存檔）",
+          "accessed": "2026-10-17",
+          "source_type": "academic"
+        }
+      ],
+      "notes": [
+        "中央氣象署報告：南投最大震度 7 級，臺中 6 級，臺北 4 級，花蓮、臺東、宜蘭最大 5 級，澎湖 4 級。",
+        "教育部：15 縣市 371 校校舍受損（大專 29、高中職 7、國中小 335）。",
+        "寫法：只寫停電、睡操場、帳篷、臨時教室等一般人的生活細節，不寫罹難者。",
+        "停電範圍（✅台電官方）：中寮超高壓開閉所震毀、南北電網解聯，中部以北全黑，全台 649 萬戶停電（台電稱史上最嚴重）；嘉民超高壓變電所以南、花東正常供電。",
+        "停電時間：台北等北部當晚經多次「全黑啟動」逐步復電；經濟部資料（中研院 921 知識庫存檔，備援）9/22 上午 7 時仍約 295 萬戶停電（28.7%），9/24 民生用電大致恢復、災區約 9 萬戶待修；北部因供電不足實施分區輪流限電，至 88-10-09 晚提前解除（✅總統府新聞引經濟部長）。災區山區、倒塌建物則更晚。",
+        "⚠️待查：全國死亡失蹤官方總數（內政部消防署）未在本次來源中取得，需要時再補。"
+      ]
+    },
+    {
+      "id": "first_party_turnover_2000",
+      "name_zh": "第一次政黨輪替",
+      "date_start": "2000-03-18",
+      "roc_year": 89,
+      "roc_ym_start": "89-03",
+      "category": "politics_policy",
+      "summary_zh": "第十任總統選舉由在野黨候選人當選，首次中央政權政黨輪替。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 0,
+      "age_max": 9,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前",
+        "國小"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 7,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 6,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 0,
+          "school_stage": "幼兒"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "第10~11任 陳總統水扁先生",
+          "url": "https://www.president.gov.tw/Page/87",
+          "publisher": "總統府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "中央選舉委員會選舉公報（總統副總統）",
+          "url": "https://bulletin.cec.gov.tw/?dir=01%E9%81%B8%E8%88%89%E5%85%AC%E5%A0%B1%2F01%E7%B8%BD%E7%B5%B1%E5%89%AF%E7%B8%BD%E7%B5%B1",
+          "publisher": "中央選舉委員會",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "中立寫法：只寫「大人在看開票」的家庭場景。"
+      ]
+    },
+    {
+      "id": "two_day_weekend_2001",
+      "name_zh": "週休二日全面實施",
+      "date_start": "2001-01-01",
+      "roc_year": 90,
+      "roc_ym_start": "90-01",
+      "category": "politics_policy",
+      "summary_zh": "公務人員自 90 年 1 月 1 日起每週工作 40 小時、週休二日；勞基法同日改為每兩週正常工時 84 小時。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 1,
+      "age_max": 10,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前",
+        "國小"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 7,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 6,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "公務人員週休二日實施辦法",
+          "url": "https://law.exam.gov.tw/LawContent.aspx?id=GL000386",
+          "publisher": "考試院主管法規共用系統",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "勞動基準法 沿革",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=N0030001",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 1992–2001（學校隔週休二日自次年 2 月 1 日起）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=4",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "各級學校每月二次週休二日處理原則（第一點：87-02-01 起每月二次週休二日；92-01-14 停止適用）",
+          "url": "https://www.rootlaw.com.tw/LawArticle.aspx?LawID=A040080021015000-0920114",
+          "publisher": "法源法律網（轉載教育部法規）",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育專題深入報導（各級學校自 90 年 2 月 1 日起全面實施周休二日）",
+          "url": "https://enews.url.com.tw/enews/6882",
+          "publisher": "智邦公益電子報",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "學校先在 87 年 2 月 1 日起隔週休二日（教育部部史網）。《公務人員週休二日實施辦法》自 90-01-01 施行，第 5 條要求「各級學校應調整課程之教授」並可利用週休二日安排進修（✅官方：辦法 90-01-01 施行，條文明列各級學校配合）。學生端「全面週休二日」：🟡 非官方來源寫各級學校自 90-02-01 全面實施（89 學年度下學期），跟原推定一致；教育部〈各級學校每月二次週休二日處理原則〉確認 87-02-01 起隔週休。⚠️待查：教育部 90-02-01 的原始函文。遊戲用「90 年 2 月起」。",
+        "勞工每週 40 小時要到 105-01-01 才實施。"
+      ]
+    },
+    {
+      "id": "typhoon_nari",
+      "name_zh": "納莉颱風",
+      "date_start": "2001-09-16",
+      "date_end": "2001-09-19",
+      "roc_year": 90,
+      "roc_ym_start": "90-09",
+      "roc_ym_end": "90-09",
+      "category": "disaster",
+      "summary_zh": "納莉颱風在東北角登陸並滯留約 49 小時，北台灣嚴重淹水，台北捷運與台北車站淹水停駛。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 1,
+      "age_max": 10,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前",
+        "國小"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 10,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 9,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 8,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 7,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 6,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 2,
+          "school_stage": "幼兒"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 1,
+          "school_stage": "幼兒"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "北部（基隆河沿岸、臺北市、汐止）",
+          "全台多處豪雨"
+        ]
+      },
+      "counties": [
+        "taipei",
+        "new_taipei"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taipei",
+          "new_taipei"
+        ],
+        "light": [
+          "taichung"
+        ]
+      },
+      "sources": [
+        {
+          "title": "颱風資料庫：納莉 NARI（200116）",
+          "url": "https://rdc28.cwa.gov.tw/TDB/public/typhoon_detail?typhoon_id=200116",
+          "publisher": "中央氣象署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "90年09月17日天然災害停止辦公及上課情形",
+          "url": "https://www.dgpa.gov.tw/information?uid=374&pid=7002",
+          "publisher": "行政院人事行政總處",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "90年09月18日天然災害停止辦公及上課情形",
+          "url": "https://www.dgpa.gov.tw/information?uid=374&pid=7001",
+          "publisher": "行政院人事行政總處",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "90年09月19日天然災害停止辦公及上課情形",
+          "url": "https://www.dgpa.gov.tw/information?uid=374&pid=7000",
+          "publisher": "行政院人事行政總處",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "臺北市歷次天然災害停班停課訊息",
+          "url": "https://dop.gov.taipei/cp.aspx?n=EFE42F770DFD63FB",
+          "publisher": "臺北市政府人事處",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "重創臺北車站及捷運的怪颱－2001年納莉颱風",
+          "url": "https://photo.ardswc.gov.tw/PhotoStory/Home/Story?StoryID=e6bfae5d-3a16-41e5-95bd-58fa4e032928",
+          "publisher": "農業部農村發展及水土保持署",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "氣象署颱風資料庫：全台 408 所學校受損；94 人死亡、10 人失蹤（官方數字，僅供備註）。",
+        "停班停課（✅人事行政總處逐日紀錄）：9/17（一）台北市、台北縣、台中市、台中縣等北中部及宜蘭、花蓮停止辦公上課；9/18（二）台北市、台北縣、台中市、台中縣續停；9/19（三）台北市、台北縣、台中市縣恢復上課，但台北縣汐止鎮、瑞芳鎮、平溪鄉、雙溪鄉續停；臺東 9/17–9/19 照常；澎湖 9/19 停止辦公上課。"
+      ]
+    },
+    {
+      "id": "sars_2003",
+      "name_zh": "SARS 疫情",
+      "date_start": "2003-03",
+      "date_end": "2003-07-05",
+      "roc_year": 92,
+      "roc_ym_start": "92-03",
+      "roc_ym_end": "92-07",
+      "category": "epidemic",
+      "summary_zh": "SARS 疫情在台灣擴散，學校實施量體溫與停課標準，7 月 5 日世界衛生組織將台灣自感染區除名。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 3,
+      "age_max": 12,
+      "school_stages_affected": [
+        "幼兒",
+        "學齡前",
+        "國小"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 7,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 6,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 5,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 4,
+          "school_stage": "學齡前"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 3,
+          "school_stage": "幼兒"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國",
+          "臺北市（和平醫院 92-04-24 封院）"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taipei"
+        ],
+        "light": [
+          "new_taipei",
+          "taichung",
+          "taitung",
+          "penghu"
+        ]
+      },
+      "sources": [
+        {
+          "title": "揮別SARS，台灣健康起步走",
+          "url": "https://www.cdc.gov.tw/Category/ListContent/AHwuigegBBBmuDcbWkzoGQ?uaid=aGNhTomCVt4pYDa2rJOn_w",
+          "publisher": "衛生福利部疾病管制署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "SARS 疾病介紹（台灣疫情：92-03-14 通報第 1 名境外移入病例）",
+          "url": "https://www.cdc.gov.tw/Category/Page/Kou_i6ATU8jUnmKlAORhUA",
+          "publisher": "衛生福利部疾病管制署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "Update 96 - Taiwan, China: SARS transmission interrupted in last outbreak area",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2003_07_05-en",
+          "publisher": "World Health Organization",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "前臺北市立和平醫院因SARS群聚感染封院政策所涉人權侵害案專案報告",
+          "url": "https://nhrc.cy.gov.tw/News_Content.aspx?n=7459&s=6995&sms=12385",
+          "publisher": "監察院國家人權委員會",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 2002–2011（衛生署發布第一個SARS病例；校園停課標準作業規定）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=2002%EF%BC%8D2011&page=2",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "首例：疾管署 SARS 疾病介紹頁「2003年3月14日我國通報第1名境外移入SARS病例」（✅官方確認）。疾管署：本波共 346 名確定病例，死亡 73 例（官方數字，僅供備註）。",
+        "寫法：量體溫、口罩、停課在家等生活細節，不寫個別病例。"
+      ]
+    },
+    {
+      "id": "hsr_opening",
+      "name_zh": "台灣高鐵通車",
+      "date_start": "2007-01-05",
+      "roc_year": 96,
+      "roc_ym_start": "96-01",
+      "category": "tech_culture",
+      "summary_zh": "台灣高鐵通車試營運，2 月 1 日正式收費營運，台北站 3 月 2 日加入。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 7,
+      "age_max": 16,
+      "school_stages_affected": [
+        "學齡前",
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 13,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 7,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "西部走廊（板橋—左營，台北站 96-03-02 加入）"
+        ]
+      },
+      "counties": [
+        "taipei",
+        "new_taipei",
+        "taichung"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": [
+          "taipei",
+          "new_taipei",
+          "taichung"
+        ]
+      },
+      "sources": [
+        {
+          "title": "台灣高鐵",
+          "url": "https://www.rb.gov.tw/zh-TW/main/main_28/20250505_152320/20251104_134001/20250505_180533/",
+          "publisher": "交通部鐵道局",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "南北高速鐵路（國情簡介-交通運輸）",
+          "url": "https://www.ey.gov.tw/state/A44E5E33CDA7E738/5930b373-fd7d-4d8f-87e8-7f6ff15c67a7",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "basic_wage_raise_2007",
+      "name_zh": "基本工資十年來首次調整",
+      "date_start": "2007-07-01",
+      "roc_year": 96,
+      "roc_ym_start": "96-07",
+      "category": "economy",
+      "summary_zh": "基本工資自 86 年 10 月後首次調整，每月調為 17,280 元、每小時 95 元。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 7,
+      "age_max": 16,
+      "school_stages_affected": [
+        "學齡前",
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 13,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 7,
+          "school_stage": "國小1年級",
+          "school_stage_if_born_sep_dec": "學齡前"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "基本工資之制訂與調整經過",
+          "url": "https://www.mol.gov.tw/1607/28162/28166/28180/28182/28184/29016/",
+          "publisher": "勞動部",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "完整歷年表見 system_rules.basic_wage_schedule。"
+      ]
+    },
+    {
+      "id": "kaohsiung_mrt_opening",
+      "name_zh": "高雄捷運通車",
+      "date_start": "2008-03-09",
+      "roc_year": 97,
+      "roc_ym_start": "97-03",
+      "category": "tech_culture",
+      "summary_zh": "高雄捷運紅線通車營運，橘線於同年 9 月加入。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 8,
+      "age_max": 17,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 13,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "高雄市（原高雄縣市）"
+        ]
+      },
+      "counties": [],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "捷運系統營運災害（高雄市災害防救計畫，含紅線 97-03-09 通車）",
+          "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/408/relfile/0/77478/e97b45b5-1838-4aba-8c13-219b752e190e.pdf",
+          "publisher": "高雄市政府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "高雄捷運紅橘線",
+          "url": "https://www.tbkc.gov.tw/Service/PublicTransport/MRT?id=8400efe0-67dc-4ca2-86b7-0a0d9590bd08",
+          "publisher": "高雄市政府交通局",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "遊戲五縣市都不在高雄，只適合當「同學近況」或旅遊卡。",
+        "橘線：高雄市府 PDF 寫 97-09-21 全線通車營運；高捷公司寫 9-14 通車、9-22 起收費（⚠️口徑不同）。"
+      ]
+    },
+    {
+      "id": "second_party_turnover_2008",
+      "name_zh": "第二次政黨輪替",
+      "date_start": "2008-03-22",
+      "roc_year": 97,
+      "roc_ym_start": "97-03",
+      "category": "politics_policy",
+      "summary_zh": "第十二任總統選舉由在野黨候選人當選，第二次中央政權政黨輪替。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 8,
+      "age_max": 17,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 13,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 8,
+          "school_stage": "國小2年級",
+          "school_stage_if_born_sep_dec": "國小1年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "第12~13任 馬總統英九先生",
+          "url": "https://www.president.gov.tw/Page/88",
+          "publisher": "總統府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "97年3月22日（星期六）為第12任總統、副總統選舉投票日",
+          "url": "https://web.cec.gov.tw/hcec/article/2607",
+          "publisher": "中央選舉委員會（新竹縣選舉委員會）",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "第12任總統副總統選舉選舉公報",
+          "url": "https://web.cec.gov.tw/tpcec/article/10906",
+          "publisher": "中央選舉委員會（臺北市選舉委員會）",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "投票日 97-03-22（星期六）由中選會公告確認（✅官方）；就職 97-05-20。"
+      ]
+    },
+    {
+      "id": "global_financial_crisis_2008",
+      "name_zh": "金融海嘯與無薪假",
+      "date_start": "2008-09",
+      "date_end": "2009-12",
+      "roc_year": 97,
+      "roc_ym_start": "97-09",
+      "roc_ym_end": "98-12",
+      "category": "economy",
+      "summary_zh": "全球金融危機衝擊台灣出口與製造業，企業大量實施減班休息（無薪假）。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 8,
+      "age_max": 17,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 17,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 16,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 15,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 14,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 13,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 12,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 11,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 10,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 9,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 8,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "中央銀行年報（98 年：經濟成長率 −1.87%、失業率 5.85%、8 月 6.13% 高峰）",
+          "url": "https://www.cbc.gov.tw/tw/public/Attachment/0691765171.pdf",
+          "publisher": "中央銀行",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "中央銀行理監事會後參考資料（98 年經濟成長率修正為 −1.93%、98Q1 −8.56%）",
+          "url": "https://www.cbc.gov.tw/tw/public/Attachment/161418132671.pdf",
+          "publisher": "中央銀行",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "國家發展委員會 年度檢討報告（98 年失業率 5.85%、高峰 6.13%）",
+          "url": "https://ws.ndc.gov.tw/Download.ashx?icon=..pdf&n=OTnlubTmqqLoqI7nsKHloLEucGRm&u=LzAwMS9hZG1pbmlzdHJhdG9yLzEwL3JlbGZpbGUvMC84NjUwLzBhYjFlM2IyLTQzMTEtNDk2NC05ZGZhLTk4MWVjODc2ODM4NC5wZGY%3D",
+          "publisher": "國家發展委員會",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院劉院長向總統、副總統簡報「振興經濟新方案」草案（97-11-19）",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/82757c51-eda8-4b8f-bc68-e8080799275b",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院院會通過「振興經濟擴大公共建設投資特別條例」草案（97-11-24）",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/b06c3b64-3b4b-44de-8e02-ab96227456e0",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "搶救失業 全球總動員（台灣勞工季刊 2009-03 No.17：97 年 12 月 525 家、約 20.2 萬人實施無薪假）",
+          "url": "https://www.mol.gov.tw/media/xitprwza/%E5%9C%8B%E9%9A%9B%E7%9E%AD%E6%9C%9B%E5%8F%B0-03.pdf?mediaDL=true",
+          "publisher": "勞動部（前勞委會職訓局）",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "因應景氣影響勞雇雙方協商減少工時統計（專區，現行半月報）",
+          "url": "https://www.mol.gov.tw/1607/28162/28166/28218/28228/30525/post",
+          "publisher": "勞動部",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "無薪假人數破2萬 創98年11月以來新高（引述勞動部）",
+          "url": "https://www.cna.com.tw/news/firstnews/202005180148.aspx",
+          "publisher": "中央社",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        },
+        {
+          "title": "台勞委會：586家企業23.8萬人休無薪假（98-03-03）",
+          "url": "https://www.epochtimes.com/gb/9/3/3/n2449456.htm",
+          "publisher": "大紀元",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        },
+        {
+          "title": "勞委會無薪假通報 238,975 人（98-03-03）",
+          "url": "https://www.ntdtv.com/gb/2009/03/03/a264329.html",
+          "publisher": "新唐人",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "起點以 2008-09 全球金融危機為準，無台灣官方「起日」。",
+        "✅官方：勞委會 97 年 12 月調查 200 人以上事業單位，17.8%（525 家）實施無薪假，受影響約 20.2 萬人，平均每月休 4 天、薪資影響約 13%（台灣勞工季刊）。勞委會與縣市自 98 年 1 月起建立減少工時通報機制。",
+        "🟡 勞動部官員說法：勞動部副司長黃維琛 2020-05-18 表示金融海嘯最嚴重是 98 年 2 月、約 23 萬人，98 年 11 月底 19,948 人（中央社引勞動部）。精確的 98-03-03 公布 586 家、238,975 人仍只有新聞轉述勞委會（大紀元、新唐人）；98 年 1 月中約 16 萬、2-16 約 20.3 萬。⚠️待查：98 年原始半月報（勞動部開放資料 data.gov.tw 40169 只從 100 年底起）。",
+        "✅官方：98 年經濟成長率 −1.87%（央行年報；後修正 −1.93%），98Q1 −8.56%；年失業率 5.85%（年增 1.71 個百分點），8 月 6.13% 為高峰；CPI −0.87%。",
+        "✅官方：行政院 97-11-19「振興經濟新方案」：消費券、四年四千億擴大公共建設、都市更新、民間投資與產業再造。",
+        "相關官方措施見 consumer_vouchers_2009、graduate_internship_22k。"
+      ]
+    },
+    {
+      "id": "consumer_vouchers_2009",
+      "name_zh": "振興經濟消費券",
+      "date_start": "2009-01-18",
+      "date_end": "2009-09-30",
+      "roc_year": 98,
+      "roc_ym_start": "98-01",
+      "roc_ym_end": "98-09",
+      "category": "economy",
+      "summary_zh": "政府發放每人新台幣 3,600 元消費券（500 元 6 張、200 元 3 張），使用期限至 98 年 9 月 30 日。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 9,
+      "age_max": 18,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 13,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "振興經濟消費券發放特別條例",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030232",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "振興經濟消費券領取人資格及發放作業辦法",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0010066",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院院會聽取內政部消費券發放作業報告",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/6534b964-0ca2-4678-9fdd-22f055b0498c",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "未成年人也有，由戶長或法定代理人領取。"
+      ]
+    },
+    {
+      "id": "graduate_internship_22k",
+      "name_zh": "大專畢業生至企業職場實習方案（22K）",
+      "date_start": "2009-04-01",
+      "date_end": "2010-09-30",
+      "roc_year": 98,
+      "roc_ym_start": "98-04",
+      "roc_ym_end": "99-09",
+      "category": "economy",
+      "summary_zh": "教育部補助 95–97 學年度大專畢業生到企業實習一年，每人每月本薪 22,000 元，後來「22K」成為起薪的代稱。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 9,
+      "age_max": 18,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中職"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 13,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 12,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 11,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 10,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 9,
+          "school_stage": "國小3年級",
+          "school_stage_if_born_sep_dec": "國小2年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "培育優質人力促進就業計畫方案一之一大專畢業生至企業職場實習方案實施要點",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL048988",
+          "publisher": "教育部主管法規共用系統",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "要點：學校執行期程 98-04-01 至 99-09-30，預計媒介約 33,500 名。",
+        "方案只適用 95–97 學年度畢業生，本遊戲出生年（最早 80 年次約 102 年大學畢業）**不是**方案對象；但「22K」作為起薪梗可用於 19–22 歲卡。"
+      ]
+    },
+    {
+      "id": "typhoon_morakot",
+      "name_zh": "莫拉克颱風（八八風災）",
+      "date_start": "2009-08-07",
+      "date_end": "2009-08-10",
+      "roc_year": 98,
+      "roc_ym_start": "98-08",
+      "roc_ym_end": "98-08",
+      "category": "disaster",
+      "summary_zh": "莫拉克颱風與西南氣流帶來破紀錄雨量，南部與東部發生嚴重水患和土石流。",
+      "reachable_birth_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 9,
+      "age_max": 18,
+      "school_stages_affected": [
+        "國小",
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 18,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 17,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 16,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 15,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 14,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 13,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 12,
+          "school_stage": "國中1年級",
+          "school_stage_if_born_sep_dec": "國小6年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 11,
+          "school_stage": "國小6年級",
+          "school_stage_if_born_sep_dec": "國小5年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 10,
+          "school_stage": "國小5年級",
+          "school_stage_if_born_sep_dec": "國小4年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 9,
+          "school_stage": "國小4年級",
+          "school_stage_if_born_sep_dec": "國小3年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "重災：臺南、高雄、屏東、臺東",
+          "中部山區豪雨"
+        ]
+      },
+      "counties": [
+        "taitung"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taitung"
+        ],
+        "light": [
+          "taichung",
+          "penghu"
+        ]
+      },
+      "sources": [
+        {
+          "title": "颱風資料庫：莫拉克 MORAKOT（200908）",
+          "url": "https://rdc28.cwa.gov.tw/TDB/public/typhoon_detail?typhoon_id=200908",
+          "publisher": "中央氣象署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "中央災害應變中心公佈莫拉克颱風災區復學及安置重建措施（98-08-14）",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/623aaa0e-4aa9-42ba-83dd-5b888850a564",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育部：18災校易地開學 8校待評估（轉載中央社）",
+          "url": "https://www.ntdtv.com/gb/2009/08/20/a335246.html",
+          "publisher": "新唐人（轉載中央社）",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        },
+        {
+          "title": "台東縣鄺縣長巡視災區學校開學情況",
+          "url": "https://tynews.com.tw/index/News/Show/id/13105",
+          "publisher": "天眼日報",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        },
+        {
+          "title": "行政院莫拉克颱風災後重建推動委員會（典藏網站）",
+          "url": "https://exhibition.nstm.gov.tw/morakot/webhistory/88flood/index-2.html",
+          "publisher": "國立科學工藝博物館（典藏行政院重建會網站）",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "自來水公司籲颱風災後自來水飲用前請先煮沸（太麻里、知本停水）",
+          "url": "https://www.tynews.com.tw/index/News/Show/id/13315",
+          "publisher": "天眼日報",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        },
+        {
+          "title": "知本倍力橋通車 南迴太麻里又斷",
+          "url": "https://news.ltn.com.tw/news/life/paper/327297",
+          "publisher": "自由時報",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "氣象署：673 人死亡、26 人失蹤、農損逾 195 億元（官方數字，僅供備註）。",
+        "寫法：停水、道路中斷、開學延後等生活面，不寫罹難者。",
+        "開學：98 學年度中小學 8/31 開學。✅行政院（中央災害應變中心 98-08-14）：教育部預估全國 22 所受創嚴重國中小無法在 8/31 前開學，將協助易地復學。教育部 8/20（中央社轉述，新聞）：18 校如期但易地開學（南投、高雄縣、屏東）、嘉義縣阿里山鄉 8 校開學時間待評估。",
+        "臺東：企劃已決定台東版只寫停水和斷路，不做延後開學（2026-10-17），延後開學不再查。停水：太麻里、知本淨水和配水設備損毀，台水第十區搶修、呼籲煮沸後飲用（天眼日報，新聞）。斷路：知本對外道路 8/7 中斷、8/14 倍力橋通車；南迴公路太麻里段 8/14 晚間再封閉（自由時報，新聞）。⚠️待查：臺東停水戶數的官方數字。背景：臺東縣 42 校需整修、受災學生 179 人；查無臺東全縣延後開學的公告。"
+      ]
+    },
+    {
+      "id": "sunflower_movement",
+      "name_zh": "太陽花學運",
+      "date_start": "2014-03-18",
+      "date_end": "2014-04-10",
+      "roc_year": 103,
+      "roc_ym_start": "103-03",
+      "roc_ym_end": "103-04",
+      "category": "politics_policy",
+      "summary_zh": "學生與公民團體為反對《海峽兩岸服務貿易協議》的審查程序，占領立法院議場 24 天，4 月 10 日退場。",
+      "reachable_birth_years": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 14,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "臺北市（立法院周邊）",
+          "全國關注"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taipei"
+        ],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "行政院肯定學生理性平和退出議場（103-04-10）",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/1abea200-32b5-4613-a10d-57209cce5fbc",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院肯定學生團體退出議場之決定（103-04-07：自3月18日學生佔據議場以來…決定於本週四（10日）退出）",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/0ff9e6e4-677d-422f-9ad2-0639acc41f62",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院 103-04-07 新聞稿（3/18 起第 21 天；3/22 江院長至立法院與學生代表對話）",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/7f0f01a3-9ad4-4f7d-89d9-e19ee244f294",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "Executive Yuan statement on students leaving the Legislative Yuan (2014-04-10)",
+          "url": "https://english.ey.gov.tw/Page/61BF20C3E89B856/ee280931-afdf-497b-923b-0f26154db5ce",
+          "publisher": "Executive Yuan",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "318公民運動文物紀錄典藏庫",
+          "url": "https://ascdc.digitalarchives.tw/site_6988.html",
+          "publisher": "中央研究院 歷史語言研究所、資訊科學研究所",
+          "accessed": "2026-10-17",
+          "source_type": "academic"
+        },
+        {
+          "title": "太陽花學運10週年重回現場（含 3/18–4/10 經過）",
+          "url": "https://www.cna.com.tw/news/aipl/202403165004.aspx",
+          "publisher": "中央社",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        },
+        {
+          "title": "立法院公報 第103卷第19期（103-03-17 八委員會聯席會議審查海峽兩岸服務貿易協議）",
+          "url": "https://ppg.ly.gov.tw/ppg/publications/official-gazettes/103/19/01/details",
+          "publisher": "立法院議事暨公報資訊網",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "✅官方：行政院 103-04-07、04-10 新聞稿確認自 3 月 18 日學生佔據立法院議場、4 月 10 日退出（行政院稱占領 24 天、近 3,000 案延宕）。中研院典藏庫與中央社為備援。",
+        "✅立法院公報第 103 卷第 19 期（103-04-02 出版）收錄 103-03-17 八委員會聯席會議審查服貿協議（占領前一天的會議）；3/10–3/13 的審查在第 103 卷第 18 期。占領期間院會沒開會，占領起訖以行政院新聞稿為準。國家人權博物館、國家文化記憶庫頁面未取得（不影響遊戲）。",
+        "政治事件，文案保持中立：寫「教室裡有人在討論」「新聞一直開著」，不表態。"
+      ]
+    },
+    {
+      "id": "mobile_broadband_4g_launch",
+      "name_zh": "4G 行動寬頻服務開通",
+      "date_start": "2014-05",
+      "roc_year": 103,
+      "roc_ym_start": "103-05",
+      "category": "tech_culture",
+      "summary_zh": "4G 行動寬頻服務於 103 年 5 月開通，之後用戶數快速成長。",
+      "reachable_birth_years": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 14,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "寬頻網路建置情形報告（行政院第3664次院會）",
+          "url": "https://www.ey.gov.tw/File/A41BC6923F9DC927?A=C",
+          "publisher": "國家通訊傳播委員會",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "NCC 簡報：103 年 5 月 4G 服務開通；108 年 6 月 4G 用戶數 2,925 萬。",
+        "⚠️待查：3G 開台（92 年／94 年）與智慧型手機普及率尚無 NCC 官方頁面，暫不列為事件。"
+      ]
+    },
+    {
+      "id": "kaohsiung_gas_explosion",
+      "name_zh": "高雄氣爆",
+      "date_start": "2014-07-31",
+      "date_end": "2014-08-01",
+      "roc_year": 103,
+      "roc_ym_start": "103-07",
+      "roc_ym_end": "103-08",
+      "category": "disaster",
+      "summary_zh": "高雄市前鎮區地下石化管線丙烯外洩，深夜發生連環氣爆，多條道路損毀。",
+      "reachable_birth_years": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 14,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 14,
+          "school_stage": "國中2年級",
+          "school_stage_if_born_sep_dec": "國中1年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "高雄市前鎮區、苓雅區一帶"
+        ]
+      },
+      "counties": [],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "高雄氣爆事件 馬總統、江院長關切災情",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/32418ab2-976e-44b0-8ac0-6644293fe1ad",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "調查高雄氣爆事件案（糾正案文）",
+          "url": "https://www-ws.cy.gov.tw/Download.ashx?icon=.pdf&n=6auY6ZuE5rCj54iG5qGILnBkZg%3D%3D&u=LzAwMS9VcGxvYWQvQ3lPbGRGaWxlL3B1YmxpYy9kYXRhLzg4MzAxNjMxMjA3MS5wZGY%3D",
+          "publisher": "監察院",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "監察院：32 人死亡、321 人受傷（官方數字，僅供備註）。",
+        "遊戲五縣市不含高雄，適合當新聞或同學近況卡。"
+      ]
+    },
+    {
+      "id": "formosa_fun_coast_dust_explosion",
+      "name_zh": "八仙樂園粉塵暴燃",
+      "date_start": "2015-06-27",
+      "roc_year": 104,
+      "roc_ym_start": "104-06",
+      "category": "disaster",
+      "summary_zh": "新北市八里八仙水上樂園活動舞台彩色粉塵暴燃，大量遊客燒燙傷，衛福部啟動大量傷病患應變。",
+      "reachable_birth_years": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 15,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 15,
+          "school_stage": "國中3年級",
+          "school_stage_if_born_sep_dec": "國中2年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "新北市八里區",
+          "傷患分送北部等 7 縣市醫院"
+        ]
+      },
+      "counties": [
+        "new_taipei"
+      ],
+      "county_impact": {
+        "heavy": [
+          "new_taipei"
+        ],
+        "light": [
+          "taipei"
+        ]
+      },
+      "sources": [
+        {
+          "title": "衛生福利部因應八仙樂園塵爆事件大事紀",
+          "url": "https://topics.mohw.gov.tw/0627ACCIDENT/cp-2749-58982-202.html",
+          "publisher": "衛生福利部",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "衛福部因應八仙樂園粉塵爆炸事件專案小組第一次會議說明",
+          "url": "https://www.mohw.gov.tw/cp-2646-20478-1.html",
+          "publisher": "衛生福利部",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "衛福部 6/29：實際傷患 499 人（官方數字）。傷者多為年輕人，文案務必避免消費傷者；建議只當「新聞畫面」或校園宣導（禁止粉塵活動）的背景。"
+      ]
+    },
+    {
+      "id": "third_party_turnover_2016",
+      "name_zh": "第三次政黨輪替",
+      "date_start": "2016-01-16",
+      "roc_year": 105,
+      "roc_ym_start": "105-01",
+      "category": "politics_policy",
+      "summary_zh": "第十四任總統選舉由在野黨候選人當選，第三次中央政權政黨輪替，也是首位女性總統。",
+      "reachable_birth_years": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 16,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "第14~15任 蔡總統英文女士",
+          "url": "https://www.president.gov.tw/Page/705",
+          "publisher": "總統府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "中選會宣布蔡英文當選總統",
+          "url": "https://www.cna.com.tw/news/firstnews/201601165047.aspx",
+          "publisher": "中央社",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "16 歲起已能感受選舉氣氛；2016-01-16 投票日滿 20 歲者才有投票權（憲法第 130 條：年滿二十歲有依法選舉之權），本遊戲大致為 84 年次以前（85 年次只有 1996-01-16 以前出生者可投，計算）。來源：全國法規資料庫《中華民國憲法》https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000001"
+      ]
+    },
+    {
+      "id": "meinong_earthquake",
+      "name_zh": "美濃地震",
+      "date_start": "2016-02-06",
+      "roc_year": 105,
+      "roc_ym_start": "105-02",
+      "category": "disaster",
+      "summary_zh": "凌晨 3 時 57 分高雄美濃發生芮氏規模 6.6 地震，台南災情最重，時值農曆春節前夕。",
+      "reachable_birth_years": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 16,
+      "age_max": 22,
+      "school_stages_affected": [
+        "國中",
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 17,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 16,
+          "school_stage": "高中職1年級",
+          "school_stage_if_born_sep_dec": "國中3年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "regional",
+        "regions": [
+          "重災：臺南市（最大震度 7 級，新化）",
+          "南部震度 5 級"
+        ]
+      },
+      "counties": [
+        "taichung",
+        "taitung"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": [
+          "taichung",
+          "taitung"
+        ]
+      },
+      "sources": [
+        {
+          "title": "地震資訊 第006號 2月6日3時57分 規模6.6",
+          "url": "https://scweb.cwa.gov.tw/zh-tw/earthquake/details/2016020603572666006",
+          "publisher": "中央氣象署地震測報中心",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "0206 地震災情彙整與實地調查報告",
+          "url": "https://orgws.kcg.gov.tw/001/KcgOrgUploadFiles/408/relfile/74090/215157/f4c993e9-1f53-4ba1-9f89-43d873c809ab.pdf",
+          "publisher": "高雄市政府",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "遊戲五縣市只有臺中、臺東有感（4 級）；臺北幾乎無感。",
+        "⚠️待查：官方死亡人數（內政部消防署），需要時再補。"
+      ]
+    },
+    {
+      "id": "one_fixed_one_flexible_day_off",
+      "name_zh": "一例一休",
+      "date_start": "2016-12-23",
+      "date_end": "2018-03-01",
+      "roc_year": 105,
+      "roc_ym_start": "105-12",
+      "roc_ym_end": "107-03",
+      "category": "politics_policy",
+      "summary_zh": "勞基法修正施行，勞工每七日應有一日例假、一日休息日；107 年 3 月 1 日再修正放寬加班與輪班規定。",
+      "reachable_birth_years": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 16,
+      "age_max": 22,
+      "school_stages_affected": [
+        "高中職",
+        "大專（若升學）",
+        "大專畢業後（就業／研究所／兵役）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 22,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 21,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 20,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 19,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 18,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 17,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 16,
+          "school_stage": "高中職2年級",
+          "school_stage_if_born_sep_dec": "高中職1年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "勞動基準法 沿革",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=N0030001",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "勞動基準法新法上路 製造業因應須知",
+          "url": "https://www.mol.gov.tw/media/g1ql3np0/%E5%8B%9E%E5%9F%BA%E6%B3%95%E6%96%B0%E6%B3%95%E4%B8%8A%E8%B7%AF%E8%A3%BD%E9%80%A0%E6%A5%AD%E5%9B%A0%E6%87%89%E9%A0%88%E7%9F%A5.pdf?mediaDL=true",
+          "publisher": "勞動部",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "對打工的大學生、剛就業的人最有感（排班、加班費）。"
+      ]
+    },
+    {
+      "id": "pension_reform_2018",
+      "name_zh": "軍公教年金改革施行",
+      "date_start": "2018-07-01",
+      "roc_year": 107,
+      "roc_ym_start": "107-07",
+      "category": "politics_policy",
+      "summary_zh": "公務人員與教育人員退休新制自 107 年 7 月 1 日施行，調整退休金計算與起支年齡。",
+      "reachable_birth_years": [
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 18,
+      "age_max": 22,
+      "school_stages_affected": [
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 27,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 26,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 18,
+          "school_stage": "高中職3年級",
+          "school_stage_if_born_sep_dec": "高中職2年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "軍公教年金改革—建構永續的年金制度（重要政策）",
+          "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/e021cef3-b983-449b-add8-0ea0eb18f4e6",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "公務人員退休資遣撫卹法 第95條（施行日）",
+          "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=95&pcode=S0080034",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "對遊戲的意思：家長若是軍公教，可做「家裡算退休金」的背景卡；政治爭議大，文案中立。"
+      ]
+    },
+    {
+      "id": "same_sex_marriage_act",
+      "name_zh": "同性婚姻專法施行",
+      "date_start": "2019-05-24",
+      "roc_year": 108,
+      "roc_ym_start": "108-05",
+      "category": "politics_policy",
+      "summary_zh": "《司法院釋字第七四八號解釋施行法》施行，相同性別二人可辦理結婚登記。",
+      "reachable_birth_years": [
+        86,
+        87,
+        88,
+        89
+      ],
+      "age_min": 19,
+      "age_max": 22,
+      "school_stages_affected": [
+        "高中職",
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 28,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 27,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 26,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 19,
+          "school_stage": "大專1年級（若升學）",
+          "school_stage_if_born_sep_dec": "高中職3年級"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "司法院釋字第七四八號解釋施行法 沿革",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=B0000008",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "司法院釋字第748號解釋施行法5.24施行",
+          "url": "https://www.judicial.gov.tw/tw/cp-1429-57760-61de7-1.html",
+          "publisher": "司法院",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "covid19_first_case_school_delay",
+      "name_zh": "COVID-19 首例與延後開學",
+      "date_start": "2020-01-21",
+      "date_end": "2020-02-25",
+      "roc_year": 109,
+      "roc_ym_start": "109-01",
+      "roc_ym_end": "109-02",
+      "category": "epidemic",
+      "summary_zh": "台灣公布首例境外移入確診，2 月高中以下學校寒假延長兩週，延至 2 月 25 日開學。",
+      "reachable_birth_years": [
+        87,
+        88,
+        89
+      ],
+      "age_min": 20,
+      "age_max": 22,
+      "school_stages_affected": [
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 29,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 28,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 27,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 26,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "我國藉由登機檢疫即時發現首例中國大陸武漢移入之嚴重特殊傳染性肺炎個案",
+          "url": "https://www.cdc.gov.tw/Bulletin/Detail/6oHuoqzW9e_onW0AaMEemg?typeid=9",
+          "publisher": "衛生福利部疾病管制署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院 院會資料（延後開學）",
+          "url": "https://www.ey.gov.tw/File/CF751B9FBDFDCEA7?A=C",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "口罩販售實名制2月6日上路，民眾可持健保卡購買",
+          "url": "https://www.mohw.gov.tw/cp-16-51286-1.html",
+          "publisher": "衛生福利部（資料來源：疾病管制署）",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "「口罩實名制」今天上路，由專業藥事人員服務民眾",
+          "url": "https://www.mohw.gov.tw/cp-4635-51376-1.html",
+          "publisher": "衛生福利部食品藥物管理署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "口罩實名制系統升級 藥師查詢更便利（至 2/11 售出成人 693 萬片）",
+          "url": "https://mohw.gov.tw/cp-4635-51480-1.html",
+          "publisher": "衛生福利部中央健康保險署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "行政院唐鳳政務委員邀集民間社群透過健保署 open data 產製「防疫口罩查詢」（口罩地圖）",
+          "url": "https://covid19.mohw.gov.tw/ch/cp-4822-53563-205.html",
+          "publisher": "衛生福利部",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "行政院院會資料（教育部報告）：高級中等以下學校延後 2 週至 2 月 25 日開學，大專校院延至 2 月 25 日以後開學。",
+        "口罩（✅衛福部／健保署／食藥署）：政府徵用口罩；2/4 起超商停售，2020-02-06 起「口罩實名制」上路，持本人健保卡到全國約 6,000 多家健保特約藥局（偏鄉由衛生所）購買，每卡 7 天 2 片、每片 5 元（10 元 2 片），身分證末碼單號一三五、雙號二四六、週日不限；兒童口罩限 12 歲以下健保卡；可代買一張卡。各藥局販售時段不同，民眾到藥局排隊購買；健保署 2/6 釋出庫存開放資料（約 30 秒更新）供民間「口罩地圖」查詢。"
+      ]
+    },
+    {
+      "id": "triple_stimulus_voucher",
+      "name_zh": "振興三倍券",
+      "date_start": "2020-07-15",
+      "date_end": "2020-12-31",
+      "roc_year": 109,
+      "roc_ym_start": "109-07",
+      "roc_ym_end": "109-12",
+      "category": "economy",
+      "summary_zh": "政府發行振興三倍券（付 1,000 元得 3,000 元），7 月 15 日起領取使用，至 109 年底。",
+      "reachable_birth_years": [
+        87,
+        88,
+        89
+      ],
+      "age_min": 20,
+      "age_max": 22,
+      "school_stages_affected": [
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 29,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 28,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 27,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 26,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 20,
+          "school_stage": "大專2年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專1年級（若升學）"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "因應嚴重特殊傳染性肺炎振興三倍券發放辦法",
+          "url": "https://law.moea.gov.tw/LawContent.aspx?id=GL001019",
+          "publisher": "經濟部主管法規共用系統",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "⚠️待查：「付 1,000 得 3,000」細節以發放辦法原文再確認。"
+      ]
+    },
+    {
+      "id": "covid19_level3_alert",
+      "name_zh": "COVID-19 三級警戒與全國停課",
+      "date_start": "2021-05-15",
+      "date_end": "2021-07-26",
+      "roc_year": 110,
+      "roc_ym_start": "110-05",
+      "roc_ym_end": "110-07",
+      "category": "epidemic",
+      "summary_zh": "雙北 5 月 15 日、全國 5 月 19 日提升至疫情警戒第三級，各級學校停止到校改線上學習，7 月 27 日降為二級。",
+      "reachable_birth_years": [
+        88,
+        89
+      ],
+      "age_min": 21,
+      "age_max": 22,
+      "school_stages_affected": [
+        "大專（若升學）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 30,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 29,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 28,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 27,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 26,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 22,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 21,
+          "school_stage": "大專3年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專2年級（若升學）"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國；雙北提早 4 天進入三級"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [
+          "taipei",
+          "new_taipei"
+        ],
+        "light": [
+          "taichung",
+          "taitung",
+          "penghu"
+        ]
+      },
+      "sources": [
+        {
+          "title": "指揮中心自即日起至5月28日提升雙北地區疫情警戒至第三級",
+          "url": "https://www.cdc.gov.tw/Bulletin/Detail/E7bi2j8UYj1Rmz73OPE7Yg?typeid=9",
+          "publisher": "衛生福利部疾病管制署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "指揮中心延長全國疫情警戒第三級至7月26日止",
+          "url": "https://www.cdc.gov.tw/Bulletin/Detail/aiGegg4ncYmMP9dTx4W_Zw?typeid=9",
+          "publisher": "衛生福利部疾病管制署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "全國各級學校因應疫情停課居家線上學習",
+          "url": "https://depart.moe.edu.tw/ed2100/News_Content.aspx?n=1BC1E5C3DD8E7C26&s=8BF1696CC31F4FE9&sms=5EDCB810B9A5DA84",
+          "publisher": "教育部",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "本遊戲只有 88–89 年次在這時 ≤22 歲（大學生，線上上課、畢業典禮取消等）。"
+      ]
+    },
+    {
+      "id": "quintuple_stimulus_voucher",
+      "name_zh": "振興五倍券",
+      "date_start": "2021-10-08",
+      "date_end": "2022-04-30",
+      "roc_year": 110,
+      "roc_ym_start": "110-10",
+      "roc_ym_end": "111-04",
+      "category": "economy",
+      "summary_zh": "政府發行振興五倍券（每人 5,000 元），10 月 8 日起領用消費，使用期限至 111 年 4 月 30 日。",
+      "reachable_birth_years": [
+        88,
+        89
+      ],
+      "age_min": 21,
+      "age_max": 22,
+      "school_stages_affected": [
+        "大專（若升學）",
+        "大專畢業後（就業／研究所／兵役）"
+      ],
+      "affected": [
+        {
+          "birth_roc_year": 80,
+          "age_at_event": 30,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 81,
+          "age_at_event": 29,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 82,
+          "age_at_event": 28,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 83,
+          "age_at_event": 27,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 84,
+          "age_at_event": 26,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 85,
+          "age_at_event": 25,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 86,
+          "age_at_event": 24,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 87,
+          "age_at_event": 23,
+          "school_stage": "大專畢業後（就業／研究所／兵役）"
+        },
+        {
+          "birth_roc_year": 88,
+          "age_at_event": 22,
+          "school_stage": "大專畢業後（就業／研究所／兵役）",
+          "school_stage_if_born_sep_dec": "大專4年級（若升學）"
+        },
+        {
+          "birth_roc_year": 89,
+          "age_at_event": 21,
+          "school_stage": "大專4年級（若升學）",
+          "school_stage_if_born_sep_dec": "大專3年級（若升學）"
+        }
+      ],
+      "impact_scope": {
+        "scope": "nationwide",
+        "regions": [
+          "全國"
+        ]
+      },
+      "counties": [
+        "全國"
+      ],
+      "county_impact": {
+        "heavy": [],
+        "light": []
+      },
+      "sources": [
+        {
+          "title": "因應嚴重特殊傳染性肺炎振興五倍券發放辦法",
+          "url": "https://law.moea.gov.tw/LawContent.aspx?id=GL001220",
+          "publisher": "經濟部主管法規共用系統",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "system_rules": [
+    {
+      "id": "nine_year_integrated_curriculum",
+      "name_zh": "國民中小學九年一貫課程",
+      "category": "education_system",
+      "rule_summary": "九年一貫課程自 90 學年度國小一年級開始，分四階段實施（91 學年：國小一、二、四年級及國一；92 學年：國小一至五年級及國一、二），93 學年度全面實施；以七大學習領域取代分科。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "effective_date": "2001-08-01",
+      "details": {
+        "first_exposure_by_birth_year_jan_aug": [
+          {
+            "birth_roc_year": 80,
+            "first_school_year_roc": 92,
+            "first_grade": "國中1年級"
+          },
+          {
+            "birth_roc_year": 81,
+            "first_school_year_roc": 93,
+            "first_grade": "國中1年級"
+          },
+          {
+            "birth_roc_year": 82,
+            "first_school_year_roc": 91,
+            "first_grade": "國小4年級"
+          },
+          {
+            "birth_roc_year": 83,
+            "first_school_year_roc": 92,
+            "first_grade": "國小4年級"
+          },
+          {
+            "birth_roc_year": 84,
+            "first_school_year_roc": 90,
+            "first_grade": "國小1年級"
+          },
+          {
+            "birth_roc_year": 85,
+            "first_school_year_roc": 91,
+            "first_grade": "國小1年級"
+          },
+          {
+            "birth_roc_year": 86,
+            "first_school_year_roc": 92,
+            "first_grade": "國小1年級"
+          },
+          {
+            "birth_roc_year": 87,
+            "first_school_year_roc": 93,
+            "first_grade": "國小1年級"
+          },
+          {
+            "birth_roc_year": 88,
+            "first_school_year_roc": 94,
+            "first_grade": "國小1年級"
+          },
+          {
+            "birth_roc_year": 89,
+            "first_school_year_roc": 95,
+            "first_grade": "國小1年級"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "title": "教育大事紀 1992–2001（九年一貫各年級實施期程）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=6",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "計算假設：1–8 月出生者 6 歲入小一（見 timeline_source.md）。9–12 月出生者晚一年入學，第一次接觸的年級會不同。",
+        "國小三年級起本土語言、94 學年起英語提前到國小三年級（部史網）。"
+      ]
+    },
+    {
+      "id": "textbook_liberalization_one_guideline_many_versions",
+      "name_zh": "一綱多本（教科書開放審定本）",
+      "category": "education_system",
+      "rule_summary": "國立編譯館自 90 學年度起不再編印部編本，中小學改用民間依課綱編寫、經審定的教科書（一綱多本）。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "effective_date": "2001-08-01",
+      "sources": [
+        {
+          "title": "教育大事紀 1992–2001（國立編譯館九十學年度起不再編印部編本教科書）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=5",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "本遊戲所有出生年（80–89）國中都是審定本時代。",
+        "⚠️待查：國小教科書逐年開放的起始學年（約 85 學年起）與各縣市「一綱一本」政策，未取得官方原文。"
+      ]
+    },
+    {
+      "id": "basic_competence_test_jice",
+      "name_zh": "國中基本學力測驗（基測）",
+      "category": "education_system",
+      "rule_summary": "90 年起以國中基測取代高中、高職、五專聯考（考招分離），首次測驗 90 年 3 月 31 日、4 月 1 日；一年辦理多次，後來加考寫作（96 年正式）。實施至 102 年，103 年起由會考取代。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "effective_date": "2001-03-31",
+      "effective_end": "2013-06",
+      "details": {
+        "exam_calendar_year_by_birth_jan_aug": {
+          "80": 2006,
+          "81": 2007,
+          "82": 2008,
+          "83": 2009,
+          "84": 2010,
+          "85": 2011,
+          "86": 2012,
+          "87": 2013
+        }
+      },
+      "sources": [
+        {
+          "title": "教育大事紀 1992–2001（90 年度全面實施多元入學方案，基測首次測驗）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=10",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "推動各項多元入學方案",
+          "url": "https://history.moe.gov.tw/Policy/Detail/bbc6f3c5-46f2-42dd-80dc-c3e037be8862",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 2002–2011（基測 95 年試辦、96 年正式加考寫作測驗）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=2002%EF%BC%8D2011&page=3",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 2012–2021（103 年 5 月首屆國中教育會考）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=2012%EF%BC%8D2021&page=4",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "102年度國中基測圓滿落幕　教育會考明年上路",
+          "url": "https://www.matsu-news.gov.tw/news/article/73609",
+          "publisher": "馬祖日報（連江縣政府）",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "87 年次 9–12 月出生者晚一年入學，國三在 103 年，考的是會考。與 data/era_terms.json（80–87 基測、88–89 會考）一致。",
+        "基測最後一屆為 102 年：教育部部史網 103 年 5 月記「首屆國中教育會考」（✅官方），故 102 年為最後一屆基測；連江縣政府《馬祖日報》報導「102 年度國中基測圓滿落幕、教育會考明年上路」（縣府媒體，備援）。"
+      ]
+    },
+    {
+      "id": "twelve_year_basic_education_cap",
+      "name_zh": "十二年國民基本教育與國中教育會考",
+      "category": "education_system",
+      "rule_summary": "103 學年度起全面實施十二年國教，高級中等學校以免試入學為主、特色招生為輔；103 年 5 月首屆國中教育會考，成績分精熟、基礎、待加強三等級。",
+      "applies_to_birth_roc_years": [
+        88,
+        89
+      ],
+      "effective_date": "2014-05",
+      "details": {
+        "exam_calendar_year_by_birth_jan_aug": {
+          "88": 2014,
+          "89": 2015
+        },
+        "also_applies_if_born_sep_dec": [
+          87
+        ]
+      },
+      "sources": [
+        {
+          "title": "教育大事紀 2012–2021（首屆國中教育會考；十二年國教全面實施）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=2012%EF%BC%8D2021&page=4",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "推動各項多元入學方案（改進入學管道）",
+          "url": "https://history.moe.gov.tw/Policy/Detail/bbc6f3c5-46f2-42dd-80dc-c3e037be8862",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "國中教育會考",
+          "url": "https://www.k12ea.gov.tw/Tw/Station/AffairDetail?filter=63F293A9-0155-41A3-97B7-46E43E4685FE&id=793977bb-64ee-4211-9e8b-90bd52cc45db",
+          "publisher": "教育部國民及學前教育署",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "會考成績是 A／B／C 等級（精熟、基礎、待加強），不是分數。"
+      ]
+    },
+    {
+      "id": "multiple_university_admission",
+      "name_zh": "大學多元入學方案（取代大學聯考）",
+      "category": "education_system",
+      "rule_summary": "91 學年度起廢除大學聯考，改為考招分離的大學多元入學：甄選入學（含個人申請、學校推薦）與考試分發（學測、指考）；96 學年度起有繁星計畫，100 學年度起與學校推薦整併為「繁星推薦」。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "effective_date": "2002-08-01",
+      "details": {
+        "university_entry_school_year_roc_by_birth_jan_aug": {
+          "80": 98,
+          "81": 99,
+          "82": 100,
+          "83": 101,
+          "84": 102,
+          "85": 103,
+          "86": 104,
+          "87": 105,
+          "88": 106,
+          "89": 107
+        },
+        "fanxing_program_separate_96_99": [
+          80,
+          81
+        ],
+        "fanxing_tuijian_merged_100plus": [
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ]
+      },
+      "sources": [
+        {
+          "title": "推動各項多元入學方案",
+          "url": "https://history.moe.gov.tw/Policy/Detail/bbc6f3c5-46f2-42dd-80dc-c3e037be8862",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 1992–2001（大學多元入學新方案自九十一學年度起實施）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=6",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "大考中心 簡介",
+          "url": "https://www.ceec.edu.tw/xmdoc/cont?xsmsid=0I363352685517160772",
+          "publisher": "財團法人大學入學考試中心基金會",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "本遊戲所有出生年升大學時都已是多元入學（學測＋指考時代）；111 學年度起的新制（學習歷程）不影響 80–89 年次。"
+      ]
+    },
+    {
+      "id": "vocational_admission_tvc",
+      "name_zh": "技專校院多元入學與統一入學測驗（統測）",
+      "category": "education_system",
+      "rule_summary": "90 學年度起技專校院實施考招分離，成立技專校院入學測驗中心辦理統一入學測驗；主要管道有甄選入學、聯合登記分發、技優入學等；96 學年度起有技職繁星（104 學年度放寬為校排前 30%、每校推薦 10 名）。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "effective_date": "2001-08-01",
+      "details": {
+        "tvc_fanxing_80_89": [
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ]
+      },
+      "sources": [
+        {
+          "title": "推動各項多元入學方案（升技專校院部分）",
+          "url": "https://history.moe.gov.tw/Policy/Detail/bbc6f3c5-46f2-42dd-80dc-c3e037be8862",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "教育大事紀 1992–2001（技專校院入學測驗中心 90 年 2 月 16 日成立）",
+          "url": "https://history.moe.gov.tw/Memorabilia?yearInterval=1992%EF%BC%8D2001&page=10",
+          "publisher": "教育部部史網站",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "本會簡介（自 90 學年度起辦理四技二專、二技統一入學測驗）",
+          "url": "https://www.tcte.edu.tw/index.php?mod=AboutCenter%2Fpage_intr",
+          "publisher": "財團法人技專校院入學測驗中心基金會",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "90學年度四技二專統一入學測驗各類科試題及答案",
+          "url": "https://web1.tcte.edu.tw/EXAM/090_4y/",
+          "publisher": "財團法人技專校院入學測驗中心基金會",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "✅官方（技專校院入學測驗中心）：自 90 學年度起四技二專、二技統一入學測驗由該中心辦理；首屆「四技二專統一入學測驗」於 90 學年度（90 年 4 月）舉行。「統測」是此考試的簡稱，自首屆起即用「統一入學測驗」之名。",
+        "⚠️待查：「統測」二字作為官方簡稱首次出現的年份，未找到明文（第二輪再試：技專校院入學測驗中心簡介、教育部部史網，都只寫全名；中心 107 學年度以前的報告已下架）。文案可直接用通用簡稱「統測」。"
+      ]
+    },
+    {
+      "id": "tuition_subsidy_114w_100_102",
+      "name_zh": "高職免學費／私立高中齊一學費（家戶年所得 114 萬元以下，100–102 學年）",
+      "category": "education_system",
+      "rule_summary": "100–102 學年度，家戶年所得 114 萬元以下的學生：高職（含五專前三年）免學費，私立高中學費比照公立（齊一學費）。",
+      "applies_to_birth_roc_years": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "effective_date": "2011-08-01",
+      "effective_end": "2014-07-31",
+      "details": {
+        "in_high_school_during_window": [
+          {
+            "birth_roc_year": 82,
+            "hs_school_years_roc": [],
+            "hs_school_years_roc_if_born_sep_dec": [
+              100
+            ]
+          },
+          {
+            "birth_roc_year": 83,
+            "hs_school_years_roc": [
+              100
+            ],
+            "hs_school_years_roc_if_born_sep_dec": [
+              100,
+              101
+            ]
+          },
+          {
+            "birth_roc_year": 84,
+            "hs_school_years_roc": [
+              100,
+              101
+            ],
+            "hs_school_years_roc_if_born_sep_dec": [
+              100,
+              101,
+              102
+            ]
+          },
+          {
+            "birth_roc_year": 85,
+            "hs_school_years_roc": [
+              100,
+              101,
+              102
+            ],
+            "hs_school_years_roc_if_born_sep_dec": [
+              101,
+              102
+            ]
+          },
+          {
+            "birth_roc_year": 86,
+            "hs_school_years_roc": [
+              101,
+              102
+            ],
+            "hs_school_years_roc_if_born_sep_dec": [
+              102
+            ]
+          },
+          {
+            "birth_roc_year": 87,
+            "hs_school_years_roc": [
+              102
+            ],
+            "hs_school_years_roc_if_born_sep_dec": []
+          }
+        ],
+        "household_coverage_estimate": {
+          "label": "computed, rough",
+          "value": "約 56–62% 家戶（100 年家庭收支調查所得總額未滿 110 萬 56.1%、未滿 120 萬 61.6%；95 年 56.3–62.4%）",
+          "caveat": "政策用報稅「家庭年所得總額」，調查用「所得總額」，口徑不同；報稅所得通常較低，實際符合比例應更高（⚠️待查）。"
+        }
+      },
+      "sources": [
+        {
+          "title": "12年國教免學費方案（臺北市政府刊載）",
+          "url": "https://www-ws.gov.taipei/Download.ashx?n=NjgxODE3NDkzODcxLnBkZg%3D%3D&u=LzAwMS9VcGxvYWQvMzQyL3JlbGZpbGUvMzY5NjcvNzA3ODI1Mi82ODE4MTc0OTM4NzEucGRm",
+          "publisher": "臺北市政府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "家庭收支調查報告（100 年，第 11 表所得總額組別）",
+          "url": "https://www.stat.gov.tw/News_Content.aspx?n=3908&s=210980",
+          "publisher": "行政院主計總處",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "出處：data/v1.2_research.md 第 8-6 節（commit 29d27df）；臺北市 PDF：100-102 學年度（100-08-01 至 103-07-31）實施，以「在學期間」計，所以列出這段期間在高中職的出生年。",
+        "齊一學費另排除第三筆以上不動產公告現值合計超過 650 萬元、或年利息所得 10 萬元以上的家戶。",
+        "就學貸款「114 萬以下在學期間利息全額補貼」：⚠️待再確認原文。"
+      ]
+    },
+    {
+      "id": "tuition_free_148w_from_103",
+      "name_zh": "高中免學費（家戶年所得 148 萬元以下，103 學年起）",
+      "category": "education_system",
+      "rule_summary": "103 學年度起入學的學生逐年實施：就讀高職者免學費，就讀高中且家庭年所得 148 萬元以下者免學費，105 學年度三個年級全面施行。",
+      "applies_to_birth_roc_years": [
+        88,
+        89
+      ],
+      "effective_date": "2014-08-01",
+      "details": {
+        "entry_cohort_rule": "只適用 103 學年度起「入學」高一的學生（逐年實施）；102 學年度以前入學、103 年後仍在學者依臺北市 PDF 附表二另計（⚠️待查附表二內容）。",
+        "hs_entry_school_year_roc_by_birth_jan_aug": {
+          "80": 95,
+          "81": 96,
+          "82": 97,
+          "83": 98,
+          "84": 99,
+          "85": 100,
+          "86": 101,
+          "87": 102,
+          "88": 103,
+          "89": 104
+        },
+        "also_applies_if_born_sep_dec": [
+          87
+        ],
+        "still_in_high_school_after_103_but_entered_earlier": [
+          {
+            "birth_roc_year": 85,
+            "hs_school_years_roc": [],
+            "hs_school_years_roc_if_born_sep_dec": [
+              103
+            ]
+          },
+          {
+            "birth_roc_year": 86,
+            "hs_school_years_roc": [
+              103
+            ],
+            "hs_school_years_roc_if_born_sep_dec": [
+              103,
+              104
+            ]
+          },
+          {
+            "birth_roc_year": 87,
+            "hs_school_years_roc": [
+              103,
+              104
+            ],
+            "hs_school_years_roc_if_born_sep_dec": [
+              103,
+              104,
+              105
+            ]
+          }
+        ],
+        "household_coverage_estimate": {
+          "label": "computed, rough",
+          "value": "約 71–75% 家戶（100 年家庭收支調查所得總額未滿 140 萬 71.2%、未滿 150 萬 75.3%；95 年 72.1–76.2%）",
+          "caveat": "口徑不同（報稅 vs 調查），只能當參考；⚠️待查。"
+        }
+      },
+      "sources": [
+        {
+          "title": "教育部補助高級中等學校學生學費有7成約54萬名學生受益說明",
+          "url": "https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&s=42EE5BA1C2DE5D17",
+          "publisher": "教育部",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "12年國教免學費方案（臺北市政府刊載）",
+          "url": "https://www-ws.gov.taipei/Download.ashx?n=NjgxODE3NDkzODcxLnBkZg%3D%3D&u=LzAwMS9VcGxvYWQvMzQyL3JlbGZpbGUvMzY5NjcvNzA3ODI1Mi82ODE4MTc0OTM4NzEucGRm",
+          "publisher": "臺北市政府",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "家庭收支調查報告（100 年，第 11 表所得總額組別）",
+          "url": "https://www.stat.gov.tw/News_Content.aspx?n=3908&s=210980",
+          "publisher": "行政院主計總處",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "出處：data/v1.2_research.md 第 8-6 節（commit 29d27df）。",
+        "148 萬參考「國民住宅出售出租對象家庭收入標準」全國最寬標準。",
+        "高職：100–102 學年已適用 114 萬門檻免學費；103 起逐年全面免學費，105 學年全面施行。"
+      ]
+    },
+    {
+      "id": "military_1yr_born_on_or_before_82",
+      "name_zh": "兵役：82 年次以前（1 年）",
+      "category": "military_service",
+      "rule_summary": "民國 82 年 12 月 31 日以前出生的役男服 1 年：常備役體位到 106 年底仍徵集 1 年常備兵現役；107 年 1 月 1 日起不再徵集常備兵，尚未服役者全數改服 1 年替代役（最後一批 1 年常備兵 107-12-26 全數退伍）。替代役體位者服 1 年替代役。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82
+      ],
+      "effective_date": "2008-01-01",
+      "sources": [
+        {
+          "title": "服役須知（役男體位服役規定）",
+          "url": "https://dca.moi.gov.tw/chaspx/Faq_Detail.aspx?id=259&web=84",
+          "publisher": "內政部役政署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "役男當兵 真的只要一年!（97 年起役期 1 年）",
+          "url": "https://www.ly.gov.tw/EngPages/Detail.aspx?nodeid=4962&pid=23945",
+          "publisher": "立法院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "義務役期幾度更迭 最長3年最短4個月",
+          "url": "https://www.cna.com.tw/news/aipl/202212270355.aspx",
+          "publisher": "中央社",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "役期 1 年自 97 年 1 月起（立法院委員動態頁）。本遊戲 80–82 年次 19 歲在 99–101 年，因此一律 1 年。",
+        "中央社：82 年次以前服滿 1 年義務役者，107 年底已全數退伍。",
+        "✅已查：82 年次以前未服役者改服 1 年替代役自 107-01-01 起（高雄市兵役處替代役問答，更新 112-01-17：https://mildp.kcg.gov.tw/News_Content.aspx?n=B704DE2C4F1BF038&s=65E3613F85D2D96D&sms=14201CF2CF29F79C）；國防部 107-12-17 新聞稿：82 年次（含）以前服 1 年常備兵現役者 107-12-26 全數退伍（https://www.mnd.gov.tw/news/pressrelease/75839）。國防部 100 年函釋（國力規劃第 1000004444 號）原訂 102-01-01 改服替代役，實際延到 107 年才實施。本遊戲 80–82 年次 19 歲在 99–101 年，正常入伍者仍是 1 年常備兵；只有延後服役（例如讀研究所）到 107 年後才入營的人改服替代役。",
+        "在學期間修過軍訓／全民國防課程可折抵役期，合計軍訓最多 30 日、全民國防教育最多 15 日。女性不服義務役。"
+      ]
+    },
+    {
+      "id": "military_4mo_training_83_93",
+      "name_zh": "兵役：83–93 年次（4 個月常備兵役軍事訓練）",
+      "category": "military_service",
+      "rule_summary": "民國 83 年 1 月 1 日至 93 年 12 月 31 日出生的常備役體位役男，自 102 年起服 4 個月常備兵役軍事訓練；替代役體位服 12 天補充兵役。專科以上在學者可申請連續兩年暑假分階段受訓。",
+      "applies_to_birth_roc_years": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "effective_date": "2013-01-01",
+      "sources": [
+        {
+          "title": "服役須知（第1點體位服役規定、第20點常備兵役軍事訓練、第21點分階段受訓）",
+          "url": "https://dca.moi.gov.tw/chaspx/Faq_Detail.aspx?id=259&web=84",
+          "publisher": "內政部役政署",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "國防部新聞稿（94年次後恢復1年義務役，83–93年次維持4個月）",
+          "url": "https://www.ey.gov.tw/File/7D9C5766CA1F9541?A=C",
+          "publisher": "國防部（行政院網站刊載）",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "薪餉：比照二等兵每月 6,510 元（見 data/military_service_sources.md）。"
+      ]
+    },
+    {
+      "id": "military_1yr_restored_94_plus",
+      "name_zh": "兵役：94 年次以後（恢復 1 年）",
+      "category": "military_service",
+      "rule_summary": "民國 94 年 1 月 1 日以後出生的役男，自 113 年 1 月 1 日起恢復服 1 年常備兵現役；替代役體位服 1 年替代役。",
+      "applies_to_birth_roc_years": [],
+      "effective_date": "2024-01-01",
+      "sources": [
+        {
+          "title": "94年次後出生役男回復1年義務役",
+          "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/d46f509b-0f03-4487-b218-ad6093bfa704",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "服役須知",
+          "url": "https://dca.moi.gov.tw/chaspx/Faq_Detail.aspx?id=259&web=84",
+          "publisher": "內政部役政署",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "不適用本遊戲任何出生年（80–89），只列出供對照；2024 起二兵月薪 20,320 元也不適用。"
+      ]
+    },
+    {
+      "id": "alternative_service_launch",
+      "name_zh": "替代役制度開始實施",
+      "category": "military_service",
+      "rule_summary": "《替代役實施條例》89 年公布施行，89 年 8 月起開始徵集替代役。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82
+      ],
+      "effective_date": "2000-05-01",
+      "sources": [
+        {
+          "title": "替代役實施條例",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0040017",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "替代役實施條例 沿革（89-05-01 施行）",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=D0040017",
+          "publisher": "法務部全國法規資料庫",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "役政業務主要政策介紹（89-08-03 第 1 梯次替代役男入營）",
+          "url": "https://kids.ey.gov.tw/Page/3E5D19DCC4C902CC",
+          "publisher": "行政院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "義務役期幾度更迭（2000 年 8 月開始徵集替代役）",
+          "url": "https://www.cna.com.tw/news/aipl/202212270355.aspx",
+          "publisher": "中央社",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "對本遊戲：80–82 年次可能服 1 年替代役；83–89 年次替代役體位只服 12 天補充兵役。",
+        "✅官方：全國法規資料庫沿革——89-02-02 制定公布，行政院令「定自八十九年五月一日起施行」；行政院兒童網（內政部役政政策）——「民國89年8月3日第1梯次替代役男徵集入營」。"
+      ]
+    },
+    {
+      "id": "service_length_history",
+      "name_zh": "義務役役期縮短沿革（背景）",
+      "category": "military_service",
+      "rule_summary": "常備兵役期 93 年起由 1 年 10 個月逐次縮短：1 年 8 個月、96 年 1 月 1 年 4 個月、96 年 7 月 1 年 2 個月、97 年 1 月起 1 年；102 年起 83 年次以後改為 4 個月軍事訓練。",
+      "applies_to_birth_roc_years": [],
+      "effective_date": "2004-01-01",
+      "sources": [
+        {
+          "title": "役男當兵 真的只要一年!",
+          "url": "https://www.ly.gov.tw/EngPages/Detail.aspx?nodeid=4962&pid=23945",
+          "publisher": "立法院",
+          "accessed": "2026-10-17"
+        },
+        {
+          "title": "義務役期幾度更迭 最長3年最短4個月",
+          "url": "https://www.cna.com.tw/news/aipl/202212270355.aspx",
+          "publisher": "中央社",
+          "accessed": "2026-10-17",
+          "source_type": "news"
+        }
+      ],
+      "notes": [
+        "本遊戲出生年最早 19 歲在 99 年，全部在 1 年制以後，這條只是背景（例如「爸爸當兵兩年」）。",
+        "⚠️待查：1 年 10 個月的起點，中央社寫 2000 年 1 月、立法院頁寫 93 年起由 1 年 10 個月縮為 1 年 8 個月，兩者不衝突但起點年份需國防部原文確認。"
+      ]
+    },
+    {
+      "id": "basic_wage_schedule",
+      "name_zh": "基本工資（月薪／時薪）歷年表",
+      "category": "economy",
+      "rule_summary": "基本工資 86 年 10 月起每月 15,840 元，凍漲至 96 年 7 月調為 17,280 元，之後逐年調整；114 年起由最低工資取代。",
+      "applies_to_birth_roc_years": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "effective_date": "1997-10-16",
+      "details": {
+        "schedule": [
+          {
+            "effective": "1997-10-16",
+            "monthly": 15840,
+            "hourly": 66
+          },
+          {
+            "effective": "2007-07-01",
+            "monthly": 17280,
+            "hourly": 95
+          },
+          {
+            "effective": "2011-01-01",
+            "monthly": 17880,
+            "hourly": 98
+          },
+          {
+            "effective": "2012-01-01",
+            "monthly": 18780,
+            "hourly": 103
+          },
+          {
+            "effective": "2013-01-01",
+            "monthly": 18780,
+            "hourly": 109
+          },
+          {
+            "effective": "2013-04-01",
+            "monthly": 19047,
+            "hourly": 109
+          },
+          {
+            "effective": "2014-01-01",
+            "monthly": 19047,
+            "hourly": 115
+          },
+          {
+            "effective": "2014-07-01",
+            "monthly": 19273,
+            "hourly": 115
+          },
+          {
+            "effective": "2015-07-01",
+            "monthly": 20008,
+            "hourly": 120
+          },
+          {
+            "effective": "2016-10-01",
+            "monthly": 20008,
+            "hourly": 126
+          },
+          {
+            "effective": "2017-01-01",
+            "monthly": 21009,
+            "hourly": 133
+          },
+          {
+            "effective": "2018-01-01",
+            "monthly": 22000,
+            "hourly": 140
+          },
+          {
+            "effective": "2019-01-01",
+            "monthly": 23100,
+            "hourly": 150
+          },
+          {
+            "effective": "2020-01-01",
+            "monthly": 23800,
+            "hourly": 158
+          },
+          {
+            "effective": "2021-01-01",
+            "monthly": 24000,
+            "hourly": 160
+          },
+          {
+            "effective": "2022-01-01",
+            "monthly": 25250,
+            "hourly": 168
+          }
+        ]
+      },
+      "sources": [
+        {
+          "title": "基本工資之制訂與調整經過",
+          "url": "https://www.mol.gov.tw/1607/28162/28166/28180/28182/28184/29016/",
+          "publisher": "勞動部",
+          "accessed": "2026-10-17"
+        }
+      ],
+      "notes": [
+        "本遊戲 16–22 歲打工時薪範圍：80 年次（96–102 年）95–109 元；89 年次（105–111 年）120–168 元。UI 不顯示數字，只能轉成「便當幾個」之類的比喻。"
+      ]
+    }
+  ]
+}

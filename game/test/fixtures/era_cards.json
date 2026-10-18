@@ -1,0 +1,49 @@
+{
+  "_note": "測試用假時代牌（文字不是文案，只給引擎測試）。格式同 data/deck/era_cards.json。配 test/fixtures/timeline.json。",
+  "prologue_capacity": {
+    "6": 2,
+    "9": 2,
+    "12": 1
+  },
+  "review_max_lines": 3,
+  "cards": [
+    {
+      "id": "era_fixture_nationwide",
+      "timeline_id": "fixture_nationwide",
+      "name": "測試時代牌甲",
+      "line": "測試：{exam_name}那一代。",
+      "effects": {
+        "stress": 1
+      },
+      "priority": 3,
+      "sets_flags": [
+        "fixture_flag_a"
+      ]
+    },
+    {
+      "id": "era_fixture_regional",
+      "timeline_id": "fixture_regional",
+      "name": "測試時代牌乙",
+      "line": "測試：只有特定縣市。",
+      "effects_by_tier": {
+        "heavy": {
+          "happiness": -1
+        }
+      },
+      "priority": 2,
+      "tier_policy": "heavy_light"
+    },
+    {
+      "id": "era_fixture_late",
+      "timeline_id": "fixture_late",
+      "name": "測試時代牌丙",
+      "line": "測試：晚出生的大學生。",
+      "effects": {
+        "social": -1
+      },
+      "priority": 1
+    }
+  ],
+  "review_only": [],
+  "rules": []
+}

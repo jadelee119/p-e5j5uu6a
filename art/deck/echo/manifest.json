@@ -1,0 +1,193 @@
+{
+  "_note": "回音牌插圖（美術設計）。每組一張，苦版和暖版共用。4:5 母版 480×600（src/*.svg），主體在安全區 x 80–400、y 60–540；png＝600×750（96 色調色盤 PNG），webp＝寬 480（480×600，品質 82）。對應：卡片 id 去掉 _bitter/_warm、再去掉 e_ → 組名 → echo_<組名>.webp，找不到退回 .png，再找不到用實心缺圖樣式。",
+  "ratio": "4:5",
+  "size": [
+    480,
+    600
+  ],
+  "png_size": [
+    600,
+    750
+  ],
+  "webp_size": [
+    480,
+    600
+  ],
+  "safe_zone": [
+    80,
+    60,
+    400,
+    540
+  ],
+  "groups": {
+    "teenjob": {
+      "id": "echo_teenjob",
+      "group": "teenjob",
+      "accent": "#E2638F",
+      "cards": [
+        "e_teenjob_bitter",
+        "e_teenjob_warm"
+      ],
+      "webp": "art/deck/echo/echo_teenjob.webp",
+      "png": "art/deck/echo/echo_teenjob.png",
+      "svg": "art/deck/echo/src/echo_teenjob.svg",
+      "subject": "打工店牆上掛著粉紅圍裙（名牌空白、口袋插筆），旁邊是手搖飲封口機和一杯封好的珍奶",
+      "hand_focus": "50% 62%"
+    },
+    "loan": {
+      "id": "echo_loan",
+      "group": "loan",
+      "accent": "#2FA84F",
+      "cards": [
+        "e_loan_bitter",
+        "e_loan_warm"
+      ],
+      "webp": "art/deck/echo/echo_loan.webp",
+      "png": "art/deck/echo/echo_loan.png",
+      "svg": "art/deck/echo/src/echo_loan.svg",
+      "subject": "銀行櫃檯的玻璃隔板前，一疊文件（波浪線、空心紅圈）、印章、印泥和鍊條筆",
+      "hand_focus": "50% 72%"
+    },
+    "single": {
+      "id": "echo_single",
+      "group": "single",
+      "accent": "#A8B82A",
+      "cards": [
+        "e_single_bitter",
+        "e_single_warm"
+      ],
+      "webp": "art/deck/echo/echo_single.webp",
+      "png": "art/deck/echo/echo_single.png",
+      "svg": "art/deck/echo/src/echo_single.svg",
+      "subject": "吊燈下的餐桌擺著兩副碗筷和一盤青菜，冰箱上貼著兩張便條",
+      "hand_focus": "50% 45%"
+    },
+    "cram": {
+      "id": "echo_cram",
+      "group": "cram",
+      "accent": "#10BDB0",
+      "cards": [
+        "e_cram_bitter",
+        "e_cram_warm"
+      ],
+      "webp": "art/deck/echo/echo_cram.webp",
+      "png": "art/deck/echo/echo_cram.png",
+      "svg": "art/deck/echo/src/echo_cram.svg",
+      "subject": "晚上的補習班大樓換上嶄新的空白招牌，舊招牌靠在牆邊，教室亮著日光燈，樓下停滿機車",
+      "hand_focus": "50% 40%"
+    },
+    "care": {
+      "id": "echo_care",
+      "group": "care",
+      "accent": "#C08A9E",
+      "cards": [
+        "e_care_bitter",
+        "e_care_warm"
+      ],
+      "webp": "art/deck/echo/echo_care.webp",
+      "png": "art/deck/echo/echo_care.png",
+      "svg": "art/deck/echo/src/echo_care.svg",
+      "subject": "窗邊的輪椅搭著毛毯，座位上攤開一本老相簿，旁邊小桌上是七格彩色藥盒",
+      "hand_focus": "50% 72%"
+    },
+    "filial": {
+      "id": "echo_filial",
+      "group": "filial",
+      "accent": "#4D5B52",
+      "cards": [
+        "e_filial_bitter",
+        "e_filial_warm"
+      ],
+      "webp": "art/deck/echo/echo_filial.webp",
+      "png": "art/deck/echo/echo_filial.png",
+      "svg": "art/deck/echo/src/echo_filial.svg",
+      "subject": "格子桌布上一個素面信封，年輕的手推過去、大人的手推回來，旁邊攤著記帳本和筆",
+      "hand_focus": "50% 62%"
+    },
+    "shop": {
+      "id": "echo_shop",
+      "group": "shop",
+      "accent": "#F5C800",
+      "cards": [
+        "e_shop_bitter",
+        "e_shop_warm"
+      ],
+      "webp": "art/deck/echo/echo_shop.webp",
+      "png": "art/deck/echo/echo_shop.png",
+      "svg": "art/deck/echo/src/echo_shop.svg",
+      "subject": "自家小店的條紋遮雨棚、貨架和糖果罐櫃檯，角落小桌攤著作業，桌下一張紅色塑膠板凳",
+      "hand_focus": "50% 28%"
+    },
+    "newyear": {
+      "id": "echo_newyear",
+      "group": "newyear",
+      "accent": "#E0144C",
+      "cards": [
+        "e_newyear_bitter",
+        "e_newyear_warm"
+      ],
+      "webp": "art/deck/echo/echo_newyear.webp",
+      "png": "art/deck/echo/echo_newyear.png",
+      "svg": "art/deck/echo/src/echo_newyear.svg",
+      "subject": "過年的茶几：八角糖果盒裡的瓜子和糖、一疊素面紅包、茶杯，牆上貼著空白斗方",
+      "hand_focus": "50% 46%"
+    },
+    "child": {
+      "id": "echo_child",
+      "group": "child",
+      "accent": "#62C6F5",
+      "cards": [
+        "e_child_bitter",
+        "e_child_warm"
+      ],
+      "webp": "art/deck/echo/echo_child.webp",
+      "png": "art/deck/echo/echo_child.png",
+      "svg": "art/deck/echo/src/echo_child.svg",
+      "subject": "櫃子最上層打開的紙箱，露出接力棒、捲起來的獎狀、直笛、蠟筆和掛繩鑰匙（標籤空白）",
+      "hand_focus": "50% 40%"
+    },
+    "track": {
+      "id": "echo_track",
+      "group": "track",
+      "accent": "#8A5CD6",
+      "cards": [
+        "e_track_bitter",
+        "e_track_warm"
+      ],
+      "webp": "art/deck/echo/echo_track.webp",
+      "png": "art/deck/echo/echo_track.png",
+      "svg": "art/deck/echo/src/echo_track.svg",
+      "subject": "路分成三條，路標三塊空白箭頭指向不同方向；前景是摺了一角的簡章和書包",
+      "hand_focus": "50% 46%"
+    },
+    "branch": {
+      "id": "echo_branch",
+      "group": "branch",
+      "accent": "#262A4E",
+      "cards": [
+        "e_branch_bitter",
+        "e_branch_warm"
+      ],
+      "webp": "art/deck/echo/echo_branch.webp",
+      "png": "art/deck/echo/echo_branch.png",
+      "svg": "art/deck/echo/src/echo_branch.svg",
+      "subject": "天快亮的窗外露出一點日出，書桌上開著筆電、一本闔上的素面筆記本和一杯冒煙的馬克杯",
+      "hand_focus": "50% 62%"
+    },
+    "home": {
+      "id": "echo_home",
+      "group": "home",
+      "accent": "#F59C72",
+      "cards": [
+        "e_home_bitter",
+        "e_home_warm"
+      ],
+      "webp": "art/deck/echo/echo_home.webp",
+      "png": "art/deck/echo/echo_home.png",
+      "svg": "art/deck/echo/src/echo_home.svg",
+      "subject": "門上插著掛繩鑰匙，旁邊小桌上一鍋蓋著蓋子、冒著熱氣的湯，檯燈還亮著",
+      "hand_focus": "50% 30%"
+    }
+  },
+  "_hand_focus_note": "手牌卡面框 7:5，用 object-fit: cover; object-position: <hand_focus>。詳情頁仍顯示整張 4:5。"
+}

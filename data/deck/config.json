@@ -70,6 +70,8 @@
       ]
     }
   },
+  "_stress_peak_note": "v1.2 stress_peak 旗標的壓力門檻（給 ach_burnout，只影響成就、不影響病倒；沒寫＝forced.f_sick.stress_at_least 39）。企劃 10/17 第三輪：39→37（設計假設），deckcheck12 6c 混合打法 5.2–5.3%、Q1−Q5 −1.8～−1.9（目標 3–8%、差距 ≤ 約 2）",
+  "stress_peak_at": 37,
   "forced": {
     "f_teacher": {
       "base_chance": 0.15,
@@ -241,5 +243,217 @@
   },
   "summer_stress_mult": 0.5,
   "_summer_note": "§10（9b31ad8）：15→16 結轉時壓力 ×0.5（假設值）",
-  "_temptation_note": "§11：s_game、s_skip 各 2 張進起始牌庫，和 s_study 一樣多（「權重和 s_study 相同」的假設解讀）"
+  "_temptation_note": "§11：s_game、s_skip 各 2 張進起始牌庫，和 s_study 一樣多（「權重和 s_study 相同」的假設解讀）",
+  "adult_branch": {
+    "_note": "design/v1.0-adult-branch-skeleton.md（dfa145b）骨架。預設打開（enabled=true；v1.2 另由 data/deck/v12.json 的 adult=true 打開）：18 歲之後進 19–22 歲成人段（分流 uni／uni_tech／work_first、租屋、結局）。網址 ?adult=0 或 deckcheck 參數可以關掉，關掉時整局照舊在 18 歲結束。分流門檻：academic_min；v1.2 另讀 academic_min_by_track（表內路線視同允許、門檻用表內值）。所有門檻、機率都是假設值。",
+    "enabled": true,
+    "ages": [
+      19,
+      20,
+      21,
+      22
+    ],
+    "summer_stress_mult": 0.5,
+    "carry_age_max": {
+      "_note": "18 歲以後還要繼續抽得到的既有牌（只在開關打開時延長 age_max；國中、高中專屬行動牌不延長）",
+      "ids": [
+        "b_comfort",
+        "b_bill",
+        "b_scroll",
+        "g_mature",
+        "f_sick",
+        "b_tired"
+      ],
+      "to": 22
+    },
+    "shared_adds": [
+      "b_rent",
+      "b_family_expect",
+      "first_paycheck",
+      "f_recession",
+      "f_family_crisis",
+      "t_binge",
+      "t_party"
+    ],
+    "branch": {
+      "age": 19,
+      "from_tracks": [
+        "hs_general",
+        "hs_vocational"
+      ],
+      "options": {
+        "uni": {
+          "name": "大學",
+          "result": "你選了條大家都聽過名字的路，學費單也聽過你的名字。",
+          "not_taken": "如果當時去念了大學，現在大概正在煩惱別的事。",
+          "requires_track": [
+            "hs_general"
+          ],
+          "academic_min": 23,
+          "adds": [
+            "uni_study",
+            "uni_club",
+            "uni_love",
+            "uni_parttime",
+            "uni_double",
+            "uni_exchange",
+            "uni_confess"
+          ],
+          "loan": true,
+          "academic_min_by_track": {
+            "hs_vocational": 44
+          },
+          "_by_track_note": "企劃 v1.2 平衡第二輪（2026-10-17；設計假設）：高職生也能讀一般大學，門檻比普高高（academic_min_by_track，v1.2 才讀）。44 是 deckcheck12 抽樣校準值：高職生走一般大學約 8.5%（目標 5–10%，data/v1.2_research.md §10 第二輪目標；全國實際比例 ⚠️待查，§9A）。第一輪是 35（約三成）。出社會約 10% 的目標沒有用科大門檻做：門檻擋人會讓窮的分位被擋得多、家境差距變大，而且會把學業低的富裕玩家也擋在科大外，見企劃回報"
+        },
+        "uni_tech": {
+          "name": "科大",
+          "result": "你選了條把手藝磨得更利的路。",
+          "not_taken": "如果當時繼續念下去，你的手可能會比現在更有把握。",
+          "requires_track": [
+            "hs_general",
+            "hs_vocational"
+          ],
+          "academic_min": 13,
+          "adds": [
+            "tech_intern",
+            "tech_license",
+            "tech_project",
+            "tech_parttime",
+            "tech_industry_intern",
+            "tech_competition"
+          ],
+          "loan": true
+        },
+        "work_first": {
+          "name": "直接工作",
+          "result": "你選了條先賺錢再說的路，至少月底會有個交代。",
+          "not_taken": "如果當時先去工作，現在存摺裡也許有點東西，也許沒有。",
+          "adds": [
+            "work_overtime",
+            "work_save",
+            "work_job_offer",
+            "work_night_school",
+            "work_switch",
+            "work_apprentice"
+          ]
+        },
+        "military": {
+          "_note": "兵役：空白，等 Jade（要不要做、年紀、性別、役期、志願役結局條件）。enabled=false 不會顯示",
+          "enabled": false
+        }
+      },
+      "_threshold_note": "e9c6fc1 校正：sim/branchcheck.ts（自然分位、隨機用滿）19 歲學業分布 → 科大門檻 13＝普高 p5（普高約 95% 至少能選一個）、高職約八成能選科大；大學門檻 23＝普高 p20（企劃沒給目標，假設值）。"
+    },
+    "branch_jc": {
+      "age": 21,
+      "from_tracks": [
+        "hs_5yr"
+      ],
+      "options": {
+        "uni_tech": {
+          "name": "插大或二技",
+          "result": "你決定再念下去，課本換了，通勤的路也換了。",
+          "not_taken": "如果當時繼續念下去，你的手可能會比現在更有把握。",
+          "academic_min": 13,
+          "adds": [
+            "tech_intern",
+            "tech_license",
+            "tech_project",
+            "tech_parttime",
+            "tech_industry_intern",
+            "tech_competition"
+          ],
+          "loan": true,
+          "_note": "插大／二技 → uni_tech，讀兩年"
+        },
+        "work_first": {
+          "name": "直接工作",
+          "result": "你帶著那張畢業證書，直接走進了職場。",
+          "not_taken": "如果當時先去工作，現在存摺裡也許有點東西，也許沒有。",
+          "adds": [
+            "work_overtime",
+            "work_save",
+            "work_job_offer",
+            "work_night_school",
+            "work_switch",
+            "work_apprentice"
+          ]
+        },
+        "military": {
+          "_note": "兵役：空白，等 Jade",
+          "enabled": false
+        }
+      }
+    },
+    "loan": {
+      "_note": "學貸機率（假設）：分位基礎 × 私立倍率；學業 < private_below 視為私立。目標約兩成（e21e572）",
+      "card": "b_loan",
+      "by_quintile": {
+        "1": 0.4,
+        "2": 0.26,
+        "3": 0.13,
+        "4": 0.05,
+        "5": 0.01
+      },
+      "private_below": 55,
+      "private_mult": 1.3,
+      "public_mult": 0.5
+    },
+    "sim_policy": {
+      "_note": "假玩家：可選大學→機率 uni；否則可選科大→機率 tech；其餘出社會",
+      "uni": 0.8,
+      "tech": 0.75,
+      "work_choice_by_track": {
+        "_note": "假玩家：可以繼續升學、卻選出社會的機率（依選校路線）。企劃 10/17 第三輪校準：最後走出社會的比例 普高約 5.0%（含綜高，用 95 學年高一新生普通科 39.5／綜高 14.6 加權；教育部 98–107 學年未升學率 普通科 3.9%、綜高 7.9%，見 data/v1.2_research.md 第 10 節）、高職約 18.8%（同來源）、五專約 5%（設計假設：查不到五專資料）；整體約 10.5%。這裡的數字是「能升學者裡選出社會」的機率，不是最後比例（門檻擋掉的人另算）",
+        "hs_general": 0.05,
+        "hs_vocational": 0.172,
+        "hs_5yr": 0.043
+      }
+    },
+    "endings": {
+      "_note": "接 data/endings.json 的 id；判斷順序與門檻都是假設值，最後保底 still_trying／ordinary_good。兵役 volunteer 等 Jade。",
+      "burnout_sick_count": 2,
+      "high_academic": 60,
+      "savings_wealth_gain": 15,
+      "against_odds_score": 60,
+      "dreamer_happiness_gain": 15
+    },
+    "route_names": {
+      "_note": "回顧相簿段名（不放年紀）；五專轉插大／二技也用「科大」",
+      "uni": "大學",
+      "uni_tech": "科大",
+      "work_first": "出社會"
+    },
+    "adult_overrides": {
+      "_note": "十九歲起 g_network 換成成人文字（同一張牌，album_text 沿用）",
+      "g_network": {
+        "line": "你記得每個人的名字，大家也開始記得你的。",
+        "result_text": "有人說「我認識人可以幫你」，這句話開始變得常聽到。"
+      }
+    },
+    "housing": {
+      "_note": "分流後接著選住處（f_branch／f_branch_jc 之後）。文字：劇情文案定稿 dbf7fdd；數值留給企劃（目前全 0）。標題「住哪裡」是工程暫定。",
+      "title": "住哪裡",
+      "options": {
+        "move_out": {
+          "name": "搬出去住",
+          "result": "你把棉被塞進大塑膠袋，第一次發現自己的東西原來這麼多。",
+          "flag": "moved_out",
+          "effects": {
+            "happiness": 3,
+            "social": 2
+          }
+        },
+        "stay_home": {
+          "name": "留在家裡",
+          "result": "每天通勤很久，但冰箱裡永遠有東西吃。",
+          "flag": "living_home",
+          "effects": {
+            "health": -1
+          }
+        }
+      },
+      "sim_move_out": 0.5
+    }
+  }
 }

@@ -43,6 +43,7 @@
         "academic"
       ],
       "result_event": "junior_cram_school_01",
+      "result_text": "黑板上寫的，是學校下個月才要教的東西。走出大樓時，天已經黑透了。",
       "invest": true,
       "album_text": "晚上的街燈下，大家揹著一樣的書包走出來。",
       "regret_text": "那間補習班的招牌換過好幾次名字，你一次也沒進去過。",
@@ -174,7 +175,7 @@
         "effort",
         "talent"
       ],
-      "result_text": "老師說你進步了。你不確定她是不是對每個人都這樣說。",
+      "result_text": "老師說你進步了。你不確定老師是不是對每個人都這樣說。",
       "echo": {
         "age": 20,
         "text": "同學在尾牙上台彈了一首，你在台下拍手拍得很用力。"
@@ -673,7 +674,6 @@
       "age_min": 16,
       "age_max": 18,
       "expires_age": null,
-      "missed_if_never_played": true,
       "line": "樓梯口飄出泡麵和冷氣的味道，裡面永遠有一台空位在等你。",
       "effects": {
         "happiness": 3,
@@ -683,7 +683,6 @@
       },
       "result_text": "你連贏了好幾場，走出來才發現天黑了，書包還放在櫃檯。",
       "album_text": "網咖角落那台電腦，鍵盤上有一顆鍵被你按到發亮。",
-      "regret_text": "那間網咖你經過很多次，從來沒推開過那扇貼滿海報的門。",
       "tags": [
         "fun"
       ],
@@ -699,7 +698,6 @@
       "age_min": 16,
       "age_max": 18,
       "expires_age": null,
-      "missed_if_never_played": true,
       "line": "第一節是考試，天氣好得不像話。",
       "effects": {
         "happiness": 3,
@@ -711,7 +709,6 @@
       ],
       "result_text": "你們在河堤邊坐了一整個上午，回學校的時候，有人已經在幫你想請假的理由。",
       "album_text": "河堤上的風，吹亂了制服，也吹掉了一節課。",
-      "regret_text": "那幾年你一節課都沒蹺過，偶爾會想，河堤邊的風是什麼感覺。",
       "tags": [
         "fun"
       ],
@@ -783,7 +780,7 @@
       },
       "result_text": "你第一次做出一件不用重來的東西，老師傅沒說話，只是點了點頭。",
       "album_text": "工作服口袋裡，總有一支不知道是誰的螺絲起子。",
-      "regret_text": "那個老師傅後來退休了，你沒有機會跟他說謝謝。",
+      "regret_text": "那個老師傅後來退休了，你沒有機會說聲謝謝。",
       "tags": [
         "effort"
       ],
